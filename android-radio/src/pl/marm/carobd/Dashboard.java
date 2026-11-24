@@ -195,9 +195,9 @@ public final class Dashboard extends Activity {
         clockArea.addView(clocks,new FrameLayout.LayoutParams(-1,-1));
         speedDial=new Instruments.Dial(this,instrumentsFont,"Prędkość","km/h",Instruments.SPEED_LIMIT,20,Instruments.ORANGE);
         rpmDial=new Instruments.Dial(this,instrumentsFont,"Obroty","obr./min",Instruments.RPM_LIMIT,1000,Instruments.BLUE);
-        weight(clocks,speedDial,1);
-        gap(clocks,10);
         weight(clocks,rpmDial,1);
+        gap(clocks,10);
+        weight(clocks,speedDial,1);
         recordingDot=new View(this); recordingDot.setBackground(box(RECORDING,6));
         recordingDot.setContentDescription("Trwa zapis przejazdu");
         recordingDot.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_YES);
@@ -374,11 +374,13 @@ public final class Dashboard extends Activity {
         reading(consumption,(live.fuelSource==2 && !demo && Double.isFinite(live.rate) ? "~" : "")+
             (demo ? "5,8" : fmt(live.rate,1))+" l/h");
         reading(tripMean,(demo ? "6,7" : fmt(live.mean,1))+" l/100 km");
-        double fuel=demo ? 58 : Double.isFinite(live.tankLiters) ? 100*live.tankLiters/Elm.KIA_TANK_L : live.fuel;
+        boolean estimatedFuel=!demo && !Double.isFinite(live.fuel) && Double.isFinite(live.tankLiters);
+        double fuel=demo ? 58 : estimatedFuel ? 100*live.tankLiters/Elm.KIA_TANK_L : live.fuel;
+        tank.setTag(estimatedFuel ? "Poziom paliwa szacowany z litrów OBD" : "Poziom paliwa");
         JSONObject range=EngineHours.kiaProfile(vehicle) ? null : NasHistory.telemetry(settings,vehicle).optJSONObject("range");
         long age=range==null ? Long.MAX_VALUE : System.currentTimeMillis()/1000-range.optLong("t",0);
         double nasRange=age>=0 && age<=6*3600 ? range.optDouble("range_km") : Double.NaN;
-        reading(tank,Double.isFinite(fuel) ? fmt(fuel,0)+"%" : "—");
+        reading(tank,Double.isFinite(fuel) ? (estimatedFuel ? "~" : "")+fmt(fuel,0)+"%" : "—");
         reading(rangeValue,demo ? "520 km" : Double.isFinite(nasRange) ? fmt(nasRange,0)+" km" : "—");
         fuelChart.sample(live.rate,live.rpm,live.speed,now,demo);
         changed(arm,demo ? "Zakończ podgląd" : "Włącz lokalizację");

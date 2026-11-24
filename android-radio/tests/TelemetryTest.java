@@ -24,7 +24,10 @@ public final class TelemetryTest {
         missing(Elm.decode(0x10,"NO DATA"));
         missing(Elm.decode(0x0d,"7F0112"));
         missing(Elm.decode(0x0d,"410D"));
-        equal(Elm.decode(0x2f,"412F00"),0);
+        equal(Elm.decode(Elm.FUEL_LEVEL,"412F00"),0);
+        equal(Elm.decode(Elm.FUEL_LEVEL,"41 2F 38\r>"),56*100/255.0);
+        equal(Elm.decode(Elm.FUEL_LEVEL,"412FFF"),100);
+        missing(Elm.decode(Elm.FUEL_LEVEL,"NO DATA>"));
         equal(Elm.decode(Elm.COOLANT,"41 05 82\r>"),90);
         equal(Elm.decode(Elm.COOLANT,"41051E>"),-10);
         equal(Elm.decode(Elm.OIL,"415C91>"),105);
@@ -83,6 +86,8 @@ public final class TelemetryTest {
         session.init(); equal(session.speed(),70);
         Elm.Sample sample=session.read("diesel",0);
         equal(sample.rpm,2000); equal(sample.rate,0.5*3600/832); equal(sample.source,4);
+        equal(sample.fuel,128*100/255.0);
+        missing(session.read("diesel",1).fuel);
         equal(session.temperature(true),90); missing(session.temperature(false));
         equal(session.odometer(),123456.7);
         if (!seen.containsAll(Arrays.asList("0105","015C"))) throw new AssertionError(seen);

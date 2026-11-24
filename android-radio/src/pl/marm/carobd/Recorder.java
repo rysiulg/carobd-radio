@@ -63,8 +63,8 @@ public final class Recorder extends Service {
     private int bootCount;
     private long resumedUntil;
     private long ecuAt=-1,gpsAt=-1,stoodAt=-1,maintenanceAt=-30000;
-    private long coolantAt=-1,oilAt=-1,odometerAt=-1,tankAt=-1,gearAt=-1,proxyAt=-3000;
-    private static final long ODOMETER_PERIOD=30000, ODOMETER_FRESH=90000;
+    private long coolantAt=-1,oilAt=-1,odometerAt=-1,fuelLevelAt=-1,tankAt=-1,gearAt=-1,proxyAt=-3000;
+    private static final long ODOMETER_PERIOD=30000, ODOMETER_FRESH=90000, FUEL_LEVEL_FRESH=45000;
     private Location lastLocation;
     private String adapterStatus="Brak połączenia OBD";
     private NotificationManager notifications;
@@ -188,6 +188,7 @@ public final class Recorder extends Service {
             if (now-coolantAt>TEMP_FRESH) state.coolant=Double.NaN;
             if (now-oilAt>TEMP_FRESH) state.oil=Double.NaN;
             if (now-odometerAt>ODOMETER_FRESH) state.odometer=Double.NaN;
+            if (now-fuelLevelAt>FUEL_LEVEL_FRESH) state.fuel=Double.NaN;
             if (now-tankAt>150000) state.tankLiters=Double.NaN;
             if (!fresh(gearAt,now)) state.gear="";
             if (now-proxyAt>=3000) {
@@ -247,7 +248,7 @@ public final class Recorder extends Service {
     private void engine(Elm.Sample sample,long at) {
         if (!active) return;
         state.rpm=sample.rpm; state.rate=sample.rate; state.fuelSource=sample.source;
-        if (Double.isFinite(sample.fuel)) state.fuel=sample.fuel;
+        if (Double.isFinite(sample.fuel)) { state.fuel=sample.fuel; fuelLevelAt=at; }
         double v=fresh(ecuAt,at) ? state.speed : Double.NaN;
         ignition.observe(sample.rpm,v,at);
         try {

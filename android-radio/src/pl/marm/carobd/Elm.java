@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 /** Wyłącznie odczyt OBD. Skalowanie jak w CarOBD ESP. */
 final class Elm {
-    static final int COOLANT=0x05, OIL=0x5c;
+    static final int COOLANT=0x05, OIL=0x5c, FUEL_LEVEL=0x2f;
     static final double KIA_TANK_L=71;
     private static final double KIA_ODO_CORRECTION_KM=0.0; // Opcjonalna korekta kalibracji w kilometrach.
     private static final int KIA_ODO_OFFSET=49*2;
@@ -120,7 +120,7 @@ final class Elm {
     Sample read(String fuel, int tick) throws Exception {
         Sample data=new Sample();
         data.rpm=value(0x0c);
-        if (tick % 5 == 0) data.fuel=value(0x2f);
+        if (tick % 5 == 0) data.fuel=value(FUEL_LEVEL);
         boolean diesel="diesel".equals(fuel);
         if (fuelPid==0 && tick % 8 == 0) {
             for (int pid : diesel ? new int[]{0x5e,0x9d} : new int[]{0x5e,0x9d,0x10}) {
@@ -160,7 +160,7 @@ final class Elm {
     }
     static double decode(int pid, String response) {
         String tag=String.format(Locale.ROOT,"41%02X",pid);
-        int length=(pid==0x0d || pid==0x2f || pid==COOLANT || pid==OIL) ? 2 : 4;
+        int length=(pid==0x0d || pid==FUEL_LEVEL || pid==COOLANT || pid==OIL) ? 2 : 4;
         Pattern payload=Pattern.compile("^"+tag+"([0-9A-F]{"+length+"})(?:[0-9A-F]{2})*$");
         for (String row : response.toUpperCase(Locale.ROOT).split("[\r\n>]")) {
             Matcher m=payload.matcher(row.replaceAll("\\s+", ""));
@@ -170,7 +170,7 @@ final class Elm {
                 case COOLANT: case OIL: return number-40;
                 case 0x0d: return number;
                 case 0x0c: return number/4.0;
-                case 0x2f: return number*100/255.0;
+                case FUEL_LEVEL: return number*100/255.0;
                 case 0x5e: return number/20.0;
                 case 0x9d: return number*0.02;
                 case 0x10: return number/100.0;
