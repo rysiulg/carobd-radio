@@ -65,6 +65,8 @@ public final class Recorder extends Service {
     private long ecuAt=-1,gpsAt=-1,stoodAt=-1,maintenanceAt=-30000;
     private long coolantAt=-1,oilAt=-1,odometerAt=-1,fuelLevelAt=-1,tankAt=-1,gearAt=-1,proxyAt=-3000;
     private static final long ODOMETER_PERIOD=30000, ODOMETER_FRESH=90000, FUEL_LEVEL_FRESH=45000;
+    private static final int ECU_MISSES=3;
+    private static final long ECU_RECHECK_MS=15000;
     private Location lastLocation;
     private String adapterStatus="Brak połączenia OBD";
     private NotificationManager notifications;
@@ -360,18 +362,25 @@ public final class Recorder extends Service {
                 Dtc.Monitor faults=new Dtc.Monitor();
                 EngineHours.Monitor engineHours=new EngineHours.Monitor();
                 boolean kiaProfile=EngineHours.kiaProfile(current.vehicle);
-                long nextGear=0;
+                long nextGear=0, nextProtocolCheck=0;
                 if (!wifi) exchange.connected(true);
                 status(current,"Adapter połączony • oczekiwanie na ECU",false,0);
                 for (int n=0,missed=0;active && profile==current && request==reconnect;n++) {
                     long begin=SystemClock.elapsedRealtime();
                     double v=session.speed(); long at=SystemClock.elapsedRealtime();
                     if (Double.isFinite(v)) {
-                        missed=0;
+                        missed=0; nextProtocolCheck=0;
                         log.post(() -> { if (profile==current) speed(v,at); });
-                    } else if (++missed==3) {
-                        faults=new Dtc.Monitor(); engineHours=new EngineHours.Monitor();
-                        status(current,"Adapter połączony • ECU nie odpowiada",false,0);
+                    } else {
+                        if (++missed==ECU_MISSES) { faults=new Dtc.Monitor(); engineHours=new EngineHours.Monitor(); }
+                        if (missed>=ECU_MISSES && at>=nextProtocolCheck) {
+                            status(current,"Adapter połączony • ponawiam wykrywanie ECU",false,0);
+                            boolean ecu=session.rediscoverProtocol();
+                            nextProtocolCheck=SystemClock.elapsedRealtime()+ECU_RECHECK_MS;
+                            status(current,ecu ? "ECU odpowiada • brak odczytu prędkości" :
+                                "Adapter połączony • ECU nie odpowiada",false,0);
+                            continue;
+                        }
                     }
                     if (serviceRead.getAndSet(false)) {
                         Elm.ServiceInterval data=v==0 && EngineHours.kiaProfile(current.vehicle) ? session.kiaService() : null;
@@ -401,7 +410,7 @@ public final class Recorder extends Service {
                             publish();
                         });
                     }
-                    if (!wifi && missed<3 && n%3!=0) session.serveProxy();
+                    if (!wifi && missed<ECU_MISSES && n%3!=0) session.serveProxy();
                     if (missed==0 && n%3==1 && live.measurement!=Measurement.RUNNING && live.measurement!=Measurement.WAITING) {
                         if (kiaProfile && begin>=nextGear) {
                             KiaGear reading=session.kiaGear();
@@ -448,7 +457,7 @@ public final class Recorder extends Service {
                             });
                         }
                     }
-                    Thread.sleep(Math.max(50,(missed>=3 ? 2300 : 600)-(SystemClock.elapsedRealtime()-begin)));
+                    Thread.sleep(Math.max(50,(missed>=ECU_MISSES ? 2300 : 600)-(SystemClock.elapsedRealtime()-begin)));
                 }
                 continue;
             } catch (InterruptedException e) { Thread.currentThread().interrupt(); return; }

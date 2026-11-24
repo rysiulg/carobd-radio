@@ -8,6 +8,8 @@ import java.util.regex.Pattern;
 final class Elm {
     static final int COOLANT=0x05, OIL=0x5c, FUEL_LEVEL=0x2f;
     static final double KIA_TANK_L=71;
+    private static final String AUTO_PROTOCOL="ATSP0";
+    private static final Pattern PID_LIST=Pattern.compile("(?im)^4100[0-9a-f]{8}(?:[0-9a-f]{2})*(?=[\\r\\n>]|$)");
     private static final double KIA_ODO_CORRECTION_KM=0.0; // Opcjonalna korekta kalibracji w kilometrach.
     private static final int KIA_ODO_OFFSET=49*2;
     interface Link extends AutoCloseable {
@@ -28,10 +30,16 @@ final class Elm {
     void init() throws Exception {
         String response=link.query("ATZ", 3200);
         if (response.trim().isEmpty()) throw new java.io.IOException("Adapter nie odpowiada");
-        for (String command : new String[]{"ATE0","ATL0","ATS0","ATH0","ATSP0","ATAT1"}) {
+        for (String command : new String[]{"ATE0","ATL0","ATS0","ATH0",AUTO_PROTOCOL,"ATAT1"}) {
             if (!link.query(command, 1800).contains("OK")) throw new java.io.IOException("Brak OK: " + command);
         }
         sample("0100",10500);
+    }
+    /** Ponawia wykrywanie protokołu po utracie ECU, bez resetowania łącza do adaptera. */
+    boolean rediscoverProtocol() throws Exception {
+        if (!link.query(AUTO_PROTOCOL,1800).contains("OK")) throw new java.io.IOException("Adapter odrzucił wykrywanie protokołu");
+        String reply=sample("0100",10500).replace(" ","").replace("\t","");
+        return PID_LIST.matcher(reply).find();
     }
     double speed() throws Exception { return value(0x0d); }
     double temperature(boolean coolant) throws Exception { return value(coolant ? COOLANT : OIL); }

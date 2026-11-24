@@ -93,6 +93,31 @@ public final class TelemetryTest {
         if (!seen.containsAll(Arrays.asList("0105","015C"))) throw new AssertionError(seen);
         if (seen.contains("0110") || seen.contains("04") || !seen.containsAll(Arrays.asList("ATSP0","0100")))
             throw new AssertionError(seen);
-        System.out.println("OK: ELM, spalanie, odstępy w pomiarze, progi 20–140");
+        rediscoverAfterEcuLoss();
+        System.out.println("OK: ELM, ponowne wykrywanie ECU, spalanie, odstępy w pomiarze, progi 20–140");
+    }
+
+    private static void rediscoverAfterEcuLoss() throws Exception {
+        List<String> sent=new ArrayList<>();
+        Elm session=new Elm(new Elm.Link() {
+            private int discoveryAttempts;
+            @Override public String query(String request,int timeout) {
+                sent.add(request);
+                switch (request) {
+                    case "ATSP0": return "OK>";
+                    case "0100": return ++discoveryAttempts>1 ? "SEARCHING...\r41 00 BE 1F A8 13\r4100983BA013>" : "NO DATA>";
+                    case "010D": return discoveryAttempts>1 ? "410D00>" : "UNABLE TO CONNECT>";
+                    default: throw new AssertionError("Nieoczekiwane polecenie "+request);
+                }
+            }
+            @Override public void close() {}
+        });
+        missing(session.speed());
+        if (session.rediscoverProtocol()) throw new AssertionError("NO DATA to brak odpowiedzi ECU");
+        missing(session.speed());
+        if (!session.rediscoverProtocol()) throw new AssertionError("ECU nie zostało ponownie wykryte");
+        equal(session.speed(),0);
+        if (!sent.equals(Arrays.asList("010D","ATSP0","0100","010D","ATSP0","0100","010D")))
+            throw new AssertionError(sent);
     }
 }
