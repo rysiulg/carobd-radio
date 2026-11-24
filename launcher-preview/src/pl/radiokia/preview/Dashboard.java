@@ -55,6 +55,7 @@ public final class Dashboard extends Activity {
     private static final int PRESET_COUNT = 8, FM_ACCENT = 0xff78ddd0;
     private static final String PHONE="com.zjinnova.zlink", VLC="org.videolan.vlc", DS="com.synology.dsvideo", MAPS="com.google.android.apps.maps";
     private static final String PHONE_APP_NAME="TLink5";
+    private static final String VLC_FLOATING_HELP="vlcFloatingHelpSeen";
     private static final Uri CAROBD=Uri.parse("content://pl.marm.carobd.dashboard");
     private static final String CAROBD_APP="pl.marm.carobd";
     private static final String RADIO_FM="pl.radiokia.fm";
@@ -241,6 +242,7 @@ public final class Dashboard extends Activity {
             pageTabs[item.ordinal()]=tab; addRight(navigation,tab);
         }
         navigation.addView(new View(this),new LinearLayout.LayoutParams(0,1,1));
+        addRight(navigation,action("Wideo · VLC",false,this::openFloatingVlc));
         addRight(navigation,action("Aplikacje",false,this::openApps));
         root.addView(navigation,new LinearLayout.LayoutParams(-1,dp(44)));
         faultNotice=action("",false,() -> {
@@ -769,14 +771,44 @@ public final class Dashboard extends Activity {
 
     private void chooseVideoSource() {
         new AlertDialog.Builder(this).setTitle("Źródło wideo").setItems(
-            new String[]{"Z telefonu · "+PHONE_APP_NAME,"DS video","VLC","Adres strumienia HTTPS","Plik lokalny"},
+            new String[]{"Z telefonu · "+PHONE_APP_NAME,"DS video","VLC","VLC · okno pływające","Adres strumienia HTTPS","Plik lokalny"},
             (d,i) -> {
                 if (i==0) launchApp(PHONE,null,true);
                 else if (i==1) launchApp(DS,null,true);
                 else if (i==2) launchApp(VLC,null,true);
-                else if (i==3) chooseStream();
+                else if (i==3) openFloatingVlc();
+                else if (i==4) chooseStream();
                 else pickClip();
             }).setNegativeButton("Anuluj",null).show();
+    }
+    private void openFloatingVlc() {
+        Intent vlc=getPackageManager().getLaunchIntentForPackage(VLC);
+        if (vlc==null || preferences.getBoolean(VLC_FLOATING_HELP,false)) {
+            launchFloatingVlc(vlc);
+            return;
+        }
+        boolean systemPip=getPackageManager().hasSystemFeature(PackageManager.FEATURE_PICTURE_IN_PICTURE);
+        String setup="W VLC otwórz Ustawienia → Wideo → Odtwarzanie w tle / PiP i wybierz obraz w obrazie.";
+        if (!systemPip) setup+="\n\nWłącz też własne okno PiP w ustawieniach wideo VLC i zezwól aplikacji wyświetlać się nad innymi.";
+        new AlertDialog.Builder(this).setTitle("VLC · okno pływające")
+            .setMessage(setup+"\n\nUruchom film i wróć przyciskiem Home. Możesz też wybrać odtwarzacz podręczny w menu filmu.")
+            .setNeutralButton("Uprawnienia VLC",(dialog,which) -> openVlcWindowPermission(systemPip))
+            .setNegativeButton("Wróć",null).setPositiveButton("Otwórz VLC",(dialog,which) -> {
+                preferences.edit().putBoolean(VLC_FLOATING_HELP,true).apply();
+                launchFloatingVlc(vlc);
+            }).show();
+    }
+    private void launchFloatingVlc(Intent vlc) {
+        if (vlc!=null && floating && clip==null) { floating=false; render(); }
+        launch(vlc,false);
+    }
+    private void openVlcWindowPermission(boolean systemPip) {
+        Uri app=Uri.fromParts("package",VLC,null);
+        String action=systemPip ? "android.settings.PICTURE_IN_PICTURE_SETTINGS" : android.provider.Settings.ACTION_MANAGE_OVERLAY_PERMISSION;
+        try { startActivity(new Intent(action,app)); }
+        catch (ActivityNotFoundException | SecurityException unavailable) {
+            launch(new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS,app),false);
+        }
     }
     private void openApps() {
         PackageManager packages=getPackageManager();

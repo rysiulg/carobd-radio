@@ -12,6 +12,8 @@ Zestaw aplikacji na samochodowe stacje multimedialne z Androidem. CarOBD odczytu
 
 W pełnym RadioKIA FM i na widocznym panelu FM Pulpitu na zgodnym TS7 krótkie naciśnięcie przycisku na kierownicy przechodzi do następnego lub poprzedniego presetu. Długie uruchamia wyszukiwanie stacji w tunerze.
 
+Przycisk **Wideo · VLC** w górnym pasku Pulpitu otwiera VLC. Przy pierwszym użyciu pokazuje ustawienia obrazu w obrazie (PiP). Po uruchomieniu filmu użyj przycisku Home lub trybu podręcznego VLC. Dostępność małego okna zależy od wersji VLC i obsługi PiP na radiu.
+
 ## Przykładowe ekrany
 
 Zrzuty pokazują dane demonstracyjne wygenerowane przez aplikację na emulatorze.
