@@ -53,7 +53,7 @@ final class Instruments {
             float x=getWidth()/2f,y=getHeight()/2f,r=Math.min(getWidth()*.46f,getHeight()*heightRatio);
             if (r<=1) return;
             ink.setStyle(Paint.Style.FILL); ink.setColor(FACE); c.drawCircle(x,y,r,ink);
-            ink.setStyle(Paint.Style.STROKE); ink.setColor(TRACK); ink.setStrokeWidth(Math.max(1,r*.023f));
+            ink.setStyle(Paint.Style.STROKE); ink.setColor(accent); ink.setStrokeWidth(Math.max(1,r*.023f));
             c.drawCircle(x,y,r,ink);
             ink.setStyle(Paint.Style.FILL); ink.setColor(CENTER); c.drawCircle(x,y,r*.445f,ink);
             ink.setStyle(Paint.Style.STROKE); ink.setColor(GRID); ink.setStrokeWidth(Math.max(1,r*.009f));
@@ -101,8 +101,7 @@ final class Instruments {
     static final class Fuel extends View {
         private static final int FUEL=0, RPM=1, SPEED=2, SAMPLES=46, PERIOD_MS=2000;
         private static final int[] COLORS={MINT,BLUE,ORANGE};
-        private static final String[] LABELS={"Spalanie l/h","obr./min (log)","km/h (log)"};
-        private static final double[] LIMITS={0,RPM_LIMIT,SPEED_LIMIT}, LOG_UNITS={0,1000,20};
+            private static final double[] LIMITS={0,RPM_LIMIT,SPEED_LIMIT}, LOG_UNITS={0,1000,20};
         private final Paint ink=new Paint(Paint.ANTI_ALIAS_FLAG);
         private final Path trace=new Path();
         private final double[][] values=new double[COLORS.length][SAMPLES];
@@ -152,13 +151,9 @@ final class Instruments {
             for (double v:values[FUEL]) if (Double.isFinite(v)) peak=Math.max(peak,v);
             double fuelScale=Math.ceil(peak/5)*5;
             ink.setStyle(Paint.Style.FILL); ink.setTextSize(11*d); ink.setTextAlign(Paint.Align.LEFT);
-            float legend=left;
-            for (int series=0;series<COLORS.length;series++) {
-                ink.setColor(COLORS[series]); ink.setStrokeWidth(2*d);
-                c.drawLine(legend,11*d,legend+10*d,11*d,ink);
-                c.drawText(LABELS[series],legend+14*d,15*d,ink);
-                legend+=ink.measureText(LABELS[series])+26*d;
-            }
+            ink.setColor(COLORS[FUEL]); ink.setStrokeWidth(2*d);
+            c.drawLine(left,11*d,left+10*d,11*d,ink);
+            c.drawText("Spalanie l/h",left+14*d,15*d,ink);
             ink.setTextAlign(Paint.Align.RIGHT);
             for (int i=0;i<=3;i++) {
                 float fraction=i/3f,y=bottom-(bottom-top)*fraction;
