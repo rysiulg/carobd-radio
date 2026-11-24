@@ -41,8 +41,8 @@ final class ServiceWindow {
                 EngineHours.Reading hours=live.hours;
                 String summary="Brak świeżego odczytu motogodzin z OBD";
                 if (own && live.obd && hours!=null && hours.fresh(SystemClock.elapsedRealtime())) {
-                    summary="Praca silnika  "+Dashboard.fmt(hours.total/3600.0,1)+" h   ·   Bieg jałowy  "+
-                        (hours.idle<0 ? "—" : Dashboard.fmt(hours.idle/3600.0,1)+" h");
+                    summary="Praca silnika  "+EngineHours.duration(hours.total)+
+                        "\nPostój na biegu jałowym  "+EngineHours.duration(hours.idle);
                 }
                 changed(counters,summary);
                 String ip=ObdLan.radioAddress(activity);

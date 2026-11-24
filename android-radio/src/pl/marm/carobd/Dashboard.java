@@ -364,9 +364,9 @@ public final class Dashboard extends Activity {
         double reading=demo ? 197452 : live.obd ? live.odometer : Double.NaN;
         changed(odometer,Double.isFinite(reading) ? String.format(PL,"%,.0f km",reading) : "—");
         boolean radioHours=live.obd && live.hours!=null && live.hours.fresh(now);
-        double hours=demo ? 6984.9 : radioHours ? live.hours.total/3600.0 : Double.NaN;
-        double idle=demo ? 1644.4 : radioHours && live.hours.idle>=0 ? live.hours.idle/3600.0 : Double.NaN;
-        changed(engineHours,hoursText(hours)+"  ·  Postój "+hoursText(idle));
+        long engineSeconds=demo ? Math.round(6984.9*3600) : radioHours ? live.hours.total : -1;
+        long idleSeconds=demo ? Math.round(1644.4*3600) : radioHours ? live.hours.idle : -1;
+        changed(engineHours,EngineHours.duration(engineSeconds)+"  ·  Postój "+EngineHours.duration(idleSeconds));
         long remaining=live.retryAt==0 ? 0 : Math.max(0,(live.retryAt-now+999)/1000);
         String obdMessage=live.status+(remaining>0 ? " · ponowienie za "+remaining+" s" : "");
         boolean recording=!demo && live.started>0;
@@ -804,7 +804,6 @@ public final class Dashboard extends Activity {
         new AlertDialog.Builder(this).setTitle(title).setMessage(detail).setPositiveButton("OK",null).show();
     }
     static String fmt(double n,int d) { return Double.isFinite(n) ? String.format(PL,"%."+d+"f",n) : "—"; }
-    private static String hoursText(double hours) { return Double.isFinite(hours) ? fmt(hours,1)+" h" : "—"; }
     private static String date(long sec) { return new SimpleDateFormat("dd.MM.yyyy  HH:mm",PL).format(new Date(sec*1000)); }
     private static String elapsed(long sec) {
         if (sec<0) return "—";

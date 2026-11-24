@@ -11,6 +11,22 @@ final class EngineHours {
     static boolean kiaProfile(String vehicle) {
         return "kia-radio".equalsIgnoreCase(vehicle) || (!KIA_ID.isEmpty() && KIA_ID.equalsIgnoreCase(vehicle));
     }
+    // OBD zwraca czas trwania, więc rok to 365 dni.
+    static String duration(long seconds) {
+        if (seconds<0) return "—";
+        long minutes=seconds/60, hours=minutes/60, days=hours/24, years=days/365;
+        StringBuilder text=new StringBuilder();
+        if (years>0) {
+            long digit=years%10, lastTwo=years%100;
+            String unit=years==1 ? " rok" : digit>=2 && digit<=4 && (lastTwo<12 || lastTwo>14) ? " lata" : " lat";
+            text.append(years).append(unit);
+        }
+        days%=365; hours%=24; minutes%=60;
+        if (days>0) text.append(' ').append(days).append(days==1 ? " dzień" : " dni");
+        if (hours>0) text.append(' ').append(hours).append(" godz.");
+        if (minutes>0 || text.length()==0) text.append(' ').append(minutes).append(" min");
+        return text.toString().trim();
+    }
     static final class Reading {
         final long total,idle,at;
         Reading(long total,long idle,long at) { this.total=total; this.idle=idle; this.at=at; }
