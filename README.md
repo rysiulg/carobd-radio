@@ -10,6 +10,8 @@ Zestaw aplikacji na samochodowe stacje multimedialne z Androidem. CarOBD odczytu
 | [RadioKIA Pulpit](launcher-preview) | Ekran główny Androida z regulowanym podziałem paneli, danymi CarOBD, mapą, tunerem oraz skrótami do aplikacji. Przesuń w lewo, aby przejść z Układu do FM, a potem do CarOBD. Przesuń w prawo, aby wrócić. Z karty CarOBD można otworzyć pełne zegary i historię. |
 | [RadioKIA FM](fm-offline) | Samodzielny tuner ze skalą FM, ośmioma presetami, wyszukiwaniem stacji oraz RDS, gdy jednostka udostępnia dane. Sterowanie zależy od zgodności sprzętowej z usługą Topway XTService. |
 
+W pełnym RadioKIA FM i na widocznym panelu FM Pulpitu na zgodnym TS7 krótkie naciśnięcie przycisku na kierownicy przechodzi do następnego lub poprzedniego presetu. Długie uruchamia wyszukiwanie stacji w tunerze.
+
 ## Przykładowe ekrany
 
 Zrzuty pokazują dane demonstracyjne wygenerowane przez aplikację na emulatorze.

@@ -48,15 +48,16 @@ public final class Radio extends Activity implements TopwayFmEvents.Listener {
         if (hasWindowFocus()) stepPreset(this.vendorDirection);
     };
     private final SteeringPress steering = new SteeringPress();
-    private final Runnable applyWheelPreset = this::applyWheelPreset;
-    private final Runnable tunerTimeout = () -> this.statusView.setText("Tuner nie potwierdził zmiany częstotliwości.");
+    private final WheelPresets wheel = new WheelPresets(main, this::canSwitchPreset,
+        frequency -> sendCommand(Config.XT_TUNE, frequency, true), this::onTunerChannel);
+    private final Runnable tunerTimeout = this::tunerTimedOut;
     private static final long SAME_PRESS_MS = 240, TUNER_REPLY_MS = 3500;
     private XtRadioEvents factoryEvents;
     private TopwayFmEvents topway;
     private MediaSession mediaKeys;
     private long lastAndroidKey = Long.MIN_VALUE / 2;
-    private int androidDirection, vendorDirection, wheelPreset;
-    private long tunerUpdates;
+    private int androidDirection, vendorDirection;
+    private long tunerUpdates, tunerCommand;
 
     private SharedPreferences prefs;
     private TextView channelView, statusView;
@@ -172,6 +173,7 @@ public final class Radio extends Activity implements TopwayFmEvents.Listener {
             openFactory(true);
         }
         if (hasFocus) showPendingScan();
+        else wheel.clear();
     }
 
     @Override protected void onSaveInstanceState(Bundle state) {
@@ -194,7 +196,8 @@ public final class Radio extends Activity implements TopwayFmEvents.Listener {
         mediaKeys.setActive(false);
         steering.cancel();
         main.removeCallbacks(stepFromXt);
-        cancelWheelPreset();
+        main.removeCallbacks(tunerTimeout);
+        wheel.clear(); tunerCommand++;
         if (factoryEvents != null) {
             factoryEvents.close();
             factoryEvents = null;
@@ -419,9 +422,17 @@ public final class Radio extends Activity implements TopwayFmEvents.Listener {
     /** Rozróżnia przyjęcie polecenia przez XTService i potwierdzenie częstotliwości przez tuner. */
     private void send(int transaction, int frequency) {
         if (sending || returning || readingFactory) return;
-        cancelWheelPreset();
+        wheel.clear();
+        sendCommand(transaction, frequency, false);
+    }
+
+    private boolean canSwitchPreset() {
+        return hasWindowFocus() && !sending && !returning && !readingFactory;
+    }
+
+    private void sendCommand(int transaction, int frequency, boolean preset) {
         main.removeCallbacks(tunerTimeout);
-        long previousUpdate = tunerUpdates;
+        long previousUpdate = tunerUpdates, command = ++tunerCommand;
         sending = true;
         lastRds = null;
         showRds();
@@ -429,17 +440,19 @@ public final class Radio extends Activity implements TopwayFmEvents.Listener {
         XtRadio.send(this, transaction, frequency, error -> {
             sending = false;
             if (isDestroyed()) return;
-            if (tunerUpdates != previousUpdate) return;
-            if (error != null) {
-                statusView.setText(error);
-                return;
+            if (command == tunerCommand && tunerUpdates == previousUpdate && (!preset || wheel.awaiting(frequency))) {
+                if (error != null) {
+                    if (preset) wheel.finish(frequency);
+                    statusView.setText(error);
+                } else if (topway != null) {
+                    awaitTuner(frequency);
+                } else {
+                    if (preset) wheel.finish(frequency);
+                    setRequested(frequency, frequency == 0 ? "Wysłano wyszukiwanie stacji. Odczyt MHz w fabrycznym FM."
+                        : "Ostatnia wysłana częstotliwość");
+                }
             }
-            if (topway != null) {
-                awaitTuner(frequency);
-            } else {
-                setRequested(frequency, frequency == 0 ? "Wysłano wyszukiwanie stacji. Odczyt MHz w fabrycznym FM."
-                    : "Ostatnia wysłana częstotliwość");
-            }
+            wheel.flush();
         });
     }
 
@@ -449,13 +462,15 @@ public final class Radio extends Activity implements TopwayFmEvents.Listener {
         main.postDelayed(tunerTimeout, TUNER_REPLY_MS);
     }
 
-    /** Fabryczne FM potwierdza rzeczywisty wynik ręcznego strojenia i wyszukiwania. */
+    private void tunerTimedOut() {
+        if (wheel.pending() && !wheel.awaiting(lastChannel)) return;
+        wheel.finish(lastChannel);
+        statusView.setText("Tuner nie potwierdził zmiany częstotliwości.");
+    }
+
+    /** Potwierdza wybraną częstotliwość po zakończeniu fabrycznej reakcji na kierownicę. */
     @Override public void onTunerChannel(int frequency) {
-        if (wheelPreset != 0 && wheelPreset != frequency && hasWindowFocus()) {
-            applyWheelPreset();
-            return;
-        }
-        cancelWheelPreset();
+        if (!wheel.acceptChannel(frequency)) return;
         main.removeCallbacks(tunerTimeout);
         tunerUpdates++;
         if (frequency != lastChannel) {
@@ -590,6 +605,8 @@ public final class Radio extends Activity implements TopwayFmEvents.Listener {
             case KeyEvent.KEYCODE_CHANNEL_DOWN: direction = -1; break;
             default: return false;
         }
+        // Na TS7 ten sam przycisk może trafić też do Androida. Zdarzenie MCU ma pierwszeństwo.
+        if (topway != null) return true;
         androidDirection = direction;
         lastAndroidKey = SystemClock.uptimeMillis();
         main.removeCallbacks(stepFromXt);
@@ -610,11 +627,12 @@ public final class Radio extends Activity implements TopwayFmEvents.Listener {
     private void onFactoryEvent(int operation, int frequency) {
         if (!hasWindowFocus() || sending || readingFactory || returning) return;
         if (operation == XtRadioEvents.TUNE) {
-            if (frequency != 0 && frequency != lastChannel) setRequested(frequency, "Polecenie strojenia z fabrycznego FM.");
+            if (!wheel.pending() && frequency != 0 && frequency != lastChannel) setRequested(frequency, "Polecenie strojenia z fabrycznego FM.");
             return;
         }
         if (operation == XtRadioEvents.SEEK_NEXT || operation == XtRadioEvents.SEEK_PREVIOUS) {
             main.removeCallbacks(stepFromXt);
+            wheel.clear();
             setRequested(0, "Fabryczny tuner szuka stacji.");
             return;
         }
@@ -634,43 +652,16 @@ public final class Radio extends Activity implements TopwayFmEvents.Listener {
     @Override public void onTunerSteering(int direction, boolean seek) {
         if (!hasWindowFocus() || readingFactory || returning) return;
         if (seek) {
-            cancelWheelPreset();
+            wheel.clear(); tunerCommand++;
             awaitTuner(0);
-            return;
-        }
-        if (sending || (direction == androidDirection && SystemClock.uptimeMillis() - lastAndroidKey <= SAME_PRESS_MS)) return;
-        wheelPreset = nextPreset(direction, wheelPreset == 0 ? lastChannel : wheelPreset);
-        if (wheelPreset == 0) return;
-        main.removeCallbacks(applyWheelPreset);
-        main.postDelayed(applyWheelPreset, SAME_PRESS_MS);
-    }
-
-    private void applyWheelPreset() {
-        int preset = wheelPreset;
-        cancelWheelPreset();
-        if (preset != 0 && hasWindowFocus()) send(Config.XT_TUNE, preset);
-    }
-
-    private void cancelWheelPreset() {
-        wheelPreset = 0;
-        main.removeCallbacks(applyWheelPreset);
+        } else stepPreset(direction);
     }
 
     private void stepPreset(int direction) {
-        int target = nextPreset(direction, lastChannel);
-        if (target != 0) send(Config.XT_TUNE, target);
-    }
-
-    private int nextPreset(int direction, int currentChannel) {
-        if (presets.isEmpty()) {
-            statusView.setText("Dodaj preset, aby przełączać własne stacje.");
-            return 0;
-        }
-        List<Integer> order = new ArrayList<>(presets);
-        int size = Math.min(order.size(), Config.MAX_PRESETS);
-        int current = order.subList(0, size).indexOf(currentChannel);
-        int next = current < 0 ? (direction > 0 ? 0 : size - 1) : Math.floorMod(current + direction, size);
-        return order.get(next);
+        if (!hasWindowFocus() || readingFactory || returning) return;
+        if (wheel.step(direction, lastChannel, presets.stream().mapToInt(Integer::intValue).toArray()))
+            main.removeCallbacks(tunerTimeout);
+        else statusView.setText("Dodaj preset, aby przełączać własne stacje.");
     }
 
     private void setRequested(int frequency, String status) {

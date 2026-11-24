@@ -1,15 +1,16 @@
 package pl.radiokia.fm;
 
 import android.content.Context;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 /** Pulpit używa tego samego interfejsu tunera co RadioKIA FM. */
 public final class DashboardTuner implements AutoCloseable {
     private TopwayFmEvents events;
-    public DashboardTuner(Consumer<Integer> channel) {
+    public DashboardTuner(Consumer<Integer> channel,BiConsumer<Integer,Boolean> steering) {
         events=TopwayFmEvents.open(new TopwayFmEvents.Listener() {
             @Override public void onTunerChannel(int value) { channel.accept(value); }
-            @Override public void onTunerSteering(int direction,boolean seek) { }
+            @Override public void onTunerSteering(int direction,boolean seek) { steering.accept(direction,seek); }
         });
     }
     public void tune(Context context,int value,Consumer<String> done) {

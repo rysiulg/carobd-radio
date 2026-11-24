@@ -30,6 +30,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import pl.radiokia.fm.DashboardTuner;
 import pl.radiokia.fm.FmScale;
+import pl.radiokia.fm.WheelPresets;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -91,6 +92,9 @@ public final class Dashboard extends Activity {
     private final Handler main=new Handler(Looper.getMainLooper());
     private final ExecutorService reader=Executors.newSingleThreadExecutor();
     private DashboardTuner tuner;
+    private int fmSending;
+    private final WheelPresets wheel=new WheelPresets(main,() -> fmFocused() && fmSending==0,
+        value -> sendFm(value,false,true), this::tunerChannel);
     private String fmNote="Czekam na odczyt tunera";
     private TextView mapAltitude;
     private TextView faultNotice;
@@ -131,13 +135,14 @@ public final class Dashboard extends Activity {
         super.onStart();
         running=true;
         // Fabryczne FM publikuje stan również wtedy, gdy samo zasłania pulpit.
-        if (tuner==null) tuner=new DashboardTuner(this::tunerChannel);
+        if (tuner==null) tuner=new DashboardTuner(this::tunerChannel,this::tunerSteering);
         if (wantsGps || (liveMap!=null && locationAllowed())) startGps(wantsGps);
         telemetry.run();
     }
 
     @Override protected void onStop() {
         running=false;
+        wheel.clear();
         main.removeCallbacks(telemetry);
         fmSequence++; realFrequency=requestedFrequency=0; fmNote="Czekam na odczyt tunera"; showFm();
         gps.stop(); updateGpsStatus();
@@ -287,6 +292,7 @@ public final class Dashboard extends Activity {
         }
         int direction=PAGE_ORDER.indexOf(next)>PAGE_ORDER.indexOf(page) ? 1 : -1;
         page=next;
+        if (!fmFocused()) wheel.clear();
         preferences.edit().putInt("page",page.ordinal()).apply();
         pages.setInAnimation(slide(direction,0));
         pages.setOutAnimation(slide(0,-direction));
@@ -526,7 +532,26 @@ public final class Dashboard extends Activity {
             }
         }
     }
+    private boolean fmFocused() {
+        return tuner!=null && running && hasWindowFocus() &&
+            (page==Page.RADIO || page==Page.LAYOUT &&
+                (panels[0]==Panel.FM || (!twoPanels && panels[1]==Panel.FM) || panels[2]==Panel.FM));
+    }
+    @Override public void onWindowFocusChanged(boolean focused) {
+        super.onWindowFocusChanged(focused);
+        if (!focused) wheel.clear();
+    }
+    private void tunerSteering(int direction,boolean seek) {
+        if (!fmFocused()) return;
+        if (seek) {
+            wheel.clear(); fmSequence++;
+            requestedFrequency=realFrequency=0; fmNote="Wyszukiwanie stacji…"; showFm();
+        } else if (!wheel.step(direction,realFrequency,fmChannels)) {
+            fmNote="Zapisz preset w RadioKIA FM"; showFm();
+        }
+    }
     private void tunerChannel(int value) {
+        if (!wheel.acceptChannel(value)) return;
         realFrequency=value;
         if (requestedFrequency==0 || requestedFrequency==value) { requestedFrequency=0; fmNote="Odczyt z tunera"; }
         showFm();
@@ -534,22 +559,33 @@ public final class Dashboard extends Activity {
     private int fmSequence;
     private void command(int value,boolean up) {
         if (tuner==null) return;
+        wheel.clear();
+        sendFm(value,up,false);
+    }
+    private void sendFm(int value,boolean up,boolean preset) {
         int token=++fmSequence;
+        fmSending++;
         requestedFrequency=value;
         realFrequency=0;
         fmNote=value==0 ? "Wyszukiwanie stacji…" : "Strojenie "+frequency(value)+" MHz…";
         showFm();
         java.util.function.Consumer<String> done=error -> {
-            if (token!=fmSequence || !running) return;
-            if (error!=null) { fmNote=error; showFm(); return; }
-            if (value>0 && realFrequency==value) {
-                fmNote="Odczyt z tunera"; requestedFrequency=0; showFm(); return;
+            fmSending--;
+            if (token==fmSequence && running) {
+                if (error!=null && (!preset || wheel.awaiting(value))) {
+                    if (preset) wheel.finish(value);
+                    fmNote=error; showFm();
+                } else if (error==null && (value==0 || realFrequency!=value)) {
+                    main.postDelayed(() -> {
+                        if (token!=fmSequence || "Odczyt z tunera".equals(fmNote) ||
+                            preset && wheel.pending() && !wheel.awaiting(value)) return;
+                        if (preset) wheel.finish(value);
+                        fmNote=value>0 ? "Wysłano "+frequency(value)+" MHz · brak odczytu tunera" : "Wysłano szukanie · brak odczytu tunera";
+                        showFm();
+                    },4500);
+                }
             }
-            main.postDelayed(() -> {
-                if (token!=fmSequence || "Odczyt z tunera".equals(fmNote)) return;
-                fmNote=value>0 ? "Wysłano "+frequency(value)+" MHz · brak odczytu tunera" : "Wysłano szukanie · brak odczytu tunera";
-                showFm();
-            },4500);
+            wheel.flush();
         };
         if (value>0) tuner.tune(this,value,done); else tuner.seek(this,up,done);
     }

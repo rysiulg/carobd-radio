@@ -11,8 +11,8 @@ builder = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(builder)
 builder.ROOT = ROOT
 builder.PACKAGE_NAME = "RadioKIA_Pulpit_Podglad"
-builder.VERSION = "0.3.13"
+builder.VERSION = "0.3.14"
 builder.EXTRA_SOURCES = [
-    FM_ROOT / "src" / "pl" / "radiokia" / "fm" / name for name in ("Config.java", "XtRadio.java", "TopwayFmEvents.java", "FmScale.java")
+    FM_ROOT / "src" / "pl" / "radiokia" / "fm" / name for name in ("Config.java", "XtRadio.java", "TopwayFmEvents.java", "FmScale.java", "WheelPresets.java")
 ]
 builder.build()

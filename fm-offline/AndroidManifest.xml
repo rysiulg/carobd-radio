@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="pl.radiokia.fm"
-    android:versionCode="9" android:versionName="0.7.1">
+    android:versionCode="10" android:versionName="0.7.2">
     <uses-sdk android:minSdkVersion="27" android:targetSdkVersion="34"/>
     <queries>
         <package android:name="com.tw.service.xt"/>
