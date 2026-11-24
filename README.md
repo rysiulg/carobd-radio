@@ -36,6 +36,10 @@ Zainstaluj APK na Androidzie 8.1 (API 27) lub nowszym. W CarOBD wybierz adapter 
 
 Aby pod przyciskiem Home otwierał się RadioKIA Pulpit, wybierz go w **Ustawienia Androida → Aplikacje → Aplikacje domyślne → Ekran główny**. Dostęp do tego wyboru jest też w menu **Aplikacje → Ekran główny** w Pulpicie. W tym samym miejscu można przywrócić wcześniejszy ekran główny.
 
+## Fabryczny ekran główny i gesty
+
+Aby zachować fabryczny ekran jako pierwszą stronę, w Pulpicie otwórz **Aplikacje → Gesty motywu**. Wybierz launcher producenta w ustawieniach ekranu głównego i włącz **RadioKIA – gesty motywu** w Ułatwieniach dostępu. Przeciągnij uchwyt u dołu w lewo, żeby przejść z Home do pełnego RadioKIA FM, a następnie do pełnego CarOBD. Gest w prawo wraca. Uchwyt pojawia się na tych trzech ekranach. Do przełączeń potrzebne są zainstalowane aplikacje FM i CarOBD. Aby wyłączyć gesty, wyłącz usługę w ustawieniach Androida.
+
 ## Rejestracja i synchronizacja
 
 - **Rejestruj przejazdy** uruchamia automatyczny zapis po ruszeniu. Wyłączenie kończy bieżący zapis. Odczyty GPS i OBD nadal działają.

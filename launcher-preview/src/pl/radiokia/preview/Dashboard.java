@@ -793,10 +793,22 @@ public final class Dashboard extends Activity {
             catch (ActivityNotFoundException | SecurityException unavailable) {
                 Toast.makeText(this,"Nie można otworzyć aplikacji",Toast.LENGTH_SHORT).show();
             }
-        }).setNeutralButton("Ekran główny",(dialog,button) -> {
-            try { startActivity(new Intent(android.provider.Settings.ACTION_HOME_SETTINGS)); }
-            catch (ActivityNotFoundException unavailable) { startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS)); }
-        }).setNegativeButton("Zamknij",null).show();
+        }).setNeutralButton("Ekran główny",(dialog,button) -> openHomeSettings())
+            .setPositiveButton("Gesty motywu",(dialog,button) -> showThemeGestures())
+            .setNegativeButton("Zamknij",null).show();
+    }
+    private void openHomeSettings() {
+        try { startActivity(new Intent(android.provider.Settings.ACTION_HOME_SETTINGS)); }
+        catch (ActivityNotFoundException unavailable) { startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS)); }
+    }
+    private void showThemeGestures() {
+        new AlertDialog.Builder(this).setTitle("Gesty motywu")
+            .setMessage("Wybierz fabryczny ekran główny. W Ułatwieniach dostępu włącz „RadioKIA – gesty motywu”.\n\n"+
+                "Przesuń mały uchwyt u dołu w lewo, aby przejść do pełnego FM, a następnie do CarOBD. W prawo wracasz.")
+            .setNeutralButton("Ekran główny",(dialog,which) -> openHomeSettings())
+            .setPositiveButton("Ułatwienia dostępu",(dialog,which) ->
+                startActivity(new Intent(android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS)))
+            .setNegativeButton("Zamknij",null).show();
     }
     private void launchApp(String packageName,Uri target,boolean adjacent) {
         Intent intent=target==null ? getPackageManager().getLaunchIntentForPackage(packageName) :

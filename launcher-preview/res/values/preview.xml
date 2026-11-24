@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RadioKIA Pulpit · podgląd</string>
+    <string name="theme_swipe_label">RadioKIA – gesty motywu</string>
+    <string name="theme_swipe_description">Pokazuje uchwyt do przełączania między fabrycznym ekranem głównym, RadioKIA FM i CarOBD.</string>
 </resources>
