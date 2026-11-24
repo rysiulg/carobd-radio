@@ -1,0 +1,12 @@
+dist/
+private/
+__pycache__/
+.env*
+*.apk
+*.apk.idsig
+*.jks
+*.p12
+*.keystore
+*.db
+*.db-*
+store.pass

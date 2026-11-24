@@ -1,0 +1,179 @@
+package pl.marm.carobd;
+
+import android.content.Context;
+import android.graphics.*;
+import android.view.View;
+import java.util.Arrays;
+
+final class Instruments {
+    static final int WHITE=0xfff0f7fa, MUTE=0xff9db5c7, TRACK=0xff355065, GRID=0xff29445a,
+        MINT=0xff64eabd, BLUE=0xff82beff, ORANGE=0xffff795f, SPEED_LIMIT=220, RPM_LIMIT=7000;
+    static final class Dial extends View {
+        private static final float START=140, SWEEP=260;
+        private static final int FACE=0xff0d1c2d, CENTER=0xff12263a;
+        private final Paint ink=new Paint(Paint.ANTI_ALIAS_FLAG);
+        private final Path needle=new Path();
+        final String name,unit;
+        final int limit,major,accent;
+        double value=Double.NaN;
+        private String digits="—",gear="";
+        Dial(Context c,Typeface typeface,String name,String unit,int limit,int major,int accent) {
+            super(c); this.name=name; this.unit=unit; this.limit=limit; this.major=major; this.accent=accent;
+            ink.setTypeface(typeface);
+            setContentDescription(name+" brak odczytu");
+        }
+        void value(double next) {
+            if (Double.compare(value,next)==0) return;
+            value=next;
+            digits=Double.isFinite(value) ? Long.toString(Math.round(value)) : "—";
+            describe();
+            invalidate();
+        }
+        void gear(String next) {
+            if (gear.equals(next)) return;
+            gear=next; describe(); invalidate();
+        }
+        private void describe() {
+            setContentDescription(name+" "+(Double.isFinite(value) ? digits+" "+unit : "brak odczytu")+
+                (gear.isEmpty() ? "" : " · "+("—".equals(gear) ? "brak odczytu biegu" : "bieg "+gear)));
+        }
+        private void text(Canvas c,String text,float x,float y,float size,int color) {
+            ink.setStyle(Paint.Style.FILL); ink.setColor(color); ink.setTextSize(size);
+            ink.setTextAlign(Paint.Align.CENTER);
+            c.drawText(text,x,y,ink);
+        }
+        @Override protected void onDraw(Canvas c) {
+            float x=getWidth()/2f,y=getHeight()/2f,r=Math.min(getWidth()*.46f,getHeight()*.475f);
+            if (r<=1) return;
+            ink.setStyle(Paint.Style.FILL); ink.setColor(FACE); c.drawCircle(x,y,r,ink);
+            ink.setStyle(Paint.Style.STROKE); ink.setColor(TRACK); ink.setStrokeWidth(Math.max(1,r*.023f));
+            c.drawCircle(x,y,r,ink);
+            ink.setStyle(Paint.Style.FILL); ink.setColor(CENTER); c.drawCircle(x,y,r*.445f,ink);
+            ink.setStyle(Paint.Style.STROKE); ink.setColor(GRID); ink.setStrokeWidth(Math.max(1,r*.009f));
+            c.drawCircle(x,y,r*.445f,ink);
+            int divisor=limit>1000 ? 1000 : 1;
+            int count=limit/major*2;
+            for (int i=0;i<=count;i++) {
+                double a=Math.toRadians(START+SWEEP*i/count);
+                float cos=(float)Math.cos(a),sin=(float)Math.sin(a);
+                boolean main=i%2==0;
+                ink.setColor(main ? WHITE : TRACK); ink.setStrokeWidth(r*(main ? .016f : .009f));
+                float inner=r*(main ? .84f : .91f);
+                c.drawLine(x+inner*cos,y+inner*sin,x+r*.96f*cos,y+r*.96f*sin,ink);
+                if (main) text(c,Integer.toString(i*major/2/divisor),
+                    x+r*.704f*cos,y+r*.704f*sin+r*.045f,r*.13f,WHITE);
+            }
+            if (Double.isFinite(value)) {
+                // Wskazówka zaczyna się poza kołem z odczytem i obraca się wokół jego środka.
+                float angle=START+(float)(SWEEP*Math.max(0,Math.min(value,limit))/limit);
+                c.save();
+                c.translate(x,y); c.rotate(angle);
+                needle.rewind(); needle.moveTo(r*.51f,-r*.027f);
+                needle.lineTo(r*.973f,0); needle.lineTo(r*.51f,r*.027f); needle.close();
+                ink.setStyle(Paint.Style.FILL); ink.setColor(accent); c.drawPath(needle,ink);
+                c.restore();
+            }
+            float digitsSize=r*(digits.length()>3 ? .35f : .52f);
+            ink.setTextSize(digitsSize);
+            float advance=ink.measureText(digits);
+            if (advance>r*.82f) digitsSize*=r*.82f/advance;
+            text(c,digits,x,y+r*.101f,digitsSize,WHITE);
+            text(c,unit,x,y+r*.276f,r*.122f,MUTE);
+            if (divisor>1) text(c,"×1000",x,y+r*.75f,r*.10f,MUTE);
+            if (!gear.isEmpty()) text(c,gear,x,y+r*.78f,r*.19f,"—".equals(gear) ? MUTE : MINT);
+        }
+    }
+
+    static final class Fuel extends View {
+        private static final int FUEL=0, RPM=1, SPEED=2, SAMPLES=46, PERIOD_MS=2000;
+        private static final int[] COLORS={MINT,BLUE,ORANGE};
+        private static final String[] LABELS={"Spalanie l/h","obr./min (log)","km/h (log)"};
+        private static final double[] LIMITS={0,RPM_LIMIT,SPEED_LIMIT}, LOG_UNITS={0,1000,20};
+        private final Paint ink=new Paint(Paint.ANTI_ALIAS_FLAG);
+        private final Path trace=new Path();
+        private final double[][] values=new double[COLORS.length][SAMPLES];
+        private long lastSlot=-1;
+        private boolean preview;
+
+        Fuel(Context c) {
+            super(c); clear();
+            setContentDescription("Spalanie w l/h, obroty w obr./min i prędkość w km/h. Ostatnie 90 sekund. Obroty i prędkość na skalach logarytmicznych.");
+        }
+        private void clear() {
+            for (double[] series:values) Arrays.fill(series,Double.NaN);
+            lastSlot=-1;
+        }
+        void sample(double rate,double rpm,double speed,long now,boolean demo) {
+            if (preview!=demo) { preview=demo; clear(); invalidate(); }
+            long slot=now/PERIOD_MS;
+            if (slot<=lastSlot) return;
+            // Puste próbki zostawiają lukę, gdy odświeżanie ekranu zostało wstrzymane.
+            if (lastSlot>=0) for (long missed=Math.max(lastSlot+1,slot-SAMPLES+1);missed<slot;missed++) {
+                int i=(int)(missed%SAMPLES);
+                for (double[] series:values) series[i]=Double.NaN;
+            }
+            int i=(int)(slot%SAMPLES);
+            values[FUEL][i]=rate; values[RPM][i]=rpm; values[SPEED][i]=speed;
+            lastSlot=slot; invalidate();
+        }
+        private double value(int series,int position) {
+            if (preview) {
+                double drift=Math.sin(position*.17), slope=Math.sin(position*.61);
+                if (series==FUEL) return 5.5+2.5*drift+slope;
+                if (series==RPM) return 1800+590*Math.sin(position*.17+.5)+250*slope;
+                return 68+31*Math.sin(position*.17-.6)+4*slope;
+            }
+            return values[series][(int)Math.floorMod(lastSlot+position+1,SAMPLES)];
+        }
+        private double tick(int series,float fraction,double fuelScale) {
+            if (series==FUEL) return fuelScale*fraction;
+            double unit=LOG_UNITS[series];
+            return unit*Math.expm1(fraction*Math.log1p(LIMITS[series]/unit));
+        }
+        @Override protected void onDraw(Canvas c) {
+            float w=getWidth(),h=getHeight(),d=getResources().getDisplayMetrics().density;
+            float top=32*d,bottom=h-18*d,left=30*d,right=w-76*d;
+            if (right-left<64*d || bottom-top<24*d) return;
+            double peak=preview ? 15 : 5;
+            for (double v:values[FUEL]) if (Double.isFinite(v)) peak=Math.max(peak,v);
+            double fuelScale=Math.ceil(peak/5)*5;
+            ink.setStyle(Paint.Style.FILL); ink.setTextSize(11*d); ink.setTextAlign(Paint.Align.LEFT);
+            float legend=left;
+            for (int series=0;series<COLORS.length;series++) {
+                ink.setColor(COLORS[series]); ink.setStrokeWidth(2*d);
+                c.drawLine(legend,11*d,legend+10*d,11*d,ink);
+                c.drawText(LABELS[series],legend+14*d,15*d,ink);
+                legend+=ink.measureText(LABELS[series])+26*d;
+            }
+            ink.setTextAlign(Paint.Align.RIGHT);
+            for (int i=0;i<=3;i++) {
+                float fraction=i/3f,y=bottom-(bottom-top)*fraction;
+                ink.setColor(GRID); ink.setStrokeWidth(1); c.drawLine(left,y,right,y,ink);
+                ink.setColor(MINT); c.drawText(Long.toString(Math.round(tick(FUEL,fraction,fuelScale))),left-6*d,y+4*d,ink);
+                ink.setColor(COLORS[RPM]); c.drawText(Long.toString(Math.round(tick(RPM,fraction,fuelScale))),right+34*d,y+4*d,ink);
+                ink.setColor(COLORS[SPEED]); c.drawText(Long.toString(Math.round(tick(SPEED,fraction,fuelScale))),w-4*d,y+4*d,ink);
+            }
+            for (int series=0;series<COLORS.length;series++) drawSeries(c,series,fuelScale,left,top,right,bottom,d);
+            ink.setColor(MUTE); ink.setTextAlign(Paint.Align.LEFT); c.drawText("90 s temu",left,h-2*d,ink);
+            ink.setTextAlign(Paint.Align.RIGHT); c.drawText("teraz",right,h-2*d,ink);
+        }
+        private void drawSeries(Canvas c,int series,double fuelScale,float left,float top,float right,float bottom,float d) {
+            double limit=series==FUEL ? fuelScale : LIMITS[series], unit=LOG_UNITS[series];
+            double scale=unit==0 ? limit : Math.log1p(limit/unit);
+            trace.rewind(); boolean begun=false;
+            float endY=Float.NaN;
+            for (int i=0;i<SAMPLES;i++) {
+                double sample=value(series,i);
+                if (!Double.isFinite(sample) || sample<0) { begun=false; continue; }
+                double bounded=Math.min(sample,limit);
+                double ratio=(unit==0 ? bounded : Math.log1p(bounded/unit))/scale;
+                float x=left+(right-left)*i/(SAMPLES-1),y=bottom-(float)ratio*(bottom-top);
+                if (begun) trace.lineTo(x,y); else { trace.moveTo(x,y); begun=true; }
+                if (i==SAMPLES-1) endY=y;
+            }
+            ink.setStrokeWidth(2*d); ink.setColor(COLORS[series]); ink.setStyle(Paint.Style.STROKE); c.drawPath(trace,ink);
+            ink.setStyle(Paint.Style.FILL);
+            if (Float.isFinite(endY)) c.drawCircle(right,endY,2.5f*d,ink);
+        }
+    }
+}

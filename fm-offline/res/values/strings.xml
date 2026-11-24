@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RadioKIA FM</string>
+    <string name="factory_fm_access_name">RadioKIA FM – odczyt fabrycznego radia</string>
+    <string name="factory_fm_access_description">Po wybraniu odczytu RDS lub autoskanu RadioKIA korzysta z widocznych kontrolek fabrycznego FM. Odczytuje nazwę RDS, tryb LOC/DX i listę częstotliwości. Dane pozostają na radiu.</string>
+</resources>

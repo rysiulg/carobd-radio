@@ -1,0 +1,46 @@
+# CarOBD dla Androida i RadioKIA Pulpit
+
+Zestaw aplikacji na samochodowe stacje multimedialne z Androidem. CarOBD odczytuje dane z adaptera ELM327 i korzysta z GPS radia. RadioKIA Pulpit łączy ekran główny, telemetrię i tuner FM.
+
+## Aplikacje
+
+| Moduł | Funkcje |
+| --- | --- |
+| [CarOBD](android-radio) | Prędkość, obroty, wysokość GPS, temperatury, spalanie, odczyt błędów OBD i historia przejazdów z mapą. Lokalne kopie GPX na SD, USB lub w pamięci radia. Profile adapterów BLE, Bluetooth Classic i Wi-Fi. |
+| [RadioKIA Pulpit](launcher-preview) | Ekran główny Androida z regulowanym podziałem paneli, danymi CarOBD, mapą, tunerem oraz skrótami do aplikacji. Zakładki można zmieniać gestem. |
+| [RadioKIA FM](fm-offline) | Samodzielny tuner ze skalą FM, ośmioma presetami, wyszukiwaniem stacji oraz RDS, gdy jednostka udostępnia dane. Sterowanie zależy od zgodności sprzętowej z usługą Topway XTService. |
+
+## Przykładowe ekrany
+
+Zrzuty pokazują dane demonstracyjne wygenerowane przez aplikację na emulatorze.
+
+![CarOBD – zegary, dane GPS i wykres spalania w trybie demonstracyjnym](docs/screenshots/dashboard.png)
+
+![CarOBD – historia przejazdów, przebieg trasy i pomiary przyspieszenia w trybie demonstracyjnym](docs/screenshots/history.png)
+
+## Budowanie i uruchomienie
+
+Potrzebne są Python 3, JDK 17 lub nowszy i Android SDK z platformą `android-34` oraz Build Tools `35.0.0`. Ustaw `ANDROID_HOME` albo przekaż ścieżkę przez `--sdk`.
+
+```sh
+python android-radio/build.py
+python fm-offline/build.py
+python launcher-preview/build.py
+```
+
+Każdy moduł zapisuje podpisany APK we własnym katalogu `dist/`. Skrypty domyślnie korzystają ze wspólnego, lokalnie generowanego klucza w `private/`. Wspólny podpis umożliwia Pulpitowi odczyt bieżącej telemetrii i presetów. Zachowaj swój klucz do budowania kolejnych aktualizacji.
+
+Zainstaluj APK na Androidzie 8.1 (API 27) lub nowszym. W CarOBD wybierz adapter i nadaj aplikacji wymagane uprawnienia Bluetooth oraz lokalizacji. Widoki można obejrzeć bez samochodu przez **Konfiguracja → Podgląd demonstracyjny**.
+
+Aby pod przyciskiem Home otwierał się RadioKIA Pulpit, wybierz go w **Ustawienia Androida → Aplikacje → Aplikacje domyślne → Ekran główny**. Dostęp do tego wyboru jest też w menu **Aplikacje → Ekran główny** w Pulpicie. W tym samym miejscu można przywrócić wcześniejszy ekran główny.
+
+## Rejestracja i synchronizacja
+
+- **Rejestruj przejazdy** uruchamia automatyczny zapis po ruszeniu. Wyłączenie kończy bieżący zapis. Odczyty GPS i OBD nadal działają.
+- **Wysyłaj przejazdy do NAS** steruje wysyłką zakończonych przejazdów. Przy wyłączonej wysyłce kolejka czeka lokalnie, a pobieranie historii z własnego NAS nadal jest możliwe. Synchronizacja wymaga zgodnego serwera i danych dostępu urządzenia.
+
+Publiczny projekt jest gotowy do rejestracji lokalnej. Integracja z własnym NAS wymaga obsługi protokołu z `Maintenance.java` i `NasHistory.java`, ustawienia adresu w `Settings.java` i zarejestrowania klienta przez `ProvisionNas.java`. Serwer NAS i dane dostępowe nie są częścią repozytorium.
+
+Dostępność PID, danych RDS i sterowania FM zależy od pojazdu, adaptera i stacji multimedialnej. Rozszerzone odczyty oraz ustawienia serwisowe specyficzne dla Kia wymagają dopasowania do zweryfikowanego pojazdu.
+
+Krój Oxanium używany w CarOBD jest dołączony z licencją [SIL Open Font License](android-radio/res/raw/oxanium_ofl.txt).
