@@ -2,25 +2,44 @@ package pl.radiokia.preview;
 
 import android.accessibilityservice.AccessibilityService;
 import android.content.ActivityNotFoundException;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.content.pm.ProviderInfo;
 import android.content.pm.ResolveInfo;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.GradientDrawable;
+import android.net.Uri;
+import android.os.Build;
+import android.os.SystemClock;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /** Mały uchwyt tylko na ekranie Home, pełnym FM i pełnym CarOBD. */
 public final class ThemeSwipeService extends AccessibilityService {
-    private static final String[] APPS={"pl.radiokia.fm","pl.marm.carobd"};
+    private static final String CAROBD="pl.marm.carobd";
+    private static final Uri CAROBD_STATUS=Uri.parse("content://pl.marm.carobd.dashboard");
+    private static final String[] APPS={"pl.radiokia.fm",CAROBD};
     private static final String[] LABELS={"Ekran główny","RadioKIA FM","CarOBD"};
     private static final int HOME=0;
+    private final ExecutorService background=Executors.newSingleThreadExecutor();
+    private final BroadcastReceiver screenWake=new BroadcastReceiver() {
+        @Override public void onReceive(Context context,Intent intent) {
+            if (Intent.ACTION_SCREEN_ON.equals(intent.getAction())) wakeCarObd();
+        }
+    };
+    private long nextWake;
+    private boolean wakeRegistered;
     private WindowManager windows;
     private TextView handle;
     private int active=-1;
@@ -29,6 +48,30 @@ public final class ThemeSwipeService extends AccessibilityService {
 
     @Override protected void onServiceConnected() {
         windows=getSystemService(WindowManager.class);
+        if (!wakeRegistered) {
+            IntentFilter filter=new IntentFilter(Intent.ACTION_SCREEN_ON);
+            if (Build.VERSION.SDK_INT>=33) registerReceiver(screenWake,filter,Context.RECEIVER_NOT_EXPORTED);
+            else registerReceiver(screenWake,filter);
+            wakeRegistered=true;
+        }
+        wakeCarObd();
+    }
+
+    /** Wybudzenie TS7 nie musi rozsyłać BOOT_COMPLETED. Podpisany dostawca wznawia rejestrator. */
+    private void wakeCarObd() {
+        if (Build.VERSION.SDK_INT>28) return;
+        long now=SystemClock.elapsedRealtime();
+        if (now<nextWake) return;
+        nextWake=now+5000;
+        background.execute(() -> {
+            try {
+                ProviderInfo provider=getPackageManager().resolveContentProvider(CAROBD_STATUS.getAuthority(),0);
+                if (provider!=null && CAROBD.equals(provider.packageName))
+                    getContentResolver().call(CAROBD_STATUS,"snapshot",null,null);
+            } catch (RuntimeException unavailable) {
+                // Brak CarOBD albo brak zgodnego podpisu nie blokuje gestów motywu.
+            }
+        });
     }
 
     @Override public void onAccessibilityEvent(AccessibilityEvent event) {
@@ -39,7 +82,10 @@ public final class ThemeSwipeService extends AccessibilityService {
         if (getPackageName().contentEquals(pkg) && !Dashboard.class.getName().contentEquals(name)) return;
         int page=pageOf(pkg,name);
         if (page<0) hide();
-        else show(page);
+        else {
+            if (page==HOME) wakeCarObd();
+            show(page);
+        }
     }
 
     private ComponentName home() {
@@ -134,5 +180,13 @@ public final class ThemeSwipeService extends AccessibilityService {
     private int dp(int n) { return Math.round(n*getResources().getDisplayMetrics().density); }
 
     @Override public void onInterrupt() { hide(); }
-    @Override public boolean onUnbind(Intent intent) { hide(); return super.onUnbind(intent); }
+    @Override public boolean onUnbind(Intent intent) {
+        hide();
+        if (wakeRegistered) { unregisterReceiver(screenWake); wakeRegistered=false; }
+        return super.onUnbind(intent);
+    }
+    @Override public void onDestroy() {
+        background.shutdownNow();
+        super.onDestroy();
+    }
 }

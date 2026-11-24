@@ -38,7 +38,7 @@ Aby pod przyciskiem Home otwierał się RadioKIA Pulpit, wybierz go w **Ustawien
 
 ## Fabryczny ekran główny i gesty
 
-Aby zachować fabryczny ekran jako pierwszą stronę, w Pulpicie otwórz **Aplikacje → Gesty motywu**. Wybierz launcher producenta w ustawieniach ekranu głównego i włącz **RadioKIA – gesty motywu** w Ułatwieniach dostępu. Przeciągnij uchwyt u dołu w lewo, żeby przejść z Home do pełnego RadioKIA FM, a następnie do pełnego CarOBD. Gest w prawo wraca. Uchwyt pojawia się na tych trzech ekranach. Do przełączeń potrzebne są zainstalowane aplikacje FM i CarOBD. Aby wyłączyć gesty, wyłącz usługę w ustawieniach Androida.
+Aby zachować fabryczny ekran jako pierwszą stronę, w Pulpicie otwórz **Aplikacje → Gesty motywu**. Wybierz launcher producenta w ustawieniach ekranu głównego i włącz **RadioKIA – gesty motywu** w Ułatwieniach dostępu. Przeciągnij uchwyt u dołu w lewo, żeby przejść z Home do pełnego RadioKIA FM, a następnie do pełnego CarOBD. Gest w prawo wraca. Uchwyt pojawia się na tych trzech ekranach. Do przełączeń potrzebne są zainstalowane aplikacje FM i CarOBD. Aby wyłączyć gesty, wyłącz usługę w ustawieniach Androida. Po włączeniu usługi Pulpit na Androidzie 8.1 wznawia rejestrator CarOBD także po wybudzeniu ekranu. Autostart wymaga nadanego uprawnienia do dokładnej lokalizacji w CarOBD.
 
 ## Rejestracja i synchronizacja
 
