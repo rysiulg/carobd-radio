@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 final class Instruments {
     static final int WHITE=0xfff0f7fa, MUTE=0xff9db5c7, TRACK=0xff355065, GRID=0xff29445a,
-        MINT=0xff64eabd, BLUE=0xff82beff, ORANGE=0xffff795f, SPEED_LIMIT=220, RPM_LIMIT=7000;
+        MINT=0xff64eabd, RPM_COLOR=0xffff795f, SPEED_COLOR=0xff82beff, SPEED_LIMIT=220, RPM_LIMIT=7000;
     static final class Dial extends View {
         private static final float START=140, SWEEP=260;
         private static final int FACE=0xff0d1c2d, CENTER=0xff12263a, RED_ZONE=0xffff454e;
@@ -71,7 +71,7 @@ final class Instruments {
                 boolean red=kiaScale && tick>=KIA_RED_FROM;
                 ink.setColor(red ? RED_ZONE : main ? WHITE : TRACK);
                 ink.setStrokeWidth(r*(main ? .016f : red ? .013f : .009f));
-                float inner=r*(main ? .84f : red ? .895f : .91f);
+                float inner=r*(red ? (main ? .84f : .895f) : (main ? .88f : .91f));
                 c.drawLine(x+inner*cos,y+inner*sin,x+r*.96f*cos,y+r*.96f*sin,ink);
                 if (main) text(c,Integer.toString(tick/divisor),
                     x+r*.704f*cos,y+r*.704f*sin+r*.045f,r*.13f,WHITE);
@@ -84,7 +84,7 @@ final class Instruments {
                 c.translate(x,y); c.rotate(angle);
                 needle.rewind(); needle.moveTo(base,-halfWidth);
                 needle.lineTo(r*.973f,0); needle.lineTo(base,halfWidth); needle.close();
-                ink.setStyle(Paint.Style.FILL); ink.setColor(accent); c.drawPath(needle,ink);
+                ink.setStyle(Paint.Style.FILL); ink.setColor(RED_ZONE); c.drawPath(needle,ink);
                 c.restore();
             }
             float digitsSize=r*(digits.length()>3 ? .35f : .52f);
@@ -100,8 +100,8 @@ final class Instruments {
 
     static final class Fuel extends View {
         private static final int FUEL=0, RPM=1, SPEED=2, SAMPLES=46, PERIOD_MS=2000;
-        private static final int[] COLORS={MINT,BLUE,ORANGE};
-            private static final double[] LIMITS={0,RPM_LIMIT,SPEED_LIMIT}, LOG_UNITS={0,1000,20};
+        private static final int[] COLORS={MINT,RPM_COLOR,SPEED_COLOR};
+        private static final double[] LIMITS={0,RPM_LIMIT,SPEED_LIMIT}, LOG_UNITS={0,1000,20};
         private final Paint ink=new Paint(Paint.ANTI_ALIAS_FLAG);
         private final Path trace=new Path();
         private final double[][] values=new double[COLORS.length][SAMPLES];

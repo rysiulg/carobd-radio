@@ -193,8 +193,8 @@ public final class Dashboard extends Activity {
         FrameLayout clockArea=new FrameLayout(this); weight(instruments,clockArea,1);
         LinearLayout clocks=group(false);
         clockArea.addView(clocks,new FrameLayout.LayoutParams(-1,-1));
-        speedDial=new Instruments.Dial(this,instrumentsFont,"Prędkość","km/h",Instruments.SPEED_LIMIT,20,Instruments.ORANGE,.49f);
-        rpmDial=new Instruments.Dial(this,instrumentsFont,"Obroty","obr./min",Instruments.RPM_LIMIT,1000,Instruments.BLUE,.445f);
+        speedDial=new Instruments.Dial(this,instrumentsFont,"Prędkość","km/h",Instruments.SPEED_LIMIT,20,Instruments.SPEED_COLOR,.49f);
+        rpmDial=new Instruments.Dial(this,instrumentsFont,"Obroty","obr./min",Instruments.RPM_LIMIT,1000,Instruments.RPM_COLOR,.445f);
         weight(clocks,rpmDial,.92f);
         gap(clocks,10);
         weight(clocks,speedDial,1.08f);
