@@ -22,6 +22,7 @@ import android.text.InputType;
 import android.widget.EditText;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
@@ -69,6 +70,8 @@ public final class Dashboard extends Activity {
         final String title;
         Page(String title) { this.title=title; }
     }
+    // Kolejność stron jest niezależna od indeksów Page zapisanych w ustawieniach.
+    private static final List<Page> PAGE_ORDER=Arrays.asList(Page.LAYOUT,Page.RADIO,Page.CAR);
     private static final class CarFields {
         TextView speed,duration,distance,fuel,mean,status;
     }
@@ -228,7 +231,7 @@ public final class Dashboard extends Activity {
         addRight(bar, status);
         root.addView(bar, new LinearLayout.LayoutParams(-1, dp(62)));
         LinearLayout navigation=row();
-        for (Page item:Page.values()) {
+        for (Page item:PAGE_ORDER) {
             TextView tab=action(item.title,false,() -> changePage(item));
             pageTabs[item.ordinal()]=tab; addRight(navigation,tab);
         }
@@ -274,15 +277,15 @@ public final class Dashboard extends Activity {
     }
 
     private void stepPage(int direction) {
-        int next=page.ordinal()+direction;
-        if (next>=0 && next<Page.values().length) changePage(Page.values()[next]);
+        int next=PAGE_ORDER.indexOf(page)+direction;
+        if (next>=0 && next<PAGE_ORDER.size()) changePage(PAGE_ORDER.get(next));
     }
     private void changePage(Page next) {
         if (next==page) return;
         if (page==Page.LAYOUT && !floating && video!=null && video.getDuration()>0) {
             clipPosition=video.getCurrentPosition(); playClip=video.isPlaying();
         }
-        int direction=next.ordinal()>page.ordinal() ? 1 : -1;
+        int direction=PAGE_ORDER.indexOf(next)>PAGE_ORDER.indexOf(page) ? 1 : -1;
         page=next;
         preferences.edit().putInt("page",page.ordinal()).apply();
         pages.setInAnimation(slide(direction,0));

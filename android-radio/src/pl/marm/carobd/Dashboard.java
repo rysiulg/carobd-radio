@@ -193,11 +193,11 @@ public final class Dashboard extends Activity {
         FrameLayout clockArea=new FrameLayout(this); weight(instruments,clockArea,1);
         LinearLayout clocks=group(false);
         clockArea.addView(clocks,new FrameLayout.LayoutParams(-1,-1));
-        speedDial=new Instruments.Dial(this,instrumentsFont,"Prędkość","km/h",Instruments.SPEED_LIMIT,20,Instruments.ORANGE);
-        rpmDial=new Instruments.Dial(this,instrumentsFont,"Obroty","obr./min",Instruments.RPM_LIMIT,1000,Instruments.BLUE);
-        weight(clocks,rpmDial,1);
+        speedDial=new Instruments.Dial(this,instrumentsFont,"Prędkość","km/h",Instruments.SPEED_LIMIT,20,Instruments.ORANGE,.49f);
+        rpmDial=new Instruments.Dial(this,instrumentsFont,"Obroty","obr./min",Instruments.RPM_LIMIT,1000,Instruments.BLUE,.445f);
+        weight(clocks,rpmDial,.90f);
         gap(clocks,10);
-        weight(clocks,speedDial,1);
+        weight(clocks,speedDial,1.10f);
         recordingDot=new View(this); recordingDot.setBackground(box(RECORDING,6));
         recordingDot.setContentDescription("Trwa zapis przejazdu");
         recordingDot.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_YES);

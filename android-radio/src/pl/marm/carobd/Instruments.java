@@ -15,11 +15,12 @@ final class Instruments {
         private final Path needle=new Path();
         final String name,unit;
         final int limit,major,accent;
+        private final float heightRatio;
         double value=Double.NaN;
         private String digits="—",gear="";
-        Dial(Context c,Typeface typeface,String name,String unit,int limit,int major,int accent) {
+        Dial(Context c,Typeface typeface,String name,String unit,int limit,int major,int accent,float heightRatio) {
             super(c); this.name=name; this.unit=unit; this.limit=limit; this.major=major; this.accent=accent;
-            ink.setTypeface(typeface);
+            this.heightRatio=heightRatio; ink.setTypeface(typeface);
             setContentDescription(name+" brak odczytu");
         }
         void value(double next) {
@@ -43,7 +44,7 @@ final class Instruments {
             c.drawText(text,x,y,ink);
         }
         @Override protected void onDraw(Canvas c) {
-            float x=getWidth()/2f,y=getHeight()/2f,r=Math.min(getWidth()*.46f,getHeight()*.475f);
+            float x=getWidth()/2f,y=getHeight()/2f,r=Math.min(getWidth()*.46f,getHeight()*heightRatio);
             if (r<=1) return;
             ink.setStyle(Paint.Style.FILL); ink.setColor(FACE); c.drawCircle(x,y,r,ink);
             ink.setStyle(Paint.Style.STROKE); ink.setColor(TRACK); ink.setStrokeWidth(Math.max(1,r*.023f));
@@ -64,12 +65,13 @@ final class Instruments {
                     x+r*.704f*cos,y+r*.704f*sin+r*.045f,r*.13f,WHITE);
             }
             if (Double.isFinite(value)) {
-                // Wskazówka zaczyna się poza kołem z odczytem i obraca się wokół jego środka.
+                // Krótka wskazówka obraca się wokół środka i kończy przy podziałce.
                 float angle=START+(float)(SWEEP*Math.max(0,Math.min(value,limit))/limit);
+                float base=r*.664f, halfWidth=r*.027f;
                 c.save();
                 c.translate(x,y); c.rotate(angle);
-                needle.rewind(); needle.moveTo(r*.51f,-r*.027f);
-                needle.lineTo(r*.973f,0); needle.lineTo(r*.51f,r*.027f); needle.close();
+                needle.rewind(); needle.moveTo(base,-halfWidth);
+                needle.lineTo(r*.973f,0); needle.lineTo(base,halfWidth); needle.close();
                 ink.setStyle(Paint.Style.FILL); ink.setColor(accent); c.drawPath(needle,ink);
                 c.restore();
             }

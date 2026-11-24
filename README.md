@@ -7,7 +7,7 @@ Zestaw aplikacji na samochodowe stacje multimedialne z Androidem. CarOBD odczytu
 | Moduł | Funkcje |
 | --- | --- |
 | [CarOBD](android-radio) | Prędkość, obroty, wysokość GPS, temperatury, spalanie, odczyt błędów OBD i historia przejazdów z mapą. Lokalne kopie GPX na SD, USB lub w pamięci radia. Profile adapterów BLE, Bluetooth Classic i Wi-Fi. |
-| [RadioKIA Pulpit](launcher-preview) | Ekran główny Androida z regulowanym podziałem paneli, danymi CarOBD, mapą, tunerem oraz skrótami do aplikacji. Zakładki można zmieniać gestem. |
+| [RadioKIA Pulpit](launcher-preview) | Ekran główny Androida z regulowanym podziałem paneli, danymi CarOBD, mapą, tunerem oraz skrótami do aplikacji. Przesuń w lewo, aby przejść z Układu do FM, a potem do CarOBD. Przesuń w prawo, aby wrócić. Z karty CarOBD można otworzyć pełne zegary i historię. |
 | [RadioKIA FM](fm-offline) | Samodzielny tuner ze skalą FM, ośmioma presetami, wyszukiwaniem stacji oraz RDS, gdy jednostka udostępnia dane. Sterowanie zależy od zgodności sprzętowej z usługą Topway XTService. |
 
 ## Przykładowe ekrany
