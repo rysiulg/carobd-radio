@@ -351,7 +351,9 @@ public final class Dashboard extends Activity {
         reading(altitude,fmt(demo ? 247 : live.altitude,0)+" m");
         long now=SystemClock.elapsedRealtime();
         String vehicle=live.armed ? live.vehicle : nextProfile.vehicle;
-        speedDial.gear(demo ? "D4" : EngineHours.kiaProfile(vehicle) ?
+        boolean kia=EngineHours.kiaProfile(vehicle);
+        rpmDial.kiaScale(demo || kia);
+        speedDial.gear(demo ? "D4" : kia ?
             (live.gear.isEmpty() ? "—" : live.gear) : "");
         double reading=demo ? 197452 : live.obd ? live.odometer : Double.NaN;
         changed(odometer,Double.isFinite(reading) ? String.format(PL,"%,.0f km",reading) : "—");
@@ -377,7 +379,7 @@ public final class Dashboard extends Activity {
         boolean estimatedFuel=!demo && !Double.isFinite(live.fuel) && Double.isFinite(live.tankLiters);
         double fuel=demo ? 58 : estimatedFuel ? 100*live.tankLiters/Elm.KIA_TANK_L : live.fuel;
         tank.setTag(estimatedFuel ? "Poziom paliwa szacowany z litrów OBD" : "Poziom paliwa");
-        JSONObject range=EngineHours.kiaProfile(vehicle) ? null : NasHistory.telemetry(settings,vehicle).optJSONObject("range");
+        JSONObject range=kia ? null : NasHistory.telemetry(settings,vehicle).optJSONObject("range");
         long age=range==null ? Long.MAX_VALUE : System.currentTimeMillis()/1000-range.optLong("t",0);
         double nasRange=age>=0 && age<=6*3600 ? range.optDouble("range_km") : Double.NaN;
         reading(tank,Double.isFinite(fuel) ? (estimatedFuel ? "~" : "")+fmt(fuel,0)+"%" : "—");

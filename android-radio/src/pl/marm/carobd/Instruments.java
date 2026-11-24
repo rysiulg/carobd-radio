@@ -10,7 +10,8 @@ final class Instruments {
         MINT=0xff64eabd, BLUE=0xff82beff, ORANGE=0xffff795f, SPEED_LIMIT=220, RPM_LIMIT=7000;
     static final class Dial extends View {
         private static final float START=140, SWEEP=260;
-        private static final int FACE=0xff0d1c2d, CENTER=0xff12263a;
+        private static final int FACE=0xff0d1c2d, CENTER=0xff12263a, RED_ZONE=0xffff454e;
+        private static final int KIA_RPM_LIMIT=6000, KIA_RED_FROM=4500;
         private final Paint ink=new Paint(Paint.ANTI_ALIAS_FLAG);
         private final Path needle=new Path();
         final String name,unit;
@@ -18,6 +19,7 @@ final class Instruments {
         private final float heightRatio;
         double value=Double.NaN;
         private String digits="—",gear="";
+        private boolean kiaScale;
         Dial(Context c,Typeface typeface,String name,String unit,int limit,int major,int accent,float heightRatio) {
             super(c); this.name=name; this.unit=unit; this.limit=limit; this.major=major; this.accent=accent;
             this.heightRatio=heightRatio; ink.setTypeface(typeface);
@@ -29,6 +31,10 @@ final class Instruments {
             digits=Double.isFinite(value) ? Long.toString(Math.round(value)) : "—";
             describe();
             invalidate();
+        }
+        void kiaScale(boolean enabled) {
+            if (kiaScale==enabled) return;
+            kiaScale=enabled; invalidate();
         }
         void gear(String next) {
             if (gear.equals(next)) return;
@@ -53,20 +59,26 @@ final class Instruments {
             ink.setStyle(Paint.Style.STROKE); ink.setColor(GRID); ink.setStrokeWidth(Math.max(1,r*.009f));
             c.drawCircle(x,y,r*.445f,ink);
             int divisor=limit>1000 ? 1000 : 1;
-            int count=limit/major*2;
+            // Układ kresek z zegarów Kia. Pozostałe profile korzystają ze zwykłej podziałki.
+            int dialLimit=kiaScale ? KIA_RPM_LIMIT : limit;
+            int subdivisions=kiaScale ? 4 : 2;
+            int count=dialLimit/major*subdivisions;
             for (int i=0;i<=count;i++) {
                 double a=Math.toRadians(START+SWEEP*i/count);
                 float cos=(float)Math.cos(a),sin=(float)Math.sin(a);
-                boolean main=i%2==0;
-                ink.setColor(main ? WHITE : TRACK); ink.setStrokeWidth(r*(main ? .016f : .009f));
-                float inner=r*(main ? .84f : .91f);
+                boolean main=i%subdivisions==0;
+                int tick=i*major/subdivisions;
+                boolean red=kiaScale && tick>=KIA_RED_FROM;
+                ink.setColor(red ? RED_ZONE : main ? WHITE : TRACK);
+                ink.setStrokeWidth(r*(main ? .016f : red ? .013f : .009f));
+                float inner=r*(main ? .84f : red ? .895f : .91f);
                 c.drawLine(x+inner*cos,y+inner*sin,x+r*.96f*cos,y+r*.96f*sin,ink);
-                if (main) text(c,Integer.toString(i*major/2/divisor),
+                if (main) text(c,Integer.toString(tick/divisor),
                     x+r*.704f*cos,y+r*.704f*sin+r*.045f,r*.13f,WHITE);
             }
             if (Double.isFinite(value)) {
                 // Krótka wskazówka obraca się wokół środka i kończy przy podziałce.
-                float angle=START+(float)(SWEEP*Math.max(0,Math.min(value,limit))/limit);
+                float angle=START+(float)(SWEEP*Math.max(0,Math.min(value,dialLimit))/dialLimit);
                 float base=r*.664f, halfWidth=r*.027f;
                 c.save();
                 c.translate(x,y); c.rotate(angle);
