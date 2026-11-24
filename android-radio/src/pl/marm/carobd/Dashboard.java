@@ -195,9 +195,9 @@ public final class Dashboard extends Activity {
         clockArea.addView(clocks,new FrameLayout.LayoutParams(-1,-1));
         speedDial=new Instruments.Dial(this,instrumentsFont,"Prędkość","km/h",Instruments.SPEED_LIMIT,20,Instruments.ORANGE,.49f);
         rpmDial=new Instruments.Dial(this,instrumentsFont,"Obroty","obr./min",Instruments.RPM_LIMIT,1000,Instruments.BLUE,.445f);
-        weight(clocks,rpmDial,.90f);
+        weight(clocks,rpmDial,.92f);
         gap(clocks,10);
-        weight(clocks,speedDial,1.10f);
+        weight(clocks,speedDial,1.08f);
         recordingDot=new View(this); recordingDot.setBackground(box(RECORDING,6));
         recordingDot.setContentDescription("Trwa zapis przejazdu");
         recordingDot.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_YES);
@@ -210,14 +210,12 @@ public final class Dashboard extends Activity {
         odometer=centeredCounter(instruments,"—",32,WHITE,40);
         odometer.setTypeface(instrumentsFont); odometer.setIncludeFontPadding(false);
         engineHours=centeredCounter(instruments,"",16,WHITE,27);
-        speedSource=txt("",14,MUTE,false); speedSource.setMinLines(1); instruments.addView(speedSource);
+        speedSource=txt("",14,MUTE,false); instruments.addView(speedSource);
         gap(instruments,3);
-        LinearLayout keys=group(false); instruments.addView(keys);
-        arm=button("Włącz automat",false,this::armRecording); width(keys,arm,1); gap(keys,8);
-        measure=button("Pomiar przyspieszenia",true,this::measure); width(keys,measure,1.26f); gap(keys,8);
+        arm=button("Włącz automat",false,this::armRecording); instruments.addView(arm,-1,-2);
         retryObd=button("Ponów OBD",false,() -> {
             if (Recorder.live.armed && !Recorder.live.obd) startService(new Intent(this,Recorder.class).setAction(Recorder.RETRY));
-        }); width(keys,retryObd,.76f);
+        }); instruments.addView(retryObd,-1,-2);
         LinearLayout stats=panel(true); weight(columns,stats,1);
         LinearLayout fuelReadings=group(false); stats.addView(fuelReadings,-1,dp(64));
         consumption=readout(fuelReadings,"Spalanie chwilowe",R.drawable.metric_flow,22); gap(fuelReadings,8);
@@ -238,7 +236,15 @@ public final class Dashboard extends Activity {
         storageIcon=new ImageView(this); storageIcon.setPadding(dp(6),dp(6),dp(6),dp(6));
         storageIcon.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_YES);
         statusLine.addView(storageIcon,dp(37),dp(37));
-        gap(stats,7); stats.addView(button("Motogodziny i serwis",false,this::openService));
+        gap(stats,7);
+        LinearLayout actions=group(false); stats.addView(actions,-1,dp(48));
+        measure=button("Pomiar przyspieszenia",true,this::measure);
+        Button service=button("Motogodziny i serwis",false,this::openService);
+        for (Button action:new Button[]{measure,service}) {
+            padding(action,7,4); action.setMaxLines(2);
+            action.setAutoSizeTextTypeUniformWithConfiguration(10,12,1,android.util.TypedValue.COMPLEX_UNIT_SP);
+        }
+        weight(actions,measure,1); gap(actions,8); weight(actions,service,1);
     }
     private TextView centeredCounter(LinearLayout column,String label,int size,int color,int height) {
         TextView view=txt(label,size,color,size>13);
@@ -368,7 +374,7 @@ public final class Dashboard extends Activity {
         String countdown=recording && live.autoStopAt>now ? "Auto-stop za "+elapsed((live.autoStopAt-now+999)/1000) : "";
         String notice=demo || !live.armed ? "" : live.obd ? countdown :
             (countdown.isEmpty() ? "" : countdown+" · ")+obdMessage;
-        changed(speedSource,notice); speedSource.setVisibility(notice.isEmpty() ? View.INVISIBLE : View.VISIBLE);
+        changed(speedSource,notice); speedSource.setVisibility(notice.isEmpty() ? View.GONE : View.VISIBLE);
         retryObd.setVisibility(!demo && live.armed && !live.obd ? View.VISIBLE : View.GONE);
         changed(distance,(demo ? "8,42" : fmt(live.km,2))+" km");
         long tripSeconds=demo ? 9*60+32 : live.started>0 ? (now-live.started)/1000 : -1;
