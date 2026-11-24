@@ -35,9 +35,9 @@ public final class TelemetryTest {
         missing(Elm.decodeKiaTank(tank.replace("008A","00FF")));
         missing(Elm.decodeKiaTank("00A\r0:62B002C00000\r>"));
         String kiaOdo="043\r0:62ED03FFE7FF\r1:E0000100010000\r2:00000010000100\r3:00000000190000\r4:00000000000000\r"+
-            "5:000000FFFF0003\r6:02000014DF6178\r7:0000560414DFB7\r8:7C0003000A0000\r9:000000FFFF5555\r>";
-        equal(Elm.decodeKiaOdometer(kiaOdo),349877.971);
-        missing(Elm.decodeKiaOdometer(kiaOdo.replace("8:7C","A:7C")));
+            "5:000000FFFF0003\r6:020000075BD9A0\r7:00005604075BCD\r8:0C0003000A0000\r9:000000FFFF5555\r>";
+        equal(Elm.decodeKiaOdometer(kiaOdo),123456.78);
+        missing(Elm.decodeKiaOdometer(kiaOdo.replace("8:0C","A:0C")));
         missing(Elm.decodeKiaOdometer("7F2231>"));
         gear(KiaGear.UDS,"6201A0",8,4,71,"D4");
         gear(KiaGear.UDS,"6201A0",12,3,42,"M3");
