@@ -10,14 +10,22 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import java.util.ArrayList;
 
-/** Wyłącznie bieżący stan przejazdu dla podpisanego pulpitu RadioKIA. Bez trasy, pozycji i kluczy NAS. */
+/** Bieżący stan CarOBD oraz publiczna mapa pomiarów dla podpisanego pulpitu RadioKIA. */
 public final class DashboardData extends ContentProvider {
     private static final String DASHBOARD="pl.radiokia.preview";
     private long nextWake;
 
     @Override public boolean onCreate() { return true; }
     @Override public Bundle call(String method,String arg,Bundle extras) {
-        if (!"snapshot".equals(method) || !trusted()) throw new SecurityException("Tylko pulpit RadioKIA");
+        if (!trusted()) throw new SecurityException("Tylko pulpit RadioKIA");
+        if ("roadMap".equals(method)) {
+            RoadMapData.Snapshot map=RoadMapData.load(getContext());
+            Bundle result=new Bundle();
+            result.putString("version",map.version); result.putString("date",map.date);
+            if (!map.version.equals(arg)) result.putDoubleArray("markers",map.markers);
+            return result;
+        }
+        if (!"snapshot".equals(method)) throw new IllegalArgumentException("Nieznane żądanie pulpitu");
         Recorder.Live live=Recorder.live;
         if (!live.armed) wakeRecorder();
         Bundle current=new Bundle();
@@ -29,6 +37,7 @@ public final class DashboardData extends ContentProvider {
         String vehicle=live.armed ? live.vehicle : new Settings(getContext()).profiles.defaultProfile().vehicle;
         current.putString("vehicle",vehicle);
         current.putBoolean("kia_profile",EngineHours.kiaProfile(vehicle));
+        current.putDouble(Trips.AMBIENT_C,live.ambientC);
         current.putDouble("kmh",live.speed);
         current.putLong("seconds",live.started<=0 ? -1 : (SystemClock.elapsedRealtime()-live.started)/1000);
         current.putDouble("distance",live.started<=0 ? Double.NaN : live.km);

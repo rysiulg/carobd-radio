@@ -4,6 +4,7 @@ package pl.marm.carobd;
 final class Engine {
     static final long LOST=35000, OFF=3000;
     private static final long RECENT_MOTION=5000, GPS_SAMPLE_GAP=3000, STOP_SAMPLE_GAP=8000, GPS_ONLY_LOST=5*60_000L;
+    private static final long MIN_RECOVERY_WINDOW=120_000L;
     private static final double OBD_MOVING=2, GPS_MOVING=5;
     private long lastRunning=-1, zeroSince=-1;
     private long motionAt=-1, gpsCandidate=-1;
@@ -42,6 +43,10 @@ final class Engine {
         lastSpeedAt=at;
     }
     void beginTrip(long now) { engineSeenInTrip=running(now,false); }
+    // Nawet przy wyłączonym auto-stopie można wznowić zapis po krótkim restarcie procesu.
+    static boolean recoverableGap(long gap,long stationaryTimeout) {
+        return gap<=Math.max(MIN_RECOVERY_WINDOW,stationaryTimeout);
+    }
     void resumeTrip(long checkpoint,long motion,boolean hadObd) {
         lastSpeedAt=checkpoint; motionAt=motion;
         engineSeenInTrip=hadObd; lastRunning=hadObd ? checkpoint : -1;

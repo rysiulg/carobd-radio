@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false" />
+    <!-- Starsze wersje Androida nie mają w systemie nowego publicznego root CA Certum. -->
+    <domain-config>
+        <domain>api.dane.gov.pl</domain>
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="@raw/certum_trusted_root_ca" />
+        </trust-anchors>
+    </domain-config>
+</network-security-config>

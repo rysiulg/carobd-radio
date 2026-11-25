@@ -1,0 +1,749 @@
+Rodzaj urzπdzenia;Gmina;Powiat;WojewÛdztwo;MiejscowoúÊ;Ulica i numer posesji;Nr drogi;Km drogi;Hm drogi;Kategoria drogi;kod lokalizacji;Typ urzπdzenia;Numer seryjny;D≥ugoúÊ odcinka kierunek P-T [m];D≥ugoúÊ odcinka kierunek T-P[m];SzerokoúÊ geograficzna - poczπtek;D≥ugoúÊ geograficzna - poczπtek;SzerokoúÊ geograficzna - koniec;D≥ugoúÊ geograficzna - koniec
+czerwone úwiat≥o;Pszczyna;pszczyÒski;åL•SKIE;Pszczyna;GÛrnoúlπska | MÍczennikÛw OúwiÍcimskich ;1;584;746;DK;SLA.C.005;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00130;;;49,97644444;18,95841667;;
+czerwone úwiat≥o;Jelenia GÛra;Jelenia GÛra;DOLNOåL•SKIE;Jelenia GÛra;Grunwaldzka | Al. Ja Paw≥a II ;3;465;900;DK;PDZ.C.007;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00203;;;50,90852778;15,73626667;;
+czerwone úwiat≥o;Wroc≥aw;Wroc≥aw;DOLNOåL•SKIE;Wroc≥aw;Gπdowianka |  Ostatnim Groszu | Bystrzycka ;5;359;680;DK;PDZ.C.003;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00101;;;51,11975;16,97205556;;
+czerwone úwiat≥o;LÍbork;lÍborski;POMORSKIE;Mosty;Dk6 | Witosa ;6;262;100;DK;PLN.C.002;Neurocar 2.0 RedLight;ncar-h-ctrl-d000006;;;54,5458;17,78879722;;
+czerwone úwiat≥o;Marki;wo≥omiÒski;MAZOWIECKIE;Marki;Pi≥sudskiego | WspÛl | Ma≥achowskiego ;8;471;850;DK;CAN.C.001;Neurocar 2.0 RedLight;ncar-h-ctrl-d000033;;;52,33427778;21,11438889;;
+czerwone úwiat≥o;Nak≥o nad Noteciπ;nakielski;KUJAWSKO-POMORSKIE;Nak≥o nad Noteciπ;DW 241 | DK10 ;10;237;150;DK;PLN.C.006;Neurocar 2.0 RedLight;ncar-h-cpuh5-000054;;;53,15111111;17,59138889;;
+czerwone úwiat≥o;Pi≥a;pilski;WIELKOPOLSKIE;Pi≥a;DK 11 | DK 10 ;10;181;555;DK;WLK.C.001;Neurocar 2.0 RedLight;ncar-h-ctrl-d000008;;;53,15022778;16,78986667;;
+czerwone úwiat≥o;Go≥uchÛw;pleszewski;WIELKOPOLSKIE;Koúcielna Wieú;Kreczunowicza | Ostrowska | PozÒska ;12;;;DK;WLK.C.009;VITRONIC SSP-X;110901;;;51,78394444;18,01086111;;
+czerwone úwiat≥o;Bia≥ystok;Bia≥ystok;PODLASKIE;Bia≥ystok;ul. Piastowska | ul. Kazimierza Wielkiego | ul. gen. Sulika | ul. gen. Sosabowskiego ;19;;;DK;PNW.C.001;Neurocar Terminal RedLight 3;ncar-h-cpu-06b00151;;;53,14041667;23,20080556;;
+czerwone úwiat≥o;Øukowo;kartuski;POMORSKIE;Miszewo;GdaÒska | Dk20 ;20;302;100;DK;PLN.C.003;Neurocar 2.0 RedLight;ncar-h-ctrl-d000004;;;54,38025833;18,36168611;;
+czerwone úwiat≥o;GorzÛw Wielkopolski;GorzÛw Wielkopolski;LUBUSKIE;GorzÛw Wielkopolski;Podmiejska | Trasa dwarciaÒska | Warszawska ;22;;;DK;PNZ.C.002;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00157;;;52,73425;15,25580556;;
+czerwone úwiat≥o;Malbork;malborski;POMORSKIE;Malbork;Al. Rod≥a | ul. 17 Marca ;22;357;800;DK;PLN.C.011;VITRONIC SSP-X;110301;;;54,03508333;19,02805556;;
+czerwone úwiat≥o;Wolsztyn;wolsztyÒski;WIELKOPOLSKIE;Wolsztyn;DK32 | ul. PowstaÒcÛw Wielkopolskich ;32;;;DK;WLK.C.005;VITRONIC SSP-X;110401;;;52,11419444;16,12655556;;
+czerwone úwiat≥o;åwidnica;úwidnicki;DOLNOåL•SKIE;åwidnica;Ul. EsperantystÛw | Ul. £πcz | Ul. StÍczyÒskiego ;35;45;700;DK;PDZ.C.008;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00110;;;50,85388889;16,49855556;;
+czerwone úwiat≥o;WieluÒ;wieluÒski;£”DZKIE;WieluÒ;Pi≥sudskiego | Krakowskie Przedmieúcie | 18 stycznia | CzÍstochowska ;43;0;354;DK;CEN.C.008;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00167;;;51,21804167;18,57380556;;
+czerwone úwiat≥o;Miko≥Ûw;miko≥owski;åL•SKIE;Miko≥Ûw;Gliwicka | CieszyÒska | Wyzwolenia ;44;23;644;DK;SLA.C.004;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00118;;;50,17811111;18,89063889;;
+czerwone úwiat≥o;Jab≥onna;legionowski;MAZOWIECKIE;Jab≥onna;Brzozowa | ModliÒska | DK 61 ;61;18;108;DK;CAN.C.003;Neurocar 2.0 RedLight;ncar-h-ctrl-d000043;;;52,36330833;20,93535278;;
+czerwone úwiat≥o;£Ûdü;£Ûdü;£”DZKIE;£Ûdü;Al. Gen. W≥. Sikorskiego | Al. W≥Ûkniarzy | Zgierska ;72;;;DK;CEN.C.006;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00154;;;51,81575;19,43444444;;
+czerwone úwiat≥o;Kielce;Kielce;åWI TOKRZYSKIE;Kielce;Sandomierska | èrÛd≥owa | Al. Solidarnoúci | Al. IX WiekÛw Kielc ;73;;;DK;PLD.C.006;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00144;;;50,87154167;20,64131111;;
+czerwone úwiat≥o;Nowy Sπcz;Nowy Sπcz;MA£OPOLSKIE;Nowy Sπcz;Al. Pi≥sudskiego | KrÛlowej Jadwigi | Ja KiliÒskiego ;75;3;650;DK;PLD.C.003;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00112;;;49,61745556;20,71486111;;
+czerwone úwiat≥o;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Al. Krakowska | £opuszaÒska | F. Hynka ;79;;;DK;CAN.C.005;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00141;;;52,19018889;20,95798889;;
+czerwone úwiat≥o;£aziska GÛrne;miko≥owski;åL•SKIE;£aziska GÛrne;CieszyÒska | DK81 ;81;18;200;DK;SLA.C.001;Neurocar 2.0 RedLight;ncar-h-ctrl-d000021;;;50,1372;18,83296944;;
+czerwone úwiat≥o;Kowal;w≥oc≥awski;KUJAWSKO-POMORSKIE;Kowal;Wojska Polskiego | Dk91 ;91;2;800;DK;PLN.C.004;Neurocar 2.0 RedLight;ncar-h-cpuf4-000001;;;52,52388889;19,13944444;;
+czerwone úwiat≥o;Sochaczew;sochaczewski;MAZOWIECKIE;Koøuszki-Parcel;Koøuszki-Parcel ;92;428;640;DK;CAN.C.006;VITRONIC SSP-X;110501;;;52,22263889;20,31241667;;
+czerwone úwiat≥o;Nekla;wrzesiÒski;WIELKOPOLSKIE;Nekla;DK92 | Dworcowa | PowstaÒcÛw Wielkopolskich ;92;;;DK;WLK.C.008;VITRONIC SSP-X;110101;;;52,36813889;17,41291667;;
+czerwone úwiat≥o;Wojnicz;tarnowski;MA£OPOLSKIE;Miko≥ajowice;DK 94 ;94;64;800;DK;PLD.C.002;Neurocar 2.0 RedLight;ncar-h-ctrl-d000023;;;49,96928056;20,87171944;;
+czerwone úwiat≥o;Olkusz;olkuski;MA£OPOLSKIE;Olkusz;DK 94 ;94;299;300;DK;PLD.C.001;Neurocar 2.0 RedLight;ncar-h-cpuh5-000018;;;50,2742;19,58361944;;
+czerwone úwiat≥o;Pyskowice;gliwicki;åL•SKIE;Pyskowice;Toszecka | Mickiewicza ;94;243;220;DK;SLA.C.002;Neurocar 2.0 RedLight;ncar-h-ctrl-d000019;;;50,39725;18,61772222;;
+czerwone úwiat≥o;Ropczyce;ropczycko-sÍdziszowski;PODKARPACKIE;Ropczyce;DK 94 obwodnica Ropczyc | DW 986 ul. 3 go Maja ;94;1;750;DK;PDW.C.002;Neurocar 2.0 RedLight;ncar-h-ctrl-d000053;;;50,04944444;21,605;;
+czerwone úwiat≥o;S≥upsk;S≥upsk;POMORSKIE;S≥upsk;GdaÒska | Wiejska | Garncarska | Sierpinka ;210;;;DW;PLN.C.007;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00116;;;54,46497222;17,04141667;;
+czerwone úwiat≥o;Komorniki;poznaÒski;WIELKOPOLSKIE;Komorniki;PozÒska | Daimlera-Magazynowa ;311;22;510;DW;WLK.C.002;Neurocar 2.0 RedLight;ncar-h-ctrl-d000011;;;52,34575556;16,82801944;;
+czerwone úwiat≥o;Polkowice;polkowicki;DOLNOåL•SKIE;Polkowice;ul. Kopalnia | ul. Legnicka (DK3) ;333;;;DW;PDZ.C.002;Neurocar 2.0 RedLight;ncar-h-ctrl-d000001;;;51,496775;16,06699167;;
+czerwone úwiat≥o;Boles≥awiec;boles≥awiecki;DOLNOåL•SKIE;Boles≥awiec;Ul. Boles≥awa Chrobrego | Ul. Asnyka | Ul. SpÛ≥dzielcza | Al. Tysiπclecia ;363;;;DW;PDZ.C.006;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00109;;;51,26153611;15,57584444;;
+czerwone úwiat≥o;PiotrkÛw Trybunalski;PiotrkÛw Trybunalski;£”DZKIE;PiotrkÛw Trybunalski;Al. Gen. W≥. Sikorskiego | Al. Armii Krajowej | Al. Marsza≥ka J. Pi≥sudskiego ;473;;;DW;CEN.C.005;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00120;;;51,40602778;19,67666667;;
+czerwone úwiat≥o;£Ûdü;£Ûdü;£”DZKIE;£Ûdü;Al. W≥Ûkniarzy | Drewnowska ;488;;;DW;CEN.C.003;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00159;;;51,78027778;19,42111111;;
+czerwone úwiat≥o;£Ûdü;£Ûdü;£”DZKIE;£Ûdü;Obywatelska | Al. Ja Paw≥a II ;488;;;DW;CEN.C.004;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00162;;;51,73644444;19,44219444;;
+czerwone úwiat≥o;Zgierz;zgierski;£”DZKIE;Zgierz;ul. D≥uga | al. Armii Krajowej ;488;340;600;DW;CEN.C.001;Neurocar 2.0 RedLight;ncar-h-ctrl-d000028;;;51,85626111;19,40608056;;
+czerwone úwiat≥o;Olsztyn;Olsztyn;WARMI—SKO-MAZURSKIE;Olsztyn;J. Tuwima | SynÛw Pu≥ku | Al. Gen. W≥. Sikorskiego ;598;;;DW;PNW.C.003;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00160;;;53,75573333;20,48661389;;
+czerwone úwiat≥o;£Ûdü;£Ûdü;£”DZKIE;£Ûdü;RokiciÒska | A. Puszki ;713;;;DW;CEN.C.009;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00135;;;51,76061111;19,53694444;;
+czerwone úwiat≥o;KrakÛw;KrakÛw;MA£OPOLSKIE;KrakÛw;Aleja Pokoju | Nowohucka ;776;3;47;DW;PLD.C.004;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00125;;;50,06694444;20,00425;;
+czerwone úwiat≥o;Lesznowola;piaseczyÒski;MAZOWIECKIE;MrokÛw;Aleja Krakowska | Rejonowa ;788;395;475;DW;CAN.C.002;Neurocar 2.0 RedLight;ncar-h-ctrl-d000035;;;52,03861111;20,86122222;;
+czerwone úwiat≥o;Stalowa Wola;stalowowolski;PODKARPACKIE;Stalowa Wola;DW 871 Aleje Ja Paw≥a II | DW 871 ul. K.E.N ;871;48;700;DW;PDW.C.001;Neurocar 2.0 RedLight;ncar-h-ctrl-d000045;;;50,57611111;22,06111111;;
+czerwone úwiat≥o;Ruda ålπska;Ruda ålπska;åL•SKIE;Ruda ålπska;1 Maja | Czarnoleú | E. Kokota ;925;;;DW;SLA.C.006;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00173;;;50,28043889;18,85886389;;
+czerwone úwiat≥o;Pu≥awy;pu≥awski;LUBELSKIE;Anielin;Anielin ;12s;;;DK;WSC.C.001;Neurocar 2.0 RedLight;ncar-h-ctrl-d000031;;;51,39996389;21,82795556;;
+czerwone úwiat≥o;PiotrkÛw Trybunalski;PiotrkÛw Trybunalski;£”DZKIE;PiotrkÛw Trybunalski;Al. Concordii | Al. Gen. W≥. Sikorskiego ;1560E;1;60;DG;CEN.C.002;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00122;;;51,40623611;19,65647778;;
+czerwone úwiat≥o;Ønin;øniÒski;KUJAWSKO-POMORSKIE;Ønin;Kopernika | A. Mickiewicza ;2375C;;;DG;PLN.C.008;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00168;;;52,85069444;17,71944444;;
+czerwone úwiat≥o;Szczecin;Szczecin;ZACHODNIOPOMORSKIE;Szczecin;H. Derdowskiego | 26 Kwietnia | Gen. St. Taczaka ;5001Z;;;DG;PNZ.C.001;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00164;;;53,42888889;14,50002778;;
+czerwone úwiat≥o;Bia≥ystok;Bia≥ystok;PODLASKIE;Bia≥ystok;ul. úw. Pio | ul. Zwierzyniecka ;;;;DG;PNW.C.002;Neurocar Terminal RedLight 3;ncar-h-cpu-06b00153;;;53,11841667;23,16683333;;
+czerwone úwiat≥o;KrakÛw;KrakÛw;MA£OPOLSKIE;KrakÛw;Tischnera | ZakopiaÒska | Wadowicka | Broøka ;;9;421;DG;PLD.C.005;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00147;;;50,02911111;19,93658333;;
+czerwone úwiat≥o;Starogard GdaÒski;starogardzki;POMORSKIE;Starogard GdaÒski;BohaterÛw Monte Cassino | Al. Armii Krajowej | Al. Ja Paw≥a II ;;;;DG;PLN.C.010;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00132;;;53,95691667;18,52819444;;
+czerwone úwiat≥o;Bielsko-Bia≥a;Bielsko-Bia≥a;åL•SKIE;Bielsko-Bia≥a;Sarni Stok | Warszawska | Eugeniusza Kwiatkowskiego ;;;;DP;SLA.C.003;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00103;;;49,83931111;19,03779444;;
+czerwone úwiat≥o;PoznaÒ;PoznaÒ;WIELKOPOLSKIE;PoznaÒ;Roosevelta | Zwierzyniecka | åwiÍty Marcin ;;;;DP;WLK.C.003;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00138;;;52,40782222;16,91249167;;
+czerwone úwiat≥o;Zabrze;Zabrze;åL•SKIE;Zabrze;Prof. Z. Religi | Bytomska | P. Stalmacha ;;;;DP;SLA.C.007;NeuroCar Terminal RedLight 3;ncar-h-cpu-06b00149;;;50,30981944;18,78852778;;
+czerwone úwiat≥o;Lubicz;toruÒski;KUJAWSKO-POMORSKIE;GrÍbocin;Dk 15 ul.Kowalewska | Dworcowa  Lubicka;;15;245;DG;PLN.C.005;Neurocar 2.0 RedLight;ncar-h-ctrl-d000014;;;5,884166667;245,5119444;;
+czerwone úwiat≥o;Luzino;wejherowski;POMORSKIE;Luzino;DK6 | Ch≥opska  Wilczka;;468;284;DG;PLN.C.001;Neurocar 2.0 RedLight;ncar-h-ctrl-d000007;;;58,55944444;284,3013889;;
+czerwone úwiat≥o kolejowe;£Íka Opatowska;kÍpiÒski;WIELKOPOLSKIE;Piaski;Piaski ;11;;;DK;WLK.C.007;VITRONIC SSP-X;0220501;;;51,23272222;18,06472222;;
+czerwone úwiat≥o kolejowe;Trzemeszno;gnieünieÒski;WIELKOPOLSKIE;Wymys≥owo;GnieünieÒska ;15;149;200;DK;WLK.C.004;VITRONIC SSP-X;0220101;;;52,55816667;17,76483333;;
+czerwone úwiat≥o kolejowe;OstrÛw Wielkopolski;ostrowski;WIELKOPOLSKIE;£πkociny;KrotoszyÒska ;36;;;DK;WLK.C.006;VITRONIC SSP-X;0220401;;;51,65786111;17,66333333;;
+czerwone úwiat≥o kolejowe;Kruszwica;inowroc≥awski;KUJAWSKO-POMORSKIE;Che≥mce;DK 62 km 27+426 ;62;27;426;DK;PLN.C.009;NeuroCar RedLight;ncar-h-cpu-06b00171;;;52,61611111;18,47694444;;
+czerwone úwiat≥o kolejowe;Wroc≥aw;Wroc≥aw;DOLNOåL•SKIE;Wroc≥aw;åredzka ;94;84;230;DK;PDZ.C.005;NeuroCar RedLight;ncar-h-cpu-06b00108;;;51,14652778;16,86163889;;
+czerwone úwiat≥o kolejowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;CyrulikÛw ;637;15;200;DW;CAN.C.004;NeuroCar RedLight;ncar-h-cpu-06b00169;;;52,25661111;21,17941667;;
+czerwone úwiat≥o kolejowe;Radomsko;radomszczaÒski;£”DZKIE;Radomsko;Pi≥sudskiego ;3952E;;;DG;CEN.C.007;NeuroCar RedLight;ncar-h-cpu-06b00170;;;51,06226944;19,43115;;
+czerwone úwiat≥o kolejowe;Wroc≥aw;Wroc≥aw;DOLNOåL•SKIE;Wroc≥aw;SzczeciÒska ;;;;DG;PDZ.C.004;NeuroCar RedLight;ncar-h-cpu-06b00107;;;51,12344444;16,93261111;;
+odcinkowy pomiar prÍdkoúci;Kolbuszowa;kolbuszowski;PODKARPACKIE;Kolbuszowa GÛrna; ;9;167;490;DK;PDW.O.2.001;Unicam VELOCITY3;CAM15001385;2525,5;2524,6;50,2315;21,78805556;50,21472222;21,8145
+odcinkowy pomiar prÍdkoúci;Nowa DÍba;tarnobrzeski;PODKARPACKIE;Nowa DÍba;ks. £agockiego 119;9;141;843;DK;PDW.O.2.008;Unicam VELOCITY3;CAM22010785;1830,4;1827,9;50,43845556;21,75051389;50,42238056;21,752775
+odcinkowy pomiar prÍdkoúci;Tarnowskie GÛry;tarnogÛrski;åL•SKIE;Tarnowskie GÛry;Obwodnica ;11;572;700;DK;SLA.O.2.005;Unicam VELOCITY3;CAM15001379;991,4;990,5;50,4345;18,84947222;50,43197222;18,86291667
+odcinkowy pomiar prÍdkoúci;Szlichtyngowa;wschowski;LUBUSKIE;GÛrczyna; ;12;137;300;DK;PDZ.O.2.001;Unicam VELOCITY3;CAM15001381;2530;2533,3;51,70731667;16,23951389;51,72556944;16,25906944
+odcinkowy pomiar prÍdkoúci;RogÛüno;grudziπdzki;KUJAWSKO-POMORSKIE;K≥Ûdka; ;16;18;393;DK;PLN.O.1.005;Unicam VELOCITY3;CAM23001805;2211,5;2206,9;53,50544444;18,92162222;53,51788056;18,9398
+odcinkowy pomiar prÍdkoúci;Gietrzwa≥d;olsztyÒski;WARMI—SKO-MAZURSKIE;Gietrzwa≥d; ;16;123;700;DK;PNW.O.2.005;Unicam VELOCITY3;CAM15001372;5025,4;5032,4;53,74426667;20,229;53,75990556;20,29739444
+odcinkowy pomiar prÍdkoúci;Korczyna;kroúnieÒski;PODKARPACKIE;Iskrzynia;Podkarpacka ;19;248;968;DK;PDW.O.2.002;Unicam VELOCITY3;CAM15001386;1392,1;1392,1;49,68403889;21,85697222;49,67398889;21,8492
+odcinkowy pomiar prÍdkoúci;Dukla;kroúnieÒski;PODKARPACKIE;Dukla;Trakt WÍgierski 4;19;268;55;DK;PDW.O.2.004;Unicam VELOCITY3;CAM22010784;1565,4;1556,6;49,561;21,68794444;49,54880556;21,68417778
+odcinkowy pomiar prÍdkoúci;Niebylec;strzyøowski;PODKARPACKIE;Lutcza; 617;19;228;808;DK;PDW.O.2.005;Unicam VELOCITY3;CAM23000028;1721,8;1722,9;49,80661111;21,88872222;49,80322222;21,91156667
+odcinkowy pomiar prÍdkoúci;Zab≥udÛw;bia≥ostocki;PODLASKIE;Zab≥udÛw; ;19;74;230;DK;PNW.O.2.001;Unicam VELOCITY3;CAM15001389;3826,6;3823;53,04821667;23,28968333;53,02106667;23,32128333
+odcinkowy pomiar prÍdkoúci;Somonino;kartuski;POMORSKIE;Babi DÛ≥;Babi DÛ≥ ;20;291;377;DK;PLN.O.2.004;Unicam VELOCITY3;CAM22010787;2710,4;2713,1;54,27527778;18,29389722;54,29796944;18,30827222
+odcinkowy pomiar prÍdkoúci;Rabka-ZdrÛj;nowotarski;MA£OPOLSKIE;Rabka-ZdrÛj;Sπdecka 81;28;69;70;DK;PLD.O.2.006;Unicam VELOCITY4;CAM25004057;2731,9;2734,5;49,62173056;19,95911389;49,62919167;19,99344722
+odcinkowy pomiar prÍdkoúci;SulechÛw;zielonogÛrski;LUBUSKIE;Okunin; ;32;75;0;DK;PNZ.O.2.001;Unicam VELOCITY3;CAM15001363;3014;3013,4;52,091;15,65783333;52,09678333;15,7009
+odcinkowy pomiar prÍdkoúci;Miko≥Ûw;miko≥owski;åL•SKIE;Miko≥Ûw;Gliwicka 268;44;16;673;DK;SLA.O.2.014;Unicam VELOCITY3;CAM23000030;1307,3;1306,4;50,22686389;18,80830833;50,22152222;18,82450833
+odcinkowy pomiar prÍdkoúci;TomaszÛw Mazowiecki;tomaszowski;£”DZKIE;TomaszÛw Mazowiecki;Wysoka ;48;1;395;DK;CEN.O.2.002;Unicam VELOCITY3;CAM15001362;2169,8;2170,6;51,55611111;20,02158333;51,55030556;20,0495
+odcinkowy pomiar prÍdkoúci;JadÛw;wo≥omiÒski;MAZOWIECKIE;Warmiaki; ;50;246;790;DK;CAN.O.2.001;Unicam VELOCITY3;CAM15001374;2647,5;2649,5;52,43883333;21,63827778;52,46036111;21,65319444
+odcinkowy pomiar prÍdkoúci;CelestynÛw;otwocki;MAZOWIECKIE;Regut; ;50;192;450;DK;CAN.O.2.005;Unicam VELOCITY3;CAM15001382;2760;2760;52,04091667;21,39158333;52,04730556;21,43011111
+odcinkowy pomiar prÍdkoúci;Sochaczew;sochaczewski;MAZOWIECKIE;Sochaczew; ;50;88;429;DK;CAN.O.2.007;Unicam VELOCITY3;CAM15001367;2839,4;2840,3;52,20805556;20,25286111;52,18661111;20,27733333
+odcinkowy pomiar prÍdkoúci;MszczonÛw;øyrardowski;MAZOWIECKIE;MszczonÛw; ;50;3;145;DK;CAN.O.2.014;Unicam VELOCITY3;CAM23000025;2930;2937,4;51,98106667;20,53036944;51,97254722;20,57186944
+odcinkowy pomiar prÍdkoúci;ChynÛw;grÛjecki;MAZOWIECKIE;ChynÛw; ;50;8;300;DK;CAN.O.2.016;Unicam VELOCITY3;CAM23000032;7482,1;7479,9;51,89694444;20,99472222;51,91555556;21,09555556
+odcinkowy pomiar prÍdkoúci;Piecki;mrπgowski;WARMI—SKO-MAZURSKIE;Gwiazdowo; ;59;45;310;DK;PNW.O.2.004;Unicam VELOCITY3;CAM15001376;5620,7;5620,7;53,825875;21,30512778;53,77971944;21,33416667
+odcinkowy pomiar prÍdkoúci;Karniewo;makowski;MAZOWIECKIE;Karniewo; ;60;178;910;DK;PNW.O.2.002;Unicam VELOCITY3;CAM15001377;1795,4;1797,9;52,8337;20,95895;52,839;20,98428333
+odcinkowy pomiar prÍdkoúci;Skierniewice;skierniewicki;£”DZKIE;Mokra Prawa; 10;70;21;564;DK;CEN.O.2.012;Unicam VELOCITY3;CAM22010782;2475,5;2475,2;51,99555556;20,10222222;51,97916667;20,12638889
+odcinkowy pomiar prÍdkoúci;G≥uchÛw;skierniewicki;£”DZKIE;Z≥ota; 13;72;156;484;DK;CEN.O.2.001;Unicam VELOCITY3;CAM15001384;3285,8;3283,6;51,77527778;20,12405556;51,77297222;20,17063889
+odcinkowy pomiar prÍdkoúci;Kluki;be≥chatowski;£”DZKIE;Kluki; 115;74;68;894;DK;CEN.O.2.003;Unicam VELOCITY3;CAM15001383;1392,4;1390,2;51,34194167;19,23035556;51,34315833;19,24997222
+odcinkowy pomiar prÍdkoúci;Bia≥a;wieluÒski;£”DZKIE;Bia≥a Pierwsza; 42;74;6;660;DK;CEN.O.2.008;Unicam VELOCITY3;CAM23000033;3850,5;3848,4;51,27568333;18,42863333;51,26115556;18,47689444
+odcinkowy pomiar prÍdkoúci;GÛrno;kielecki;åWI TOKRZYSKIE;Radlin; ;74;89;925;DK;PLD.O.2.001;Unicam VELOCITY3;CAM15001375;3993,6;3995,3;50,86569444;20,73522222;50,86111111;20,79061111
+odcinkowy pomiar prÍdkoúci;Gorzyce;wodzis≥awski;åL•SKIE;Gorzyce;Rybnicka 16;78;9;672;DK;SLA.O.2.003;Unicam VELOCITY3;CAM15001371;847,1;848,8;49,96005556;18,40177778;49,96425;18,41155556
+odcinkowy pomiar prÍdkoúci;Pilchowice;gliwicki;åL•SKIE;Nieborowice;Rybnicka ;78;44;906;DK;SLA.O.2.004;Unicam VELOCITY3;CAM15001364;2200,5;2202,5;50,19941667;18,58158333;50,21522222;18,60022222
+odcinkowy pomiar prÍdkoúci;SkoczÛw;cieszyÒski;åL•SKIE;Ochaby Ma≥e; ;81;57;930;DK;SLA.O.1.021;Unicam VELOCITY4;CAM25004022;3143;3166,2;49,83488889;18,78108333;49,80988889;18,79055556
+odcinkowy pomiar prÍdkoúci;PuchaczÛw;≥ÍczyÒski;LUBELSKIE;Turowola; ;82;29;675;DK;WSC.O.1.002;Unicam VELOCITY3;CAM15001368;3888;3888,5;51,29888889;22,90102778;51,30394444;22,95525
+odcinkowy pomiar prÍdkoúci;WÛlka;lubelski;LUBELSKIE;£uszczÛw Drugi; ;82;16;390;DK;WSC.O.2.001;Unicam VELOCITY3;CAM15001373;2875,3;2872,2;51,30411111;22,73616667;51,29708333;22,77586111
+odcinkowy pomiar prÍdkoúci;Zabrze;Zabrze;åL•SKIE;Zabrze;Ja Nowaka-JezioraÒskiego ;88;21;700;DK;SLA.O.1.011;Unicam VELOCITY3;CAM23003839;7165,3;7161,2;50,31138333;18,737125;50,33528889;18,82980833
+odcinkowy pomiar prÍdkoúci;Gliwice;Gliwice;åL•SKIE;Gliwice;Ja Nowaka-JezioraÒskiego ;88;17;0;DK;SLA.O.2.008;Unicam VELOCITY3;CAM23001424;2941,1;2946,7;50,31542222;18,66888611;50,31260556;18,70945556
+odcinkowy pomiar prÍdkoúci;SulejÛwek;miÒski;MAZOWIECKIE;SulejÛwek; ;92;496;450;DK;CAN.O.2.006;Unicam VELOCITY3;CAM15001369;1501,1;1501,9;52,22230556;21,26194444;52,22158333;21,28166667
+odcinkowy pomiar prÍdkoúci;åwinoujúcie;åwinoujúcie;ZACHODNIOPOMORSKIE;åwinoujúcie; ;93;0;405;DK;PNZ.O.2.003;Unicam VELOCITY3;CAM23003840;2485,2;2479,6;53,89094444;14,24227778;53,90172222;14,26916667
+odcinkowy pomiar prÍdkoúci;DÍbica;dÍbicki;PODKARPACKIE;Podgrodzie;DK94 1;94;541;760;DK;PDW.O.2.006;Unicam VELOCITY3;CAM23001430;1078;1077,4;50,00929722;21,34244722;50,01489722;21,35453056
+odcinkowy pomiar prÍdkoúci;TarnÛw;TarnÛw;MA£OPOLSKIE;TarnÛw; ;94;74;510;DK;PLD.O.2.002;Unicam VELOCITY3;CAM15001378;4392,8;4380,7;49,99254722;20,99455556;50,00826944;21,04910556
+odcinkowy pomiar prÍdkoúci;Lewin Brzeski;brzeski;OPOLSKIE;£osiÛw;G≥Ûw 1;94;151;63;DK;SLA.O.2.001;Unicam VELOCITY3;CAM15001388;2161,2;2161,2;50,79388889;17,55394444;50,78766667;17,58141667
+odcinkowy pomiar prÍdkoúci;Witnica;gorzowski;LUBUSKIE;Bia≥cz; ;132;21;66;DW;PNZ.O.2.004;Unicam VELOCITY3;CAM23001429;3088,9;3088,9;52,67460833;14,91230833;52,676625;14,95778333
+odcinkowy pomiar prÍdkoúci;Barlinek;myúliborski;ZACHODNIOPOMORSKIE;Brynka; ;151;114;0;DW;PNZ.O.2.005;Unicam VELOCITY3;CAM23000029;7844,7;7849,2;52,956825;15,18249167;52,88756944;15,19147222
+odcinkowy pomiar prÍdkoúci;Kartuzy;kartuski;POMORSKIE;Borowo; ;211;69;249;DW;PLN.O.2.003;Unicam VELOCITY3;CAM23001427;1365,8;1373,5;54,31651944;18,28453611;54,32155556;18,30289444
+odcinkowy pomiar prÍdkoúci;Reda;wejherowski;POMORSKIE;Reda; ;216;3;450;DW;PLN.O.1.002;Unicam VELOCITY3;CAM16003406;1648;1642;54,61966667;18,3415;54,63325;18,34466667
+odcinkowy pomiar prÍdkoúci;Inowroc≥aw;inowroc≥awski;KUJAWSKO-POMORSKIE;Cieúlin; 33;251;69;820;DW;PLN.O.1.006;Unicam VELOCITY3;CAM23001428;3934;3931,7;52,80478889;18,136275;52,80329722;18,193775
+odcinkowy pomiar prÍdkoúci;WiπzÛw;strzeliÒski;DOLNOåL•SKIE;K≥osÛw; ;403;5;685;DW;PDZ.O.2.004;Unicam VELOCITY3;CAM23000027;2648,1;2647,3;50,81216944;17,34451389;50,788475;17,3459
+odcinkowy pomiar prÍdkoúci;G≥ubczyce;g≥ubczycki;OPOLSKIE;Kietlice; ;416;26;58;DW;SLA.O.2.009;Unicam VELOCITY3;CAM23001422;2408,8;2406,3;50,30016667;17,81272778;50,27915833;17,81093611
+odcinkowy pomiar prÍdkoúci;Pabianice;pabianicki;£”DZKIE;Bychlew;Jutrzkowicka 5;485;3;199;DW;CEN.O.2.009;Unicam VELOCITY3;CAM22010781;2133;2132,5;51,64153056;19,36031389;51,62238889;19,36110556
+odcinkowy pomiar prÍdkoúci;CzosnÛw;nowodworski;MAZOWIECKIE;Cybulice Duøe; ;579;7;103;DW;CAN.O.1.024;Unicam VELOCITY 5;CAM25004549;12865,3;12866,1;52,37400278;20,62971667;52,26194167;20,592775
+odcinkowy pomiar prÍdkoúci;TuroúÒ Koúcielna;bia≥ostocki;PODLASKIE;Baciuty; ;678;17;700;DW;PNW.O.2.006;Unicam VELOCITY3;CAM23000031;8520,6;8519,8;53,04805556;22,97252778;53,04144444;22,84888889
+odcinkowy pomiar prÍdkoúci;BrwinÛw;pruszkowski;MAZOWIECKIE;Kanie;Warszawska 9B;719;24;430;DW;CAN.O.2.015;Unicam VELOCITY3;CAM22010778;1347,6;1349,3;52,14033333;20,77107778;52,131575;20,75774444
+odcinkowy pomiar prÍdkoúci;Pu≥awy;pu≥awski;LUBELSKIE;Go≥πb; ;801;111;376;DW;WSC.O.1.004;Unicam VELOCITY3;CAM23001426;5560,1;5559,9;51,52186944;21,864625;51,47687778;21,87756111
+odcinkowy pomiar prÍdkoúci;TryÒcza;przeworski;PODKARPACKIE;Gniewczyna Tryniecka;Gniewczy Tryniecka 202;835;141;502;DW;PDW.O.2.009;Unicam VELOCITY3;CAM22010786;2958,4;2956,7;50,11783333;22,51911111;50,09911111;22,49366667
+odcinkowy pomiar prÍdkoúci;HrubieszÛw;hrubieszowski;LUBELSKIE;HrubieszÛw; ;844;50;87;DW;WSC.O.2.003;Unicam VELOCITY3;CAM23001425;4086,7;4088;50,858575;23,84681111;50,829875;23,88157222
+odcinkowy pomiar prÍdkoúci;Stalowa Wola;stalowowolski;PODKARPACKIE;Stalowa Wola; ;871;35;800;DW;PDW.O.3.003;Unicam VELOCITY3;CAM15001370;6518;6520;50,57211111;21,94438889;50,569525;22,03411111
+odcinkowy pomiar prÍdkoúci;Katowice;Katowice;åL•SKIE;Katowice;Nikodema i JÛzefa RencÛw w kierunku Katowic;902;1;490;DW;SLA.O.1.012;Unicam VELOCITY3;CAM23001802;1277,4;;50,27378333;18,96358611;50,27011944;18,98047778
+odcinkowy pomiar prÍdkoúci;Katowice;Katowice;åL•SKIE;Katowice;Nikodema i JÛzefa RencÛw ;902;1;490;DW;SLA.O.1.013;Unicam VELOCITY3 - drugi sterownik na odcinku;CAM23003841;1275,4;;50,27020278;18,98062778;50,27398056;18,96371667
+odcinkowy pomiar prÍdkoúci;åwierklany;rybnicki;åL•SKIE;Jankowice;åwierklaÒska 51;929;;;DW;SLA.O.2.010;Unicam VELOCITY3;CAM23001423;1714,9;1712,1;50,04185833;18,57438889;50,02929167;18,58788056
+odcinkowy pomiar prÍdkoúci;Suszec;pszczyÒski;åL•SKIE;Kobielice;PszczyÒska/Sportowa ;935;;;DW;SLA.O.1.007;Unicam VELOCITY3;CAM22010779;4720,3;4722,8;50,02917778;18,79423889;50,01572778;18,85135556
+odcinkowy pomiar prÍdkoúci;RzeszÛw;RzeszÛw;PODKARPACKIE;RzeszÛw;DÍbicka 59;1391;;;DW;PDW.O.2.007;Unicam VELOCITY3;CAM22010783;3888,5;3892,1;50,03886111;21,9035;50,05483333;21,95147222
+odcinkowy pomiar prÍdkoúci;Wroc≥aw;Wroc≥aw;DOLNOåL•SKIE;Wroc≥aw;Wilanowska 4;105392D;;;DG;PDZ.O.3.005;Unicam VELOCITY3;CAM23003838;2615,8;;51,14277778;17,09736111;51,15372222;17,12944444
+odcinkowy pomiar prÍdkoúci;Wroc≥aw;Wroc≥aw;DOLNOåL•SKIE;Wroc≥aw;Boles≥awa Krzywoustego ;105392D;;;DG;PDZ.O.3.006;Unicam VELOCITY3 - drugi sterownik na odcinku;CAM23003842;2612,3;;51,14302778;17,09727778;51,15386111;17,12933333
+odcinkowy pomiar prÍdkoúci;£Ûdü;£Ûdü;£”DZKIE;£Ûdü;Chocianowicka 4A;1120E;;;DG;CEN.O.3.010;Unicam VELOCITY3;CAM22010780;3438,6;3438,6;51,70659444;19,420625;51,70966389;19,37108889
+odcinkowy pomiar prÍdkoúci;LubieÒ Kujawski;w≥oc≥awski;KUJAWSKO-POMORSKIE;Siemionki; ;A1;224;316;DK;CEN.O.2.013;Unicam VELOCITY3;CAM23001421;14024,6;14044,1;52,44086111;19,23658056;52,33994444;19,35648333
+odcinkowy pomiar prÍdkoúci;£adzice;radomszczaÒski;£”DZKIE;Stobiecko Szlacheckie; ;A1;389;870;DK;CEN.O.2.015;Unicam VELOCITY4;CAM25004392;13563,2;;51,20388889;19,47955556;51,09977778;19,38297222
+odcinkowy pomiar prÍdkoúci;KrzyøanÛw;kutnowski;£”DZKIE;Kaszewy Dworne; ;A1;254;235;DK;CEN.O.2.018;Unicam VELOCITY4;CAM25004049;17960,9;17987,9;52,22097222;19,47069444;52,06911111;19,53538889
+odcinkowy pomiar prÍdkoúci;KamieÒsk;radomszczaÒski;£”DZKIE;Dπbrowa; ;A1;371;613;DK;CEN.O.2.019;Unicam VELOCITY4;CAM25004381;19304,4;;51,3945;19,62963889;51,23802778;19,51830556
+odcinkowy pomiar prÍdkoúci;AleksandrÛw Kujawski;aleksandrowski;KUJAWSKO-POMORSKIE;Kuczek; ;A1;165;600;DK;PLN.O.2.007;Unicam VELOCITY3;CAM23001806;11979,6;11985,3;52,86190278;18,7668;52,76896389;18,8492
+odcinkowy pomiar prÍdkoúci;Konopiska;czÍstochowski;åL•SKIE;Wπsosz; ;A1;442;420;DK;SLA.O.2.017;Unicam VELOCITY4;CAM25004023;15366,6;15379,5;50,74061111;19,05147222;50,60525;19,03198333
+odcinkowy pomiar prÍdkoúci;MykanÛw;czÍstochowski;åL•SKIE;£ochynia; ;A1;413;60;DK;SLA.O.2.018;Unicam VELOCITY4;CAM25004382;18972,7;;51,06402778;19,36380556;50,9205;19,22077778
+odcinkowy pomiar prÍdkoúci;KamieÒsk;radomszczaÒski;£”DZKIE;KamieÒsk; ;A1;377;86;DK;CEN.O.2.017;Unicam VELOCITY4 - drugi sterownik na odcinku;CAM25004053;12777,2;;51,19725;19,47566944;51,09977778;19,382975
+odcinkowy pomiar prÍdkoúci;PiotrkÛw Trybunalski;PiotrkÛw Trybunalski;£”DZKIE;PiotrkÛw Trybunalski; ;A1;352;687;DK;CEN.O.2.020;Unicam VELOCITY4 - drugi sterownik na odcinku;CAM25004024;18928,7;;51,39102778;19,62880556;51,23791667;19,51866667
+odcinkowy pomiar prÍdkoúci;Zabrze;Zabrze;åL•SKIE;Zabrze; ;A1;17;630;DK;SLA.O.2.020;Unicam VELOCITY4;CAM25004391;4189;;50,37352778;18,76183333;50,35058056;18,72386111
+odcinkowy pomiar prÍdkoúci;Zabrze;Zabrze;åL•SKIE;Zabrze; ;A1;13;454;DK;SLA.O.2.020;Unicam VELOCITY4 - drugi sterownik na odcinku;CAM25004050;4155,7;;50,35058056;18,72386111;50,37352778;18,76183333
+odcinkowy pomiar prÍdkoúci;£adzice;radomszczaÒski;£”DZKIE;Radziechowice Drugie; ;A1;394;74;DK;SLA.O.2.019;Unicam VELOCITY4 - drugi sterownik na odcinku;CAM25004025;19215,3;;51,064;19,36397222;50,91858333;19,21927778
+odcinkowy pomiar prÍdkoúci;Stare Miasto;koniÒski;WIELKOPOLSKIE;Ødøary; ;A2;263;116;DK;WLK.O.2.003;Unicam VELOCITY3;CAM23001804;11185,5;11175,4;52,14968333;18,28920556;52,15124167;18,44799167
+odcinkowy pomiar prÍdkoúci;Dπbie;kolski;WIELKOPOLSKIE;Cichmiana; ;A2;301;416;DK;WLK.O.2.004;Unicam VELOCITY4;CAM25004031;15173;15176;52,1395;18,61458333;52,07399167;18,80813056
+odcinkowy pomiar prÍdkoúci;DÍbe Wielkie;miÒski;MAZOWIECKIE;ChoszczÛwka DÍbska; ;A2;506;489;DK;WSC.O.2.006;Unicam VELOCITY4;CAM25004019;17374;17384,2;52,20544444;21,51111111;52,20163889;21,75802778
+odcinkowy pomiar prÍdkoúci;PoznaÒ;PoznaÒ;WIELKOPOLSKIE;PoznaÒ; ;A2;168;510;DK;WLK.O.3.001;Unicam VELOCITY3;CAM23003973;7471,5;;52,35219444;16,86138889;52,34838889;16,96988889
+odcinkowy pomiar prÍdkoúci;LuboÒ;poznaÒski;WIELKOPOLSKIE;LuboÒ; ;A2;161;30;DK;WLK.O.3.001;Unicam VELOCITY3 - drugi sterownik na odcinku;CAM23003974;7482,4;;52,34838889;16,96988889;52,35219444;16,86138889
+odcinkowy pomiar prÍdkoúci;Kπty Wroc≥awskie;wroc≥awski;DOLNOåL•SKIE;Kπty Wroc≥awskie;Autostrada A4 ;A4;135;918;DK;PDZ.O.3.003;Unicam VELOCITY3;CAM23000034;8095,1;8091;51,03544444;16,62155556;51,019625;16,73255833
+odcinkowy pomiar prÍdkoúci;Kobierzyce;wroc≥awski;DOLNOåL•SKIE;Biskupice PodgÛrne; ;A4;146;720;DK;PDZ.O.3.009;Unicam VELOCITY4;CAM25001968;7660,9;7662;51,02311111;16,77694444;51,03680556;16,88011111
+odcinkowy pomiar prÍdkoúci;TarnÛw;TarnÛw;MA£OPOLSKIE;TarnÛw; ;A4;502;720;DK;PLD.O.2.007;Unicam VELOCITY4;CAM25004056;14761,5;14762,5;50,05411389;21,02371111;50,09553056;21,21314722
+odcinkowy pomiar prÍdkoúci;ChojnÛw;legnicki;DOLNOåL•SKIE;Krzywa; ;A4;61;474;DK;PDZ.O.3.012;Unicam VELOCITY4;CAM25004055;10269,5;;51,32138889;15,65888889;51,27861111;15,78611111
+odcinkowy pomiar prÍdkoúci;Gromadka;boles≥awiecki;DOLNOåL•SKIE;Krzyøowa; ;A4;51;206;DK;PDZ.O.3.012;Unicam VELOCITY4 - drugi sterownik na odcinku;CAM25004393;10273,2;;51,27861111;15,78611111;51,32138889;15,65888889
+odcinkowy pomiar prÍdkoúci;Dπbrowa;opolski;OPOLSKIE;Prπdy; ;A4;223;970;DK;SLA.O.2.015;Unicam VELOCITY4;CAM25003404;13606,4;13607;50,65591667;17,71286111;50,57336111;17,85263889
+odcinkowy pomiar prÍdkoúci;Gogolin;krapkowicki;OPOLSKIE;Gogolin; ;A4;252;786;DK;SLA.O.2.016;Unicam VELOCITY4;CAM25004046;6488;6471,4;50,48397222;18,00622222;50,479;18,09511111
+odcinkowy pomiar prÍdkoúci;KrakÛw;KrakÛw;MA£OPOLSKIE;KrakÛw; ;A4;423;794;DK;PLD.O.2.009;Unicam VELOCITY4;CAM25004380;3938,1;;50,00044444;19,94919444;50,00180556;20,00358333
+odcinkowy pomiar prÍdkoúci;KrakÛw;KrakÛw;MA£OPOLSKIE;KrakÛw; ;A4;419;860;DK;PLD.O.2.009;Unicam VELOCITY4 - drugi sterownik na odcinku;CAM25004021;3928,6;;50,00180556;20,00358333;50,00044444;19,94919444
+odcinkowy pomiar prÍdkoúci;Szczecin;Szczecin;ZACHODNIOPOMORSKIE;Szczecin; ;A6;24;710;DK;PNZ.O.2.007;Unicam VELOCITY4;CAM25004383;3401;;53,39924167;14,72037222;53,41926667;14,75687222
+odcinkowy pomiar prÍdkoúci;Szczecin;Szczecin;ZACHODNIOPOMORSKIE;Szczecin; ;A6;24;710;DK;PNZ.O.2.007;Unicam VELOCITY4 - drugi sterownik na odcinku;CAM25004029;3409;;53,41926667;14,75687222;53,39924167;14,72037222
+odcinkowy pomiar prÍdkoúci;Wroc≥aw;Wroc≥aw;DOLNOåL•SKIE;Wroc≥aw; ;A8;23;205;DK;PDZ.O.3.010;Unicam VELOCITY4;CAM25001969;8289,9;;51,16766944;17,00518611;51,11945833;16,93231667
+odcinkowy pomiar prÍdkoúci;Wroc≥aw;Wroc≥aw;DOLNOåL•SKIE;Wroc≥aw; ;A8;14;698;DK;PDZ.O.3.011;Unicam VELOCITY4 - drugi sterownik na odcinku;CAM25001970;8336;;51,16792222;17,00253333;51,11772222;16,93224722
+odcinkowy pomiar prÍdkoúci;Dopiewo;poznaÒski;WIELKOPOLSKIE;Dπbrowa; ;S11;17;529;DK;WLK.O.2.002;Unicam VELOCITY3;CAM23001803;2326,6;2337,3;52,41266111;16,72637222;52,43249444;16,73551111
+odcinkowy pomiar prÍdkoúci;KoÒskowola;pu≥awski;LUBELSKIE;ChrzπchÛwek; ;S12;24;417;DK;WSC.O.2.007;Unicam VELOCITY4;CAM25004044;10337,2;10330,9;51,43137222;22,14337222;51,38469167;22,26961111
+odcinkowy pomiar prÍdkoúci;DobroÒ;pabianicki;£”DZKIE;DobroÒ; ;S14;75;270;DK;CEN.O.3.011;Unicam VELOCITY3;CAM23001801;5376,2;5407,5;51,64797222;19,27111111;51,68022222;19,32097222
+odcinkowy pomiar prÍdkoúci;Garwolin;garwoliÒski;MAZOWIECKIE;Garwolin; ;S17;42;721;DK;WSC.O.2.005;Unicam VELOCITY4;CAM25004027;6204,9;6177,6;51,89219444;21,57891667;51,86097222;21,64125
+odcinkowy pomiar prÍdkoúci;JastkÛw;lubelski;LUBELSKIE;Dπbrowica; ;S19;1;370;DK;WSC.O.2.009;Unicam VELOCITY4;CAM25004388;7524,4;;51,21547222;22,44125;51,27658333;22,43702778
+odcinkowy pomiar prÍdkoúci;Konopnica;lubelski;LUBELSKIE;Marynin; ;S19;8;900;DK;WSC.O.2.008;Unicam VELOCITY4 - drugi sterownik na odcinku;CAM25004045;7536,1;;51,21560556;22,440925;51,27666667;22,43688889
+odcinkowy pomiar prÍdkoúci;Warszawa;Warszawa;MAZOWIECKIE;Warszawa; ;S2;473;700;DK;CAN.O.1.012;Unicam VELOCITY3;CAM15001366;2520;;52,13998889;21,03162222;52,15058889;21,06325278
+odcinkowy pomiar prÍdkoúci;Wiπzowna;otwocki;MAZOWIECKIE;ZagÛrze; ;S2;487;958;DK;CAN.O.3.018;Unicam VELOCITY4;CAM25003403;10336,1;;52,155;21,11863889;52,194;21,24805556
+odcinkowy pomiar prÍdkoúci;Warszawa;Warszawa;MAZOWIECKIE;Warszawa; ;S2;471;225;DK;CAN.O.1.013;Unicam VELOCITY3 - drugi sterownik na odcinku;CAM15001387;2533;;52,15171111;21,06537778;52,14029167;21,03326944
+odcinkowy pomiar prÍdkoúci;Warszawa;Warszawa;MAZOWIECKIE;Warszawa; ;S2;477;624;DK;CAN.O.3.019;Unicam VELOCITY4 - drugi sterownik na odcinku;CAM25003402;10338,5;;52,15522222;21,11847222;52,194;21,24802778
+odcinkowy pomiar prÍdkoúci;Stare Bogaczowice;wa≥brzyski;DOLNOåL•SKIE;Nowe Bogaczowice; ;S3;344;555;DK;PDZ.O.1.007;Unicam VELOCITY3;CAM15001380;2447,3;;50,87048333;16,15833611;50,84975;16,15183056
+odcinkowy pomiar prÍdkoúci;GorzÛw Wielkopolski;GorzÛw Wielkopolski;LUBUSKIE;GorzÛw Wielkopolski; ;S3;90;382;DK;PNZ.O.2.008;Unicam VELOCITY4;CAM25004054;4214;4198,3;52,70805833;15,16307778;52,69994167;15,222975
+odcinkowy pomiar prÍdkoúci;PrzybiernÛw;goleniowski;ZACHODNIOPOMORSKIE;Kartlewo; ;S3;42;211;DK;PNZ.O.2.010;Unicam VELOCITY4;CAM25004036;4092;4090;53,82936667;14,75126389;53,79644444;14,77675
+odcinkowy pomiar prÍdkoúci;BolkÛw;jaworski;DOLNOåL•SKIE;Sady GÛrne; ;S3;342;74;DK;PDZ.O.1.008;Unicam VELOCITY3 - drugi sterownik na odcinku;CAM15001365;2592;;50,84884722;16,15147778;50,87066111;16,15896111
+odcinkowy pomiar prÍdkoúci;Dobrcz;bydgoski;KUJAWSKO-POMORSKIE;Trzeciewiec; ;S5;39;545;DK;PLN.O.2.012;Unicam VELOCITY4;CAM25004051;6780;6773;53,30525;18,25180556;53,26058333;18,18627778
+odcinkowy pomiar prÍdkoúci;Komorniki;poznaÒski;WIELKOPOLSKIE;ChomÍcice; ;S5;1;354;DK;WLK.O.2.005;Unicam VELOCITY4;CAM25004052;9042;9029;52,341425;16,74940556;52,27758611;16,66921111
+odcinkowy pomiar prÍdkoúci;Olsztynek;olsztyÒski;WARMI—SKO-MAZURSKIE;Ameryka; ;S51b;0;458;DK;PNW.O.2.009;Unicam VELOCITY4;CAM25004042;13319;13325;53,70611111;20,42111111;53,60722222;20,31555556
+odcinkowy pomiar prÍdkoúci;KrakÛw;KrakÛw;MA£OPOLSKIE;KrakÛw; ;S52;10;511;DK;PLD.O.3.004;iCar5-AverageSpeed-BE-C;ICAR5C2501;1176,8;;50,11377778;19,91441667;50,11244444;19,93052778
+odcinkowy pomiar prÍdkoúci;KrakÛw;KrakÛw;MA£OPOLSKIE;KrakÛw; ;S52;10;372;DK;PLD.O.3.005;iCar5-AverageSpeed-BE-C - drugi sterownik na odcinku;ICAR5C2502;1234,5;;50,11252778;19,92863889;50,11430556;19,91341667
+odcinkowy pomiar prÍdkoúci;GdaÒsk;GdaÒsk;POMORSKIE;GdaÒsk; ;S6;327;546;DK;PLN.O.2.014;Unicam VELOCITY4;CAM25004028;3370;3385;54,40913889;18,48591667;54,38311111;18,50555556
+odcinkowy pomiar prÍdkoúci;Ko≥obrzeg;ko≥obrzeski;ZACHODNIOPOMORSKIE;Niekanin; ;S6;90;110;DK;PNZ.O.2.006;Unicam VELOCITY4;CAM25004037;3040;3045;54,13104444;15,57897778;54,15605556;15,59789722
+odcinkowy pomiar prÍdkoúci;Biesiekierz;koszaliÒski;ZACHODNIOPOMORSKIE;Stare Bielice; ;S6;125;90;DK;PNZ.O.2.009;Unicam VELOCITY4;CAM25004035;12218;12193;54,20244444;15,91994722;54,18840833;16,10514444
+odcinkowy pomiar prÍdkoúci;GdaÒsk;GdaÒsk;POMORSKIE;GdaÒsk; ;S6;337;522;DK;PLN.O.2.015;Unicam VELOCITY4;CAM25004386;3781;;54,35908333;18,51966667;54,32869444;18,53883333
+odcinkowy pomiar prÍdkoúci;GdaÒsk;GdaÒsk;POMORSKIE;GdaÒsk; ;S6;333;826;DK;PLN.O.2.015;Unicam VELOCITY4 - drugi sterownik na odcinku;CAM25004038;3766;;54,32869444;18,53883333;54,35908333;18,51966667
+odcinkowy pomiar prÍdkoúci;GrÛjec;grÛjecki;MAZOWIECKIE;GrÛjec; ;S7;414;353;DK;CAN.O.2.022;Unicam VELOCITY4;CAM25004026;7421,7;7432,8;51,94011111;20,84641667;51,87486111;20,85416667
+odcinkowy pomiar prÍdkoúci;Promna;bia≥obrzeski;MAZOWIECKIE;FalÍcice; ;S7;3;50;DK;CEN.O.2.007;Unicam VELOCITY3;CAM23000026;14061;14052,8;51,66583333;20,95541667;51,55547222;21,03377778
+odcinkowy pomiar prÍdkoúci;JedliÒsk;radomski;MAZOWIECKIE;KÍpiny; ;S7;0;960;DK;CEN.O.2.014;Unicam VELOCITY4;CAM25004033;15916,9;15924,9;51,52938889;21,08197222;51,39402778;21,02222222
+odcinkowy pomiar prÍdkoúci;LubieÒ;myúlenicki;MA£OPOLSKIE;Skomielna Bia≥a; ;S7;26;50;DK;PLD.O.3.003;Unicam VELOCITY3;CAM15001390;2042,2;2039,6;49,651;19,90455556;49,66722222;19,88994444
+odcinkowy pomiar prÍdkoúci;Pas≥Ík;elblπski;WARMI—SKO-MAZURSKIE;Krosno; ;S7;14;450;DK;PLN.O.2.008;Unicam VELOCITY4;CAM25004040;11553;11543;54,07097222;19,61877778;53,981975;19,69668333
+odcinkowy pomiar prÍdkoúci;Nidzica;nidzicki;WARMI—SKO-MAZURSKIE;Tatary; ;S7;34;160;DK;PLN.O.2.010;Unicam VELOCITY4;CAM25004387;11287;;53,40827778;20,33944444;53,33377778;20,43563889
+odcinkowy pomiar prÍdkoúci;Nowy DwÛr GdaÒski;nowodworski;POMORSKIE;Or≥owo; ;S7;36;933;DK;PLN.O.2.013;Unicam VELOCITY4;CAM25004039;9134;9131;54,25372222;18,97063889;54,21611111;19,09377778
+odcinkowy pomiar prÍdkoúci;ZagnaÒsk;kielecki;åWI TOKRZYSKIE;KajetanÛw; ;S7;5;906;DK;PLD.O.2.008;Unicam VELOCITY4;CAM25004384;2522;;50,95340556;20,70556667;50,94155833;20,67630278
+odcinkowy pomiar prÍdkoúci;ZagnaÒsk;kielecki;åWI TOKRZYSKIE;Barcza; ;S7;3;390;DK;PLD.O.2.008;Unicam VELOCITY4 - drugi sterownik na odcinku;CAM25004032;2521,6;;50,94155833;20,67630278;50,95340556;20,70556667
+odcinkowy pomiar prÍdkoúci;Nidzica;nidzicki;WARMI—SKO-MAZURSKIE;Rπczki; ;S7;22;780;DK;PLN.O.2.011;Unicam VELOCITY4 - drugi sterownik na odcinku;CAM25004041;11262;;53,40828056;20,33944722;53,33386111;20,43597222
+odcinkowy pomiar prÍdkoúci;Olsztynek;olsztyÒski;WARMI—SKO-MAZURSKIE;Sudwa; ;S7g;1;100;DK;PLN.O.2.009;Unicam VELOCITY4;CAM25004030;10363;10364;53,59627778;20,09034444;53,58625;20,244
+odcinkowy pomiar prÍdkoúci;OøarÛw Mazowiecki;warszawski zachodni;MAZOWIECKIE;Macierzysz; ;S8;3;450;DK;CAN.O.2.009;Unicam VELOCITY3;CAM21003329;2955;;52,24244444;20,89136111;52,22011111;20,86808333
+odcinkowy pomiar prÍdkoúci;Warszawa;Warszawa;MAZOWIECKIE;Warszawa; ;S8;465;20;DK;CAN.O.2.011;Unicam VELOCITY3;CAM21003327;4046,6;;52,30758333;21,10263889;52,30288889;21,04452778
+odcinkowy pomiar prÍdkoúci;WyszkÛw;wyszkowski;MAZOWIECKIE;WyszkÛw; ;S8;2;950;DK;CAN.O.2.017;Unicam VELOCITY3;CAM23001807;6808,7;6789,3;52,5558;21,45617778;52,60483333;21,49585
+odcinkowy pomiar prÍdkoúci;Raszyn;pruszkowski;MAZOWIECKIE;WypÍdy; ;S8;6;255;DK;CAN.O.2.020;Unicam VELOCITY4;CAM25004390;2262,8;;52,16119444;20,905;52,14445;20,88638889
+odcinkowy pomiar prÍdkoúci;Nadarzyn;pruszkowski;MAZOWIECKIE;Nadarzyn; ;S8;437;884;DK;CAN.O.2.023;Unicam VELOCITY4;CAM25004389;3171,3;;52,10066667;20,82388889;52,08225;20,79272222
+odcinkowy pomiar prÍdkoúci;Nadarzyn;pruszkowski;MAZOWIECKIE;Nadarzyn; ;S8;441;63;DK;CAN.O.2.023;Unicam VELOCITY4 - drugi sterownik na odcinku;CAM25004047;3175,9;;52,08225;20,79272222;52,10066667;20,82388889
+odcinkowy pomiar prÍdkoúci;Koby≥ka;wo≥omiÒski;MAZOWIECKIE;Koby≥ka; ;S8;4;800;DK;CAN.O.2.025;Unicam VELOCITY4;CAM25004034;8111;;52,326025;21,153225;52,38846389;21,19600278
+odcinkowy pomiar prÍdkoúci;Radzymin;wo≥omiÒski;MAZOWIECKIE;Ciemne; ;S8;13;100;DK;CAN.O.2.025;Unicam VELOCITY4 - drugi sterownik na odcinku;CAM25004385;8136;;52,38846389;21,19600278;52,326025;21,153225
+odcinkowy pomiar prÍdkoúci;OstrÛw Mazowiecka;ostrowski;MAZOWIECKIE;OstrÛw Mazowiecka; ;S8;6;201;DK;PNW.O.2.007;Unicam VELOCITY4;CAM25004379;2594,8;;52,80891667;21,87663889;52,82063889;21,90555556
+odcinkowy pomiar prÍdkoúci;Ko≥aki Koúcielne;zambrowski;PODLASKIE;Gosie Duøe; ;S8;4;194;DK;PNW.O.2.010;Unicam VELOCITY4;CAM25004043;10105;10090;53,04380556;22,36544444;53,09008333;22,49130556
+odcinkowy pomiar prÍdkoúci;Stare Babice;warszawski zachodni;MAZOWIECKIE;Blizne £aszczyÒskiego; ;S8;6;410;DK;CAN.O.2.008;Unicam VELOCITY3 - drugi sterownik na odcinku;CAM21003328;3082,1;;52,21902778;20,86728611;52,24226389;20,891725
+odcinkowy pomiar prÍdkoúci;Marki;wo≥omiÒski;MAZOWIECKIE;Marki; ;S8;0;700;DK;CAN.O.2.010;Unicam VELOCITY3 - drugi sterownik na odcinku;CAM21003326;4040,9;;52,30252778;21,04486111;52,30725;21,10269444
+odcinkowy pomiar prÍdkoúci;Micha≥owice;pruszkowski;MAZOWIECKIE;Micha≥owice; ;S8;8;519;DK;CAN.O.2.021;Unicam VELOCITY4 - drugi sterownik na odcinku;CAM25004048;2269,6;;52,16119722;20,90500278;52,14436111;20,88658333
+odcinkowy pomiar prÍdkoúci;OstrÛw Mazowiecka;ostrowski;MAZOWIECKIE;OstrÛw Mazowiecka; ;S8;3;644;DK;PNW.O.2.008;Unicam VELOCITY4 - drugi sterownik na odcinku;CAM25004020;2614,1;;52,80891944;21,87664167;52,82064167;21,90555833
+punktowe;Czechowice-Dziedzice;bielski;åL•SKIE;Czechowice-Dziedzice; ;1;593;865;DK;SLA.1.054;MultaRadar CD;593-072-73284;;;49,90248333;18,9916;;
+punktowe;Czechowice-Dziedzice;bielski;åL•SKIE;Czechowice-Dziedzice; ;1;594;67;DK;SLA.1.055;MultaRadar CD;593-072/71967;;;49,9007;18,99211667;;
+punktowe;Zalesie;bialski;LUBELSKIE;HorbÛw; ;2;649;300;DK;WSC.2.042;MultaRadar CD;593-072-73281;;;52,03493333;23,32455;;
+punktowe;Terespol;bialski;LUBELSKIE;Kobylany; ;2;666;136;DK;WSC.1.046;MESTA Fusion RN;23136FU10003683;;;52,05405;23,5634;;
+punktowe;MiÍdzyrzec Podlaski;bialski;LUBELSKIE;Rogoüniczka; ;2;617;688;DK;WSC.2.065;MultaRadar CD;593-072-73282;;;52,02861111;22,88;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Trakt Brzeski ;2;0;0;DK;CAN.3.066;Fotorapid CM;087;;;52,22419444;21,21036111;;
+punktowe;Zalesie;bialski;LUBELSKIE;WÛlka DobryÒska; ;2;660;619;DK;WSC.2.043;MESTA Fusion RN;23142FU10003691;;;52,03746667;23,48913333;;
+punktowe;Strzegom;úwidnicki;DOLNOåL•SKIE;JaroszÛw; ;5;385;689;DK;PDZ.2.058;MESTA Fusion RN;23164FU10003770;;;50,98803333;16,4179;;
+punktowe;Stara Kamienica;karkonoski;DOLNOåL•SKIE;Wojcieszyce;JeleniogÛrska ;5;474;40;DK;PDZ.1.107;TraffiStar SR390;643294-60100;;;50,88247222;15,63777778;;
+punktowe;Damnica;s≥upski;POMORSKIE;Domaradz; ;6;225;338;DK;PLN.1.107;MESTA Fusion RN;23144FU10003709;;;54,44713889;17,26788889;;
+punktowe;S≥awno;s≥awieÒski;ZACHODNIOPOMORSKIE;Rzyszczewo; ;6;175;588;DK;PNZ.2.097;MultaRadar CD;593-072/72055;;;54,33786667;16,60176667;;
+punktowe;Mogilany;krakowski;MA£OPOLSKIE;Gaj; 334;7;677;41;DK;PLD.1.019;MultaRadar CD;593-072-73240;;;49,96246667;19,89368333;;
+punktowe;Myúlenice;myúlenicki;MA£OPOLSKIE;G≥ogoczÛw; ;7;687;727;DK;PLD.1.121;TraffiStar SR390;643294-60089;;;49,87916667;19,88333056;;
+punktowe;Myúlenice;myúlenicki;MA£OPOLSKIE;Jawornik; 285;7;691;174;DK;PLD.1.023;MultaRadar CD;593-072/71984;;;49,86125;19,90969444;;
+punktowe;Myúlenice;myúlenicki;MA£OPOLSKIE;Krzyszkowice; ;7;689;95;DK;PLD.1.115;MESTA Fusion RN;23142FU10003694;;;49,87760278;19,90127222;;
+punktowe;Mogilany;krakowski;MA£OPOLSKIE;Mogilany; ;7;681;745;DK;PLD.1.101;MultaRadar CD;593-072/71672;;;49,9251;19,88285278;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Pu≥kowa ;7;0;0;DK;CAN.3.003;MultaRadar CD;593-072-73189;;;52,31313333;20,92245;;
+punktowe;AugustÛw;augustowski;PODLASKIE;Bia≥obrzegi; ;8;727;506;DK;PNW.2.022;MultaRadar CD;593-072/71988;;;53,8032;22,96926667;;
+punktowe;Suchowola;sokÛlski;PODLASKIE;ChodorÛwka Nowa; ;8;690;640;DK;PNW.2.032;MESTA Fusion RN;23164FU10003771;;;53,53576667;23,10501667;;
+punktowe;Korycin;sokÛlski;PODLASKIE;Korycin; ;8;679;715;DK;PNW.2.040;MESTA Fusion RN;23164FU10003772;;;53,44091667;23,09566667;;
+punktowe;Marki;wo≥omiÒski;MAZOWIECKIE;Marki;Marsza≥ka JÛzefa Pi≥sudskiego 46;8;469;450;DK;CAN.3.002;MultaRadar CD;593-072-73303;;;52,31483333;21,09858333;;
+punktowe;JordanÛw ålπski;wroc≥awski;DOLNOåL•SKIE;Mleczna; ;8;89;406;DK;PDZ.1.068;MultaRadar CD;593-072/71521;;;50,83413333;16,86051667;;
+punktowe;Niemcza;dzierøoniowski;DOLNOåL•SKIE;Przerzeczyn ZdrÛj;NiemczaÒska 12;8;71;327;DK;PDZ.1.088;MultaRadar CD;593-072/72052;;;50,68444444;16,82027778;;
+punktowe;Suchowola;sokÛlski;PODLASKIE;Suchowola;Bia≥ostocka ;8;695;50;DK;PNW.2.043;MultaRadar CD;593-072-73259;;;53,57405;23,10503333;;
+punktowe;Suchowola;sokÛlski;PODLASKIE;Suchowola;Augustowska 64;8;696;850;DK;PNW.2.003;MultaRadar CD;593-072-73260;;;53,58968333;23,10965;;
+punktowe;Suchowola;sokÛlski;PODLASKIE;Suchowola;åwiÍtokrzyska 22;8;0;0;DK;PNW.2.002;MultaRadar CD;593-072-73261;;;53,58151667;23,10681667;;
+punktowe;Zπbkowice ålπskie;zπbkowicki;DOLNOåL•SKIE;Szklary; ;8;66;655;DK;PDZ.1.065;MultaRadar CD;593-072/71519;;;50,64578333;16,82666667;;
+punktowe;Sztabin;augustowski;PODLASKIE;Sztabin;Augustowska ;8;709;100;DK;PNW.2.042;MultaRadar CD;593-072-73252;;;53,68835;23,0944;;
+punktowe;Zπbkowice ålπskie;zπbkowicki;DOLNOåL•SKIE;Zπbkowice ålπskie; ;8;59;352;DK;PDZ.1.064;MultaRadar CD;593-072/71520;;;50,5883;16,80631667;;
+punktowe;Cmolas;kolbuszowski;PODKARPACKIE;Cmolas;Rzeszowska ;9;159;609;DK;PDW.2.091;TraffiStar SR390;643294-60113;;;50,29333333;21,74555556;;
+punktowe;G≥ogÛw Ma≥opolski;rzeszowski;PODKARPACKIE;G≥ogÛw Ma≥opolski;Rzeszowska ;9;185;659;DK;PDW.1.092;TraffiStar SR390;643294-60114;;;50,13722222;21,96511111;;
+punktowe;KlimontÛw;sandomierski;åWI TOKRZYSKIE;KlimontÛw; 1;9;106;820;DK;PLD.2.062;MultaRadar CD;593-072-73235;;;50,65585;21,45641667;;
+punktowe;Majdan KrÛlewski;kolbuszowski;PODKARPACKIE;Majdan KrÛlewski; ;9;147;894;DK;PDW.2.069;MultaRadar CD;593-072/71671;;;50,38638889;21,75611111;;
+punktowe;Brody;starachowicki;åWI TOKRZYSKIE;M≥ynek; 1;9;50;68;DK;PLD.2.055;MESTA Fusion RN;23165FU10003773;;;51,03521667;21,19776667;;
+punktowe;OpatÛw;opatowski;åWI TOKRZYSKIE;OpatÛw;Koúciuszki 76;9;84;698;DK;PLD.2.096;MultaRadar CD;593-072/72040;;;50,81096667;21,41666667;;
+punktowe;Skaryszew;radomski;MAZOWIECKIE;Skaryszew; ;9;17;492;DK;CEN.2.048;MultaRadar CD;593-072/71994;;;51,31113333;21,25183333;;
+punktowe;Nowa DÍba;tarnobrzeski;PODKARPACKIE;Tarnowska Wola; ;9;139;495;DK;PDW.3.008;MultaRadar CD;593-072/71507;;;50,45661667;21,73626667;;
+punktowe;Kolbuszowa;kolbuszowski;PODKARPACKIE;Wide≥ka; ;9;173;863;DK;PDW.1.083;MultaRadar CD;593-072-73173;;;50,20083333;21,85833333;;
+punktowe;Dzierzπønia;p≥oÒski;MAZOWIECKIE;Dzierzπønia; ;10;438;588;DK;CAN.2.052;MultaRadar CD;593-072/71691;;;52,62898333;20,20301667;;
+punktowe;Szczutowo;sierpecki;MAZOWIECKIE;GÛjsk; ;10;381;414;DK;CAN.2.086;MESTA Fusion RN;23137FU10003689;;;52,90169444;19,52513889;;
+punktowe;Miasteczko KrajeÒskie;pilski;WIELKOPOLSKIE;GrabÛwno; ;10;196;673;DK;WLK.2.050;MultaRadar CD;593-072-73312;;;53,13235;17,01288333;;
+punktowe;Miros≥awiec;wa≥ecki;ZACHODNIOPOMORSKIE;Jab≥onowo; ;10;139;260;DK;PNZ.1.037;MESTA Fusion RN;23116FU10003637;;;53,33095;16,2956;;
+punktowe;Kaczory;pilski;WIELKOPOLSKIE;Jeziorki; ;10;186;386;DK;WLK.1.049;MESTA Fusion RN;23087FUS1000017;;;53,14240556;16,86043611;;
+punktowe;Wyrzysk;pilski;WIELKOPOLSKIE;Kosztowo; ;10;208;991;DK;WLK.2.052;MESTA Fusion RN;23081FUS1000005;;;53,15993333;17,1907;;
+punktowe;Staroüreby;p≥ocki;MAZOWIECKIE;Krzywanice; ;10;434;223;DK;CAN.2.051;MultaRadar CD;593-072-73186;;;52,63891667;20,14088889;;
+punktowe;Pi≥a;pilski;WIELKOPOLSKIE;Pi≥a; ;10;179;944;DK;WLK.1.048;MESTA Fusion RN;23143FU10003697;;;53,16425;16,78453333;;
+punktowe;Bia≥oúliwie;pilski;WIELKOPOLSKIE;PobÛrka Wielka; ;10;202;535;DK;WLK.1.051;MultaRadar CD;593-072/71992;;;53,14275;17,09855;;
+punktowe;Drobin;p≥ocki;MAZOWIECKIE;RogotwÛrsk; ;10;425;0;DK;CAN.2.049;MultaRadar CD;593-072-73191;;;52,69135;20,0499;;
+punktowe;Wyrzysk;pilski;WIELKOPOLSKIE;Ruda; ;10;218;401;DK;WLK.1.053;MESTA Fusion RN;23088FUS1000024;;;53,15308333;17,32248333;;
+punktowe;Sierpc;sierpecki;MAZOWIECKIE;Sierpc; ;10;392;427;DK;CAN.2.106;TraffiStar SR390;643294-60097;;;52,86305556;19,67;;
+punktowe;SkÍpe;lipnowski;KUJAWSKO-POMORSKIE;SkÍpe; ;10;369;800;DK;PLN.1.019;MESTA Fusion RN;23167FU10003793;;;52,87541667;19,36303333;;
+punktowe;Recz;choszczeÒski;ZACHODNIOPOMORSKIE;S≥utowo; ;10;87;177;DK;PNZ.2.093;MultaRadar CD;593-072/71605;;;53,28138889;15,59805556;;
+punktowe;Solec Kujawski;bydgoski;KUJAWSKO-POMORSKIE;Solec Kujawski; ;10;280;720;DK;PLN.1.041;MESTA Fusion RN;23083FUS1000009;;;53,06143333;18,21583333;;
+punktowe;Szczecin;Szczecin;ZACHODNIOPOMORSKIE;Szczecin;Ku S≥oÒcu, rÛg PiÍknej ;10;10;880;DK;PNZ.2.026;MultaRadar CD;593-072-73221;;;53,42065;14,51373333;;
+punktowe;Szczecin;Szczecin;ZACHODNIOPOMORSKIE;Szczecin;Szosa Stargardzka ;10;26;800;DK;PNZ.3.101;MultaRadar CD;593-072/71712;;;53,36240278;14,75309444;;
+punktowe;Szczecin;Szczecin;ZACHODNIOPOMORSKIE;Szczecin;GdaÒska-Basen GÛrniczy 3;10;0;0;DK;PNZ.1.100;MultaRadar CD;593-072/73127;;;53,39984444;14,59833889;;
+punktowe;Szczecin;Szczecin;ZACHODNIOPOMORSKIE;Szczecin;Ku S≥oÒcu, rÛg Hrubieszowskiej ;10;8;870;DK;PNZ.2.006;MultaRadar CD;593-072/71546;;;53,42635;14,48475;;
+punktowe;Nak≥o nad Noteciπ;nakielski;KUJAWSKO-POMORSKIE;Trzeciewnica;PowstaÒcÛw Wielkopolskich ;10;240;350;DK;PLN.2.027;MultaRadar CD;593-072-73321;;;53,15905;17,63513333;;
+punktowe;Oborniki;obornicki;WIELKOPOLSKIE;Bogdanowo;Bogdanowo 28;11;252;442;DK;WLK.2.082;Fotorapid CM;313;;;52,62826389;16,80840556;;
+punktowe;åroda Wielkopolska;úredzki;WIELKOPOLSKIE;Brodowo; ;11;318;880;DK;WLK.1.034;MESTA Fusion RN;23115FU10003634;;;52,18945;17,32081667;;
+punktowe;BudzyÒ;chodzieski;WIELKOPOLSKIE;BudzyÒ; ;11;218;199;DK;WLK.1.091;TraffiStar SR390;643294-60098;;;52,89098333;16,96960278;;
+punktowe;Chodzieø;chodzieski;WIELKOPOLSKIE;Chodzieø; ;11;207;841;DK;WLK.1.085;TraffiStar SR390;643294-60077;;;52,97538889;16,92881944;;
+punktowe;Ciasna;lubliniecki;åL•SKIE;Ciasna; ;11;529;946;DK;SLA.2.067;MultaRadar CD;593-072/71682;;;50,75227778;18,60955556;;
+punktowe;OstrzeszÛw;ostrzeszowski;WIELKOPOLSKIE;Koch≥owy; ;11;435;857;DK;WLK.1.090;TraffiStar SR390;643294-60091;;;51,37105278;17,94183333;;
+punktowe;Kluczbork;kluczborski;OPOLSKIE;Ligota GÛrna; ;11;492;504;DK;SLA.1.061;MultaRadar CD;593-072/71540;;;50,97576667;18,25543333;;
+punktowe;Lubliniec;lubliniecki;åL•SKIE;Lubliniec; ;11;540;831;DK;SLA.1.074;MESTA Fusion RN;23164FU10003768;;;50,66489722;18,65241667;;
+punktowe;OstrzeszÛw;ostrzeszowski;WIELKOPOLSKIE;Niedüwiedü; ;11;421;825;DK;WLK.2.037;MESTA Fusion RN;23080FUS1000002;;;51,48351667;17,87523333;;
+punktowe;Nowe Miasto nad Wartπ;úredzki;WIELKOPOLSKIE;Nowe Miasto nad Wartπ; ;11;332;282;DK;WLK.1.076;MESTA Fusion RN;23116FU10003636;;;52,09171667;17,39161667;;
+punktowe;£Íka Opatowska;kÍpiÒski;WIELKOPOLSKIE;Piaski; ;11;456;302;DK;WLK.2.036;MultaRadar CD;593-072-73315;;;51,22923333;18,07848333;;
+punktowe;Byczyna;kluczborski;OPOLSKIE;SarnÛw; ;11;480;455;DK;SLA.2.062;MultaRadar CD;593-072/71541;;;51,06345;18,201;;
+punktowe;Ciasna;lubliniecki;åL•SKIE;SierakÛw ålπski; ;11;524;380;DK;SLA.2.068;MultaRadar CD;593-072/71681;;;50,79725;18,58138889;;
+punktowe;OstrÛw Wielkopolski;ostrowski;WIELKOPOLSKIE;Szczury; ;11;391;880;DK;WLK.1.039;MESTA Fusion RN;23083FUS1000012;;;51,72551667;17,82433333;;
+punktowe;Tarnowskie GÛry;tarnogÛrski;åL•SKIE;Tarnowskie GÛry;J. Korola 36;11;574;781;DK;SLA.2.095;TraffiStar SR390;643294-60055;;;50,42427778;18,86772222;;
+punktowe;TworÛg;tarnogÛrski;åL•SKIE;TworÛg;TarnogÛrska 2 ;11;557;540;DK;SLA.2.037;MultaRadar CD;593-072-73242;;;50,52966667;18,71601667;;
+punktowe;Jarocin;jarociÒski;WIELKOPOLSKIE;Witaszyce;Wolnoúci ;11;355;440;DK;WLK.1.035;MultaRadar CD;593-072-73313;;;51,94222222;17,58111111;;
+punktowe;åroda Wielkopolska;úredzki;WIELKOPOLSKIE;Øabikowo; ;11;310;501;DK;WLK.1.033;MultaRadar CD;593-072-73314;;;52,22856667;17,22518333;;
+punktowe;Siedliszcze;che≥mski;LUBELSKIE;Anusin; ;12;655;210;DK;WSC.1.066;MESTA Fusion RN;23136FU10003685;;;51,17283333;23,14321667;;
+punktowe;Trzebiel;øarski;LUBUSKIE;Bronowice; 1;12;3;334;DK;PDZ.2.104;TraffiStar SR390;643294-60092;;;51,55777778;14,7625;;
+punktowe;Radwanice;polkowicki;DOLNOåL•SKIE;Buczyna; ;12;100;572;DK;PDZ.1.069;MultaRadar CD;593-072/71509;;;51,54593333;15,90241667;;
+punktowe;ØagaÒ;øagaÒski;LUBUSKIE;ChrobrÛw; ;12;61;107;DK;PDZ.2.078;MultaRadar CD;593-072/71539;;;51,59426667;15,40176667;;
+punktowe;åwiÍciechowa;leszczyÒski;WIELKOPOLSKIE;D≥ugie Stare;LeszczyÒska 1;12;157;581;DK;WLK.2.071;MultaRadar CD;593-072/71687;;;51,82472222;16,44388889;;
+punktowe;Szprotawa;øagaÒski;LUBUSKIE;DzieÊmiarowice; 2e;12;75;498;DK;PDZ.1.094;MultaRadar CD;593-072-73193;;;51,54961389;15,57876389;;
+punktowe;Go≥uchÛw;pleszewski;WIELKOPOLSKIE;Go≥uchÛw; ;12;253;904;DK;WLK.1.041;MultaRadar CD;593-072/71999;;;51,8441;17,94223333;;
+punktowe;Szlichtyngowa;wschowski;LUBUSKIE;JÍdrzychowice; ;12;139;850;DK;PDZ.2.085;MultaRadar CD;593-072/71688;;;51,74105556;16,28691667;;
+punktowe;Go≥uchÛw;pleszewski;WIELKOPOLSKIE;Koúcielna Wieú;PozÒska 39;12;260;294;DK;WLK.1.077;MultaRadar CD;593-072-73179;;;51,79634444;17,98943611;;
+punktowe;åwiÍciechowa;leszczyÒski;WIELKOPOLSKIE;Lasocice; ;12;160;404;DK;WLK.2.003;MESTA Fusion RN;23083FUS1000013;;;51,82472222;16,48472222;;
+punktowe;ZwoleÒ;zwoleÒski;MAZOWIECKIE;Miodne; ;12;527;421;DK;CEN.2.050;MESTA Fusion RN;23129FU10003671;;;51,36641667;21,49538333;;
+punktowe;Trawniki;úwidnicki;LUBELSKIE;Pe≥czyn; ;12;643;600;DK;WSC.1.011;MESTA Fusion RN;23142FU10003692;;;51,16128333;22,97811667;;
+punktowe;SulejÛw;piotrkowski;£”DZKIE;PoniatÛw; ;12;404;200;DK;CEN.2.020;MESTA Fusion RN;23088FUS1000026;;;51,39380278;19,76541944;;
+punktowe;Przysucha;przysuski;MAZOWIECKIE;Przysucha;Krakowska 35;12;469;300;DK;CEN.2.043;MultaRadar CD;593-072/71995;;;51,35945;20,62461667;;
+punktowe;G≥ogÛw;g≥ogowski;DOLNOåL•SKIE;Serby; ;12;126;0;DK;PDZ.2.072;MultaRadar CD;593-072/71513;;;51,68560556;16,11995833;;
+punktowe;WrÛblew;sieradzki;£”DZKIE;S≥omkÛw Mokry; ;12;309;740;DK;CEN.2.037;MultaRadar CD;593-072-73309;;;51,63141667;18,5472;;
+punktowe;Che≥m;che≥mski;LUBELSKIE;Sto≥pie; ;12;669;700;DK;WSC.2.012;MESTA Fusion RN;23144FU10003710;;;51,16801667;23,34848333;;
+punktowe;Trzebiel;øarski;LUBUSKIE;Strzeszowice; 29;12;18;992;DK;PDZ.2.105;TraffiStar SR390;643294-60090;;;51,63663889;14,89416667;;
+punktowe;SulejÛw;piotrkowski;£”DZKIE;SulejÛw; ;12;414;225;DK;CEN.2.124;MultaRadar CD;593-072-73308;;;51,35391667;19,89341667;;
+punktowe;Tuszyn;≥Ûdzki wschodni;£”DZKIE;Tuszyn; ;12;329;703;DK;CEN.2.120;MultaRadar CD;593-072/72056;;;51,60144444;19,54022222;;
+punktowe;G≥ogÛw;g≥ogowski;DOLNOåL•SKIE;WilkÛw; ;12;131;717;DK;PDZ.2.073;MultaRadar CD;593-072/71514;;;51,6955;16,20076667;;
+punktowe;åwidnik;úwidnicki;LUBELSKIE;åwidnik;Tysiπclecia ;0012;0;526;DP;WSC.1.070;MESTA Fusion RN;23166FU10003787;;;51,211;22,65011111;;
+punktowe;Ko≥baskowo;policki;ZACHODNIOPOMORSKIE;Ko≥baskowo; 62;13;12;818;DK;PNZ.1.107;TraffiStar SR390;643294-60057;;;53,33263889;14,43155556;;
+punktowe;G≥owno;zgierski;£”DZKIE;G≥owno;£owicka ;14;23;235;DK;CEN.2.042;MultaRadar CD;593-072/72004;;;51,964;19,73263333;;
+punktowe;£Ûdü;£Ûdü;£”DZKIE;£Ûdü;Palki ;14;0;0;DK;CEN.2.004;MESTA Fusion RN;23167FU10003792;;;51,78740278;19,48420833;;
+punktowe;£Ûdü;£Ûdü;£”DZKIE;£Ûdü;Pabianicka 190;14;0;0;DK;CEN.3.005;MultaRadar CD;593-072-73293;;;51,71378333;19,43181667;;
+punktowe;Trzemeszno;gnieünieÒski;WIELKOPOLSKIE;Cytrynowo; ;15;155;702;DK;WLK.1.086;TraffiStar SR390;643294-60086;;;52,57319167;17,85261667;;
+punktowe;Gniewkowo;inowroc≥awski;KUJAWSKO-POMORSKIE;Gniewkowo;Inowroc≥awska ;15;215;200;DK;PLN.2.031;MESTA Fusion RN;23088FUS1000021;;;52,89175;18,40076667;;
+punktowe;Jarocin;jarociÒski;WIELKOPOLSKIE;Golina;JarociÒska 34;15;82;70;DK;WLK.2.088;TraffiStar SR390;643294-60095;;;51,91326667;17,48212222;;
+punktowe;Krotoszyn;krotoszyÒski;WIELKOPOLSKIE;Krotoszyn;Zdunowska 219;15;53;956;DK;WLK.2.087;TraffiStar SR390;643294-60087;;;51,67519444;17,41092222;;
+punktowe;Mogilno;mogileÒski;KUJAWSKO-POMORSKIE;Kwieciszewo; ;15;172;290;DK;PLN.3.024;MultaRadar CD;593-072-73323;;;52,6208;18,05195;;
+punktowe;Lubawa;i≥awski;WARMI—SKO-MAZURSKIE;Samp≥awa; ;15;335;572;DK;PLN.2.102;MultaRadar CD;593-072/71694;;;53,5023;19,67858889;;
+punktowe;Brodnica;brodnicki;KUJAWSKO-POMORSKIE;Tywola; ;15;295;950;DK;PLN.1.125;TraffiStar SR390;643294-60119;;;53,25930556;19,35111111;;
+punktowe;I≥awa;i≥awski;WARMI—SKO-MAZURSKIE;Franciszkowo; ;16;84;20;DK;PLN.1.011;MESTA Fusion RN;23144FU10003707;;;53,64665;19,74378333;;
+punktowe;I≥awa;i≥awski;WARMI—SKO-MAZURSKIE;I≥awa;OstrÛdzka ;16;71;832;DK;PLN.2.048;MultaRadar CD;593-072/71989;;;53,60538333;19,58695;;
+punktowe;I≥awa;i≥awski;WARMI—SKO-MAZURSKIE;Nowa Wieú; ;16;72;908;DK;PLN.2.046;MultaRadar CD;593-072-73342;;;53,6085;19,60221667;;
+punktowe;Gietrzwa≥d;olsztyÒski;WARMI—SKO-MAZURSKIE;Rapaty; ;16;117;0;DK;PNW.2.052;MESTA Fusion RN;23109FUS1000028;;;53,72269444;20,14488889;;
+punktowe;E≥k;e≥cki;WARMI—SKO-MAZURSKIE;Ruska Wieú; ;16;280;740;DK;PNW.2.050;MESTA Fusion RN;23185FU10003893;;;53,79253333;22,20361667;;
+punktowe;OstrÛda;ostrÛdzki;WARMI—SKO-MAZURSKIE;Samborowo;OstrÛdzka 34;16;90;180;DK;PLN.2.008;MultaRadar CD;593-072-73336;;;53,66563333;19,81876667;;
+punktowe;I≥awa;i≥awski;WARMI—SKO-MAZURSKIE;Stradomno; 9;16;64;485;DK;PLN.2.091;MESTA Fusion RN;23111FU10003624;;;53,5938;19,49868333;;
+punktowe;AugustÛw;augustowski;PODLASKIE;Øarnowo Drugie; ;16;332;173;DK;PNW.2.096;MultaRadar CD;593-072-73255;;;53,83443333;22,88886667;;
+punktowe;Fajs≥awice;krasnostawski;LUBELSKIE;Fajs≥awice; 47;17;123;340;DK;WSC.2.063;MESTA Fusion RN;23144FU10003706;;;51,09238889;22,96119444;;
+punktowe;Krynice;tomaszowski;LUBELSKIE;Krynice; ;17;196;130;DK;WSC.2.022;MESTA Fusion RN;23145FU10003711;;;50,58338333;23,38201667;;
+punktowe;£abunie;zamojski;LUBELSKIE;£abuÒki Pierwsze; ;17;183;300;DK;WSC.2.021;MESTA Fusion RN;23167FU10003797;;;50,68555;23,33656667;;
+punktowe;£opiennik GÛrny;krasnostawski;LUBELSKIE;£opiennik GÛrny; ;17;130;547;DK;WSC.2.064;MESTA Fusion RN;23137FU10003687;;;51,04847222;23,03352778;;
+punktowe;Stary ZamoúÊ;zamojski;LUBELSKIE;Stary ZamoúÊ; ;17;162;550;DK;WSC.2.017;MESTA Fusion RN;23145FU10003715;;;50,82548333;23,18368333;;
+punktowe;RadzyÒ Podlaski;radzyÒski;LUBELSKIE;Bia≥ka; ;19;234;250;DK;WSC.2.029;MESTA Fusion RN;23145FU10003714;;;51,80905;22,66033333;;
+punktowe;Bia≥ystok;Bia≥ystok;PODLASKIE;Bia≥ystok;Branickiego ;19;56;996;DK;PNW.2.099;MultaRadar CD;593-072-73295;;;53,12176667;23,19176389;;
+punktowe;BoÊki;bielski;PODLASKIE;BoÊki;Bielska 1;19;123;843;DK;PNW.2.029;MESTA Fusion RN;23110FUS1000029;;;52,6507;23,03996667;;
+punktowe;Boguchwa≥a;rzeszowski;PODKARPACKIE;Boguchwa≥a;Suszyckich 102;19;204;287;DK;PDW.2.082;MultaRadar CD;593-072-73172;;;49,97436111;21,92380556;;
+punktowe;Niemce;lubelski;LUBELSKIE;Ciecierzyn; ;19;302;727;DK;WSC.1.054;MultaRadar CD;593-072/73128;;;51,31061111;22,59808333;;
+punktowe;Czarna Bia≥ostocka;bia≥ostocki;PODLASKIE;Czarna Bia≥ostocka;Bia≥ostocka ;19;36;500;DK;PNW.2.086;MultaRadar CD;593-072/71676;;;53,30202778;23,305;;
+punktowe;Firlej;lubartowski;LUBELSKIE;Firlej; ;19;271;100;DK;WSC.1.049;MESTA Fusion RN;23145FU10003717;;;51,55915833;22,50266389;;
+punktowe;SokÛ≥ka;sokÛlski;PODLASKIE;Geniusze; ;19;22;780;DK;PNW.2.033;MESTA Fusion RN;23131FU10003679;;;53,37365;23,4316;;
+punktowe;Niebylec;strzyøowski;PODKARPACKIE;Jawornik; ;19;223;845;DK;PDW.1.077;MultaRadar CD;593-072/72011;;;49,84397222;21,89130556;;
+punktowe;LubartÛw;lubartowski;LUBELSKIE;£ucka-Kolonia; ;19;289;88;DK;WSC.2.067;MultaRadar CD;593-072-73241;;;51,42630556;22,63658333;;
+punktowe;Bielsk Podlaski;bielski;PODLASKIE;Proniewicze; 58;19;101;200;DK;PNW.2.007;MultaRadar CD;593-072-73258;;;52,80851667;23,19463333;;
+punktowe;Zab≥udÛw;bia≥ostocki;PODLASKIE;Rybo≥y; ;19;86;854;DK;PNW.2.087;MultaRadar CD;593-072/71677;;;52,93027778;23,26305556;;
+punktowe;Siemiatycze;siemiatycki;PODLASKIE;Siemiatycze;11 Listopada 34;19;154;836;DK;WSC.2.055;MESTA Fusion RN;23114FU10003630;;;52,42027778;22,8675;;
+punktowe;SokÛ≥ka;sokÛlski;PODLASKIE;SokÛ≥ka;Bia≥ostocka 98;19;0;0;DK;PNW.2.034;MESTA Fusion RN;23185FU10003894;;;53,40302778;23,48961111;;
+punktowe;Czudec;strzyøowski;PODKARPACKIE;Wyøne; ;19;213;179;DK;PDW.1.074;MESTA Fusion RN;23166FU10003790;;;49,92067778;21,87955278;;
+punktowe;Chociwel;stargardzki;ZACHODNIOPOMORSKIE;Chociwel; ;20;26;430;DK;PNZ.2.042;MultaRadar CD;593-072/72061;;;53,4706;15,35153333;;
+punktowe;Somonino;kartuski;POMORSKIE;Egiertowo; ;20;281;440;DK;PLN.2.104;MESTA Fusion RN;23019FU10003527;;;54,24;18,2035;;
+punktowe;Szczecinek;szczecinecki;ZACHODNIOPOMORSKIE;Gwda Ma≥a; 13;20;145;600;DK;PNZ.1.109;TraffiStar SR390;643294-60084;;;53,73416667;16,81222222;;
+punktowe;Koúcierzyna;koúcierski;POMORSKIE;Kaliska Koúcierskie; ;20;266;945;DK;PLN.2.069;MultaRadar CD;593-072-73327;;;54,16585;18,0436;;
+punktowe;Koúcierzyna;koúcierski;POMORSKIE;K≥obuczyno; ;20;271;310;DK;PLN.2.058;MultaRadar CD;593-072-73328;;;54,186;18,1006;;
+punktowe;Øukowo;kartuski;POMORSKIE;Miszewo; ;20;302;894;DK;PLN.2.105;MultaRadar CD;593-072-73335;;;54,38713333;18,36051667;;
+punktowe;Studzienice;bytowski;POMORSKIE;PÛ≥czno; 22;20;236;340;DK;PLN.2.110;MESTA Fusion RN;23144FU10003708;;;54,14805556;17,64133333;;
+punktowe;Øukowo;kartuski;POMORSKIE;Tuchom;GdyÒska 10;20;306;646;DK;PLN.1.111;MultaRadar CD;593-072-73180;;;54,41693611;18,37648889;;
+punktowe;Øukowo;kartuski;POMORSKIE;Tuchom;GdyÒska 108;20;308;292;DK;PLN.2.100;MultaRadar CD;593-072/71674;;;54,42972222;18,39055556;;
+punktowe;Kartuzy;kartuski;POMORSKIE;Wieøyca; 1;20;275;696;DK;PLN.1.113;MultaRadar CD;593-072-73184;;;54,21897778;18,12647778;;
+punktowe;Øukowo;kartuski;POMORSKIE;Øukowo; ;20;298;717;DK;PLN.2.106;MultaRadar CD;593-072-73334;;;54,34872222;18,37;;
+punktowe;Deszczno;gorzowski;LUBUSKIE;Bolemin; 102;22;50;885;DK;PNZ.2.111;TraffiStar SR390;643294-60117;;;52,64218056;15,25211111;;
+punktowe;Zblewo;starogardzki;POMORSKIE;Bytonia; ;22;302;855;DK;PLN.2.023;MultaRadar CD;593-072-73326;;;53,92151667;18,28206667;;
+punktowe;Cz≥uchÛw;cz≥uchowski;POMORSKIE;Chrzπstowo; 48;22;223;385;DK;PLN.2.119;TraffiStar SR390;643294-60085;;;53,62583333;17,22666667;;
+punktowe;Malbork;malborski;POMORSKIE;Cisy; ;22;354;775;DK;PLN.2.012;MESTA Fusion RN;23129FU10003672;;;54,04398056;18,98328056;;
+punktowe;Cz≥opa;wa≥ecki;ZACHODNIOPOMORSKIE;Cz≥opa; ;22;135;960;DK;PNZ.2.021;MESTA Fusion RN;23114FU10003628;;;53,09188333;16,12978333;;
+punktowe;GorzÛw Wielkopolski;GorzÛw Wielkopolski;LUBUSKIE;GorzÛw Wielkopolski;Kasprzaka 6a;22;5;550;DK;PNZ.1.001;MultaRadar CD;593-072/71714;;;52,70926667;15,24121667;;
+punktowe;Krzeszyce;sulÍciÒski;LUBUSKIE;Krzeszyce;SkwierzyÒska 23;22;29;805;DK;PNZ.2.092;MESTA Fusion RN;23083FUS1000015;;;52,583775;15,01613333;;
+punktowe;Czersk;chojnicki;POMORSKIE;£πg; ;22;285;146;DK;PLN.2.063;MultaRadar CD;593-072-73325;;;53,82948333;18,06473333;;
+punktowe;Zblewo;starogardzki;POMORSKIE;Miradowo; 23;22;309;644;DK;PLN.1.124;TraffiStar SR390;643294-60118;;;53,93258333;18,38083333;;
+punktowe;Wa≥cz;wa≥ecki;ZACHODNIOPOMORSKIE;Ostrowiec; 68;22;171;858;DK;PNZ.2.108;TraffiStar SR390;643294-60060;;;53,29830556;16,52811111;;
+punktowe;Cz≥uchÛw;cz≥uchowski;POMORSKIE;Rychnowy; 71;22;239;28;DK;PLN.2.108;MultaRadar CD;593-072-73322;;;53,684925;17,428;;
+punktowe;Starogard GdaÒski;starogardzki;POMORSKIE;Sucumin; ;22;313;374;DK;PLN.1.101;MultaRadar CD;593-072/71786;;;53,93696667;18,43590556;;
+punktowe;Tczew;tczewski;POMORSKIE;WaÊmierek; ;22;335;757;DK;PLN.2.120;TraffiStar SR390;643294-60068;;;54,04222222;18,69999722;;
+punktowe;Wa≥cz;wa≥ecki;ZACHODNIOPOMORSKIE;Wa≥cz; ;22;168;580;DK;PNZ.2.099;MultaRadar CD;593-072/71710;;;53,27972222;16,49166667;;
+punktowe;Zblewo;starogardzki;POMORSKIE;Zblewo;Chojnicka 20;22;304;993;DK;PLN.2.065;MESTA Fusion RN;23144FU10003705;;;53,92845;18,31183333;;
+punktowe;DÍbno;myúliborski;ZACHODNIOPOMORSKIE;DÍbno; ;23;22;560;DK;PNZ.2.011;MESTA Fusion RN;23115FU10003633;;;52,74185;14,71251667;;
+punktowe;MyúlibÛrz;myúliborski;ZACHODNIOPOMORSKIE;Wierzbnica; ;23;0;744;DK;PNZ.1.104;MultaRadar CD;593-072/72001;;;52,9124;14,85585833;;
+punktowe;Przytoczna;miÍdzyrzecki;LUBUSKIE;Przytoczna; ;24;42;180;DK;PNZ.3.084;MultaRadar CD;593-072/71544;;;52,57683333;15,67353333;;
+punktowe;ØelazkÛw;kaliski;WIELKOPOLSKIE;Kokanin; ;25;295;172;DK;WLK.2.069;MultaRadar CD;593-072/71695;;;51,81166667;18,09333333;;
+punktowe;ØelazkÛw;kaliski;WIELKOPOLSKIE;RussÛw; ;25;291;767;DK;WLK.2.042;MESTA Fusion RN;23081FUS1000008;;;51,84281667;18,09658333;;
+punktowe;Skulsk;koniÒski;WIELKOPOLSKIE;Skulsk; ;25;214;390;DK;WLK.2.089;TraffiStar SR390;643294-60094;;;52,480575;18,32014444;;
+punktowe;Oleúnica;oleúnicki;DOLNOåL•SKIE;Soko≥owice; 95;25;365;400;DK;PDZ.2.096;MultaRadar CD;593-072/71705;;;51,23352778;17,45055556;;
+punktowe;TrzciÒsko-ZdrÛj;gryfiÒski;ZACHODNIOPOMORSKIE;GÛralice; ;26;30;100;DK;PNZ.2.010;MultaRadar CD;593-072-73289;;;52,97678333;14,67165;;
+punktowe;NowogrÛd BobrzaÒski;zielonogÛrski;LUBUSKIE;NowogrÛd BobrzaÒski;Øarska 11;27;39;927;DK;PNZ.2.110;TraffiStar SR390;643294-60108;;;51,79452778;15,23358333;;
+punktowe;Øary;øarski;LUBUSKIE;OlbrachtÛw; ;27;18;650;DK;PDZ.2.022;MESTA Fusion RN;23081FUS1000007;;;51,6025;15,09636667;;
+punktowe;åwidnica;zielonogÛrski;LUBUSKIE;åwidnica; ;27;55;230;DK;PNZ.1.098;MultaRadar CD;593-072/71545;;;51,88431389;15,380475;;
+punktowe;Øary;øarski;LUBUSKIE;W≥ostÛw; ;27;33;70;DK;PDZ.2.108;TraffiStar SR390;643294-60121;;;51,74347222;15,1825;;
+punktowe;Jedlicze;kroúnieÒski;PODKARPACKIE;ModerÛwka; ;28;220;597;DK;PDW.2.080;MultaRadar CD;593-072/71665;;;49,74972222;21,63313889;;
+punktowe;Jedlicze;kroúnieÒski;PODKARPACKIE;Potok; ;28;225;615;DK;PDW.2.085;TraffiStar SR390;643294-60059;;;49,72361111;21,68805556;;
+punktowe;Krosno OdrzaÒskie;kroúnieÒski;LUBUSKIE;Krosno OdrzaÒskie;S≥ubicka 35;29;50;42;DK;PNZ.2.076;MultaRadar CD;593-072/71524;;;52,05801111;15,08808333;;
+punktowe;S≥ubice;s≥ubicki;LUBUSKIE;S≥ubice;Koúciuszki 23;29;0;424;DK;PNZ.2.113;TraffiStar SR390;643294-60122;;;52,34867778;14,56347778;;
+punktowe;Zgorzelec;zgorzelecki;DOLNOåL•SKIE;£agÛw;JeleniogÛrska 71;30;2;550;DK;PDZ.2.097;TraffiStar SR390;643294-60066;;;51,15569444;15,03486111;;
+punktowe;GÛrzyca;s≥ubicki;LUBUSKIE;Owczary; ;31;119;500;DK;PNZ.1.071;MESTA Fusion RN;23087FUS1000018;;;52,47848333;14,64418333;;
+punktowe;Gryfino;gryfiÒski;ZACHODNIOPOMORSKIE;Pniewo; ;31;23;100;DK;PNZ.2.041;MultaRadar CD;593-072-73286;;;53,22051667;14,48956667;;
+punktowe;Gryfino;gryfiÒski;ZACHODNIOPOMORSKIE;Radziszewo; ;31;10;200;DK;PNZ.2.017;MultaRadar CD;593-072-73288;;;53,32526667;14,54043333;;
+punktowe;S≥ubice;s≥ubicki;LUBUSKIE;S≥ubice;Wojska Polskiego ;31;136;550;DK;PNZ.2.073;MESTA Fusion RN;23076FUS1000001;;;52,36883333;14,56973333;;
+punktowe;Dπbie;kroúnieÒski;LUBUSKIE;Dπbie;£uøycka 5;32;36;450;DK;PNZ.2.079;MultaRadar CD;593-072/71542;;;52,0118;15,15126667;;
+punktowe;Dπbie;kroúnieÒski;LUBUSKIE;GronÛw;G≥Ûw 1;32;42;200;DK;PNZ.2.083;MultaRadar CD;593-072/71522;;;51,98951667;15,22448333;;
+punktowe;Kargowa;zielonogÛrski;LUBUSKIE;Kargowa; ;32;87;170;DK;PNZ.1.102;MESTA Fusion RN;23088FUS1000019;;;52,07088889;15,85719444;;
+punktowe;Siedlec;wolsztyÒski;WIELKOPOLSKIE;Kopanica; ;32;92;693;DK;WLK.2.028;MESTA Fusion RN;23167FU10003794;;;52,09598333;15,92497222;;
+punktowe;Rakoniewice;grodziski;WIELKOPOLSKIE;Rakoniewice; ;32;120;450;DK;WLK.2.015;MultaRadar CD;593-072-73320;;;52,14258333;16,27758333;;
+punktowe;Rakoniewice;grodziski;WIELKOPOLSKIE;Rostarzewo; ;32;114;20;DK;WLK.2.013;MESTA Fusion RN;23080FUS1000004;;;52,1315;16,1924;;
+punktowe;Kπty Wroc≥awskie;wroc≥awski;DOLNOåL•SKIE;Gniechowice; ;35;75;214;DK;PDZ.2.086;MultaRadar CD;593-072/72042;;;50,98727778;16,83313889;;
+punktowe;Marcinowice;úwidnicki;DOLNOåL•SKIE;Marcinowice; ;35;52;577;DK;PDZ.2.082;MultaRadar CD;593-072/71609;;;50,87843333;16,58093333;;
+punktowe;SobÛtka;wroc≥awski;DOLNOåL•SKIE;Miros≥awice;Wroc≥awska 8a;35;70;167;DK;PDZ.2.099;TraffiStar SR390;643294-60070;;;50,95638889;16,78305556;;
+punktowe;åwidnica;úwidnicki;DOLNOåL•SKIE;MokrzeszÛw; ;35;35;343;DK;PDZ.2.087;MESTA Fusion RN;23142FU10003690;;;50,85151944;16,37002222;;
+punktowe;Marcinowice;úwidnicki;DOLNOåL•SKIE;Strzelce; 17;35;59;340;DK;PDZ.2.102;TraffiStar SR390;643294-60074;;;50,91138889;16,66027778;;
+punktowe;åwidnica;úwidnicki;DOLNOåL•SKIE;åwidnica;Zamenhoffa 64;35;43;90;DK;PDZ.1.103;TraffiStar SR390;643294-60082;;;50,84388889;16,46861111;;
+punktowe;Wa≥brzych;Wa≥brzych;DOLNOåL•SKIE;Wa≥brzych;Wieniawskiego 68;35;0;0;DK;PDZ.2.095;MESTA Fusion RN;23205FU10003944;;;50,8203;16,28150278;;
+punktowe;Kobylin;krotoszyÒski;WIELKOPOLSKIE;KuklinÛw; ;36;109;759;DK;WLK.2.092;TraffiStar SR390;643294-60106;;;51,73235;17,31394444;;
+punktowe;Lubin;lubiÒski;DOLNOåL•SKIE;Mi≥osna; ;36;7;846;DK;PDZ.2.091;MESTA Fusion RN;23186FU10003895;;;51,33168333;16,30399722;;
+punktowe;Lubin;lubiÒski;DOLNOåL•SKIE;NiemstÛw; 10;36;10;890;DK;PDZ.2.093;MultaRadar CD;593-072/71970;;;51,35169444;16,27408333;;
+punktowe;Lubin;lubiÒski;DOLNOåL•SKIE;Osiek;ålπska ;36;13;867;DK;PDZ.1.092;MESTA Fusion RN;23164FU10003766;;;51,36819444;16,24;;
+punktowe;OstrÛw Wielkopolski;ostrowski;WIELKOPOLSKIE;OstrÛw Wielkopolski;KrotoszyÒska 87;36;146;204;DK;WLK.2.073;MESTA Fusion RN;23081FUS1000006;;;51,65605;17,79126667;;
+punktowe;Rawicz;rawicki;WIELKOPOLSKIE;SarnÛwka; ;36;78;45;DK;WLK.2.070;MultaRadar CD;593-072/71696;;;51,63572222;16,90638889;;
+punktowe;G≥ubczyce;g≥ubczycki;OPOLSKIE;Grobniki; ;38;18;249;DK;SLA.1.097;TraffiStar SR390;643294-60063;;;50,19833333;17,87416667;;
+punktowe;G≥ubczyce;g≥ubczycki;OPOLSKIE;Mokre Kolonia; ;38;3;77;DK;SLA.2.070;MESTA Fusion RN;23131FU10003676;;;50,14241667;17,69713889;;
+punktowe;Skarbimierz;brzeski;OPOLSKIE;Ma≥ujowice; ;39;43;762;DK;SLA.3.099;TraffiStar SR390;643294-60072;;;50,84609167;17,38161389;;
+punktowe;Rudniki;oleski;OPOLSKIE;Jaworek; ;42;67;226;DK;SLA.2.096;TraffiStar SR390;643294-60061;;;51,03561111;18,60944444;;
+punktowe;Radomsko;radomszczaÒski;£”DZKIE;Kietlin; ;42;143;600;DK;CEN.2.038;MultaRadar CD;593-072-73310;;;51,08908333;19,50538333;;
+punktowe;Radomsko;radomszczaÒski;£”DZKIE;Radomsko;Brzeünicka 149;42;134;615;DK;CEN.2.040;MultaRadar CD;593-072/72007;;;51,0769;19,39871667;;
+punktowe;Skarøysko-Kamienna;skarøyski;åWI TOKRZYSKIE;Skarøysko-Kamienna;W.Polskiego 45;42;246;707;DK;PLD.2.087;MESTA Fusion RN;23163FU10003762;;;51,0958;20,82285;;
+punktowe;K≥obuck;k≥obucki;åL•SKIE;Libidza; ;43;51;2;DK;SLA.2.073;MultaRadar CD;593-072/72036;;;50,88386111;18,98552778;;
+punktowe;BieruÒ;bieruÒsko-lÍdziÒski;åL•SKIE;BieruÒ;Warszawska 396;44;10;373;DK;SLA.2.091;MESTA Fusion RN;23165FU10003781;;;50,06527778;19,19111111;;
+punktowe;Miko≥Ûw;miko≥owski;åL•SKIE;Miko≥Ûw; ;44;25;892;DK;SLA.1.078;MultaRadar CD;593-072/71964;;;50,17055556;18,91638889;;
+punktowe;Miko≥Ûw;miko≥owski;åL•SKIE;Miko≥Ûw;Gliwicka 212;44;17;682;DK;SLA.2.087;MultaRadar CD;593-072-73340;;;50,21683333;18,83541667;;
+punktowe;Giera≥towice;gliwicki;åL•SKIE;PaniÛwki;Gliwicka ;44;12;134;DK;SLA.2.069;MultaRadar CD;593-072-73232;;;50,24018333;18,76805;;
+punktowe;Tychy;Tychy;åL•SKIE;Tychy;Miko≥owska 52;44;32;532;DK;SLA.2.082;MultaRadar CD;593-072-73169;;;50,13497222;18,98013889;;
+punktowe;RacibÛrz;raciborski;åL•SKIE;RacibÛrz;Kozielska 38A;45;23;352;DK;SLA.2.094;TraffiStar SR390;643294-60054;;;50,10166667;18,21194444;;
+punktowe;CzÍstochowa;CzÍstochowa;åL•SKIE;CzÍstochowa;Wojska Polskiego, Rakowska ;46;0;0;DK;SLA.3.092;TraffiStar SR390;643294-60049;;;50,7725;19,15666667;;
+punktowe;Ozimek;opolski;OPOLSKIE;Grodziec;CzÍstochowska 50;46;122;890;DK;SLA.2.022;MultaRadar CD;593-072-73301;;;50,70246667;18,26846667;;
+punktowe;Olsztyn;czÍstochowski;åL•SKIE;Olsztyn; ;46;197;187;DK;SLA.1.088;MultaRadar CD;593-072-73339;;;50,76025;19,22511111;;
+punktowe;DÍblin;rycki;LUBELSKIE;DÍblin;Kocka ;48;158;353;DK;WSC.2.056;MultaRadar CD;593-072/71716;;;51,57083333;21,88944444;;
+punktowe;Inow≥Ûdz;tomaszowski;£”DZKIE;Inow≥Ûdz;Kazimierza Wielkiego ;48;16;625;DK;CEN.2.133;MultaRadar CD;593-072/72043;;;51,52258611;20,22330278;;
+punktowe;Jeziorzany;lubartowski;LUBELSKIE;Przytoczno; ;48;186;888;DK;WSC.2.062;MultaRadar CD;593-072/72051;;;51,619925;22,27387778;;
+punktowe;Inow≥Ûdz;tomaszowski;£”DZKIE;Spa≥a;Pi≥sudskiego ;48;9;788;DK;CEN.2.107;MultaRadar CD;593-072/71709;;;51,54038889;20,13833333;;
+punktowe;Nowy Targ;nowotarski;MA£OPOLSKIE;GronkÛw; 174;49;7;199;DK;PLD.2.100;MESTA Fusion RN;23116FU10003638;;;49,43680556;20,08263889;;
+punktowe;Wiskitki;øyrardowski;MAZOWIECKIE;AleksandrÛw; ;50;97;442;DK;CAN.2.060;MultaRadar CD;593-072/72053;;;52,13929167;20,32194722;;
+punktowe;GÛra Kalwaria;piaseczyÒski;MAZOWIECKIE;Czaplinek;GrÛjecka ;50;171;454;DK;CAN.2.001;MESTA Fusion RN;23129FU10003673;;;51,94843333;21,13865;;
+punktowe;GrÛjec;grÛjecki;MAZOWIECKIE;JanÛwek; ;50;151;171;DK;CAN.2.053;MultaRadar CD;593-072/71692;;;51,87343889;20,88979722;;
+punktowe;Pniewy;grÛjecki;MAZOWIECKIE;Karolew; ;50;135;177;DK;CAN.2.055;MultaRadar CD;593-072/71698;;;51,91705833;20,68389167;;
+punktowe;Ko≥biel;otwocki;MAZOWIECKIE;Ko≥biel;1-go Maja ;50;199;750;DK;CAN.2.007;MESTA Fusion RN;23145FU10003718;;;52,0655;21,48775;;
+punktowe;Naruszewo;p≥oÒski;MAZOWIECKIE;Nacpolsk;P≥oÒska 30;50;48;846;DK;CAN.2.099;MultaRadar CD;593-072/71699;;;52,50873056;20,25208056;;
+punktowe;OjrzeÒ;ciechanowski;MAZOWIECKIE;OjrzeÒ; ;50;14;850;DK;PLN.2.094;MultaRadar CD;593-072-73298;;;52,76893333;20,54478333;;
+punktowe;£ochÛw;wÍgrowski;MAZOWIECKIE;OstrÛwek; ;50;261;473;DK;WSC.2.060;MultaRadar CD;593-072/72048;;;52,55971389;21,76254167;;
+punktowe;Pniewy;grÛjecki;MAZOWIECKIE;PrzÍs≥awice; ;50;142;684;DK;CAN.2.054;MultaRadar CD;593-072/71693;;;51,89555556;20,78194444;;
+punktowe;P≥oÒsk;p≥oÒski;MAZOWIECKIE;Radzyminek; ;50;39;203;DK;CAN.2.088;MESTA Fusion RN;23131FU10003677;;;52,56894444;20,34466667;;
+punktowe;WyszogrÛd;p≥ocki;MAZOWIECKIE;RÍbowo; ;50;60;622;DK;CAN.2.103;TraffiStar SR390;643294-60088;;;52,41361111;20,18722222;;
+punktowe;Ko≥biel;otwocki;MAZOWIECKIE;Rudzienko; ;50;205;20;DK;CAN.2.008;MultaRadar CD;593-072-73299;;;52,108725;21,497475;;
+punktowe;Stanis≥awÛw;miÒski;MAZOWIECKIE;WÛlka CzarniÒska; ;50;223;178;DK;WSC.2.051;MESTA Fusion RN;23186FU10003896;;;52,26163333;21,54838333;;
+punktowe;Bartoszyce;bartoszycki;WARMI—SKO-MAZURSKIE;Bartoszyce;Warszawska 26;51;18;75;DK;PNW.2.094;MultaRadar CD;593-072-73256;;;54,24091667;20,80941667;;
+punktowe;Bartoszyce;bartoszycki;WARMI—SKO-MAZURSKIE;Bartoszyce;BohaterÛw Warszawy 103;51;16;763;DK;PNW.2.104;TraffiStar SR390;643294-60110;;;54,25236111;20,80741667;;
+punktowe;Dobre Miasto;olsztyÒski;WARMI—SKO-MAZURSKIE;Dobre Miasto;Wojska Polskiego 43;51;62;89;DK;PNW.2.102;TraffiStar SR390;643294-60105;;;53,99083333;20,39444444;;
+punktowe;Dywity;olsztyÒski;WARMI—SKO-MAZURSKIE;Dywity;OlsztyÒska 40a;51;81;230;DK;PNW.2.051;MultaRadar CD;593-072-73253;;;53,83722222;20,47444444;;
+punktowe;Lidzbark WarmiÒski;lidzbarski;WARMI—SKO-MAZURSKIE;RogÛø; 28;51;33;150;DK;PNW.2.054;MESTA Fusion RN;23142FU10003695;;;54,16276667;20,65333333;;
+punktowe;Lanckorona;wadowicki;MA£OPOLSKIE;Izdebnik; ;52;65;770;DK;PLD.2.102;MESTA Fusion RN;23124FU10003669;;;49,87;19,76472222;;
+punktowe;Kozy;bielski;åL•SKIE;Kozy;Krakowska ;52;13;904;DK;SLA.2.058;MultaRadar CD;593-072-73247;;;49,8469;19,14723333;;
+punktowe;Su≥kowice;myúlenicki;MA£OPOLSKIE;Krzywaczka; 215;52;71;981;DK;PLD.1.110;MultaRadar CD;593-072/71607;;;49,8975;19,83861111;;
+punktowe;Olszewo-Borki;ostro≥Ícki;MAZOWIECKIE;Antonie; ;53;118;830;DK;PNW.2.082;MESTA Fusion RN;23143FU10003698;;;53,1175;21,52375;;
+punktowe;Kadzid≥o;ostro≥Ícki;MAZOWIECKIE;Kadzid≥o; ;53;103;700;DK;PNW.2.081;MESTA Fusion RN;23131FU10003675;;;53,23918333;21,46396667;;
+punktowe;Myszyniec;ostro≥Ícki;MAZOWIECKIE;Myszyniec;Paw≥owskiego 13;53;83;750;DK;PNW.2.080;MultaRadar CD;593-072-73341;;;53,38786667;21,3418;;
+punktowe;Purda;olsztyÒski;WARMI—SKO-MAZURSKIE;TrÍkusek; ;53;11;100;DK;PNW.2.074;MESTA Fusion RN;23115FU10003632;;;53,71255556;20,63030556;;
+punktowe;Kwidzyn;kwidzyÒski;POMORSKIE;Baldram; ;55;58;546;DK;PLN.2.021;MultaRadar CD;593-072-73324;;;53,75888333;18,9428;;
+punktowe;Grudziπdz;grudziπdzki;KUJAWSKO-POMORSKIE;Mokre; ;55;87;805;DK;PLN.1.123;TraffiStar SR390;643294-60107;;;53,54;18,83527778;;
+punktowe;Sztum;sztumski;POMORSKIE;Sztum; ;55;36;50;DK;PLN.2.099;MultaRadar CD;593-072/71690;;;53,92916667;19,02777778;;
+punktowe;Grudziπdz;grudziπdzki;KUJAWSKO-POMORSKIE;åwierkocin; ;55;90;461;DK;PLN.2.003;MultaRadar CD;593-072/71997;;;53,52178333;18,811;;
+punktowe;Przasnysz;przasnyski;MAZOWIECKIE;Bogate; ;57;157;700;DK;PNW.2.079;MESTA Fusion RN;23088FUS1000022;;;52,96218333;20,98191667;;
+punktowe;Chorzele;przasnyski;MAZOWIECKIE;Chorzele;Grunwaldzka 3b;57;121;250;DK;PNW.2.077;MultaRadar CD;593-072-73246;;;53,24893333;20,89796667;;
+punktowe;Bartoszyce;bartoszycki;WARMI—SKO-MAZURSKIE;Minty; 11a;57;3;3;DK;PNW.1.103;TraffiStar SR390;643294-60111;;;54,19055556;20,82461111;;
+punktowe;Przasnysz;przasnyski;MAZOWIECKIE;Przasnysz;Makowska 150;57;149;820;DK;PNW.2.078;MultaRadar CD;593-072-73245;;;53,01088333;20,90491667;;
+punktowe;Przasnysz;przasnyski;MAZOWIECKIE;Przasnysz;S≥owackiego 12;57;146;790;DK;PNW.2.095;MultaRadar CD;593-072/72044;;;53,0286;20,88015;;
+punktowe;Szczytno;szczycieÒski;WARMI—SKO-MAZURSKIE;Szczytno;Marii Sk≥odowskiej-Curie 2;57;0;0;DK;PNW.2.106;TraffiStar SR390;643294-60120;;;53,56027778;20,99083333;;
+punktowe;P≥oniawy-Bramura;makowski;MAZOWIECKIE;WÍgrzynowo; ;57;163;550;DK;PNW.2.075;MESTA Fusion RN;23136FU10003684;;;52,92291667;21,02723333;;
+punktowe;Wielbark;szczycieÒski;WARMI—SKO-MAZURSKIE;Wielbark;Kopernika 31;57;102;54;DK;PNW.2.092;MESTA Fusion RN;23116FU10003639;;;53,40555556;20,94472222;;
+punktowe;Jedwabno;szczycieÒski;WARMI—SKO-MAZURSKIE;Narty; 69;58;42;455;DK;PNW.1.105;TraffiStar SR390;643294-60104;;;53,53888889;20,78944444;;
+punktowe;Piecki;mrπgowski;WARMI—SKO-MAZURSKIE;Zgon; ;58;92;409;DK;PNW.1.100;MESTA Fusion RN;23166FU10003785;;;53,65;21,39638889;;
+punktowe;Piecki;mrπgowski;WARMI—SKO-MAZURSKIE;Piecki;ZwyciÍstwa 33;59;53;59;DK;PNW.2.057;MESTA Fusion RN;23115FU10003635;;;53,761;21,33938333;;
+punktowe;CiechanÛw;ciechanowski;MAZOWIECKIE;CiechanÛw;17 Stycznia 32;60;151;63;DK;PLN.2.095;MultaRadar CD;593-072/71515;;;52,88191667;20,6119;;
+punktowe;Glinojeck;ciechanowski;MAZOWIECKIE;Glinojeck;P≥ocka 12;60;127;500;DK;PLN.2.093;MultaRadar CD;593-072/71516;;;52,81831389;20,28713333;;
+punktowe;Go≥ymin-Oúrodek;ciechanowski;MAZOWIECKIE;Go≥ymin-Oúrodek;Ciechanowska ;60;172;300;DK;PLN.2.096;MultaRadar CD;593-072/71517;;;52,8095;20,87388333;;
+punktowe;Bielsk;p≥ocki;MAZOWIECKIE;Goúlice; 72;60;80;863;DK;CAN.2.102;TraffiStar SR390;643294-60079;;;52,60583333;19,79611111;;
+punktowe;£πck;p≥ocki;MAZOWIECKIE;Grabina; ;60;60;708;DK;CAN.1.105;TraffiStar SR390;643294-60102;;;52,48305556;19,64055556;;
+punktowe;CiechanÛw;ciechanowski;MAZOWIECKIE;Gumowo; ;60;142;500;DK;PLN.2.097;MultaRadar CD;593-072/71518;;;52,84018333;20,50383333;;
+punktowe;£πck;p≥ocki;MAZOWIECKIE;£πck; ;60;57;960;DK;CAN.2.058;MESTA Fusion RN;23130FU10003674;;;52,46777778;19,61166667;;
+punktowe;Kutno;kutnowski;£”DZKIE;Piwki; ;60;20;572;DK;CEN.3.117;MultaRadar CD;593-072/72062;;;52,215;19,34805556;;
+punktowe;Strzelce;kutnowski;£”DZKIE;Strzelce;G≥Ûw 29;60;32;142;DK;CEN.2.137;TraffiStar SR390;643294-60069;;;52,3105;19,40455556;;
+punktowe;RÛøan;makowski;MAZOWIECKIE;Za≥uzie; ;60;203;843;DK;PNW.2.076;MESTA Fusion RN;23167FU10003791;;;52,88018333;21,31033333;;
+punktowe;Kutno;kutnowski;£”DZKIE;Øurawieniec; 5;60;26;250;DK;CEN.2.136;TraffiStar SR390;643294-60071;;;52,25894444;19,38675;;
+punktowe;Olszewo-Borki;ostro≥Ícki;MAZOWIECKIE;Dobro≥Íka; ;61;109;0;DK;PNW.2.083;MultaRadar CD;593-072-73244;;;53,01536667;21,49045;;
+punktowe;Pokrzywnica;pu≥tuski;MAZOWIECKIE;Dzierøenin; ;61;45;541;DK;CAN.2.087;MESTA Fusion RN;23143FU10003700;;;52,57036111;21,08936111;;
+punktowe;Pu≥tusk;pu≥tuski;MAZOWIECKIE;Kacice; ;61;57;100;DK;CAN.2.026;MESTA Fusion RN;23132FU10003681;;;52,6691;21,08163333;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;ModliÒska 248;61;0;0;DK;CAN.3.084;MultaRadar CD;593-072/71601;;;52,33806389;20,95818333;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;ModliÒska 287;61;0;0;DK;CAN.3.064;MultaRadar CD;593-072/71603;;;52,33818611;20,95741389;;
+punktowe;Serock;legionowski;MAZOWIECKIE;Zegrze; ;61;31;786;DK;CAN.1.109;TraffiStar SR390;643294-60115;;;52,45972222;21,01888889;;
+punktowe;Liw;wÍgrowski;MAZOWIECKIE;Borzychy;Podlaska ;62;282;360;DK;WSC.2.058;MultaRadar CD;593-072/71683;;;52,46083333;21,92222222;;
+punktowe;Drohiczyn;siemiatycki;PODLASKIE;Drohiczyn;Warszawska 51;62;339;185;DK;WSC.2.071;TraffiStar SR390;643294-60096;;;52,40258333;22,64855556;;
+punktowe;W≥oc≥awek;w≥oc≥awski;KUJAWSKO-POMORSKIE;Modzerowo; ;62;79;338;DK;PLN.2.013;MESTA Fusion RN;23088FUS1000025;;;52,64356667;19,19858333;;
+punktowe;Nowy DuninÛw;p≥ocki;MAZOWIECKIE;Nowy DuninÛw;P≥ocka 7;62;100;670;DK;CAN.2.100;FOTORAPID CM;363;;;52,58166667;19,48194444;;
+punktowe;S≥upno;p≥ocki;MAZOWIECKIE;S≥upno; ;62;126;700;DK;CAN.2.104;TraffiStar SR390;643294-60093;;;52,50527778;19,83694444;;
+punktowe;Serock;legionowski;MAZOWIECKIE;Wola Kie≥piÒska; ;62;213;812;DK;CAN.2.050;MESTA Fusion RN;23132FU10003680;;;52,50478333;20,98971667;;
+punktowe;Piπtnica;≥omøyÒski;PODLASKIE;Budy Czarnockie; ;63;161;108;DK;PNW.2.088;MultaRadar CD;593-072/71711;;;53,22858333;22,11136667;;
+punktowe;SterdyÒ;soko≥owski;MAZOWIECKIE;SterdyÒ; ;63;220;789;DK;WSC.1.059;MESTA Fusion RN;23143FU10003699;;;52,57705;22,29685556;;
+punktowe;WÍgorzewo;wÍgorzewski;WARMI—SKO-MAZURSKIE;WÍgorzewo;£uczaÒska 3;63;16;750;DK;PNW.2.090;MultaRadar CD;593-072/71708;;;54,20243333;21,75842778;;
+punktowe;ZambrÛw;zambrowski;PODLASKIE;ZambrÛw;Wojska Polskiego 50;63;170;319;DK;PNW.2.024;MultaRadar CD;593-072/71987;;;52,97081667;22,24423333;;
+punktowe;E≥k;e≥cki;WARMI—SKO-MAZURSKIE;E≥k;Grajewska 9C;65;4;27;DK;PNW.2.045;MultaRadar CD;593-072-73254;;;53,80365;22,36543333;;
+punktowe;Dobrzyniewo Duøe;bia≥ostocki;PODLASKIE;Fasty;Szosa KnyszyÒska ;65;161;523;DK;PNW.2.097;MultaRadar CD;593-072/71703;;;53,16872222;23,05685556;;
+punktowe;Bielsk Podlaski;bielski;PODLASKIE;Grabowiec; 66;66;67;280;DK;PNW.2.030;MultaRadar CD;593-072-73257;;;52,75263333;23,04196667;;
+punktowe;ZambrÛw;zambrowski;PODLASKIE;ZambrÛw;Mazowiecka 51;66;0;800;DK;PNW.2.023;MESTA Fusion RN;23165FU10003774;;;52,97485;22,25288333;;
+punktowe;Skierniewice;skierniewicki;£”DZKIE;Sierakowice Prawe; ;70;17;734;DK;CEN.1.119;MultaRadar CD;593-072/72034;;;52,00444444;20,08888889;;
+punktowe;KsawerÛw;pabianicki;£”DZKIE;Wola ZaradzyÒska; ;71;48;125;DK;CEN.2.125;MultaRadar CD;593-072-73292;;;51,66252778;19,41875;;
+punktowe;AleksandrÛw £Ûdzki;zgierski;£”DZKIE;AleksandrÛw £Ûdzki; ;72;92;470;DK;CEN.1.109;MultaRadar CD;593-072/71713;;;51,82073333;19,28086667;;
+punktowe;G≥uchÛw;skierniewicki;£”DZKIE;Bia≥ynin; 57;72;144;319;DK;CEN.2.132;MultaRadar CD;593-072-73218;;;51,807;20,01355556;;
+punktowe;£Ûdü;£Ûdü;£”DZKIE;£Ûdü;W≥Ûkniarzy ;72;0;0;DK;CEN.3.003;MultaRadar CD;593-072-73291;;;51,80751667;19,42561667;;
+punktowe;Brzostek;dÍbicki;PODKARPACKIE;Bukowa; ;73;151;100;DK;PDW.1.067;MultaRadar CD;593-072-73219;;;49,85213889;21,40611111;;
+punktowe;Ko≥aczyce;jasielski;PODKARPACKIE;Ko≥aczyce;Burmistrza Wiejowskiego 12;73;157;795;DK;PDW.1.078;MESTA Fusion RN;23167FU10003795;;;49,79775;21,42969444;;
+punktowe;Stopnica;buski;åWI TOKRZYSKIE;Stopnica; 45;73;73;892;DK;PLD.2.084;MultaRadar CD;593-072/71971;;;50,43961111;20,93033333;;
+punktowe;Annopol;kraúnicki;LUBELSKIE;Annopol;Radomska 4;74;176;901;DK;PDW.2.088;TraffiStar SR390;643294-60103;;;50,88535278;21,85361111;;
+punktowe;Szczebrzeszyn;zamojski;LUBELSKIE;BodaczÛw; ;74;257;445;DK;WSC.2.057;MultaRadar CD;593-072/71701;;;50,71583333;23,02861111;;
+punktowe;JanÛw Lubelski;janowski;LUBELSKIE;JanÛw Lubelski; ;74;385;195;DK;PDW.2.052;MultaRadar CD;593-072/72008;;;50,71545;22,39983333;;
+punktowe;GoúcieradÛw;kraúnicki;LUBELSKIE;Liúnik Duøy; 156;74;193;564;DK;PDW.2.087;TraffiStar SR390;643294-60076;;;50,88777778;22,06777778;;
+punktowe;£agÛw;kielecki;åWI TOKRZYSKIE;£agÛw; 4;74;117;715;DK;PLD.2.090;MultaRadar CD;593-072/71670;;;50,77638889;21,08;;
+punktowe;Miedziana GÛra;kielecki;åWI TOKRZYSKIE;Miedziana GÛra;£Ûdzka 21;74;73;952;DK;PLD.2.086;MultaRadar CD;593-072/71662;;;50,93222222;20,5625;;
+punktowe;MniÛw;kielecki;åWI TOKRZYSKIE;MniÛw; ;74;61;805;DK;PLD.2.099;MultaRadar CD;593-072/72057;;;51,00979722;20,48877222;;
+punktowe;MniÛw;kielecki;åWI TOKRZYSKIE;MniÛw;RaszÛwka ;74;63;667;DK;PLD.1.104;MESTA Fusion RN;23136FU10003682;;;50,99867222;20,50529722;;
+punktowe;Trzydnik Duøy;kraúnicki;LUBELSKIE;OlbiÍcin; ;74;197;593;DK;PDW.2.072;MultaRadar CD;593-072/71689;;;50,89383333;22,12186111;;
+punktowe;OsjakÛw;wieluÒski;£”DZKIE;OsjakÛw;Spacerowa 5;74;34;165;DK;CEN.2.108;MultaRadar CD;593-072/71702;;;51,28216667;18,789;;
+punktowe;Paradyø;opoczyÒski;£”DZKIE;Paradyø;Piotrkowska 1;74;17;190;DK;CEN.2.130;MultaRadar CD;593-072/71715;;;51,30569444;20,11375;;
+punktowe;SmykÛw;konecki;åWI TOKRZYSKIE;SmykÛw; 94;74;53;989;DK;PLD.2.085;MESTA Fusion RN;23165FU10003779;;;51,05288889;20,40294444;;
+punktowe;OøarÛw;opatowski;åWI TOKRZYSKIE;Zawada; 13a;74;3;784;DK;PLD.1.089;MultaRadar CD;593-072/71721;;;50,86888889;21,69888889;;
+punktowe;ØarnÛw;opoczyÒski;£”DZKIE;ØarnÛw; ;74;24;700;DK;CEN.2.123;MultaRadar CD;593-072-73307;;;51,25225;20,16986111;;
+punktowe;£ososina Dolna;nowosπdecki;MA£OPOLSKIE;Bilsko; 226;75;50;299;DK;PLD.1.116;TraffiStar SR390;643294-60062;;;49,73693611;20,63755833;;
+punktowe;Nowy Sπcz;Nowy Sπcz;MA£OPOLSKIE;Nowy Sπcz;wojowska 332;75;0;0;DK;PLD.2.079;MESTA Fusion RN;23167FU10003799;;;49,57348333;20,73386667;;
+punktowe;Nowy Sπcz;Nowy Sπcz;MA£OPOLSKIE;Nowy Sπcz;Pi≥sudskiego wysokoúÊ posesji Browar 27;75;0;0;DK;PLD.3.078;MESTA Fusion RN;23165FU10003782;;;49,61403333;20,72153333;;
+punktowe;Gnojnik;brzeski;MA£OPOLSKIE;Uszew; 52;75;21;618;DK;PLD.2.092;MultaRadar CD;593-072/71675;;;49,91819444;20,5975;;
+punktowe;ObrazÛw;sandomierski;åWI TOKRZYSKIE;KleczanÛw; ;77;5;112;DK;PLD.2.097;MESTA Fusion RN;23165FU10003778;;;50,71883333;21,56966667;;
+punktowe;Nowa Sarzyna;leøajski;PODKARPACKIE;Nowa Sarzyna; ;77;84;700;DK;PDW.2.046;MESTA Fusion RN;23185FU10003890;;;50,33071667;22,33866667;;
+punktowe;Przemyúl;Przemyúl;PODKARPACKIE;Przemyúl;Wolnoúci ;77;145;643;DK;PDW.3.086;MultaRadar CD;593-072/71510;;;49,80044444;22,78138889;;
+punktowe;Sandomierz;sandomierski;åWI TOKRZYSKIE;Sandomierz;Kwiatkowskiego ;77;19;492;DK;PLD.2.120;TraffiStar SR390;643294-60080;;;50,68666667;21,75472222;;
+punktowe;Zaleszany;stalowowolski;PODKARPACKIE;ZbydniÛw; ;77;37;497;DK;PDW.2.075;MultaRadar CD;593-072/72041;;;50,6345;21,94091667;;
+punktowe;Moskorzew;w≥oszczowski;åWI TOKRZYSKIE;Chlewice;16 Stycznia 14;78;173;982;DK;PLD.2.088;MultaRadar CD;593-072/71668;;;50,65555556;20,00638889;;
+punktowe;Szczekociny;zawierciaÒski;åL•SKIE;Goleniowy;Wyzwolenia ;78;160;965;DK;SLA.1.017;MESTA Fusion RN;23185FU10003891;;;50,63268333;19,87323333;;
+punktowe;Szczekociny;zawierciaÒski;åL•SKIE;Grabiec; ;78;151;16;DK;SLA.2.018;MultaRadar CD;593-072/71966;;;50,61413889;19,74333333;;
+punktowe;Kroczyce;zawierciaÒski;åL•SKIE;Prad≥a;Wyzwolenia ;78;142;911;DK;SLA.2.039;MultaRadar CD;593-072-73248;;;50,57735;19,65128333;;
+punktowe;Zawiercie;zawierciaÒski;åL•SKIE;Zawiercie;Jurajska 100b;78;129;766;DK;SLA.2.038;MESTA Fusion RN;23164FU10003767;;;50,51275278;19,53891667;;
+punktowe;Garbatka-Letnisko;kozienicki;MAZOWIECKIE;Garbatka-Letnisko;Kozienicka 21;79;93;129;DK;CEN.2.122;MultaRadar CD;593-072/72058;;;51,48495833;21,60981667;;
+punktowe;Kozienice;kozienicki;MAZOWIECKIE;Kozienice;Warszawska ;79;79;1;DK;CEN.2.052;MESTA Fusion RN;23144FU10003703;;;51,59471111;21,53444444;;
+punktowe;KrakÛw;KrakÛw;MA£OPOLSKIE;KrakÛw;Andersa 32B;79;0;0;DK;PLD.2.068;MultaRadar CD;593-072-73239;;;50,08618333;20,01173333;;
+punktowe;KrakÛw;KrakÛw;MA£OPOLSKIE;KrakÛw;LublaÒska 16A;79;0;0;DK;PLD.3.106;MultaRadar CD;593-072-73174;;;50,08505833;19,96298889;;
+punktowe;Magnuszew;kozienicki;MAZOWIECKIE;Mniszew; ;79;44;602;DK;CEN.2.053;MultaRadar CD;593-072/71993;;;51,84586667;21,28356667;;
+punktowe;Nowe Brzesko;proszowicki;MA£OPOLSKIE;Nowe Brzesko;Lubelska 109;79;315;579;DK;PLD.2.093;MultaRadar CD;593-072/71679;;;50,13738333;20,38523333;;
+punktowe;Osiek;staszowski;åWI TOKRZYSKIE;Osiek; 42a;79;219;634;DK;PLD.3.118;TraffiStar SR390;643294-60078;;;50,51638889;21,45433333;;
+punktowe;OøarÛw;opatowski;åWI TOKRZYSKIE;OøarÛw; ;79;167;452;DK;PLD.2.098;MESTA Fusion RN;23163FU10003763;;;50,87821667;21,66288333;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Pu≥awska 538;79;0;0;DK;CAN.3.067;MultaRadar CD;593-072/71600;;;52,10840833;21,01854167;;
+punktowe;Igo≥omia-WawrzeÒczyce;krakowski;MA£OPOLSKIE;WawrzeÒczyce; 14;79;322;813;DK;PLD.2.052;MESTA Fusion RN;23165FU10003775;;;50,10693333;20,2983;;
+punktowe;Policzna;zwoleÒski;MAZOWIECKIE;Wilczowola; ;79;100;470;DK;CEN.2.113;MultaRadar CD;593-072/72054;;;51,42305556;21,60888889;;
+punktowe;ZabierzÛw;krakowski;MA£OPOLSKIE;ZabierzÛw; ;79;355;507;DK;PLD.2.054;MultaRadar CD;593-072/71983;;;50,11611111;19,78994444;;
+punktowe;Igo≥omia-WawrzeÒczyce;krakowski;MA£OPOLSKIE;Zofipole; 127;79;328;358;DK;PLD.2.051;MESTA Fusion RN;23166FU10003783;;;50,08608333;20,22926667;;
+punktowe;Z≥awieú Wielka;toruÒski;KUJAWSKO-POMORSKIE;Czarnowo; 35;80;23;912;DK;PLN.2.122;TraffiStar SR390;643294-60101;;;53,10294444;18,24447222;;
+punktowe;ToruÒ;ToruÒ;KUJAWSKO-POMORSKIE;ToruÒ;Lubicka 37;80;0;0;DK;PLN.2.034;MultaRadar CD;593-072-73297;;;53,01598333;18,63268333;;
+punktowe;ToruÒ;ToruÒ;KUJAWSKO-POMORSKIE;ToruÒ;Szosa Lubicka ;80;0;0;DK;PLN.3.009;MultaRadar CD;593-072/71707;;;53,02355;18,66216667;;
+punktowe;Orzesze;miko≥owski;åL•SKIE;Orzesze;Central ;81;26;500;DK;SLA.1.053;MultaRadar CD;593-072-73233;;;50,08371944;18,75353333;;
+punktowe;Paw≥owice;pszczyÒski;åL•SKIE;Paw≥owice; ;81;41;101;DK;SLA.1.066;MultaRadar CD;593-072/71685;;;49,96723056;18,71899722;;
+punktowe;Paw≥owice;pszczyÒski;åL•SKIE;Paw≥owice; ;81;44;215;DK;SLA.1.085;MultaRadar CD;593-072/72033;;;49,94238889;18,71672222;;
+punktowe;SkoczÛw;cieszyÒski;åL•SKIE;SkoczÛw;Katowicka ;81;61;715;DK;SLA.1.056;MultaRadar CD;593-072/72006;;;49,80433333;18,79046667;;
+punktowe;PuchaczÛw;≥ÍczyÒski;LUBELSKIE;Brzeziny; 144;82;32;0;DK;WSC.2.068;MultaRadar CD;593-072/71686;;;51,30000833;22,987525;;
+punktowe;WÛlka;lubelski;LUBELSKIE;£uszczÛw Pierwszy; ;82;12;721;DK;WSC.2.061;MultaRadar CD;593-072/72050;;;51,30178056;22,72680833;;
+punktowe;WÛlka;lubelski;LUBELSKIE;Turka; ;82;8;750;DK;WSC.2.053;MultaRadar CD;593-072/71684;;;51,28638889;22,67722222;;
+punktowe;Katowice;Katowice;åL•SKIE;Katowice;Murckowska ;86;0;735;DK;SLA.1.076;MultaRadar CD;593-072/72010;;;50,24329444;19,04981389;;
+punktowe;Psary;bÍdziÒski;åL•SKIE;SarnÛw; ;86;7;220;DK;SLA.1.079;MultaRadar CD;593-072-73237;;;50,37738889;19,15486111;;
+punktowe;Ujazd;strzelecki;OPOLSKIE;Sieroniowice; ;88;5;369;DK;SLA.3.098;TraffiStar SR390;643294-60056;;;50,45638889;18,34694444;;
+punktowe;Dobryszyce;radomszczaÒski;£”DZKIE;Blok Dobryszyce;Piotrkowska 29;91;56;300;DK;CEN.2.106;MultaRadar CD;593-072/71706;;;51,11103333;19,46778333;;
+punktowe;Warlubie;úwiecki;KUJAWSKO-POMORSKIE;Bzowo; ;91;108;0;DK;PLN.2.017;MESTA Fusion RN;23080FUS1000003;;;53,55573333;18,65365;;
+punktowe;Che≥mno;che≥miÒski;KUJAWSKO-POMORSKIE;Che≥mno;£uwska ;91;146;637;DK;PLN.1.025;MultaRadar CD;593-072-73330;;;53,35163333;18,45146667;;
+punktowe;CzÍstochowa;CzÍstochowa;åL•SKIE;CzÍstochowa;Wojska Polskiego ;91;480;400;DK;SLA.3.025;MultaRadar CD;593-072-73329;;;50,76376667;19,16305;;
+punktowe;CzÍstochowa;CzÍstochowa;åL•SKIE;CzÍstochowa;Wojska Polskiego ;91;475;300;DK;SLA.3.029;MultaRadar CD;593-072/71673;;;50,80716667;19,13556667;;
+punktowe;Dragacz;úwiecki;KUJAWSKO-POMORSKIE;GÛrna Grupa; ;91;117;70;DK;PLN.1.005;MESTA Fusion RN;23019FU10003526;;;53,48571667;18,668;;
+punktowe;Che≥mno;che≥miÒski;KUJAWSKO-POMORSKIE;Grubno; ;91;148;800;DK;PLN.1.030;MESTA Fusion RN;23088FUS1000023;;;53,33603333;18,469;;
+punktowe;Papowo Biskupie;che≥miÒski;KUJAWSKO-POMORSKIE;Jeleniec; ;91;157;300;DK;PLN.2.022;MultaRadar CD;593-072-73331;;;53,274;18,50938333;;
+punktowe;KamieÒsk;radomszczaÒski;£”DZKIE;KamieÒsk;S≥owackiego 121a;91;46;591;DK;CEN.2.128;MultaRadar CD;593-072-73311;;;51,19475;19,49880556;;
+punktowe;£Íczyca;≥Íczycki;£”DZKIE;LubieÒ; ;91;317;9;DK;CEN.1.114;MultaRadar CD;593-072/72059;;;52,02613889;19,22458333;;
+punktowe;Gniew;tczewski;POMORSKIE;Ma≥a Karczma; ;91;82;548;DK;PLN.2.062;MESTA Fusion RN;23125FU10003670;;;53,74923333;18,75523333;;
+punktowe;AleksandrÛw Kujawski;aleksandrowski;KUJAWSKO-POMORSKIE;Ot≥oczyn; ;91;206;10;DK;PLN.1.029;MultaRadar CD;593-072-73192;;;52,90655;18,72175;;
+punktowe;OzorkÛw;zgierski;£”DZKIE;OzorkÛw; ;91;327;519;DK;CEN.1.118;MultaRadar CD;593-072/72060;;;51,95611111;19,31583333;;
+punktowe;Poczesna;czÍstochowski;åL•SKIE;Poczesna; ;91;486;815;DK;SLA.1.012;MultaRadar CD;593-072-73300;;;50,71488889;19,15163889;;
+punktowe;Radomsko;radomszczaÒski;£”DZKIE;Radomsko;rutowicza 211;91;57;915;DK;CEN.2.127;FOTORAPID CM;361;;;51,09738889;19,46013889;;
+punktowe;Pelplin;tczewski;POMORSKIE;Rudno; ;91;59;300;DK;PLN.2.061;MESTA Fusion RN;23143FU10003701;;;53,932;18,75818333;;
+punktowe;Siewierz;bÍdziÒski;åL•SKIE;Siewierz; ;91;516;535;DK;SLA.1.015;MultaRadar CD;593-072-73236;;;50,47096667;19,22878333;;
+punktowe;OzorkÛw;zgierski;£”DZKIE;S≥owik;GdaÒska 35;91;331;675;DK;CEN.2.010;MultaRadar CD;593-072-73337;;;51,92805556;19,35388889;;
+punktowe;Subkowy;tczewski;POMORSKIE;Subkowy; ;91;51;300;DK;PLN.2.098;MultaRadar CD;593-072/71704;;;54,00272222;18,76583333;;
+punktowe;ToruÒ;ToruÒ;KUJAWSKO-POMORSKIE;ToruÒ;Grudziπdzka 151;91;0;0;DK;PLN.2.115;MultaRadar CD;593-072/72049;;;53,03539722;18,61218611;;
+punktowe;ToruÒ;ToruÒ;KUJAWSKO-POMORSKIE;ToruÒ;Grudziπdzka 95;91;0;0;DK;PLN.2.116;MultaRadar CD;593-072/72046;;;53,0263;18,61121111;;
+punktowe;Kamienica Polska;czÍstochowski;åL•SKIE;Wanaty; ;91;489;970;DK;SLA.1.009;MultaRadar CD;593-072/71965;;;50,68827778;19,13363889;;
+punktowe;Poczesna;czÍstochowski;åL•SKIE;Wrzosowa; ;91;482;600;DK;SLA.1.011;MultaRadar CD;593-072/71538;;;50,74951667;19,15266667;;
+punktowe;Tczew;tczewski;POMORSKIE;Zajπczkowo; ;91;37;423;DK;PLN.1.121;TraffiStar SR390;643294-60067;;;54,11861111;18,75027778;;
+punktowe;Bedlno;kutnowski;£”DZKIE;Bedlno; ;92;370;841;DK;CEN.2.028;MultaRadar CD;593-072/72003;;;52,20795;19,57771667;;
+punktowe;B≥onie;warszawski zachodni;MAZOWIECKIE;B≥onie-Wieú;Sochaczewska 92;92;447;734;DK;CAN.1.108;TraffiStar SR390;643294-60116;;;52,19972222;20,58916667;;
+punktowe;Torzym;sulÍciÒski;LUBUSKIE;BoczÛw;Sikorskiego 23;92;4;555;DK;PNZ.1.112;TraffiStar SR390;643294-60124;;;52,32249722;14,94382222;;
+punktowe;Miedzichowo;nowotomyski;WIELKOPOLSKIE;Bolewice; ;92;115;34;DK;WLK.2.030;MultaRadar CD;593-072/71996;;;52,39538333;16,11816667;;
+punktowe;Trzciel;miÍdzyrzecki;LUBUSKIE;BrÛjce; ;92;62;162;DK;PNZ.1.087;MultaRadar CD;593-072/71525;;;52,32101667;15,68256667;;
+punktowe;Kostrzyn;poznaÒski;WIELKOPOLSKIE;Brzeüno; ;92;211;335;DK;WLK.1.059;MESTA Fusion RN;23185FU10003892;;;52,37453333;17,3435;;
+punktowe;Kaümierz;szamotulski;WIELKOPOLSKIE;BytyÒ; ;92;148;311;DK;WLK.2.029;MESTA Fusion RN;23087FUS1000016;;;52,48466667;16,50258333;;
+punktowe;Golina;koniÒski;WIELKOPOLSKIE;Golina;Wolnoúci ;92;39;635;DK;WLK.2.064;MESTA Fusion RN;23114FU10003625;;;52,24313333;18,08761667;;
+punktowe;K≥odawa;kolski;WIELKOPOLSKIE;K≥odawa; ;92;324;413;DK;WLK.2.056;MESTA Fusion RN;23114FU10003627;;;52,25001667;18,92913333;;
+punktowe;Kostrzyn;poznaÒski;WIELKOPOLSKIE;Kostrzyn; ;92;200;860;DK;WLK.1.058;MultaRadar CD;593-072-73317;;;52,39744444;17,20197222;;
+punktowe;Kostrzyn;poznaÒski;WIELKOPOLSKIE;Kostrzyn; ;92;201;910;DK;WLK.1.001;MultaRadar CD;593-072-73306;;;52,40027778;17,21675;;
+punktowe;Kutno;kutnowski;£”DZKIE;Kutno; ;92;358;7;DK;CEN.1.017;MultaRadar CD;593-072/72002;;;52,22055556;19,39444444;;
+punktowe;Trzciel;miÍdzyrzecki;LUBUSKIE;Lutol Suchy; ;92;65;88;DK;PNZ.2.078;MultaRadar CD;593-072-73296;;;52,33228333;15,72098333;;
+punktowe;Miedzichowo;nowotomyski;WIELKOPOLSKIE;Miedzichowo; ;92;103;131;DK;WLK.3.032;MESTA Fusion RN;23165FU10003777;;;52,37593889;15,96215;;
+punktowe;Nekla;wrzesiÒski;WIELKOPOLSKIE;Nekla; ;92;216;40;DK;WLK.1.061;MultaRadar CD;593-072-73304;;;52,36836667;17,41036667;;
+punktowe;Teresin;sochaczewski;MAZOWIECKIE;Paprotnia; ;92;436;240;DK;CAN.1.022;MESTA Fusion RN;23131FU10003678;;;52,21266667;20,42246667;;
+punktowe;KrzymÛw;koniÒski;WIELKOPOLSKIE;Paprotnia; ;92;286;621;DK;WLK.1.084;TraffiStar SR390;643294-60064;;;52,17413889;18,41975;;
+punktowe;Bedlno;kutnowski;£”DZKIE;Plecka Dπbrowa; ;92;376;98;DK;CEN.2.031;MultaRadar CD;593-072-73338;;;52,18444444;19,64444444;;
+punktowe;Duszniki;szamotulski;WIELKOPOLSKIE;Podrzewie; ;92;139;844;DK;WLK.2.002;MESTA Fusion RN;23088FUS1000020;;;52,49698889;16,38197778;;
+punktowe;Tarnowo PodgÛrne;poznaÒski;WIELKOPOLSKIE;Rumianek; ;92;157;297;DK;WLK.1.083;TraffiStar SR390;643294-60058;;;52,45772222;16,62030833;;
+punktowe;S≥upca;s≥upecki;WIELKOPOLSKIE;S≥upca;PozÒska ;92;22;165;DK;WLK.2.074;MultaRadar CD;593-072/72047;;;52,29333333;17,85805556;;
+punktowe;SwarzÍdz;poznaÒski;WIELKOPOLSKIE;SwarzÍdz; ;92;191;185;DK;WLK.3.007;MultaRadar CD;593-072-73316;;;52,40546667;17,06328333;;
+punktowe;åwiebodzin;úwiebodziÒski;LUBUSKIE;åwiebodzin; ;92;49;0;DK;PNZ.1.016;MESTA Fusion RN;23145FU10003713;;;52,25568333;15,54973333;;
+punktowe;Torzym;sulÍciÒski;LUBUSKIE;Torzym;Wojska Polskiego 67;92;12;758;DK;PNZ.2.007;MESTA Fusion RN;23083FUS1000011;;;52,31458333;15,05805;;
+punktowe;Torzym;sulÍciÒski;LUBUSKIE;Torzym; ;92;14;824;DK;PNZ.2.055;MESTA Fusion RN;23083FUS1000010;;;52,31271667;15,08765;;
+punktowe;Golina;koniÒski;WIELKOPOLSKIE;WÍglew;WÍglew-Kolonia ;92;44;570;DK;WLK.2.065;MultaRadar CD;593-072-73344;;;52,239875;18,15886667;;
+punktowe;åwiebodzin;úwiebodziÒski;LUBUSKIE;Wilkowo; ;92;43;537;DK;PNZ.2.106;MultaRadar CD;593-072-73343;;;52,25407222;15,4765;;
+punktowe;Bedlno;kutnowski;£”DZKIE;Wojszyce; 75;92;367;805;DK;CEN.2.029;MultaRadar CD;593-072-73287;;;52,21271667;19,53426667;;
+punktowe;Zduny;≥owicki;£”DZKIE;Zduny; 16;92;388;811;DK;CEN.2.032;MultaRadar CD;593-072-73294;;;52,14576667;19,81605;;
+punktowe;Boles≥aw;olkuski;MA£OPOLSKIE;Boles≥aw; 3;94;290;668;DK;PLD.1.042;MultaRadar CD;593-072-73238;;;50,30608333;19,47846667;;
+punktowe;Boles≥awiec;boles≥awiecki;DOLNOåL•SKIE;Brzeünik; ;94;33;276;DK;PDZ.2.050;MultaRadar CD;593-072/71526;;;51,24294444;15,46941667;;
+punktowe;Bytom;Bytom;åL•SKIE;Bytom;Wroc≥awska 118;94;0;0;DK;SLA.2.089;TraffiStar SR390;643294-60034;;;50,35138889;18,88944444;;
+punktowe;Wielka Wieú;krakowski;MA£OPOLSKIE;Czajowice; 2;94;517;718;DK;PLD.1.119;TraffiStar SR390;643294-60081;;;50,19027778;19,79666667;;
+punktowe;O≥awa;o≥awski;DOLNOåL•SKIE;GaÊ; 57;94;132;467;DK;PDZ.2.098;TraffiStar SR390;643294-60065;;;50,88733333;17,36516667;;
+punktowe;Mi≥kowice;legnicki;DOLNOåL•SKIE;Gniewomirowice; 2;94;20;897;DK;PDZ.1.101;TraffiStar SR390;643294-60075;;;51,22458333;16,06911111;;
+punktowe;Brzesko;brzeski;MA£OPOLSKIE;JasieÒ; 183;94;41;311;DK;PLD.2.034;MultaRadar CD;593-072/71985;;;49,97402778;20,55747222;;
+punktowe;DÍbno;brzeski;MA£OPOLSKIE;Jastew; ;94;50;441;DK;PLD.3.035;MESTA Fusion RN;23165FU10003776;;;49,9683;20,67758333;;
+punktowe;£aÒcut;≥aÒcucki;PODKARPACKIE;Kosina; ;94;622;630;DK;PDW.2.084;MESTA Fusion RN;23164FU10003769;;;50,07183889;22,32586389;;
+punktowe;£aÒcut;≥aÒcucki;PODKARPACKIE;Kraczkowa; ;94;608;604;DK;PDW.1.061;MultaRadar CD;593-072/72038;;;50,04601667;22,15006667;;
+punktowe;MiÍkinia;úredzki;DOLNOåL•SKIE;KrÍpice; ;94;80;705;DK;PDZ.1.106;TraffiStar SR390;643294-60099;;;51,15361111;16,815;;
+punktowe;Boles≥awiec;boles≥awiecki;DOLNOåL•SKIE;Kruszyn; ;94;44;490;DK;PDZ.2.051;MultaRadar CD;593-072/71537;;;51,26043333;15,61438333;;
+punktowe;SkrzyszÛw;tarnowski;MA£OPOLSKIE;£adna; 54;94;81;564;DK;PLD.1.117;TraffiStar SR390;643294-60083;;;50,0075;21,08527778;;
+punktowe;O≥awa;o≥awski;DOLNOåL•SKIE;Marcinkowice; ;94;117;130;DK;PDZ.2.084;MultaRadar CD;593-072/71606;;;50,98311111;17,22447222;;
+punktowe;Malczyce;úredzki;DOLNOåL•SKIE;Mazurowice; ;94;53;743;DK;PDZ.2.100;TraffiStar SR390;643294-60073;;;51,21238889;16,46347222;;
+punktowe;Przeworsk;przeworski;PODKARPACKIE;Mirocin; ;94;639;710;DK;PDW.3.079;MultaRadar CD;593-072/71667;;;50,04208333;22,55647222;;
+punktowe;O≥awa;o≥awski;DOLNOåL•SKIE;O≥awa; ;94;122;330;DK;PDZ.2.089;MultaRadar CD;593-072/71608;;;50,95122222;17,27869444;;
+punktowe;Pilzno;dÍbicki;PODKARPACKIE;Parkosz; ;94;539;400;DK;PDW.1.035;MultaRadar CD;593-072/71508;;;49,99373333;21,32151667;;
+punktowe;SkrzyszÛw;tarnowski;MA£OPOLSKIE;PogÛrska Wola; 76;94;86;504;DK;PLD.3.041;MESTA Fusion RN;23166FU10003786;;;50,01223333;21,15356667;;
+punktowe;Jerzmanowice-Przeginia;krakowski;MA£OPOLSKIE;Przeginia; 175;94;309;800;DK;PLD.2.045;MESTA Fusion RN;23170FU10003802;;;50,23283333;19,71216667;;
+punktowe;Przeworsk;przeworski;PODKARPACKIE;Przeworsk; ;94;633;500;DK;PDW.2.042;MultaRadar CD;593-072/71511;;;50,06085;22,4761;;
+punktowe;RzeszÛw;RzeszÛw;PODKARPACKIE;RzeszÛw;Krakowska 113;94;589;856;DK;PDW.2.089;MultaRadar CD;593-072/71512;;;50,05694444;21,96333333;;
+punktowe;SÍdziszÛw Ma≥opolski;ropczycko-sÍdziszowski;PODKARPACKIE;SÍdziszÛw Ma≥opolski; ;94;572;590;DK;PDW.1.068;MultaRadar CD;593-072/71663;;;50,06388889;21,73055556;;
+punktowe;Lewin Brzeski;brzeski;OPOLSKIE;Skorogoszcz;Opolska ;94;161;526;DK;SLA.2.047;MESTA Fusion RN;23145FU10003712;;;50,75926667;17,68228333;;
+punktowe;Kunice;legnicki;DOLNOåL•SKIE;Spalona; ;94;37;465;DK;PDZ.1.002;MultaRadar CD;593-072/71968;;;51,24408333;16,28503333;;
+punktowe;Strzelce Opolskie;strzelecki;OPOLSKIE;Strzelce Opolskie;Opolska ;94;215;130;DK;SLA.2.046;MESTA Fusion RN;23143FU10003702;;;50,5171;18,28783333;;
+punktowe;K≥aj;wielicki;MA£OPOLSKIE;Targowisko; 79;94;19;568;DK;PLD.1.032;MESTA Fusion RN;23164FU10003765;;;49,97647222;20,27680556;;
+punktowe;Warta Boles≥awiecka;boles≥awiecki;DOLNOåL•SKIE;TomaszÛw Boles≥awiecki; ;94;49;465;DK;PDZ.2.052;MultaRadar CD;593-072/71523;;;51,2606;15,684;;
+punktowe;åwilcza;rzeszowski;PODKARPACKIE;Trzciana; ;94;580;860;DK;PDW.2.039;MultaRadar CD;593-072/71669;;;50,07126667;21,84255;;
+punktowe;TarnÛw Opolski;opolski;OPOLSKIE;Walidrogi;Opolska ;94;196;662;DK;SLA.2.036;MESTA Fusion RN;23144FU10003704;;;50,6051;18,07511667;;
+punktowe;åwilcza;rzeszowski;PODKARPACKIE;Woliczka; ;94;582;764;DK;PDW.1.093;TraffiStar SR390;643294-60123;;;50,07138889;21,86888889;;
+punktowe;TarnÛw;tarnowski;MA£OPOLSKIE;Zg≥obice; 30;94;67;286;DK;PLD.3.039;MultaRadar CD;593-072-73234;;;49,97793333;20,9033;;
+punktowe;Karlino;bia≥ogardzki;ZACHODNIOPOMORSKIE;Karlino; ;112;2;38;DW;PNZ.1.038;MESTA Fusion RN;23170FU10003803;;;54,0304;15,89146667;;
+punktowe;Koszalin;Koszalin;ZACHODNIOPOMORSKIE;Koszalin;GdaÒska, rÛg Rolnej 21;112;0;0;DW;PNZ.2.028;MultaRadar CD;593-072-73249;;;54,20528333;16,20535;;
+punktowe;SianÛw;koszaliÒski;ZACHODNIOPOMORSKIE;SianÛw;£uøycka 52;112;151;366;DW;PNZ.2.103;MultaRadar CD;593-072-73153;;;54,23018611;16,30230833;;
+punktowe;S≥awno;s≥awieÒski;ZACHODNIOPOMORSKIE;S≥awno; ;112;180;697;DW;PNZ.2.063;MESTA Fusion RN;23114FU10003629;;;54,35189722;16,67723056;;
+punktowe;S≥awno;s≥awieÒski;ZACHODNIOPOMORSKIE;Warszkowo; ;112;185;279;DW;PNZ.2.105;MESTA Fusion RN;23142FU10003693;;;54,36570556;16,71476389;;
+punktowe;Koszalin;Koszalin;ZACHODNIOPOMORSKIE;Koszalin;Krakusa i Wandy ;165;44;370;DW;PNZ.2.031;MultaRadar CD;593-072-73250;;;54,18716667;16,17461667;;
+punktowe;Koszalin;Koszalin;ZACHODNIOPOMORSKIE;Koszalin;GnieünieÒska 53;165;46;630;DW;PNZ.2.029;MultaRadar CD;593-072-73251;;;54,17458333;16,20103333;;
+punktowe;Bobolice;koszaliÒski;ZACHODNIOPOMORSKIE;PrzydargiÒ; ;165;75;782;DW;PNZ.2.091;MESTA Fusion RN;23114FU10003626;;;54,00063333;16,52253333;;
+punktowe;PoznaÒ;PoznaÒ;WIELKOPOLSKIE;PoznaÒ;G≥ogowska 241;196;3;840;DW;WLK.2.080;MultaRadar CD;593-072-73290;;;52,37657222;16,87306111;;
+punktowe;PoznaÒ;PoznaÒ;WIELKOPOLSKIE;PoznaÒ;HetmaÒska ;196;7;410;DW;WLK.1.079;MultaRadar CD;593-072-73217;;;52,38822222;16,8998;;
+punktowe;Borzytuchom;bytowski;POMORSKIE;Borzytuchom;ZwyciÍstwa 1;209;53;100;DW;PLN.2.118;FOTORAPID CM;365;;;54,19988889;17,38413889;;
+punktowe;Borzytuchom;bytowski;POMORSKIE;Jutrzenka; ;209;48;970;DW;PLN.2.092;MultaRadar CD;593-072/72009;;;54,20516667;17,3326;;
+punktowe;Trπbki Wielkie;gdaÒski;POMORSKIE;Trπbki Wielkie;GdaÒska 27;222;84;484;DW;PLN.2.114;MultaRadar CD;593-072-73183;;;54,17266944;18,53534167;;
+punktowe;Kartuzy;kartuski;POMORSKIE;Kartuzy;Zamkowa 12;228;55;536;DW;PLN.2.112;MultaRadar CD;593-072-73181;;;54,32810833;18,19476944;;
+punktowe;Lipno;leszczyÒski;WIELKOPOLSKIE;Lipno;LeszczyÒska 6;309;41;113;DW;WLK.2.004;MultaRadar CD;593-072/71991;;;51,92071667;16,56471667;;
+punktowe;Lipno;leszczyÒski;WIELKOPOLSKIE;Radomicko;Radomicko 2;309;45;340;DW;WLK.2.008;MESTA Fusion RN;23167FU10003796;;;51,95465833;16,54544167;;
+punktowe;StÍszew;poznaÒski;WIELKOPOLSKIE;Zamys≥owo;Wroc≥awska 62;311;7;700;DW;WLK.1.026;MultaRadar CD;593-072-73319;;;52,26181667;16,68593333;;
+punktowe;G≥uszyca;wa≥brzyski;DOLNOåL•SKIE;G≥uszyca GÛrna;K≥odzka 72;381;18;478;DW;PDZ.2.090;MultaRadar CD;593-072-73175;;;50,66002778;16,37144444;;
+punktowe;Krapkowice;krapkowicki;OPOLSKIE;Krapkowice;ks. Kozio≥ka 48;409;19;638;DW;SLA.2.081;MultaRadar CD;593-072-73160;;;50,4865;17,98055556;;
+punktowe;Jemielnica;strzelecki;OPOLSKIE;Jemielnica;Strzelecka 56;426;9;798;DW;SLA.2.090;MESTA Fusion RN;23170FU10003801;;;50,54805556;18,38061111;;
+punktowe;£Íczyce;wejherowski;POMORSKIE;GodÍtowo; ;468;267;985;DW;PLN.2.055;MESTA Fusion RN;23137FU10003688;;;54,5733;17,86573333;;
+punktowe;Wejherowo;wejherowski;POMORSKIE;Goúcicino;LÍborska ;468;288;750;DW;PLN.2.053;MESTA Fusion RN;23170FU10003800;;;54,60426667;18,15566667;;
+punktowe;Luzino;wejherowski;POMORSKIE;KÍb≥owo;Wejherowska ;468;284;654;DW;PLN.3.066;MultaRadar CD;593-072-73332;;;54,58375;18,10793333;;
+punktowe;£Íczyce;wejherowski;POMORSKIE;Strzebielino; ;468;279;475;DW;PLN.2.054;MultaRadar CD;593-072-73333;;;54,5681;18,04076667;;
+punktowe;Wejherowo;wejherowski;POMORSKIE;Wejherowo;GdaÒska 98;468;296;736;DW;PLN.2.109;MultaRadar CD;593-072/71998;;;54,60261111;18,27482778;;
+punktowe;Wejherowo;wejherowski;POMORSKIE;Wejherowo;I Brygady Pancernej WP 1 ;468;295;890;DW;PLN.2.052;MultaRadar CD;593-072/72000;;;54,60348333;18,26098333;;
+punktowe;£Ûdü;£Ûdü;£”DZKIE;£Ûdü;Ja Paw≥a II 77;488;0;0;DW;CEN.1.129;MultaRadar CD;593-072-73188;;;51,73291667;19,44188889;;
+punktowe;£Ûdü;£Ûdü;£”DZKIE;£Ûdü;W≥Ûkniarzy 200;488;0;0;DW;CEN.2.126;MultaRadar CD;593-072/72037;;;51,77288889;19,42108333;;
+punktowe;Zgierz;zgierski;£”DZKIE;Zgierz;£Ûdzka 41;488;341;320;DW;CEN.2.008;MultaRadar CD;593-072/72005;;;51,85033333;19,40956667;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Aleje Jerozolimskie 3;631;0;0;DW;CAN.2.090;MultaRadar CD;593-072-73161;;;52,23277778;21,02624167;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Al.Jerozolimskie d ul. 3 Maja 15B;631;0;0;DW;CAN.2.092;MultaRadar CD;593-072-73163;;;52,23453056;21,03457778;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Al.Jerozolimskie d ul. 3 Maja 16-18a;631;0;0;DW;CAN.2.091;MultaRadar CD;593-072-73162;;;52,23390556;21,030775;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;d W. Koúciuszkowskim ;631;0;0;DW;CAN.2.094;MultaRadar CD;593-072-73165;;;52,23543889;21,03826389;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Poniatowskiego d W. MiedzeszyÒskim ;631;0;0;DW;CAN.2.095;MultaRadar CD;593-072-73166;;;52,23686944;21,04507222;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;GrÛjecka 124, kier. Centrum;631;0;0;DW;CAN.2.080;TraffiStar SR520;593-071/71379;;;52,20576111;20,97225278;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;GrÛjecka 124, kier. OkÍcie;631;0;0;DW;CAN.2.079;TraffiStar SR520;593-071/71380;;;52,20574167;20,97157222;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;RadzymiÒska 287;634;0;0;DW;CAN.3.065;MultaRadar CD;593-072/71604;;;52,29385556;21,08098889;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;S≥omiÒskiego ;637;0;0;DW;CAN.2.020;Fotorapid CM;088;;;52,25988889;21,00641667;;
+punktowe;Nowinka;augustowski;PODLASKIE;Nowinka;Nowinka 25 25;662;0;0;DW;PNW.2.026;MESTA Fusion RN;23165FU10003780;;;53,9338;22,9787;;
+punktowe;Mrπgowo;mrπgowski;WARMI—SKO-MAZURSKIE;Mrπgowo;Wojska Polskiego 85;680;13;925;DW;PNW.2.058;MultaRadar CD;593-072/71986;;;53,85615;21,30623333;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Aleje Jerozolimskie 239;719;0;0;DW;CAN.2.101;TraffiStar SR390;643294-60035;;;52,18518056;20,90208611;;
+punktowe;GÛra Kalwaria;piaseczyÒski;MAZOWIECKIE;Brzeúce;Wilanowska 40;724;21;564;DW;CAN.1.096;MultaRadar CD;593-072-73177;;;52,03;21,18466667;;
+punktowe;Zakrzew;radomski;MAZOWIECKIE;Milejowice;Radomska 30;740;3;448;DW;CEN.2.131;MultaRadar CD;593-072/71700;;;51,41955556;21,07716667;;
+punktowe;Miastkowo;≥omøyÒski;PODLASKIE;Miastkowo;£omøyÒska 29;760;137;720;DW;PNW.2.101;MESTA Fusion RN;23145FU10003716;;;53,15149167;21,82205278;;
+punktowe;Kielce;Kielce;åWI TOKRZYSKIE;Kielce;Krakowska ;762;10;85;DW;PLD.3.112;MESTA Fusion RN;23167FU10003798;;;50,85816944;20,58361667;;
+punktowe;S≥omniki;krakowski;MA£OPOLSKIE;Prandocin; 118;772;635;565;DW;PLD.1.015;FOTORAPID CM;340;;;50,26522222;20,07552778;;
+punktowe;Liszki;krakowski;MA£OPOLSKIE;Liszki;Krakowska 335;780;1;498;DW;PLD.2.107;MultaRadar CD;593-072-73176;;;50,03944444;19,77805556;;
+punktowe;CzernichÛw;krakowski;MA£OPOLSKIE;Przeginia Duchowna;ålπska 81;780;1;285;DW;PLD.1.111;MultaRadar CD;593-072/71543;;;50,03098611;19,62625833;;
+punktowe;Lesznowola;piaseczyÒski;MAZOWIECKIE;£azy;Krakowska 224;788;389;282;DW;CAN.1.098;MultaRadar CD;593-072-73182;;;52,09277778;20,88277778;;
+punktowe;Zielonki;krakowski;MA£OPOLSKIE;Przybys≥awice;Krakowska 98;794;1;327;DW;PLD.2.113;MultaRadar CD;593-072/72039;;;50,16374722;19,89931389;;
+punktowe;Modliborzyce;janowski;LUBELSKIE;Modliborzyce; ;848;378;948;DW;PDW.2.051;MultaRadar CD;593-072-73220;;;50,75073333;22,33486667;;
+punktowe;Szastarka;kraúnicki;LUBELSKIE;Polichna Pierwsza; 69;848;369;601;DW;PDW.3.076;MultaRadar CD;593-072/72045;;;50,82611111;22,31086111;;
+punktowe;Wilko≥az;kraúnicki;LUBELSKIE;Rudnik-Kolonia; ;848;349;630;DW;PDW.2.073;MultaRadar CD;593-072/71697;;;50,96752778;22,30388889;;
+punktowe;Nisko;niøaÒski;PODKARPACKIE;Nowosielec; ;878;425;450;DW;PDW.2.048;MESTA Fusion RN;23205FU10003945;;;50,44753333;22,1541;;
+punktowe;Ruda ålπska;Ruda ålπska;åL•SKIE;Ruda ålπska;PowstaÒ ålπskich ;902;0;835;DW;SLA.1.084;Fotorapid CF;004;;;50,30044444;18,87491667;;
+punktowe;Su≥kowice;myúlenicki;MA£OPOLSKIE;Su≥kowice;1 Maja 27;956;0;0;DW;PLD.2.103;FOTORAPID CM;389;;;49,8498;19,80133333;;
+punktowe;Kroúcienko nad Dunajcem;nowotarski;MA£OPOLSKIE;Kroúnica;Nowotarska 16;969;11;794;DW;PLD.2.109;MESTA Fusion RN;23124FU10003668;;;49,44722222;20,33958333;;
+punktowe;Ochotnica Dolna;nowotarski;MA£OPOLSKIE;Tylmanowa; 282;969;8;224;DW;PLD.2.114;FOTORAPID CM;129;;;49,49694444;20,40361111;;
+punktowe;DÍbica;dÍbicki;PODKARPACKIE;Brzeünica;DÍbicka 15;985;54;570;DW;PDW.2.081;MESTA Fusion RN;23166FU10003788;;;50,10338889;21,485775;;
+punktowe;Micha≥owice;krakowski;MA£OPOLSKIE;Micha≥owice; 235;.dawna DK7;650;957;DW;PLD.2.018;MultaRadar CD;593-072/71972;;;50,16308333;19,97911111;;
+punktowe;£Ûdü;£Ûdü;£”DZKIE;£Ûdü;Dπbrowskiego 66;1128E;0;0;DP;CEN.1.134;MESTA Fusion RN;23170FU10003804;;;51,73638889;19,50305556;;
+punktowe;WÍgierska GÛrka;øywiecki;åL•SKIE;Cisiec;Prymasa Stefa WyszyÒskiego 9;1435S;5;12;DP;SLA.2.083;MultaRadar CD;593-072-73171;;;49,59763889;19,10761111;;
+punktowe;Juchnowiec Koúcielny;bia≥ostocki;PODLASKIE;Hryniewicze;Hryniewicze 57;1483B;0;0;DP;PNW.2.098;MultaRadar CD;593-072-73190;;;53,07795278;23,13779167;;
+punktowe;PiotrkÛw Trybunalski;PiotrkÛw Trybunalski;£”DZKIE;PiotrkÛw Trybunalski;Pi≥sudskiego ;1560E;3;144;DP;CEN.2.135;MESTA Fusion RN;23166FU10003784;;;51,40666667;19,68527778;;
+punktowe;Che≥miec;nowosπdecki;MA£OPOLSKIE;Naúciszowa;nr 46;1567K;4;230;DP;PLD.1.105;MultaRadar CD;593-072-73170;;;49,65902778;20,72940278;;
+punktowe;Nowy Targ;nowotarski;MA£OPOLSKIE;Nowy Targ;Krakowska 33;1670K;4;480;DP;PLD.2.095;MultaRadar CD;593-072/72035;;;49,49916667;20,001175;;
+punktowe;Oborniki;obornicki;WIELKOPOLSKIE;Oborniki;Czarnkowska 37;2041P;0;650;DP;WLK.2.078;MultaRadar CD;593-072-73187;;;52,64864722;16,80405278;;
+punktowe;KrakÛw;KrakÛw;MA£OPOLSKIE;KrakÛw;Armii Krajowej 89;2201K;0;0;DP;PLD.2.108;MultaRadar CD;593-072-73185;;;50,07944444;19,89;;
+punktowe;JastkÛw;lubelski;LUBELSKIE;JastkÛw;PanieÒszczyz, al. Warszawska 3;2420L;0;0;DP;WSC.2.006;MultaRadar CD;593-072-73280;;;51,30011667;22,4414;;
+punktowe;Lublin;Lublin;LUBELSKIE;Lublin;Solidarnoúci ;2421L;1;253;DP;WSC.3.069;MultaRadar CD;593-072-73194;;;51,25333333;22,54786111;;
+punktowe;Koúcian;koúciaÒski;WIELKOPOLSKIE;Kawczyn;Kawczyn 50;3949P;226;1;DP;WLK.1.011;MultaRadar CD;593-072/71990;;;52,1175;16,68361111;;
+punktowe;Koúcian;koúciaÒski;WIELKOPOLSKIE;Ponin;KoúciaÒska 3;3949P;15;560;DP;WLK.1.025;MultaRadar CD;593-072-73318;;;52,05711944;16,58843889;;
+punktowe;Prudnik;prudnicki;OPOLSKIE;Prudnik; ;41a;2;3;DK;SLA.2.093;FOTORAPID CM;231;;;50,33472222;17,5875;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Armii Krajowej ;5627W;0;0;DP;CAN.2.062;Fotorapid CM;085;;;52,25022222;21,22966667;;
+punktowe;PoznaÒ;PoznaÒ;WIELKOPOLSKIE;PoznaÒ;Ja Dπbrowskiego 336;5772P;0;448;DP;WLK.3.081;MultaRadar CD;593-072-73285;;;52,42861111;16,85027778;;
+punktowe;GrÛjec;grÛjecki;MAZOWIECKIE;GrÛjec;Mogielnicka 49;6605W;0;0;DP;CAN.2.097;MultaRadar CD;593-072-73178;;;51,86365833;20,85872222;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;warszawa;Grochowska 129;7003W;0;0;DP;CAN.2.107;MultaRadar CD;593-072-73164;;;52,24222222;21,10222222;;
+punktowe;Gliwice;Gliwice;åL•SKIE;Gliwice;£πcznica L04L do A1 ;A1;0;473;DK;SLA.1.077;MultaRadar CD;593-072/71963;;;50,25905;18,724;;
+punktowe;Wa≥cz;wa≥ecki;ZACHODNIOPOMORSKIE;Witankowo; ;By≥aDK10;161;651;DW;PNZ.2.094;MultaRadar CD;593-072/71680;;;53,2474;16,58423333;;
+punktowe;Ryki;rycki;LUBELSKIE;Ryki;Lubelska ;daw. DK17;83;200;DW;WSC.2.002;MultaRadar CD;593-072-73243;;;51,6204;21,93915;;
+punktowe;Piaski;gostyÒski;WIELKOPOLSKIE;Piaski; ;Dawna 12;203;15;DW;WLK.2.022;MultaRadar CD;593-072-73305;;;51,88421667;17,06923333;;
+punktowe;TomaszÛw Lubelski;tomaszowski;LUBELSKIE;£aszczÛwka-Kolonia; ;Dawna DK17;214;945;DW;WSC.1.023;MESTA Fusion RN;23143FU10003696;;;50,41966667;23,42571667;;
+punktowe;Olesno;oleski;OPOLSKIE;£omnica; ;S11;24;129;DK;SLA.1.086;MultaRadar CD;593-072-73302;;;50,80947222;18,55211111;;
+punktowe;K≥odzko;k≥odzki;DOLNOåL•SKIE;K≥odzko;WyspiaÒskiego 22;;0;0;DG;PDZ.2.004;MultaRadar CD;593-072/71969;;;50,42838333;16,65785;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;K.E.N. 105;;0;0;DG;CAN.2.063;MultaRadar CD;593-072/71599;;;52,161;21,02802778;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Niepodleg≥oúci 177;;0;0;DG;CAN.2.085;TraffiStar SR520;593-071/71377;;;52,21024722;21,00709722;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Niepodleg≥oúci kier. MokotÛw;;0;0;DG;CAN.2.078;TraffiStar SR520;593-071/71375;;;52,21041667;21,007;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Zamieniecka - Ostrobramska, kier. Goc≥aw;;0;0;DG;CAN.2.073;TraffiStar SR520;593-071/71378;;;52,23483333;21,09733333;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Fieldorfa - Ostrobramska, kier. Plac Szembeka;;0;0;DG;CAN.2.076;TraffiStar SR520;593-071/71376;;;52,23494444;21,09780556;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Ostrobramska-Fieldorfa k. RembertÛw;;0;0;DG;CAN.2.077;TraffiStar SR520;593-071/71381;;;52,23458333;21,09772222;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;PrzyczÛ≥kowa ;;0;0;DG;CAN.2.083;Fotorapid CM;086;;;52,12158333;21,10330556;;
+punktowe;ZambrÛw;zambrowski;PODLASKIE;ZambrÛw;Ostrowska 27;;0;0;DG;PNW.2.005;MESTA Fusion RN;23164FU10003764;;;52,98086667;22,23366667;;
+punktowe;Szemud;wejherowski;POMORSKIE;Bojano;Wybickiego 65;;18;300;DP;PLN.1.117;MESTA Fusion RN;23166FU10003789;;;54,47708333;18,36738889;;
+punktowe;Soúnicowice;gliwicki;åL•SKIE;£any Wielkie;£abÍdzka 13;;0;0;DP;SLA.2.080;MultaRadar CD;593-072/73126;;;50,28111111;18,53861111;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Krakowska 208, kierunek Centrum;;0;0;DP;CAN.3.068;MultaRadar CD;593-072/71602;;;52,18555556;20,95411111;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Ostrobramska kier. Centrum;;0;0;DP;CAN.2.072;TraffiStar SR520;593-071/71374;;;52,23486111;21,09730556;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Rosochata 20;;0;0;DP;CAN.2.048;Fotorapid CM;071;;;52,13122222;21,12544444;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Pileckiego ;;0;0;DP;CAN.2.006;Fotorapid CM;070;;;52,15144444;21,02502778;;
+punktowe;Warszawa;Warszawa;MAZOWIECKIE;Warszawa;Wybrzeøe Koúciuszkowskie 51;;0;0;DP;CAN.2.082;MultaRadar CD;593-072/71598;;;52,2453;21,0232;;
+punktowe;Ryki;rycki;LUBELSKIE;Stara Dπbia;wys. pos. Stawki 251 ;;0;0;DW;WSC.1.001;MESTA Fusion RN;23137FU10003686;;;51,6519;21,89795;;
+punktowe;Suwa≥ki;Suwa≥ki;PODLASKIE;Suwa≥ki;Pu≥askiego 81;;0;0;DW;PNW.2.014;MultaRadar CD;593-072-73283;;;54,11896667;22,93786667;;

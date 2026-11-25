@@ -12,6 +12,10 @@ import java.util.UUID;
 final class Profiles {
     private static final String LIST="adapter_profiles", DEFAULT="default_profile", FIRST="legacy-default";
     private static final Object LOCK=new Object();
+    static final int NAME_LIMIT=20, REGISTRATION_LIMIT=9;
+    static boolean registrationNumber(String value) {
+        return value.length()<=REGISTRATION_LIMIT && value.matches("[A-Za-z0-9][A-Za-z0-9-]*");
+    }
     static final class Profile {
         static final String WIFI="Wi-Fi";
         final String id,name,vehicle,adapter,adapterName,transport,fuel;
@@ -26,6 +30,8 @@ final class Profiles {
         Profile withAdapter(String address,String label,String mode) {
             return new Profile(id,name,vehicle,address,label,mode,fuel);
         }
+        // Starsze profile przechowują też identyfikator urządzenia używany przez Historię i NAS.
+        String registration() { return !"kia-radio".equalsIgnoreCase(vehicle) && registrationNumber(vehicle) ? vehicle : ""; }
         boolean isWifi() { return WIFI.equals(transport); }
         JSONObject encode() throws JSONException {
             return new JSONObject().put("id",id).put("name",name).put("vehicle",vehicle).put("adapter",adapter)
@@ -84,21 +90,28 @@ final class Profiles {
         synchronized (LOCK) {
             List<Profile> rows=read();
             String id=UUID.randomUUID().toString();
-            Profile row=new Profile(id,uniqueName(rows,"Nowy profil"),"auto-"+id.substring(0,8),"","","BLE","diesel");
+            Profile row=new Profile(id,uniqueName(rows,"Nowy profil",""),"auto-"+id.substring(0,8),"","","BLE","diesel");
             rows.add(row); write(rows,defaultId(rows)); return row;
         }
     }
     Profile duplicate(Profile source) {
         synchronized (LOCK) {
             List<Profile> rows=read();
-            Profile row=new Profile(UUID.randomUUID().toString(),uniqueName(rows,source.name+" (kopia)"),
+            Profile row=new Profile(UUID.randomUUID().toString(),uniqueName(rows,source.name," (kopia)"),
                 source.vehicle,source.adapter,source.adapterName,source.transport,source.fuel);
             rows.add(row); write(rows,defaultId(rows)); return row;
         }
     }
-    private static String uniqueName(List<Profile> rows,String base) {
-        String name=base; int n=2;
-        while (containsName(rows,name)) name=base+" "+n++;
+    private static String uniqueName(List<Profile> rows,String base,String suffix) {
+        int n=1;
+        String name;
+        do {
+            String ending=n==1 ? suffix : suffix+" "+n;
+            int end=Math.min(base.length(),NAME_LIMIT-ending.length());
+            if (end>0 && Character.isHighSurrogate(base.charAt(end-1))) end--;
+            name=base.substring(0,end).trim()+ending;
+            n++;
+        } while (containsName(rows,name));
         return name;
     }
     private static boolean containsName(List<Profile> rows,String name) {

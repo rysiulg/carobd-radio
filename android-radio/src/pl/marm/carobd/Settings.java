@@ -33,12 +33,28 @@ final class Settings {
     void setProxyEnabled(boolean enabled) { prefs.edit().putBoolean("obd_wifi_proxy",enabled).apply(); }
     boolean recordingEnabled() { return prefs.getBoolean("record_trips",true); }
     void setRecordingEnabled(boolean enable) { prefs.edit().putBoolean("record_trips",enable).apply(); }
+    boolean autoAcceleration() { return prefs.getBoolean("auto_acceleration",true); }
+    void setAutoAcceleration(boolean enabled) { prefs.edit().putBoolean("auto_acceleration",enabled).apply(); }
+    boolean roadAlerts() { return prefs.getBoolean("road_alerts",true); }
+    void setRoadAlerts(boolean enabled) { prefs.edit().putBoolean("road_alerts",enabled).apply(); }
+    boolean joinShortStops() { return prefs.getBoolean("history_join_short_stops",true); }
+    void setJoinShortStops(boolean join) { prefs.edit().putBoolean("history_join_short_stops",join).apply(); }
+    boolean netFuelCost() { return prefs.getBoolean("net_fuel_cost",false); }
+    void setNetFuelCost(boolean net) { prefs.edit().putBoolean("net_fuel_cost",net).apply(); }
     boolean nasUploadEnabled() { return prefs.getBoolean("upload_to_nas",true); }
     void setNasUploadEnabled(boolean enable) { prefs.edit().putBoolean("upload_to_nas",enable).apply(); }
     int autoStopMinutes() { return Math.max(0,Math.min(AUTO_STOP_MAX,prefs.getInt(AUTO_STOP,AUTO_STOP_DEFAULT))); }
     void setAutoStopMinutes(int minutes) { prefs.edit().putInt(AUTO_STOP,Math.max(0,Math.min(AUTO_STOP_MAX,minutes))).apply(); }
     long lastNasUpload() { return prefs.getLong("last_nas_upload",0); }
     void markNasUpload() { prefs.edit().putLong("last_nas_upload",System.currentTimeMillis()/1000).apply(); }
+    double refuelBaseline(String vehicle,long now) {
+        long saved=prefs.getLong("fuel_baseline_at:"+vehicle,0);
+        return saved>0 && now>=saved && now-saved<=Refuel.BASELINE_MAX_AGE
+            ? prefs.getFloat("fuel_baseline:"+vehicle,Float.NaN) : Double.NaN;
+    }
+    void saveRefuelBaseline(String vehicle,double level,long now) {
+        prefs.edit().putFloat("fuel_baseline:"+vehicle,(float)level).putLong("fuel_baseline_at:"+vehicle,now).apply();
+    }
     boolean enabled(String name) { return prefs.getBoolean(name, false); }
     void set(String name, String value) { prefs.edit().putString(name, value).apply(); }
 

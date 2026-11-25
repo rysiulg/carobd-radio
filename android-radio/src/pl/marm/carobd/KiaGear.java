@@ -3,6 +3,7 @@ package pl.marm.carobd;
 /** TCM Sorento, pola 20 i 21 w danych odpowiedzi 2201A0 / 21A0. */
 final class KiaGear {
     static final String UDS="2201A0", LEGACY="21A0";
+    private static final long POLL_MS=1100, QUIET_MS=200, RETRY_MS=2400, UNSUPPORTED_MS=25_000;
     private static final int SELECTOR=20, CURRENT=21;
     final int selector, current;
 
@@ -15,6 +16,10 @@ final class KiaGear {
         return new KiaGear(byteAt(data,SELECTOR),byteAt(data,CURRENT));
     }
     private static int byteAt(String data,int i) { return Integer.parseInt(data.substring(i*2,i*2+2),16); }
+    static long nextPoll(long started,long finished,boolean success,boolean supported) {
+        if (success) return Math.max(started+POLL_MS,finished+QUIET_MS);
+        return finished+(supported ? RETRY_MS : UNSUPPORTED_MS);
+    }
 
     String label(double speed) {
         switch (selector) {

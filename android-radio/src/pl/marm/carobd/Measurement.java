@@ -12,13 +12,14 @@ final class Measurement {
         if (state==WAITING && at-armed>60000) cancel();
         if (state==RUNNING && (at-armed>90000 || at-run.previousAt>2500)) state=RESULT;
     }
-    void sample(double speed,long at) {
+    void sample(double speed,long at) { sample(speed,at,null); }
+    void sample(double speed,long at,TripMath.SplitListener listener) {
         tick(at);
         if (state!=WAITING && state!=RUNNING) return;
         if (state==WAITING && speed>2) { state=RUNNING; }
         if (state==RUNNING && (speed<run.peak-4 || at-run.previousAt>2500)) { state=RESULT; return; }
-        run.sample(speed,at);
-        if (state==RUNNING && speed>=140) state=RESULT;
+        run.sample(speed,at,listener);
+        if (state==RUNNING && speed>=TripMath.LIMIT) state=RESULT;
     }
     int state() { return state; }
     double[] times() { return run==null ? new double[0] : run.times.clone(); }

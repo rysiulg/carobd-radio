@@ -1,0 +1,1926 @@
+{
+  "\nDo przeglądu (szacunek)  ": {
+    "de": "\nBis zum Service (geschätzt)  ",
+    "en": "\nEstimated distance to service  "
+  },
+  "\nProxy OBD: ": {
+    "de": "\nOBD-Proxy: ",
+    "en": "\nOBD proxy: "
+  },
+  "\nProxy Wi-Fi nie może otworzyć portu ": {
+    "de": "\nWLAN-Proxy kann Port nicht öffnen: ",
+    "en": "\nWi-Fi proxy cannot open port "
+  },
+  "   ·   niepełny dystans lub czas": {
+    "de": "   ·   unvollständige Strecke oder Fahrzeit",
+    "en": "   ·   incomplete distance or duration"
+  },
+  "   •   Szacowany koszt ": {
+    "de": "   •   Geschätzte Kosten ",
+    "en": "   •   Estimated cost "
+  },
+  "   •   Szacowany koszt  ": {
+    "de": "   •   Geschätzte Kosten  ",
+    "en": "   •   Estimated cost  "
+  },
+  "  ·  Postój ": {
+    "de": "  ·  Standzeit ",
+    "en": "  ·  Idling "
+  },
+  " (kopia)": {
+    "de": " (Kopie)",
+    "en": " (copy)"
+  },
+  " brak odczytu": {
+    "de": " kein Messwert",
+    "en": " no reading"
+  },
+  " d ": {
+    "de": " T. ",
+    "en": " d "
+  },
+  " dni": {
+    "de": " Tage",
+    "en": " days"
+  },
+  " dzień": {
+    "de": " Tag",
+    "en": " day"
+  },
+  " godz.": {
+    "de": " Std.",
+    "en": " h"
+  },
+  " km GPS": {
+    "de": " km GPS",
+    "en": " km GPS"
+  },
+  " lat": {
+    "de": " Jahre",
+    "en": " years"
+  },
+  " lata": {
+    "de": " Jahre",
+    "en": " years"
+  },
+  " liter, cyfr lub myślników": {
+    "de": " Buchstaben, Ziffern oder Bindestriche",
+    "en": " letters, digits or hyphens"
+  },
+  " po terminie": {
+    "de": " überfällig",
+    "en": " overdue"
+  },
+  " próbek": {
+    "de": " Messwerte",
+    "en": " samples"
+  },
+  " rok": {
+    "de": " Jahr",
+    "en": " year"
+  },
+  " tras)": {
+    "de": " Fahrten)",
+    "en": " trips)"
+  },
+  " wpisów 0 km": {
+    "de": " Einträge mit 0 km",
+    "en": " zero-distance entries"
+  },
+  " yr ": {
+    "de": " J. ",
+    "en": " yr "
+  },
+  " znaków": {
+    "de": " Zeichen",
+    "en": " characters"
+  },
+  " · 7 dni": {
+    "de": " · 7 Tage",
+    "en": " · 7 days"
+  },
+  " · domyślny": {
+    "de": " · Standard",
+    "en": " · default"
+  },
+  " · klienci: ": {
+    "de": " · Clients: ",
+    "en": " · clients: "
+  },
+  " · kopie GPX": {
+    "de": " · GPX-Kopien",
+    "en": " · GPX copies"
+  },
+  " · możliwe oblodzenie": {
+    "de": " · Glatteis möglich",
+    "en": " · possible ice"
+  },
+  " · ostatnie pomiary": {
+    "de": " · letzte Messungen",
+    "en": " · recent measurements"
+  },
+  " · pomiar częściowy": {
+    "de": " · Teilmessung",
+    "en": " · partial measurement"
+  },
+  " · ponowienie za ": {
+    "de": " · neuer Versuch in ",
+    "en": " · retry in "
+  },
+  " · wykres z 7 dni": {
+    "de": " · 7-Tage-Diagramm",
+    "en": " · 7-day chart"
+  },
+  " · wykres z 7 dni · ": {
+    "de": " · 7-Tage-Diagramm · ",
+    "en": " · 7-day chart · "
+  },
+  " · zapisane: ": {
+    "de": " · gespeichert: ",
+    "en": " · stored: "
+  },
+  ", obroty w obr./min i prędkość w km/h. Ostatnie 90 sekund. ": {
+    "de": ", Drehzahl in U/min und Geschwindigkeit in km/h. Letzte 90 Sekunden. ",
+    "en": ", engine speed in rpm and road speed in km/h. Last 90 seconds. "
+  },
+  "0 — wyłączony": {
+    "de": "0 — aus",
+    "en": "0 — off"
+  },
+  "5 000–60 000 km, co 500 km": {
+    "de": "5.000–60.000 km in 500-km-Schritten",
+    "en": "5,000–60,000 km in 500 km steps"
+  },
+  "90 s temu": {
+    "de": "vor 90 s",
+    "en": "90 s ago"
+  },
+  "Aby zachować zmianę, kliknij „Zapisz profil”.": {
+    "de": "Zum Übernehmen auf „Profil speichern“ tippen.",
+    "en": "Tap ‘Save profile’ to keep the change."
+  },
+  "Adapter ": {
+    "de": "Adapter ",
+    "en": "Adapter "
+  },
+  "Adapter BLE odłączony": {
+    "de": "BLE-Adapter getrennt",
+    "en": "BLE adapter disconnected"
+  },
+  "Adapter BLE połączony • brak kanału ELM": {
+    "de": "BLE-Adapter verbunden • kein ELM-Kanal",
+    "en": "BLE adapter connected • no ELM channel"
+  },
+  "Adapter Wi-Fi zamknął połączenie": {
+    "de": "WLAN-Adapter hat die Verbindung beendet",
+    "en": "Wi-Fi adapter closed the connection"
+  },
+  "Adapter nie odpowiada": {
+    "de": "Adapter antwortet nicht",
+    "en": "Adapter is not responding"
+  },
+  "Adapter nie potwierdził właściwego protokołu Kia": {
+    "de": "Adapter hat das passende Kia-Protokoll nicht bestätigt",
+    "en": "Adapter did not confirm the required Kia protocol"
+  },
+  "Adapter nie przełączył się na zegary": {
+    "de": "Adapter hat nicht zum Kombiinstrument gewechselt",
+    "en": "Adapter did not switch to the instrument cluster"
+  },
+  "Adapter odrzucił wykrywanie protokołu": {
+    "de": "Adapter hat die Protokollerkennung abgelehnt",
+    "en": "Adapter rejected protocol detection"
+  },
+  "Adapter połączony • ECU nie odpowiada": {
+    "de": "Adapter verbunden • Motorsteuergerät antwortet nicht",
+    "en": "Adapter connected • ECU is not responding"
+  },
+  "Adapter połączony • inicjalizacja OBD": {
+    "de": "Adapter verbunden • OBD wird initialisiert",
+    "en": "Adapter connected • initialising OBD"
+  },
+  "Adapter połączony • oczekiwanie na ECU": {
+    "de": "Adapter verbunden • warte auf Steuergerät",
+    "en": "Adapter connected • waiting for ECU"
+  },
+  "Adapter połączony • ponawiam wykrywanie ECU": {
+    "de": "Adapter verbunden • suche erneut nach dem Steuergerät",
+    "en": "Adapter connected • retrying ECU detection"
+  },
+  "Adapter widoczny • możliwe zajęcie": {
+    "de": "Adapter sichtbar • möglicherweise belegt",
+    "en": "Adapter detected • may be busy"
+  },
+  "Adres adaptera ": {
+    "de": "Adapter-Adresse ",
+    "en": "Adapter address "
+  },
+  "Adres adaptera  ": {
+    "de": "Adapteradresse  ",
+    "en": "Adapter address  "
+  },
+  "Adres adaptera nie wskazuje lokalnej sieci IPv4": {
+    "de": "Die Adapteradresse liegt außerhalb des lokalen IPv4-Netzes",
+    "en": "Adapter address is outside the local IPv4 network"
+  },
+  "Adres radia: ": {
+    "de": "Radioadresse: ",
+    "en": "Radio address: "
+  },
+  "Adres spoza API Otwarte Dane": {
+    "de": "Adresse liegt außerhalb der Open-Data-API",
+    "en": "URL is outside the Open Data API"
+  },
+  "Android zablokował powiadomienie o pomiarze": {
+    "de": "Android hat die Messbenachrichtigung blockiert",
+    "en": "Android blocked the measurement notification"
+  },
+  "Anuluj": {
+    "de": "Abbrechen",
+    "en": "Cancel"
+  },
+  "Auto musi stać i odpowiadać na odczyt prędkości": {
+    "de": "Das Fahrzeug muss stehen und einen Geschwindigkeitswert liefern",
+    "en": "Stop the vehicle and check that it reports its speed"
+  },
+  "Auto-stop po zatrzymaniu": {
+    "de": "Auto-Stopp nach Stillstand",
+    "en": "Auto-stop when stationary"
+  },
+  "Auto-stop za ": {
+    "de": "Auto-Stopp in ",
+    "en": "Auto-stop in "
+  },
+  "Auto-stop · ": {
+    "de": "Auto-Stopp · ",
+    "en": "Auto-stop · "
+  },
+  "Automatyczny pomiar przyspieszenia": {
+    "de": "Automatische Beschleunigungsmessung",
+    "en": "Automatic acceleration measurement"
+  },
+  "BLE: brak kanału ELM": {
+    "de": "BLE: kein ELM-Kanal",
+    "en": "BLE: no ELM channel"
+  },
+  "BLE: brak pełnej odpowiedzi ELM": {
+    "de": "BLE: unvollständige ELM-Antwort",
+    "en": "BLE: incomplete ELM response"
+  },
+  "BLE: błąd wysłania polecenia": {
+    "de": "BLE: Befehl konnte nicht gesendet werden",
+    "en": "BLE: failed to send command"
+  },
+  "BT Std.": {
+    "de": "BT Classic",
+    "en": "BT Classic"
+  },
+  "Benzyna": {
+    "de": "Benzin",
+    "en": "Petrol"
+  },
+  "Bez odpowiedzi ECU · ": {
+    "de": "Keine Antwort vom Steuergerät · ",
+    "en": "No ECU response · "
+  },
+  "Bieg jałowy": {
+    "de": "Leerlauf",
+    "en": "Idling"
+  },
+  "Bluetooth wyłączony lub niedostępny": {
+    "de": "Bluetooth ausgeschaltet oder nicht verfügbar",
+    "en": "Bluetooth is off or unavailable"
+  },
+  "Brak ACK rekordu": {
+    "de": "Datensatz nicht bestätigt",
+    "en": "No acknowledgement for this record"
+  },
+  "Brak OK: ": {
+    "de": "Kein OK: ",
+    "en": "No OK response: "
+  },
+  "Brak daty ostatniego resetu": {
+    "de": "Datum der letzten Rückstellung fehlt",
+    "en": "No last reset date"
+  },
+  "Brak kodów DTC": {
+    "de": "Keine Fehlercodes",
+    "en": "No diagnostic trouble codes"
+  },
+  "Brak kodów w trybach, które odpowiedziały": {
+    "de": "Keine Fehlercodes in den ausgelesenen Modi",
+    "en": "No codes in responding modes"
+  },
+  "Brak komunikacji ze sterownikiem silnika": {
+    "de": "Keine Kommunikation mit dem Motorsteuergerät",
+    "en": "Lost communication with the engine control module"
+  },
+  "Brak lokalnej sieci IPv4": {
+    "de": "Kein lokales IPv4-Netz",
+    "en": "No local IPv4 network"
+  },
+  "Brak odczytu monitorów z ECU": {
+    "de": "Bereitschaftsmonitore konnten nicht ausgelesen werden",
+    "en": "Could not read monitors from the ECU"
+  },
+  "Brak odczytu stanu kontrolki Check Engine": {
+    "de": "Status der Motorkontrollleuchte konnte nicht ausgelesen werden",
+    "en": "Could not read check engine light status"
+  },
+  "Brak opisu tego kodu w aplikacji": {
+    "de": "Für diesen Code ist keine Beschreibung hinterlegt",
+    "en": "No description available for this code"
+  },
+  "Brak pełnego odczytu ustawień zegarów": {
+    "de": "Einstellungen des Kombiinstruments nur teilweise ausgelesen",
+    "en": "Instrument cluster settings read was incomplete"
+  },
+  "Brak potwierdzenia kasowania · sprawdź aktualny status kodów": {
+    "de": "Löschen nicht bestätigt · aktuellen Status der Fehlercodes prüfen",
+    "en": "Clearing not confirmed · check current code status"
+  },
+  "Brak połączenia OBD": {
+    "de": "Keine OBD-Verbindung",
+    "en": "No OBD connection"
+  },
+  "Brak połączenia z OBD": {
+    "de": "Keine OBD-Verbindung",
+    "en": "No OBD connection"
+  },
+  "Brak połączenia z adapterem": {
+    "de": "Keine Verbindung zum Adapter",
+    "en": "No connection to the adapter"
+  },
+  "Brak połączenia z dekoderem CAN": {
+    "de": "Keine Verbindung zum CAN-Decoder",
+    "en": "No connection to the CAN decoder"
+  },
+  "Brak przypisania auta w NAS": {
+    "de": "Fahrzeug im NAS nicht zugeordnet",
+    "en": "Vehicle is not linked to the NAS"
+  },
+  "Brak punktów GPS": {
+    "de": "Keine GPS-Punkte",
+    "en": "No GPS points"
+  },
+  "Brak uprawnienia do Bluetooth": {
+    "de": "Bluetooth-Berechtigung fehlt",
+    "en": "Bluetooth permission required"
+  },
+  "Brak uprawnienia do sieci Wi-Fi": {
+    "de": "WLAN-Berechtigung fehlt",
+    "en": "Wi-Fi permission required"
+  },
+  "Brak wybranego adaptera": {
+    "de": "Kein Adapter ausgewählt",
+    "en": "No adapter selected"
+  },
+  "Brak zapisanych odczytów z ostatnich 7 dni": {
+    "de": "Keine Messwerte der letzten 7 Tage gespeichert",
+    "en": "No readings saved in the last 7 days"
+  },
+  "Brak zapisanych pomiarów tego zakresu": {
+    "de": "Keine Messwerte für diesen Zeitraum gespeichert",
+    "en": "No measurements saved for this range"
+  },
+  "Brak zapisanych tras": {
+    "de": "Keine Fahrten gespeichert",
+    "en": "No saved trips"
+  },
+  "Brak zmian": {
+    "de": "Keine Änderungen",
+    "en": "No changes"
+  },
+  "Brutto": {
+    "de": "Brutto",
+    "en": "Gross"
+  },
+  "Błąd zapisu trasy": {
+    "de": "Fahrt konnte nicht gespeichert werden",
+    "en": "Could not save the trip"
+  },
+  "CANARD: HTTP ": {
+    "de": "CANARD: HTTP ",
+    "en": "CANARD: HTTP "
+  },
+  "CANARD: brak wykazu lokalizacji": {
+    "de": "CANARD: Standortliste fehlt",
+    "en": "CANARD: location list unavailable"
+  },
+  "CANARD: niekompletny wykaz": {
+    "de": "CANARD: unvollständige Liste",
+    "en": "CANARD: incomplete list"
+  },
+  "CANARD: przekroczony rozmiar": {
+    "de": "CANARD: Größenlimit überschritten",
+    "en": "CANARD: list exceeds the size limit"
+  },
+  "CANARD: pusty CSV": {
+    "de": "CANARD: leere CSV-Datei",
+    "en": "CANARD: empty CSV file"
+  },
+  "CANARD: zmiana kolumn": {
+    "de": "CANARD: Spalten geändert",
+    "en": "CANARD: CSV columns changed"
+  },
+  "CarOBD journal": {
+    "de": "CarOBD-Fahrtenbuch",
+    "en": "CarOBD journal"
+  },
+  "CarOBD • rejestrator tras": {
+    "de": "CarOBD • Fahrtenaufzeichnung",
+    "en": "CarOBD • trip recorder"
+  },
+  "Check Engine wyłączony": {
+    "de": "Motorkontrollleuchte aus",
+    "en": "Check engine light off"
+  },
+  "Check Engine włączony": {
+    "de": "Motorkontrollleuchte an",
+    "en": "Check engine light on"
+  },
+  "Ciśnienie atm.  ": {
+    "de": "Luftdruck  ",
+    "en": "Barometric pressure  "
+  },
+  "Ciśnienie atmosferyczne z ECU": {
+    "de": "Luftdruck laut Steuergerät",
+    "en": "Barometric pressure from ECU"
+  },
+  "Ciśnienie opon": {
+    "de": "Reifendruck",
+    "en": "Tyre pressure"
+  },
+  "Czujniki spalin": {
+    "de": "Abgassensoren",
+    "en": "Exhaust gas sensors"
+  },
+  "DANE DEMONSTRACYJNE": {
+    "de": "DEMODATEN",
+    "en": "DEMO DATA"
+  },
+  "Data ostatniego resetu przeglądu": {
+    "de": "Datum der letzten Service-Rückstellung",
+    "en": "Last service reminder reset date"
+  },
+  "Diagnostyka EOBD": {
+    "de": "EOBD-Diagnose",
+    "en": "EOBD diagnostics"
+  },
+  "Dodaj": {
+    "de": "Hinzufügen",
+    "en": "Add"
+  },
+  "Dodaj do porównania · ": {
+    "de": "Zum Vergleich hinzufügen · ",
+    "en": "Add to comparison · "
+  },
+  "Dodaj profil": {
+    "de": "Profil hinzufügen",
+    "en": "Add profile"
+  },
+  "Dodać profil?": {
+    "de": "Profil hinzufügen?",
+    "en": "Add profile?"
+  },
+  "Duplikować profil „": {
+    "de": "Profil „",
+    "en": "Duplicate profile “"
+  },
+  "Duplikuj": {
+    "de": "Duplizieren",
+    "en": "Duplicate"
+  },
+  "Duplikuj profil": {
+    "de": "Profil duplizieren",
+    "en": "Duplicate profile"
+  },
+  "ECU nie potwierdziło zgodności pojazdu z profilem Kia": {
+    "de": "Das Steuergerät hat das Fahrzeug für das Kia-Profil nicht bestätigt",
+    "en": "The ECU did not verify the vehicle against the Kia profile"
+  },
+  "ECU nie zgłosiło obsługiwanych monitorów": {
+    "de": "Steuergerät meldet keine unterstützten Monitore",
+    "en": "ECU did not report any supported monitors"
+  },
+  "ECU odpowiada • brak odczytu prędkości": {
+    "de": "Steuergerät antwortet • kein Geschwindigkeitswert",
+    "en": "ECU responding • vehicle speed unavailable"
+  },
+  "EGR / zmienne fazy rozrządu": {
+    "de": "AGR / variable Ventilsteuerung",
+    "en": "EGR / variable valve timing"
+  },
+  "Edycja profilu": {
+    "de": "Profil bearbeiten",
+    "en": "Edit profile"
+  },
+  "Filtr cząstek stałych": {
+    "de": "Partikelfilter",
+    "en": "Particulate filter"
+  },
+  "Fotoradar": {
+    "de": "Blitzer",
+    "en": "Speed camera"
+  },
+  "Fotoradary i pomiary odcinkowe": {
+    "de": "Blitzer und Abschnittskontrollen",
+    "en": "Speed cameras and average speed checks"
+  },
+  "GPS · nieaktywny": {
+    "de": "GPS · inaktiv",
+    "en": "GPS · inactive"
+  },
+  "GPS · pozycja ustalona": {
+    "de": "GPS · Position ermittelt",
+    "en": "GPS · position fixed"
+  },
+  "GPS · wykryto satelity, oczekiwanie na pozycję": {
+    "de": "GPS · Satelliten gefunden, warte auf Position",
+    "en": "GPS · satellites detected, waiting for a fix"
+  },
+  "GPS · wyszukiwanie sygnału": {
+    "de": "GPS · suche Signal",
+    "en": "GPS · searching for signal"
+  },
+  "Gotowość od ostatniego skasowania kodów": {
+    "de": "Bereitschaft seit dem letzten Löschen der Fehlercodes",
+    "en": "Readiness since codes were last cleared"
+  },
+  "Gotowy": {
+    "de": "Bereit",
+    "en": "Ready"
+  },
+  "Gotowy do jazdy": {
+    "de": "Fahrbereit",
+    "en": "Ready to drive"
+  },
+  "Grzałka sondy lambda": {
+    "de": "Lambdasondenheizung",
+    "en": "Oxygen sensor heater"
+  },
+  "Historia": {
+    "de": "Verlauf",
+    "en": "History"
+  },
+  "Historia samochodu": {
+    "de": "Fahrzeugverlauf",
+    "en": "Vehicle history"
+  },
+  "Historia: zarchiwizowano ": {
+    "de": "Verlauf: archiviert ",
+    "en": "History: archived "
+  },
+  "Host i port OBD Wi-Fi": {
+    "de": "Host und Port des OBD-WLAN-Adapters",
+    "en": "Wi-Fi OBD host and port"
+  },
+  "Inny samochód w historii": {
+    "de": "Anderes Fahrzeug im Verlauf",
+    "en": "History belongs to a different vehicle"
+  },
+  "Interwał (km)": {
+    "de": "Intervall (km)",
+    "en": "Interval (km)"
+  },
+  "Interwał (mies.)": {
+    "de": "Intervall (Mon.)",
+    "en": "Interval (months)"
+  },
+  "Jednostka": {
+    "de": "Einheit",
+    "en": "Unit"
+  },
+  "Jednostka ciśnienia": {
+    "de": "Druckeinheit",
+    "en": "Pressure unit"
+  },
+  "Język": {
+    "de": "Sprache",
+    "en": "Language"
+  },
+  "Karta SD": {
+    "de": "SD-Karte",
+    "en": "SD card"
+  },
+  "Kasowanie jest dostępne na postoju, z włączonym zapłonem i zgaszonym silnikiem.": {
+    "de": "Fehlercodes lassen sich bei stehendem Fahrzeug, eingeschalteter Zündung und abgestelltem Motor löschen.",
+    "en": "Codes can be cleared with the vehicle stationary, ignition on and engine off."
+  },
+  "Kasowanie wymaga postoju, włączonego zapłonu i zgaszonego silnika": {
+    "de": "Zum Löschen muss das Fahrzeug stehen, die Zündung eingeschaltet und der Motor aus sein",
+    "en": "To clear codes, stop the vehicle and switch on the ignition with the engine off"
+  },
+  "Kasuję kody EOBD…": {
+    "de": "EOBD-Fehlercodes werden gelöscht…",
+    "en": "Clearing EOBD codes…"
+  },
+  "Katalizator": {
+    "de": "Katalysator",
+    "en": "Catalyst"
+  },
+  "Katalizator NMHC": {
+    "de": "NMHC-Katalysator",
+    "en": "NMHC catalyst"
+  },
+  "Klient Wi-Fi · ": {
+    "de": "WLAN-Client · ",
+    "en": "Wi-Fi client · "
+  },
+  "Kody usterek": {
+    "de": "Fehlercodes",
+    "en": "Trouble codes"
+  },
+  "Komunikacja między sterownikami": {
+    "de": "Kommunikation zwischen Steuergeräten",
+    "en": "Communication between control modules"
+  },
+  "Konfiguracja": {
+    "de": "Einstellungen",
+    "en": "Settings"
+  },
+  "Kontrolka Check Engine · brak odczytanych kodów": {
+    "de": "Motorkontrollleuchte · keine Fehlercodes ausgelesen",
+    "en": "Check engine light on · no codes read"
+  },
+  "Koszt paliwa": {
+    "de": "Kraftstoffkosten",
+    "en": "Fuel cost"
+  },
+  "Koszt paliwa · ": {
+    "de": "Kraftstoffkosten · ",
+    "en": "Fuel cost · "
+  },
+  "Lewy przód": {
+    "de": "Vorne links",
+    "en": "Front left"
+  },
+  "Lewy tył": {
+    "de": "Hinten links",
+    "en": "Rear left"
+  },
+  "Maksimum z przejazdu (NAS)": {
+    "de": "Höchstwert der Fahrt (NAS)",
+    "en": "Trip maximum (NAS)"
+  },
+  "Mapa i statystyki trasy": {
+    "de": "Karte und Fahrtstatistik",
+    "en": "Trip map and statistics"
+  },
+  "Mapa przejazdów. Kolor śladu zmienia się co 10 km/h.": {
+    "de": "Fahrtenkarte. Die Spurfarbe wechselt in Schritten von 10 km/h.",
+    "en": "Trip map. Track colour changes in 10 km/h bands."
+  },
+  "Mało miejsca na nośniku GPX": {
+    "de": "Wenig Speicherplatz auf dem GPX-Datenträger",
+    "en": "GPX storage is nearly full"
+  },
+  "Mało miejsca w pamięci radia": {
+    "de": "Wenig freier Speicher im Radio",
+    "en": "Radio storage is nearly full"
+  },
+  "Mało miejsca w radiu i na nośniku GPX": {
+    "de": "Wenig Speicherplatz im Radio und auf dem GPX-Datenträger",
+    "en": "Radio and GPX storage are nearly full"
+  },
+  "Min. %.0f m   ·   Maks. %.0f m": {
+    "de": "Min. %.0f m   ·   Max. %.0f m",
+    "en": "Min. %.0f m   ·   Max. %.0f m"
+  },
+  "Monitory emisji": {
+    "de": "Abgasmonitore",
+    "en": "Emissions monitors"
+  },
+  "Motogodziny i serwis": {
+    "de": "Motorstunden und Service",
+    "en": "Engine hours and service"
+  },
+  "Motogodziny i serwis · ": {
+    "de": "Motorstunden und Service · ",
+    "en": "Engine hours and service · "
+  },
+  "NAS • historia aktualna": {
+    "de": "NAS • Verlauf aktuell",
+    "en": "NAS • history up to date"
+  },
+  "NAS • historia auta nieprzypisana": {
+    "de": "NAS • Fahrzeugverlauf nicht zugeordnet",
+    "en": "NAS • vehicle history is unlinked"
+  },
+  "NAS • historia czeka na połączenie": {
+    "de": "NAS • Verlauf wird nach dem Verbindungsaufbau geladen",
+    "en": "NAS • trip history waiting for connection"
+  },
+  "NAS • oczekiwanie na połączenie": {
+    "de": "NAS • warte auf Verbindung",
+    "en": "NAS • waiting for connection"
+  },
+  "NAS • pobieranie historii": {
+    "de": "NAS • Verlauf wird geladen",
+    "en": "NAS • downloading history"
+  },
+  "Nadwozie": {
+    "de": "Karosserie",
+    "en": "Body"
+  },
+  "Nagromadzenie sadzy ogranicza przepływ przez filtr DPF": {
+    "de": "Rußansammlung behindert den Durchfluss im DPF",
+    "en": "Soot build-up is restricting flow through the DPF"
+  },
+  "Najlepszy": {
+    "de": "Bester",
+    "en": "Best"
+  },
+  "Najwolniejszy": {
+    "de": "Langsamster",
+    "en": "Slowest"
+  },
+  "Napięcie akumulatora": {
+    "de": "Batteriespannung",
+    "en": "Battery voltage"
+  },
+  "Napięcie zmierzone przez adapter ELM": {
+    "de": "Vom ELM-Adapter gemessene Spannung",
+    "en": "Voltage measured by the ELM adapter"
+  },
+  "Nazwa profilu": {
+    "de": "Profilname",
+    "en": "Profile name"
+  },
+  "Nazwa usługi DNS-SD": {
+    "de": "DNS-SD-Dienstname",
+    "en": "DNS-SD service name"
+  },
+  "Netto": {
+    "de": "Netto",
+    "en": "Net"
+  },
+  "Nie można odczytać poprzedniej historii": {
+    "de": "Bisheriger Verlauf konnte nicht gelesen werden",
+    "en": "Could not read previous history"
+  },
+  "Nie można odczytać wieku kolejki": {
+    "de": "Alter der Warteschlange konnte nicht ermittelt werden",
+    "en": "Could not read queue age"
+  },
+  "Nie można odczytać zapisanych profili": {
+    "de": "Gespeicherte Profile konnten nicht gelesen werden",
+    "en": "Could not read saved profiles"
+  },
+  "Nie można otworzyć ": {
+    "de": "Öffnen fehlgeschlagen: ",
+    "en": "Could not open "
+  },
+  "Nie można potwierdzić aktualnych ustawień. Odczytaj je ponownie": {
+    "de": "Aktuelle Einstellungen konnten nicht bestätigt werden. Erneut auslesen",
+    "en": "Could not verify current settings. Read them again"
+  },
+  "Nie można przywrócić adresowania ELM": {
+    "de": "ELM-Adressierung konnte nicht wiederhergestellt werden",
+    "en": "Could not restore ELM addressing"
+  },
+  "Nie można utworzyć GPX": {
+    "de": "GPX-Datei konnte nicht erstellt werden",
+    "en": "Could not create GPX file"
+  },
+  "Nie można zapisać GPX": {
+    "de": "GPX-Datei konnte nicht gespeichert werden",
+    "en": "Could not save GPX file"
+  },
+  "Nie można zapisać odczytu wykresu": {
+    "de": "Diagrammwert konnte nicht gespeichert werden",
+    "en": "Could not save chart reading"
+  },
+  "Nie można zapisać trasy": {
+    "de": "Fahrt konnte nicht gespeichert werden",
+    "en": "Could not save trip"
+  },
+  "Nie przewinięto pozycji trasy": {
+    "de": "Position in der Strecke konnte nicht geändert werden",
+    "en": "Trip position did not advance"
+  },
+  "Nie udało się odczytać historii": {
+    "de": "Verlauf konnte nicht gelesen werden",
+    "en": "Could not read history"
+  },
+  "Nie udało się odczytać pomiarów": {
+    "de": "Messwerte konnten nicht geladen werden",
+    "en": "Could not read measurements"
+  },
+  "Nie udało się wznowić rejestratora": {
+    "de": "Aufzeichnung konnte nicht fortgesetzt werden",
+    "en": "Could not resume trip recording"
+  },
+  "Nie udało się zaktualizować wykazu CANARD": {
+    "de": "CANARD-Liste konnte nicht aktualisiert werden",
+    "en": "Could not update the CANARD list"
+  },
+  "Nie udało się zapisać profilu. Spróbuj ponownie.": {
+    "de": "Profil konnte nicht gespeichert werden. Erneut versuchen.",
+    "en": "Could not save profile. Try again."
+  },
+  "Nie zapisano konfiguracji NAS": {
+    "de": "NAS-Konfiguration nicht gespeichert",
+    "en": "NAS configuration was not saved"
+  },
+  "Niepełna odpowiedź NAS": {
+    "de": "Unvollständige NAS-Antwort",
+    "en": "Incomplete NAS response"
+  },
+  "Niepełna odpowiedź serwisu NAS": {
+    "de": "Unvollständige Antwort des NAS-Dienstes",
+    "en": "Incomplete response from the NAS service"
+  },
+  "Nieprawidłowa wielkość odpowiedzi NAS": {
+    "de": "Unerwartete Größe der NAS-Antwort",
+    "en": "Invalid NAS response size"
+  },
+  "Nieprawidłowe ustawienia przeglądu": {
+    "de": "Ungültige Service-Einstellungen",
+    "en": "Invalid service reminder settings"
+  },
+  "Nieprawidłowy adres MAC": {
+    "de": "Ungültige MAC-Adresse",
+    "en": "Invalid MAC address"
+  },
+  "Nieprawidłowy punkt trasy": {
+    "de": "Ungültiger Streckenpunkt",
+    "en": "Invalid trip point"
+  },
+  "Nieukończony": {
+    "de": "Nicht abgeschlossen",
+    "en": "Incomplete"
+  },
+  "Niezgodna historia auta": {
+    "de": "Unpassender Fahrzeugverlauf",
+    "en": "Vehicle history mismatch"
+  },
+  "Niezgodna trasa": {
+    "de": "Fahrt stimmt nicht überein",
+    "en": "Trip mismatch"
+  },
+  "Nieznane żądanie pulpitu": {
+    "de": "Unbekannte Anfrage vom Startbildschirm",
+    "en": "Unknown dashboard request"
+  },
+  "Nieznany profil": {
+    "de": "Unbekanntes Profil",
+    "en": "Unknown profile"
+  },
+  "Niskie ciśnienie": {
+    "de": "Druck zu niedrig",
+    "en": "Low pressure"
+  },
+  "Niskie ciśnienie w oponach": {
+    "de": "Reifendruck zu niedrig",
+    "en": "Low tyre pressure"
+  },
+  "Niskie ciśnienie · pokaż koło": {
+    "de": "Reifendruck zu niedrig · Rad anzeigen",
+    "en": "Low tyre pressure · show wheel"
+  },
+  "Nowsze": {
+    "de": "Neuere",
+    "en": "Newer"
+  },
+  "Nowy profil": {
+    "de": "Neues Profil",
+    "en": "New profile"
+  },
+  "Nośnik": {
+    "de": "Datenträger",
+    "en": "Storage"
+  },
+  "Nr rej.": {
+    "de": "Kennzeichen",
+    "en": "Reg. no."
+  },
+  "Nr rej.:": {
+    "de": "Kennzeichen:",
+    "en": "Reg. no.:"
+  },
+  "Nr rejestracyjny": {
+    "de": "Kennzeichen",
+    "en": "Registration number"
+  },
+  "OBD połączone": {
+    "de": "OBD verbunden",
+    "en": "OBD connected"
+  },
+  "OBD · samochód odpowiada": {
+    "de": "OBD · Fahrzeug antwortet",
+    "en": "OBD · vehicle responding"
+  },
+  "OBD · usterka silnika": {
+    "de": "OBD · Motorstörung",
+    "en": "OBD · engine fault"
+  },
+  "Obroty": {
+    "de": "Drehzahl",
+    "en": "Engine speed"
+  },
+  "Obroty i prędkość na skalach logarytmicznych.": {
+    "de": "Drehzahl und Geschwindigkeit auf logarithmischen Skalen.",
+    "en": "Engine speed and road speed use logarithmic scales."
+  },
+  "Oczekiwanie na GPS i OBD": {
+    "de": "Warte auf GPS und OBD",
+    "en": "Waiting for GPS and OBD"
+  },
+  "Oczekiwanie na adapter OBD": {
+    "de": "Warte auf OBD-Adapter",
+    "en": "Waiting for OBD adapter"
+  },
+  "Oczekiwanie na dane z dekodera CAN": {
+    "de": "Warte auf Daten vom CAN-Decoder",
+    "en": "Waiting for CAN decoder data"
+  },
+  "Oczekujący": {
+    "de": "Ausstehend",
+    "en": "Pending"
+  },
+  "Od 1 do 36 miesięcy": {
+    "de": "1 bis 36 Monate",
+    "en": "1 to 36 months"
+  },
+  "Od wpisanego resetu  ": {
+    "de": "Seit der eingetragenen Rückstellung  ",
+    "en": "Since recorded reset  "
+  },
+  "Odczyt i zapis dostępne na postoju. OBD musi pokazywać 0 km/h.": {
+    "de": "Lesen und Schreiben nur im Stand möglich. OBD muss 0 km/h anzeigen.",
+    "en": "Read and write while stationary. OBD must show 0 km/h."
+  },
+  "Odczyt po zapisie różni się od ustawień lub jest niedostępny": {
+    "de": "Kontrollwert weicht von den Einstellungen ab oder ist nicht verfügbar",
+    "en": "Read-back values differ from the settings or are unavailable"
+  },
+  "Odczyt ustawień przeglądu jest dostępny po wybraniu profilu Kia.": {
+    "de": "Wähle ein Kia-Profil aus, um die Service-Einstellungen auszulesen.",
+    "en": "Choose a Kia profile to read the service settings."
+  },
+  "Odczytaj ustawienia z auta i sprawdź wpisane wartości": {
+    "de": "Fahrzeugeinstellungen auslesen und eingegebene Werte prüfen",
+    "en": "Read the vehicle settings and check the values entered"
+  },
+  "Odczytano": {
+    "de": "Ausgelesen",
+    "en": "Read"
+  },
+  "Odczytano bezpośrednio z zegarów": {
+    "de": "Direkt aus dem Kombiinstrument ausgelesen",
+    "en": "Read directly from the instrument cluster"
+  },
+  "Odczytuję status diagnostyki…": {
+    "de": "Diagnosestatus wird ausgelesen…",
+    "en": "Reading diagnostic status…"
+  },
+  "Odczytuję ustawienia z zegarów…": {
+    "de": "Einstellungen werden aus dem Kombiinstrument ausgelesen…",
+    "en": "Reading settings from the instrument cluster…"
+  },
+  "Odparowanie paliwa": {
+    "de": "Tankentlüftung",
+    "en": "Evaporative emissions"
+  },
+  "Odrzucić niezapisane zmiany?": {
+    "de": "Ungespeicherte Änderungen verwerfen?",
+    "en": "Discard unsaved changes?"
+  },
+  "Odrzuć": {
+    "de": "Verwerfen",
+    "en": "Discard"
+  },
+  "Odśwież": {
+    "de": "Aktualisieren",
+    "en": "Refresh"
+  },
+  "Ostatni odczyt": {
+    "de": "Letzter Messwert",
+    "en": "Last reading"
+  },
+  "Ostatni odczyt · ": {
+    "de": "Letzter Messwert · ",
+    "en": "Last reading · "
+  },
+  "Ostatni punkt NAS": {
+    "de": "Letzter NAS-Punkt",
+    "en": "Last point on NAS"
+  },
+  "Ostatni reset": {
+    "de": "Letzte Rückstellung",
+    "en": "Last reset"
+  },
+  "Ostatnie ostrzeżenie: niskie ciśnienie": {
+    "de": "Letzte Warnung: Reifendruck zu niedrig",
+    "en": "Last warning: low pressure"
+  },
+  "Ostrzeżenia o pomiarach prędkości": {
+    "de": "Warnungen vor Geschwindigkeitskontrollen",
+    "en": "Speed camera alerts"
+  },
+  "Otwórz pogodę": {
+    "de": "Wetter öffnen",
+    "en": "Open weather"
+  },
+  "Otwórz ustawienia Bluetooth Androida": {
+    "de": "Bluetooth-Einstellungen von Android öffnen",
+    "en": "Open Android Bluetooth settings"
+  },
+  "Pamięć radia": {
+    "de": "Radiospeicher",
+    "en": "Radio storage"
+  },
+  "Pełny ekran mapy": {
+    "de": "Karte im Vollbild",
+    "en": "Full-screen map"
+  },
+  "Po odczycie": {
+    "de": "Nach dem Auslesen",
+    "en": "After reading"
+  },
+  "Pobierz z NAS": {
+    "de": "Vom NAS laden",
+    "en": "Download from NAS"
+  },
+  "Początek pomiaru odcinkowego": {
+    "de": "Beginn der Abschnittskontrolle",
+    "en": "Start of average speed check"
+  },
+  "Podaj nazwę hosta lub adres IPv4": {
+    "de": "Hostnamen oder IPv4-Adresse eingeben",
+    "en": "Enter a hostname or IPv4 address"
+  },
+  "Podaj prawidłowy port": {
+    "de": "Gültigen Port eingeben",
+    "en": "Enter a valid port"
+  },
+  "Podgląd jest dostępny poza przejazdem.": {
+    "de": "Vorschau ist außerhalb der Fahrt verfügbar.",
+    "en": "Preview is available between trips."
+  },
+  "Podgrzewany katalizator": {
+    "de": "Beheizter Katalysator",
+    "en": "Heated catalyst"
+  },
+  "Podwozie": {
+    "de": "Fahrwerk",
+    "en": "Chassis"
+  },
+  "Podzespoły silnika": {
+    "de": "Motorkomponenten",
+    "en": "Engine components"
+  },
+  "Pogoda": {
+    "de": "Wetter",
+    "en": "Weather"
+  },
+  "Pokaż całą trasę": {
+    "de": "Gesamte Strecke anzeigen",
+    "en": "Show entire trip"
+  },
+  "Pokaż ciśnienie opon": {
+    "de": "Reifendruck anzeigen",
+    "en": "Show tyre pressures"
+  },
+  "Pomiń km": {
+    "de": "Kilometerstand überspringen",
+    "en": "Skip odometer"
+  },
+  "Ponów OBD": {
+    "de": "OBD neu verbinden",
+    "en": "Retry OBD"
+  },
+  "Port musi być od 1 do 65535": {
+    "de": "Port muss zwischen 1 und 65535 liegen",
+    "en": "Port must be between 1 and 65535"
+  },
+  "Potwierdzono zmiany: ": {
+    "de": "Änderungen bestätigt: ",
+    "en": "Changes verified: "
+  },
+  "Powietrze wtórne": {
+    "de": "Sekundärluftsystem",
+    "en": "Secondary air"
+  },
+  "Powolna odpowiedź sondy lambda, bank 1, czujnik 1": {
+    "de": "Lambdasonde reagiert zu langsam, Bank 1, Sensor 1",
+    "en": "Oxygen sensor slow response, bank 1, sensor 1"
+  },
+  "Poziom paliwa": {
+    "de": "Tankfüllstand",
+    "en": "Fuel level"
+  },
+  "Poziom paliwa · odczyt szacunkowy": {
+    "de": "Tankfüllstand · Schätzwert",
+    "en": "Fuel level · estimated reading"
+  },
+  "Połącz OBD z tym profilem Kia": {
+    "de": "OBD mit diesem Kia-Profil verbinden",
+    "en": "Connect OBD using this Kia profile"
+  },
+  "Połącz radio z siecią Wi-Fi adaptera OBD": {
+    "de": "Radio mit dem WLAN des OBD-Adapters verbinden",
+    "en": "Connect the radio to the OBD adapter’s Wi-Fi"
+  },
+  "Połącz z internetem, aby wysłać przejazdy": {
+    "de": "Zum Senden der Fahrten eine Internetverbindung herstellen",
+    "en": "Connect to the internet to upload trips"
+  },
+  "Połączone odcinki · ": {
+    "de": "Zusammengefasste Abschnitte · ",
+    "en": "Merged trip segments · "
+  },
+  "Praca silnika": {
+    "de": "Motorlaufzeit",
+    "en": "Engine running time"
+  },
+  "Prawy przód": {
+    "de": "Vorne rechts",
+    "en": "Front right"
+  },
+  "Prawy tył": {
+    "de": "Hinten rechts",
+    "en": "Rear right"
+  },
+  "Profil dla tej rejestracji": {
+    "de": "Profil für dieses Kennzeichen",
+    "en": "Profile for this registration"
+  },
+  "Profil do edycji": {
+    "de": "Profil zur Bearbeitung",
+    "en": "Profile to edit"
+  },
+  "Profil do edycji · ": {
+    "de": "Profil zur Bearbeitung · ",
+    "en": "Profile to edit · "
+  },
+  "Profil historii: ": {
+    "de": "Verlaufsprofil: ",
+    "en": "History profile: "
+  },
+  "Profil jazdy: ": {
+    "de": "Fahrprofil: ",
+    "en": "Driving profile: "
+  },
+  "Profil wysokości": {
+    "de": "Höhenprofil",
+    "en": "Elevation profile"
+  },
+  "Proxy OBD jest zajęte": {
+    "de": "OBD-Proxy ist belegt",
+    "en": "OBD proxy is busy"
+  },
+  "Proxy Wi-Fi jest zajęte": {
+    "de": "WLAN-Proxy ist belegt",
+    "en": "Wi-Fi proxy is busy"
+  },
+  "Proxy Wi-Fi wyłączone": {
+    "de": "WLAN-Proxy ausgeschaltet",
+    "en": "Wi-Fi proxy is off"
+  },
+  "Proxy lokalne niedostępne": {
+    "de": "Lokaler Proxy nicht verfügbar",
+    "en": "Local proxy unavailable"
+  },
+  "Przebieg przy resecie (km)": {
+    "de": "Kilometerstand bei Rückstellung (km)",
+    "en": "Odometer at reset (km)"
+  },
+  "Przekroczono czas odpowiedzi ELM": {
+    "de": "Zeitüberschreitung bei ELM-Antwort",
+    "en": "ELM response timed out"
+  },
+  "Przekroczono czas odpowiedzi OBD Wi-Fi": {
+    "de": "Zeitüberschreitung bei OBD-WLAN-Antwort",
+    "en": "Wi-Fi OBD response timed out"
+  },
+  "Przerwano OBD. Wynik zapisu nie jest potwierdzony": {
+    "de": "OBD-Verbindung unterbrochen. Speichern nicht bestätigt",
+    "en": "OBD disconnected. Saving could not be confirmed"
+  },
+  "Przerwano odczyt ustawień OBD": {
+    "de": "Auslesen der OBD-Einstellungen abgebrochen",
+    "en": "Reading OBD settings was interrupted"
+  },
+  "Przerwano połączenie z profilem Kia": {
+    "de": "Verbindung zum Kia-Profil unterbrochen",
+    "en": "Connection for this Kia profile was interrupted"
+  },
+  "Przerwano połączenie · wynik kasowania niepotwierdzony": {
+    "de": "Verbindung unterbrochen · Löschen nicht bestätigt",
+    "en": "Connection lost · clearing not confirmed"
+  },
+  "Przyspieszenie • najlepszy czas w trasie": {
+    "de": "Beschleunigung • Bestzeit der Fahrt",
+    "en": "Acceleration • best time this trip"
+  },
+  "Prędkość": {
+    "de": "Geschwindigkeit",
+    "en": "Speed"
+  },
+  "Pulpit": {
+    "de": "Startbildschirm",
+    "en": "Dashboard"
+  },
+  "Pusta strona historii": {
+    "de": "Leere Verlaufsseite",
+    "en": "Empty history page"
+  },
+  "Radio bez adresu Wi-Fi": {
+    "de": "Radio ohne WLAN-Adresse",
+    "en": "Radio has no Wi-Fi address"
+  },
+  "Radio nie udostępnia skanera BLE.": {
+    "de": "Dieses Radio bietet keine BLE-Suche.",
+    "en": "This radio does not provide a BLE scanner."
+  },
+  "Radio nie udostępnia systemowego wyboru katalogu.": {
+    "de": "Dieses Radio bietet keine Ordnerauswahl durch das System.",
+    "en": "This radio does not provide the system folder picker."
+  },
+  "Radio oczekuje na przypisanie do NAS.": {
+    "de": "Radio wartet auf die Zuordnung zum NAS.",
+    "en": "The radio is waiting to be linked to the NAS."
+  },
+  "RadioKIA Pulpit": {
+    "de": "RadioKIA Startbildschirm",
+    "en": "RadioKIA Dashboard"
+  },
+  "Rejestrator tras": {
+    "de": "Fahrtenaufzeichnung",
+    "en": "Trip recorder"
+  },
+  "Rejestrator zatrzymany": {
+    "de": "Aufzeichnung gestoppt",
+    "en": "Recorder stopped"
+  },
+  "Rejestruj": {
+    "de": "Aufzeichnen",
+    "en": "Record"
+  },
+  "Rejestruj przejazdy": {
+    "de": "Fahrten aufzeichnen",
+    "en": "Record trips"
+  },
+  "Rekord przejazdu": {
+    "de": "Fahrtbestwert",
+    "en": "Trip record"
+  },
+  "Rekord przekracza limit NAS": {
+    "de": "Datensatz überschreitet das NAS-Limit",
+    "en": "Record exceeds the NAS size limit"
+  },
+  "Rozwiń opis": {
+    "de": "Beschreibung einblenden",
+    "en": "Expand description"
+  },
+  "Skan BLE niedostępny (": {
+    "de": "BLE-Suche nicht verfügbar (",
+    "en": "BLE scan unavailable ("
+  },
+  "Skan BLE niedostępny.": {
+    "de": "BLE-Suche nicht verfügbar.",
+    "en": "BLE scan unavailable."
+  },
+  "Skasować kody emisji EOBD?": {
+    "de": "EOBD-Abgasfehlercodes löschen?",
+    "en": "Clear EOBD emissions codes?"
+  },
+  "Skasuj": {
+    "de": "Löschen",
+    "en": "Clear"
+  },
+  "Skasuj kody": {
+    "de": "Fehlercodes löschen",
+    "en": "Clear codes"
+  },
+  "Sonda lambda": {
+    "de": "Lambdasonde",
+    "en": "Oxygen sensor"
+  },
+  "Spalanie ": {
+    "de": "Verbrauch ",
+    "en": "Fuel consumption "
+  },
+  "Spalanie chwilowe": {
+    "de": "Momentanverbrauch",
+    "en": "Instant fuel consumption"
+  },
+  "Spalanie w ": {
+    "de": "Verbrauch in ",
+    "en": "Fuel consumption in "
+  },
+  "Sparuj adapter Classic w Androidzie": {
+    "de": "Bluetooth-Classic-Adapter in Android koppeln",
+    "en": "Pair the Bluetooth Classic adapter in Android"
+  },
+  "Sprawdź datę ostatniego resetu": {
+    "de": "Datum der letzten Rückstellung prüfen",
+    "en": "Check the last reset date"
+  },
+  "Sprawdź nośnik GPX": {
+    "de": "GPX-Datenträger prüfen",
+    "en": "Check GPX storage"
+  },
+  "Sprawdź wskazanie TPMS na zegarach samochodu": {
+    "de": "Reifendruckanzeige im Kombiinstrument prüfen",
+    "en": "Check the TPMS reading on the vehicle’s instrument cluster"
+  },
+  "Sprawność filtra cząstek stałych poniżej progu, bank 1": {
+    "de": "Partikelfilterwirkung unter Grenzwert, Bank 1",
+    "en": "Particulate filter efficiency below threshold, bank 1"
+  },
+  "Sprawność katalizatora poniżej progu, bank 1": {
+    "de": "Katalysatorwirkung unter Grenzwert, Bank 1",
+    "en": "Catalyst efficiency below threshold, bank 1"
+  },
+  "Starsze": {
+    "de": "Ältere",
+    "en": "Older"
+  },
+  "Sterowanie doładowaniem": {
+    "de": "Ladedruckregelung",
+    "en": "Boost control"
+  },
+  "Sterownik może usunąć zapisane kody i ramki zamrożone oraz wyzerować gotowość monitorów emisji. Kody trwałe znikają po potwierdzeniu naprawy przez ECU.": {
+    "de": "Das Steuergerät kann gespeicherte Fehlercodes und Umgebungsdaten löschen und die Abgasmonitore zurücksetzen. Permanente Codes verschwinden, sobald das Steuergerät die Reparatur bestätigt.",
+    "en": "The ECU may clear stored codes and freeze-frame data and reset emissions monitor readiness. Permanent codes clear once the ECU verifies the repair."
+  },
+  "Sterownik potwierdził przyjęcie kasowania": {
+    "de": "Steuergerät hat den Löschbefehl bestätigt",
+    "en": "ECU accepted the clear request"
+  },
+  "Sterownik skrzyni biegów zgłosił usterkę": {
+    "de": "Getriebesteuergerät meldet einen Fehler",
+    "en": "Transmission control module reported a fault"
+  },
+  "Sterownik zgłasza zapisane usterki · brak odczytanych kodów": {
+    "de": "Steuergerät meldet gespeicherte Fehler · keine Codes ausgelesen",
+    "en": "Control module reports stored faults · no codes read"
+  },
+  "Sygnał czujnika ciśnienia doładowania A poza zakresem": {
+    "de": "Signal des Ladedrucksensors A außerhalb des Bereichs",
+    "en": "Boost pressure sensor A signal out of range"
+  },
+  "Sygnał czujnika ciśnienia na listwie paliwowej poza zakresem": {
+    "de": "Signal des Kraftstoffdrucksensors am Rail außerhalb des Bereichs",
+    "en": "Fuel rail pressure sensor signal out of range"
+  },
+  "Sygnał czujnika różnicy ciśnień filtra DPF poza zakresem": {
+    "de": "Signal des DPF-Differenzdrucksensors außerhalb des Bereichs",
+    "en": "DPF differential pressure sensor signal out of range"
+  },
+  "Sygnał przepływomierza powietrza poza zakresem": {
+    "de": "Signal des Luftmassenmessers außerhalb des Bereichs",
+    "en": "Mass air flow sensor signal out of range"
+  },
+  "Szacowane ciśnienie z wysokości GPS": {
+    "de": "Aus GPS-Höhe geschätzter Luftdruck",
+    "en": "Pressure estimated from GPS altitude"
+  },
+  "Tankowania": {
+    "de": "Tankvorgänge",
+    "en": "Refuelling"
+  },
+  "Temperatura cieczy chłodzącej": {
+    "de": "Kühlmitteltemperatur",
+    "en": "Coolant temperature"
+  },
+  "Temperatura oleju": {
+    "de": "Öltemperatur",
+    "en": "Oil temperature"
+  },
+  "Temperatura płynu chłodzącego poniżej wartości regulacji termostatu": {
+    "de": "Kühlmitteltemperatur unter dem Regelwert des Thermostats",
+    "en": "Coolant temperature below thermostat regulating temperature"
+  },
+  "Temperatura zewn.  ": {
+    "de": "Außentemp.  ",
+    "en": "Outside temp.  "
+  },
+  "Temperatura zewnętrzna": {
+    "de": "Außentemperatur",
+    "en": "Outside temperature"
+  },
+  "Ten panel fabryczny nie udostępnia tego ekranu.": {
+    "de": "Diese werkseitige Oberfläche stellt diese Ansicht nicht bereit.",
+    "en": "This screen is unavailable in the factory dashboard."
+  },
+  "Teraz": {
+    "de": "Jetzt",
+    "en": "Now"
+  },
+  "Trwa zapis do zegarów": {
+    "de": "Einstellungen werden ins Kombiinstrument geschrieben",
+    "en": "Saving to the instrument cluster"
+  },
+  "Trwa zapis przejazdu": {
+    "de": "Fahrt wird gespeichert",
+    "en": "Recording trip"
+  },
+  "Trwały": {
+    "de": "Permanent",
+    "en": "Permanent"
+  },
+  "Tylko pulpit RadioKIA": {
+    "de": "Nur RadioKIA-Startbildschirm",
+    "en": "RadioKIA dashboard only"
+  },
+  "Typ paliwa": {
+    "de": "Kraftstoffart",
+    "en": "Fuel type"
+  },
+  "Udostępnij OBD przez Wi-Fi": {
+    "de": "OBD über WLAN freigeben",
+    "en": "Share OBD over Wi-Fi"
+  },
+  "Układ napędowy": {
+    "de": "Antriebsstrang",
+    "en": "Powertrain"
+  },
+  "Układ oczyszczania NOx / SCR": {
+    "de": "NOx-Nachbehandlung / SCR",
+    "en": "NOx aftertreatment / SCR"
+  },
+  "Układ paliwowy": {
+    "de": "Kraftstoffsystem",
+    "en": "Fuel system"
+  },
+  "Upłynął czas na wykonanie polecenia": {
+    "de": "Zeitüberschreitung bei der Befehlsausführung",
+    "en": "Command timed out"
+  },
+  "Uruchom automat, aby udostępnić odczyt OBD": {
+    "de": "Automatik einschalten, um OBD-Daten freizugeben",
+    "en": "Enable auto recording to share OBD readings"
+  },
+  "Urządzenie Bluetooth": {
+    "de": "Bluetooth-Gerät",
+    "en": "Bluetooth device"
+  },
+  "User": {
+    "de": "Benutzer",
+    "en": "User"
+  },
+  "Ustaw": {
+    "de": "Festlegen",
+    "en": "Set"
+  },
+  "Ustaw adres i port adaptera OBD Wi-Fi": {
+    "de": "Adresse und Port des OBD-WLAN-Adapters einstellen",
+    "en": "Set the Wi-Fi OBD adapter address and port"
+  },
+  "Ustaw datę ostatniego resetu przypomnienia": {
+    "de": "Datum der letzten Rückstellung der Service-Erinnerung eingeben",
+    "en": "Set the last reminder reset date"
+  },
+  "Ustaw jako domyślny": {
+    "de": "Als Standard festlegen",
+    "en": "Set as default"
+  },
+  "Ustawienia w zegarach zmieniły się. Sprawdź nowy odczyt": {
+    "de": "Einstellungen im Kombiinstrument haben sich geändert. Neue Werte prüfen",
+    "en": "Instrument cluster settings changed. Check the latest reading"
+  },
+  "Ustawienia zostały odświeżone. Sprawdź odczyt przed zapisem": {
+    "de": "Einstellungen aktualisiert. Vor dem Speichern ausgelesene Werte prüfen",
+    "en": "Settings refreshed. Check the reading before saving"
+  },
+  "Ustawiono adres adaptera": {
+    "de": "Adapteradresse gespeichert",
+    "en": "Adapter address set"
+  },
+  "Usterka obwodu sterowania wtryskiwaczy": {
+    "de": "Störung im Ansteuerkreis der Einspritzventile",
+    "en": "Injector control circuit fault"
+  },
+  "Usterka obwodu świec żarowych A": {
+    "de": "Störung im Glühkerzenstromkreis A",
+    "en": "Glow plug circuit A fault"
+  },
+  "Usterka silnika · OBD": {
+    "de": "Motorstörung · OBD",
+    "en": "Engine fault · OBD"
+  },
+  "Usunięta trasa": {
+    "de": "Fahrt gelöscht",
+    "en": "Deleted trip"
+  },
+  "Usuń ostatnią cyfrę": {
+    "de": "Letzte Ziffer löschen",
+    "en": "Delete last digit"
+  },
+  "Utracono łączność OBD": {
+    "de": "OBD-Verbindung verloren",
+    "en": "OBD connection lost"
+  },
+  "W punktach tej trasy nie zapisano wysokości GPS.": {
+    "de": "Für diese Streckenpunkte wurden keine GPS-Höhen gespeichert.",
+    "en": "No GPS altitude was recorded for this trip."
+  },
+  "Wczytuję odczyty…": {
+    "de": "Messwerte werden geladen…",
+    "en": "Loading readings…"
+  },
+  "Wczytuję wyniki…": {
+    "de": "Ergebnisse werden geladen…",
+    "en": "Loading results…"
+  },
+  "Wczytywanie śladu GPS…": {
+    "de": "GPS-Spur wird geladen…",
+    "en": "Loading GPS track…"
+  },
+  "Wi-Fi TCP": {
+    "de": "WLAN TCP",
+    "en": "Wi-Fi TCP"
+  },
+  "Wi-Fi TCP · ": {
+    "de": "WLAN TCP · ",
+    "en": "Wi-Fi TCP · "
+  },
+  "Wpisz do ": {
+    "de": "Höchstens ",
+    "en": "Enter up to "
+  },
+  "Wpisz od 1 do ": {
+    "de": "1 bis ",
+    "en": "Enter a value from 1 to "
+  },
+  "Wpisz poprawną wartość. ": {
+    "de": "Gültigen Wert eingeben. ",
+    "en": "Enter a valid value. "
+  },
+  "Wpisz stan licznika z dnia resetu": {
+    "de": "Kilometerstand am Tag der Rückstellung eingeben",
+    "en": "Enter the odometer reading on the reset date"
+  },
+  "Wprowadź MAC": {
+    "de": "MAC-Adresse eingeben",
+    "en": "Enter MAC address"
+  },
+  "Wróć": {
+    "de": "Zurück",
+    "en": "Back"
+  },
+  "Wróć do historii": {
+    "de": "Zurück zum Verlauf",
+    "en": "Back to history"
+  },
+  "Wróć do panelu Kia": {
+    "de": "Zurück zur Kia-Ansicht",
+    "en": "Back to Kia dashboard"
+  },
+  "Wybierz adapter BLE": {
+    "de": "BLE-Adapter auswählen",
+    "en": "Select BLE adapter"
+  },
+  "Wybierz adapter OBD w konfiguracji": {
+    "de": "In den Einstellungen einen OBD-Adapter auswählen",
+    "en": "Select an OBD adapter in settings"
+  },
+  "Wybierz sparowane urządzenie": {
+    "de": "Gekoppeltes Gerät auswählen",
+    "en": "Select a paired device"
+  },
+  "Wybierz sparowany adapter OBD Bluetooth Classic": {
+    "de": "Gekoppelten Bluetooth-Classic-OBD-Adapter auswählen",
+    "en": "Select a paired Bluetooth Classic OBD adapter"
+  },
+  "Wybrane trasy · ": {
+    "de": "Ausgewählte Fahrten · ",
+    "en": "Selected trips · "
+  },
+  "Wybrany katalog nie pozwala zapisywać GPX.": {
+    "de": "GPX-Dateien können im gewählten Ordner nicht gespeichert werden.",
+    "en": "The selected folder does not allow GPX saving."
+  },
+  "Wyczyść": {
+    "de": "Leeren",
+    "en": "Clear"
+  },
+  "Wykres wysokości GPS względem dystansu": {
+    "de": "GPS-Höhe entlang der Strecke",
+    "en": "GPS altitude against distance"
+  },
+  "Wykryto tankowanie": {
+    "de": "Tankvorgang erkannt",
+    "en": "Refuelling detected"
+  },
+  "Wypadanie zapłonu": {
+    "de": "Zündaussetzer",
+    "en": "Misfire"
+  },
+  "Wypadanie zapłonu na cylindrze ": {
+    "de": "Zündaussetzer an Zylinder ",
+    "en": "Misfire on cylinder "
+  },
+  "Wypadanie zapłonu na jednym lub kilku cylindrach": {
+    "de": "Zündaussetzer in einem oder mehreren Zylindern",
+    "en": "Random or multiple cylinder misfire"
+  },
+  "Wysoki sygnał czujnika temperatury powietrza dolotowego": {
+    "de": "Signal des Ansauglufttemperatursensors zu hoch",
+    "en": "Intake air temperature sensor signal high"
+  },
+  "Wysoki sygnał czujnika temperatury płynu chłodzącego": {
+    "de": "Signal des Kühlmitteltemperatursensors zu hoch",
+    "en": "Coolant temperature sensor signal high"
+  },
+  "Wysokość GPS": {
+    "de": "GPS-Höhe",
+    "en": "GPS altitude"
+  },
+  "Wysyłaj do NAS": {
+    "de": "An NAS senden",
+    "en": "Upload to NAS"
+  },
+  "Wysyłaj przejazdy do NAS": {
+    "de": "Fahrten an NAS senden",
+    "en": "Upload trips to NAS"
+  },
+  "Wyszukaj adapter OBD Bluetooth Low Energy": {
+    "de": "Nach einem Bluetooth-Low-Energy-OBD-Adapter suchen",
+    "en": "Scan for a Bluetooth Low Energy OBD adapter"
+  },
+  "Wyłącz podgląd demonstracyjny": {
+    "de": "Demovorschau ausschalten",
+    "en": "Disable demo preview"
+  },
+  "Włącz Bluetooth w Androidzie, aby wyświetlić urządzenia.": {
+    "de": "Bluetooth in Android einschalten, um Geräte anzuzeigen.",
+    "en": "Turn on Android Bluetooth to see devices."
+  },
+  "Włącz automat": {
+    "de": "Automatik einschalten",
+    "en": "Enable auto recording"
+  },
+  "Włącz lokalizację": {
+    "de": "Standort aktivieren",
+    "en": "Turn on location"
+  },
+  "Włącz podgląd demonstracyjny": {
+    "de": "Demovorschau einschalten",
+    "en": "Enable demo preview"
+  },
+  "Za ": {
+    "de": "In ",
+    "en": "In "
+  },
+  "Za duży przepływ spalin przez układ EGR": {
+    "de": "AGR-Durchfluss zu hoch",
+    "en": "Excessive EGR flow"
+  },
+  "Za długa odpowiedź ELM": {
+    "de": "ELM-Antwort zu lang",
+    "en": "ELM response too long"
+  },
+  "Za długa odpowiedź OBD Wi-Fi": {
+    "de": "OBD-WLAN-Antwort zu lang",
+    "en": "Wi-Fi OBD response too long"
+  },
+  "Za mały przepływ spalin przez układ EGR": {
+    "de": "AGR-Durchfluss zu gering",
+    "en": "Insufficient EGR flow"
+  },
+  "Za niskie ciśnienie doładowania": {
+    "de": "Ladedruck zu niedrig",
+    "en": "Turbocharger underboost"
+  },
+  "Za niskie ciśnienie paliwa w układzie": {
+    "de": "Kraftstoffdruck zu niedrig",
+    "en": "Fuel system pressure too low"
+  },
+  "Za niskie napięcie instalacji pojazdu": {
+    "de": "Bordnetzspannung zu niedrig",
+    "en": "Vehicle system voltage too low"
+  },
+  "Za wysokie ciśnienie doładowania": {
+    "de": "Ladedruck zu hoch",
+    "en": "Turbocharger overboost"
+  },
+  "Za wysokie ciśnienie paliwa w układzie": {
+    "de": "Kraftstoffdruck zu hoch",
+    "en": "Fuel system pressure too high"
+  },
+  "Zainstaluj aplikację ": {
+    "de": "App installieren: ",
+    "en": "Install the app "
+  },
+  "Zakończ podgląd": {
+    "de": "Vorschau beenden",
+    "en": "End preview"
+  },
+  "Zakończ pomiar przyspieszenia": {
+    "de": "Beschleunigungsmessung beenden",
+    "en": "Stop acceleration measurement"
+  },
+  "Zaległe przejazdy · przypisz radio do NAS": {
+    "de": "Nicht gesendete Fahrten · Radio dem NAS zuordnen",
+    "en": "Pending trips · link the radio to the NAS"
+  },
+  "Zaległe przejazdy · sprawdź połączenie z NAS": {
+    "de": "Nicht gesendete Fahrten · NAS-Verbindung prüfen",
+    "en": "Pending trips · check the NAS connection"
+  },
+  "Zamknij": {
+    "de": "Schließen",
+    "en": "Close"
+  },
+  "Zapis GPX · ": {
+    "de": "GPX-Aufzeichnung · ",
+    "en": "GPX recording · "
+  },
+  "Zapis dostępny tylko na postoju": {
+    "de": "Speichern nur im Stand möglich",
+    "en": "Saving is available only while stationary"
+  },
+  "Zapis może skasować bieżące odliczanie przeglądu i przywrócić wartości domyślne w zegarach.": {
+    "de": "Das Speichern kann den aktuellen Service-Countdown löschen und die Standardwerte im Kombiinstrument wiederherstellen.",
+    "en": "Saving may clear the current service countdown and restore defaults in the instrument cluster."
+  },
+  "Zapis przerwany. Auto musi stać": {
+    "de": "Schreiben abgebrochen. Fahrzeug muss stehen",
+    "en": "Saving stopped. The vehicle must be stationary"
+  },
+  "Zapis przerwany. Brak potwierdzonego postoju": {
+    "de": "Schreiben abgebrochen. Stillstand nicht bestätigt",
+    "en": "Saving stopped. The vehicle could not be confirmed stationary"
+  },
+  "Zapisano i potwierdzono odczytem z zegarów": {
+    "de": "Geschrieben und durch Auslesen des Kombiinstruments bestätigt",
+    "en": "Saved and verified by reading back from the instrument cluster"
+  },
+  "Zapisano profil": {
+    "de": "Profil gespeichert",
+    "en": "Profile saved"
+  },
+  "Zapisany": {
+    "de": "Gespeichert",
+    "en": "Stored"
+  },
+  "Zapisać ustawienia w zegarach?": {
+    "de": "Einstellungen im Kombiinstrument speichern?",
+    "en": "Save settings to the instrument cluster?"
+  },
+  "Zapisuję do zegarów i sprawdzam odczyt…": {
+    "de": "Einstellungen werden geschrieben und zur Kontrolle ausgelesen…",
+    "en": "Saving to the cluster and verifying settings…"
+  },
+  "Zapisz": {
+    "de": "Speichern",
+    "en": "Save"
+  },
+  "Zapisz do auta": {
+    "de": "Im Fahrzeug speichern",
+    "en": "Save to vehicle"
+  },
+  "Zapisz profil": {
+    "de": "Profil speichern",
+    "en": "Save profile"
+  },
+  "Zasięg wg samochodu": {
+    "de": "Reichweite laut Fahrzeug",
+    "en": "Range reported by vehicle"
+  },
+  "Zatrzymaj auto i sprawdź połączenie OBD dla tego profilu": {
+    "de": "Fahrzeug anhalten und OBD-Verbindung für dieses Profil prüfen",
+    "en": "Stop the vehicle and check the OBD connection for this profile"
+  },
+  "Zbyt bogata mieszanka, bank 1": {
+    "de": "Gemisch zu fett, Bank 1",
+    "en": "System too rich, bank 1"
+  },
+  "Zbyt uboga mieszanka, bank 1": {
+    "de": "Gemisch zu mager, Bank 1",
+    "en": "System too lean, bank 1"
+  },
+  "Zegary nie potwierdziły dostępu do ustawień": {
+    "de": "Kombiinstrument hat den Zugriff auf die Einstellungen nicht bestätigt",
+    "en": "Instrument cluster did not confirm settings access"
+  },
+  "Zegary nie potwierdziły zakończenia sesji": {
+    "de": "Kombiinstrument hat das Sitzungsende nicht bestätigt",
+    "en": "Instrument cluster did not confirm the end of the session"
+  },
+  "Zegary nie potwierdziły zapisu. Odczytaj ustawienia ponownie": {
+    "de": "Kombiinstrument hat das Speichern nicht bestätigt. Einstellungen erneut auslesen",
+    "en": "Instrument cluster did not confirm the save. Read the settings again"
+  },
+  "Zegary nie zwróciły ustawień": {
+    "de": "Kombiinstrument hat keine Einstellungen zurückgemeldet",
+    "en": "Instrument cluster did not return settings"
+  },
+  "Zegary odmówiły dostępu do zapisu": {
+    "de": "Kombiinstrument hat Schreibzugriff verweigert",
+    "en": "Instrument cluster denied write access"
+  },
+  "Zegary odrzuciły sesję zapisu": {
+    "de": "Kombiinstrument hat Schreibsitzung abgelehnt",
+    "en": "Instrument cluster rejected the write session"
+  },
+  "Zegary zwróciły inne wartości niż wybrane": {
+    "de": "Kombiinstrument hat abweichende Werte zurückgemeldet",
+    "en": "Instrument cluster returned values different from those selected"
+  },
+  "Zezwól": {
+    "de": "Zulassen",
+    "en": "Allow"
+  },
+  "Zezwól na Bluetooth, aby wyświetlić urządzenia.": {
+    "de": "Bluetooth-Zugriff zulassen, um Geräte anzuzeigen.",
+    "en": "Allow Bluetooth access to see devices."
+  },
+  "Zezwól na lokalizację, aby wyszukać urządzenia BLE.": {
+    "de": "Standortzugriff zulassen, um nach BLE-Geräten zu suchen.",
+    "en": "Allow location access to scan for BLE devices."
+  },
+  "Zmiana profilu OBD": {
+    "de": "OBD-Profilwechsel",
+    "en": "Switching OBD profile"
+  },
+  "Zużyte paliwo": {
+    "de": "Verbrauchter Kraftstoff",
+    "en": "Fuel used"
+  },
+  "Zużyte paliwo  ": {
+    "de": "Verbrauchter Kraftstoff  ",
+    "en": "Fuel used  "
+  },
+  "Zwiń opis": {
+    "de": "Beschreibung ausblenden",
+    "en": "Collapse description"
+  },
+  "benzyna": {
+    "de": "Benzin",
+    "en": "petrol"
+  },
+  "bieg ": {
+    "de": "Gang ",
+    "en": "Gear "
+  },
+  "brak odczytu": {
+    "de": "kein Messwert",
+    "en": "No reading"
+  },
+  "brak odczytu biegu": {
+    "de": "keine Ganganzeige",
+    "en": "Gear unavailable"
+  },
+  "brutto": {
+    "de": "brutto",
+    "en": "incl. VAT"
+  },
+  "netto": {
+    "de": "netto",
+    "en": "excl. VAT"
+  },
+  "obr./min": {
+    "de": "U/min",
+    "en": "rpm"
+  },
+  "teraz": {
+    "de": "jetzt",
+    "en": "now"
+  },
+  "wyłączony": {
+    "de": "aus",
+    "en": "off"
+  },
+  "zł": {
+    "de": "zł",
+    "en": "PLN"
+  },
+  " zł": {
+    "de": " zł",
+    "en": " PLN"
+  },
+  "Łącz do ": {
+    "de": "Fahrten zusammenfassen bis ",
+    "en": "Join with gaps up to "
+  },
+  "Łączenie Wi-Fi · ": {
+    "de": "WLAN-Verbindung · ",
+    "en": "Wi-Fi connection · "
+  },
+  "Łączenie z adapterem ": {
+    "de": "Verbindung mit Adapter ",
+    "en": "Connecting to adapter "
+  },
+  "Średnie spalanie  ": {
+    "de": "Durchschnittsverbrauch  ",
+    "en": "Average fuel consumption  "
+  },
+  "Średnie spalanie przejazdu": {
+    "de": "Durchschnittsverbrauch der Fahrt",
+    "en": "Average trip fuel consumption"
+  },
+  "” jest teraz profilem domyślnym.": {
+    "de": "“ ist jetzt das Standardprofil.",
+    "en": "” is now the default profile."
+  },
+  "”?": {
+    "de": "“ duplizieren?",
+    "en": "”?"
+  }
+}

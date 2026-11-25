@@ -39,6 +39,11 @@ final class EngineHours {
         private boolean verifyVehicle, kiaVerified, confirmed;
 
         boolean due(long now) { return now>=due; }
+        void requestRefresh(long now) {
+            // Zachowaj odstęp potrzebny do potwierdzenia kolejnej próbki.
+            long earliest=previous==null ? now : Math.max(now,previous.at+FIRST_REPEAT_MS);
+            due=Math.min(due,earliest);
+        }
 
         Reading poll(Elm elm,String vehicle,long now) throws Exception {
             if (verifyVehicle) {

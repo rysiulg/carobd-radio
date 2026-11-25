@@ -14,6 +14,10 @@ W pełnym RadioKIA FM i na widocznym panelu FM Pulpitu na zgodnym TS7 krótkie n
 
 Przycisk **Wideo · VLC** w górnym pasku Pulpitu otwiera VLC. Przy pierwszym użyciu pokazuje ustawienia obrazu w obrazie (PiP). Po uruchomieniu filmu użyj przycisku Home lub trybu podręcznego VLC. Dostępność małego okna zależy od wersji VLC i obsługi PiP na radiu.
 
+## Język CarOBD
+
+CarOBD uruchamia się domyślnie po angielsku. Wybór języka jest dostępny przez **Settings → Language**, **Einstellungen → Sprache** lub **Konfiguracja → Język** zależnie od aktualnego ustawienia. Aplikacja zapamiętuje wybór i działa w każdym języku także offline. Katalog komunikatów można edytować w [ui_translations.json](android-radio/res/raw/ui_translations.json). Klucze to polskie teksty, a pola `en` i `de` zawierają tłumaczenia.
+
 ## Przykładowe ekrany
 
 Zrzuty pokazują dane demonstracyjne wygenerowane przez aplikację na emulatorze.
@@ -34,7 +38,7 @@ python launcher-preview/build.py
 
 Każdy moduł zapisuje podpisany APK we własnym katalogu `dist/`. Skrypty domyślnie korzystają ze wspólnego, lokalnie generowanego klucza w `private/`. Wspólny podpis umożliwia Pulpitowi odczyt bieżącej telemetrii i presetów. Zachowaj swój klucz do budowania kolejnych aktualizacji.
 
-Zainstaluj APK na Androidzie 8.1 (API 27) lub nowszym. W CarOBD wybierz adapter i nadaj aplikacji wymagane uprawnienia Bluetooth oraz lokalizacji. Widoki można obejrzeć bez samochodu przez **Konfiguracja → Podgląd demonstracyjny**.
+Zainstaluj APK na Androidzie 8.1 (API 27) lub nowszym. W CarOBD wybierz adapter i nadaj aplikacji wymagane uprawnienia Bluetooth oraz lokalizacji. Widoki można obejrzeć bez samochodu przez **Settings → DEMO**.
 
 Aby pod przyciskiem Home otwierał się RadioKIA Pulpit, wybierz go w **Ustawienia Androida → Aplikacje → Aplikacje domyślne → Ekran główny**. Dostęp do tego wyboru jest też w menu **Aplikacje → Ekran główny** w Pulpicie. W tym samym miejscu można przywrócić wcześniejszy ekran główny.
 

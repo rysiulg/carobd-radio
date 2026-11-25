@@ -5,6 +5,7 @@ import android.content.*;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.DocumentsContract;
+import android.util.Log;
 import org.json.*;
 import java.io.*;
 import java.net.*;
@@ -13,9 +14,9 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.*;
 
-/** Eksportuje GPX i ponawia wysyłkę, również po zamknięciu pulpitu. */
+/** Eksportuje GPX, ponawia synchronizację i aktualizuje wykaz CANARD w tle. */
 public final class Maintenance extends JobService {
-    private static final int EXPORT=140, SYNC=141, PERIODIC=142;
+    private static final int EXPORT=140, SYNC=141, PERIODIC=142, ROAD_MAP=143;
     private static final Object NETWORK=new Object();
     private final ExecutorService workers=Executors.newFixedThreadPool(2);
     private final Map<Integer,Future<?>> jobs=new HashMap<>();
@@ -25,6 +26,9 @@ public final class Maintenance extends JobService {
         JobScheduler scheduler=context.getSystemService(JobScheduler.class);
         ComponentName service=new ComponentName(context,Maintenance.class);
         Settings s=new Settings(context);
+        if (RoadMapData.due(s) && scheduler.getPendingJob(ROAD_MAP)==null)
+            scheduler.schedule(new JobInfo.Builder(ROAD_MAP,service).setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
+                .setBackoffCriteria(60*60_000L,JobInfo.BACKOFF_POLICY_EXPONENTIAL).setPersisted(true).build());
         if (!s.get("folder","").isEmpty() && scheduler.getPendingJob(EXPORT)==null)
             scheduler.schedule(new JobInfo.Builder(EXPORT,service).setMinimumLatency(250).setPersisted(true).build());
         if (s.hasNasCredential()) {
@@ -39,16 +43,24 @@ public final class Maintenance extends JobService {
         int id=params.getJobId();
         jobs.put(id,workers.submit(() -> {
             boolean retry;
-            Trips db=new Trips(this);
             Settings settings=new Settings(this);
-            String folder=settings.get("folder","");
-            try {
-                if (id==EXPORT) retry=export(db,folder);
-                else synchronized (NETWORK) { retry=sync(db,settings); }
-            } catch (Exception e) {
-                retry=true;
-                if (id==EXPORT) failedExportFolder=folder;
-            } finally { db.close(); }
+            if (id==ROAD_MAP) {
+                try { RoadMapData.refresh(this,settings); retry=false; }
+                catch (IOException | JSONException e) {
+                    Log.w("CarOBD", "Nie udało się zaktualizować wykazu CANARD", e);
+                    retry=true;
+                }
+            } else {
+                Trips db=new Trips(this);
+                String folder=settings.get("folder","");
+                try {
+                    if (id==EXPORT) retry=export(db,folder);
+                    else synchronized (NETWORK) { retry=sync(db,settings); }
+                } catch (Exception e) {
+                    retry=true;
+                    if (id==EXPORT) failedExportFolder=folder;
+                } finally { db.close(); }
+            }
             final boolean again=retry;
             new android.os.Handler(getMainLooper()).post(() -> {
                 Future<?> current=jobs.remove(id);
@@ -159,8 +171,9 @@ public final class Maintenance extends JobService {
         int previous=-1;
         for (Trips.Point p : points) {
             if (previous>=0 && p.s-previous>30) out.write("</trkseg><trkseg>");
-            out.write("<trkpt lat=\""+(p.la/1e5)+"\" lon=\""+(p.lo/1e5)+"\"><time>"+
-                iso.format(new Date((start+p.s)*1000))+"</time></trkpt>");
+            out.write("<trkpt lat=\""+(p.la/1e5)+"\" lon=\""+(p.lo/1e5)+"\">");
+            if (Double.isFinite(p.altitude)) out.write("<ele>"+p.altitude+"</ele>");
+            out.write("<time>"+iso.format(new Date((start+p.s)*1000))+"</time></trkpt>");
             previous=p.s;
         }
         out.write("</trkseg></trk></gpx>"); out.flush();

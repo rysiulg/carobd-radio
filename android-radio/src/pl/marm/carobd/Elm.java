@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 /** Wyłącznie odczyt OBD. Skalowanie jak w CarOBD ESP. */
 final class Elm {
-    static final int COOLANT=0x05, OIL=0x5c, FUEL_LEVEL=0x2f;
+    static final int COOLANT=0x05, OIL=0x5c, FUEL_LEVEL=0x2f, BAROMETER=0x33, AMBIENT=0x46;
     static final double KIA_TANK_L=71;
     private static final String AUTO_PROTOCOL="ATSP0";
     private static final Pattern PID_LIST=Pattern.compile("(?im)^4100[0-9a-f]{8}(?:[0-9a-f]{2})*(?=[\\r\\n>]|$)");
@@ -42,7 +42,31 @@ final class Elm {
         return PID_LIST.matcher(reply).find();
     }
     double speed() throws Exception { return value(0x0d); }
+    double rpm() throws Exception { return value(0x0c); }
+    static final class Voltage {
+        final double volts;
+        final boolean adapter;
+        Voltage(double volts,boolean adapter) { this.volts=volts; this.adapter=adapter; }
+    }
+    Voltage voltage() throws Exception {
+        double ecu=value(0x42);
+        if (ecu>=6 && ecu<=32) return new Voltage(ecu,false);
+        double adapter=adapterVoltage(sample("ATRV",900));
+        return adapter>=6 && adapter<=32 ? new Voltage(adapter,true) : null;
+    }
+    private static double adapterVoltage(String response) {
+        for (String row:response.split("[\\r\\n>]+")) {
+            String value=row.trim().toUpperCase(Locale.ROOT).replace(',', '.');
+            if (value.matches("[0-9]{1,2}(?:\\.[0-9]{1,3})?\\s*V")) return Double.parseDouble(value.substring(0,value.length()-1).trim());
+        }
+        return Double.NaN;
+    }
     double temperature(boolean coolant) throws Exception { return value(coolant ? COOLANT : OIL); }
+    double barometricKpa() throws Exception { return value(BAROMETER); }
+    double ambientC() throws Exception {
+        double temperature=value(AMBIENT);
+        return temperature>=-40 && temperature<=70 ? temperature : Double.NaN;
+    }
     double odometer() throws Exception {
         String data=EngineHours.payload(sample("01A6",1700),"41A6",6);
         return data==null || "FFFFFFFF".equals(data) ? Double.NaN : Long.parseLong(data,16)/10.0;
@@ -55,6 +79,15 @@ final class Elm {
     // Ta sama sekwencja adresowania i przywracania ELM co w ESPHome.
     double kiaTankLiters() throws Exception {
         return decodeKiaTank(readKiaFrame("7C6","7CE","22B002",1700));
+    }
+    double kiaAmbientC() throws Exception {
+        return decodeKiaAmbient(readKiaFrame("7B3","7BB","220100",1700));
+    }
+    static double decodeKiaAmbient(String reply) {
+        String data=EngineHours.payload(reply,"620100",10,64);
+        if (data==null) return Double.NaN;
+        double temperature=Integer.parseInt(data.substring(12,14),16)/2.0-40;
+        return temperature>-40 && temperature<=60 ? temperature : Double.NaN;
     }
     double kiaOdometer() throws Exception {
         return decodeKiaOdometer(readKiaFrame("7E0","7E8","22ED03",2500));
@@ -74,24 +107,29 @@ final class Elm {
     static final class ServiceInterval {
         final int km,months,mode;
         ServiceInterval(int km,int months,int mode) { this.km=km; this.months=months; this.mode=mode; }
+        boolean same(ServiceInterval other) {
+            return other!=null && km==other.km && months==other.months && mode==other.mode;
+        }
+        boolean validChangeFrom(ServiceInterval before) {
+            for (KiaService.Field field : KiaService.Field.values())
+                if (field.value(this)!=field.value(before) && !field.accepts(field.value(this))) return false;
+            return true;
+        }
     }
     ServiceInterval kiaService() throws Exception {
-        if (!confirmKia()) return null;
-        try {
-            if (!addressKia("7C6","7CE")) return null;
-            String mode=link.query("220070",1700), km=link.query("220072",1700), months=link.query("220073",1700);
-            return serviceInterval(mode,km,months);
-        } finally { restoreAddress(); }
+        return confirmKia() ? KiaService.readForVerifiedKia(this,link) : null;
     }
     static ServiceInterval serviceInterval(String rawMode,String rawKm,String rawMonths) {
         String mode=EngineHours.payload(rawMode,"620070",4);
         String months=EngineHours.payload(rawMonths,"620073",5);
-        String km=null;
-        for (int bytes=6;bytes<=11 && km==null;bytes++) km=EngineHours.payload(rawKm,"620072",bytes);
-        if (km==null || months==null || mode==null) return null;
-        int m=Integer.parseInt(mode,16);
-        if (m>1) return null;
-        return new ServiceInterval(Integer.parseInt(km.substring(0,6),16),Integer.parseInt(months,16),m);
+        return KiaService.values(mode,EngineHours.payload(rawKm,"620072",6,11),months);
+    }
+    KiaService.Result saveKiaService(ServiceInterval before,ServiceInterval target,java.util.function.BooleanSupplier active)
+        throws Exception {
+        if (!active.getAsBoolean() || !EngineHours.matchesKia(diagnostic("0902")))
+            return new KiaService.Result(null,false,"ECU nie potwierdziło zgodności pojazdu z profilem Kia");
+        kiaVerified=true;
+        return KiaService.saveForVerifiedKia(this,link,before,target,active);
     }
     private String readKiaFrame(String tx,String rx,String command,int timeout) throws Exception {
         if (!kiaVerified) return "";
@@ -99,12 +137,12 @@ final class Elm {
             return addressKia(tx,rx) ? link.query(command,timeout) : "";
         } finally { restoreAddress(); }
     }
-    private boolean addressKia(String tx,String rx) throws Exception {
+    boolean addressKia(String tx,String rx) throws Exception {
         for (String setup:new String[]{"ATSH"+tx,"ATCRA"+rx,"ATFCSH"+tx,"ATFCSD300000","ATFCSM1"})
             if (!link.query(setup,900).contains("OK")) return false;
         return true;
     }
-    private void restoreAddress() throws Exception {
+    void restoreAddress() throws Exception {
         boolean restored=true;
         for (String setup:new String[]{"ATFCSM0","ATAR","ATSH7DF"})
             try { restored &= link.query(setup,900).contains("OK"); }
@@ -168,20 +206,21 @@ final class Elm {
     }
     static double decode(int pid, String response) {
         String tag=String.format(Locale.ROOT,"41%02X",pid);
-        int length=(pid==0x0d || pid==FUEL_LEVEL || pid==COOLANT || pid==OIL) ? 2 : 4;
+        int length=(pid==0x0d || pid==FUEL_LEVEL || pid==COOLANT || pid==OIL || pid==BAROMETER || pid==AMBIENT) ? 2 : 4;
         Pattern payload=Pattern.compile("^"+tag+"([0-9A-F]{"+length+"})(?:[0-9A-F]{2})*$");
         for (String row : response.toUpperCase(Locale.ROOT).split("[\r\n>]")) {
             Matcher m=payload.matcher(row.replaceAll("\\s+", ""));
             if (!m.matches()) continue;
             int number=Integer.parseInt(m.group(1),16);
             switch (pid) {
-                case COOLANT: case OIL: return number-40;
-                case 0x0d: return number;
+                case COOLANT: case OIL: case AMBIENT: return number-40;
+                case 0x0d: case BAROMETER: return number;
                 case 0x0c: return number/4.0;
                 case FUEL_LEVEL: return number*100/255.0;
                 case 0x5e: return number/20.0;
                 case 0x9d: return number*0.02;
                 case 0x10: return number/100.0;
+                case 0x42: return number/1000.0;
                 default: break;
             }
         }

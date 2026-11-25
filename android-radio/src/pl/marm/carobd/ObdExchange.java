@@ -5,14 +5,17 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.Semaphore;
 
 /** Dzieli odpowiedzi i kolejkę tylko do odczytu. Transport obsługuje wyłącznie wątek rejestratora. */
 final class ObdExchange {
     static final String NO_DATA="NO DATA";
+    static final int MAX_PROXY_CLIENTS=4;
     private static final int MAX_PENDING=8;
     private static final long MAX_AGE=TimeUnit.MILLISECONDS.toNanos(2500);
     private final Map<String,Reply> replies=new HashMap<>();
     private final Map<String,Long> pending=new LinkedHashMap<>();
+    final Semaphore proxyClients=new Semaphore(MAX_PROXY_CLIENTS);
     private boolean online;
     private long generation;
 

@@ -4,6 +4,12 @@ public final class EngineTest {
     private static final long FIVE_MIN=5*60_000L;
     static void check(boolean ok) { if (!ok) throw new AssertionError(); }
     public static void main(String[] x) {
+        long twentyMinutes=20*60_000L;
+        check(Engine.recoverableGap(286_000,twentyMinutes));
+        check(Engine.recoverableGap(twentyMinutes,twentyMinutes));
+        check(!Engine.recoverableGap(twentyMinutes+1,twentyMinutes));
+        check(Engine.recoverableGap(120_000,0));
+        check(!Engine.recoverableGap(120_001,0));
         Engine e=new Engine();
         e.observe(0,0,0); check(!e.running(0,false));
         e.observe(800,0,1000); check(e.running(1000,false));
@@ -79,7 +85,8 @@ public final class EngineTest {
         run.arm(0); check(run.state()==Measurement.WAITING);
         run.sample(30,1000); check(run.state()==Measurement.RUNNING);
         check(Math.abs(run.times()[0]-2.0/3)<1e-7);
-        run.sample(145,2000); check(run.state()==Measurement.RESULT && Double.isFinite(run.times()[6]));
+        run.sample(145,2000); check(run.state()==Measurement.RUNNING && Double.isFinite(run.times()[6]));
+        run.sample(200,3000); check(run.state()==Measurement.RESULT && Double.isFinite(run.times()[9]));
         run.arm(10000); run.tick(71000); check(run.state()==Measurement.NONE);
         run.arm(90000); run.sample(34,91000); run.sample(12,92000);
         check(run.state()==Measurement.RESULT && Double.isNaN(run.times()[2]));

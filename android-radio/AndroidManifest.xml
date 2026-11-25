@@ -1,8 +1,9 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="pl.marm.carobd" android:versionCode="39" android:versionName="0.3.36">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="pl.marm.carobd" android:versionCode="75" android:versionName="0.3.72">
     <uses-sdk android:minSdkVersion="27" android:targetSdkVersion="34" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
@@ -12,11 +13,17 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
+    <uses-permission android:name="com.tw.carinfoservice.permission.USE_AIDL" />
     <uses-feature android:name="android.hardware.bluetooth" android:required="false" />
     <uses-feature android:name="android.hardware.bluetooth_le" android:required="false" />
     <uses-feature android:name="android.hardware.location.gps" android:required="false" />
-    <queries><package android:name="pl.radiokia.preview" /></queries>
-    <application android:label="CarOBD" android:icon="@drawable/carobd" android:allowBackup="false" android:theme="@android:style/Theme.Material.NoActionBar" android:usesCleartextTraffic="false">
+    <queries>
+        <package android:name="pl.radiokia.preview" />
+        <package android:name="pl.radiokia.fm" />
+        <package android:name="com.dofun.dofunweather.main" />
+        <package android:name="com.tw.carinfoservice" />
+    </queries>
+    <application android:name=".UiLanguage" android:label="CarOBD" android:icon="@drawable/carobd" android:allowBackup="false" android:theme="@style/CarObdTheme" android:usesCleartextTraffic="false" android:networkSecurityConfig="@xml/network_security_config">
         <activity android:name=".Dashboard" android:exported="true" android:screenOrientation="sensorLandscape">
             <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
         </activity>

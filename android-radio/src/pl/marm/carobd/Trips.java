@@ -11,31 +11,46 @@ import java.util.*;
 /** SQLite jest dziennikiem awaryjnym i historią. Zamykanie przejazdu oraz kolejka są atomowe. */
 final class Trips extends SQLiteOpenHelper {
     static final int CHUNK=100;
+    static final int ACCEL_HISTORY_LIMIT=10;
     private static final int CLOSED=1, EMPTY=2;
-    static final long RESUME_WINDOW_MS=120_000L, MAX_TRIP_MS=12*60*60*1000L;
+    static final long MAX_TRIP_MS=12*60*60*1000L;
     private static final String RESUME="_resume";
     static final class Point {
         final int s, la, lo, kmh;
-        Point(int s,int la,int lo,int kmh) { this.s=s; this.la=la; this.lo=lo; this.kmh=kmh; }
+        final double altitude;
+        Point(int s,int la,int lo,int kmh,double altitude) {
+            this.s=s; this.la=la; this.lo=lo; this.kmh=kmh;
+            this.altitude=altitude>=-1500 && altitude<=11000 ? altitude : Double.NaN;
+        }
     }
+    static final class Acceleration {
+        final long atMs;
+        final double seconds;
+        final boolean archived;
+        Acceleration(long atMs,double seconds,boolean archived) { this.atMs=atMs; this.seconds=seconds; this.archived=archived; }
+    }
+    static final String AMBIENT_C="ambient_c", PRESSURE_HPA="pressure_hpa";
     static final class Trip {
         final String id;
         final String vehicle;
-        final long startUnix, start, previousMotionAt;
-        final TripMath.Run acceleration=new TripMath.Run();
+        final long startUnix, start;
+        final double[] acceleration=new double[TripMath.SPLITS];
+        final List<List<Acceleration>> runs=new ArrayList<>();
         final List<Point> pendingPoints=new ArrayList<>();
         String profileId="";
         long speedAt=-1, gpsAt=-1, fuelAt=-1, motion, saved=-1;
         double speed, rate, km, gpsKm, liters, fuelCover, drive, idle, max;
+        double ambientC=Double.NaN, pressureHpa=Double.NaN;
         int fuelSource, count, lastOff=-1;
         Location lastFix;
-        Trip(String vehicle,long unix,long at,long previousMotionAt) {
-            this("radio-"+UUID.randomUUID(),vehicle,unix,at,previousMotionAt);
+        Trip(String vehicle,long unix,long at) {
+            this("radio-"+UUID.randomUUID(),vehicle,unix,at);
         }
-        private Trip(String id,String vehicle,long unix,long at,long previousMotionAt) {
+        private Trip(String id,String vehicle,long unix,long at) {
             this.id=id;
-            this.vehicle=vehicle; startUnix=unix; start=at; motion=at; this.previousMotionAt=previousMotionAt;
-            if (previousMotionAt>=0 && at-previousMotionAt<=2500) acceleration.sample(0,previousMotionAt);
+            this.vehicle=vehicle; startUnix=unix; start=at; motion=at;
+            Arrays.fill(acceleration,Double.NaN);
+            for (int i=0;i<TripMath.SPLITS;i++) runs.add(new ArrayList<>());
         }
         void speed(double v,long at) {
             if (!Double.isFinite(v) || v<0 || v>255) return;
@@ -46,7 +61,12 @@ final class Trips extends SQLiteOpenHelper {
             }
             if (v>2) motion=at;
             max=Math.max(max,v); speed=v; speedAt=at;
-            acceleration.sample(v,at);
+        }
+        void accelerationSplit(int split,long launch,double seconds) {
+            List<Acceleration> recent=runs.get(split);
+            if (!Double.isFinite(acceleration[split]) || seconds<acceleration[split]) acceleration[split]=seconds;
+            if (recent.size()==ACCEL_HISTORY_LIMIT) recent.remove(0);
+            recent.add(new Acceleration(startUnix*1000+launch-start,seconds,false));
         }
         void fuel(double v,int source,long at) {
             if (!Double.isFinite(v)) { fuelAt=-1; return; }
@@ -68,33 +88,59 @@ final class Trips extends SQLiteOpenHelper {
             lastOff=off; count++;
             double v=fix.hasSpeed() ? fix.getSpeed()*3.6 : at-speedAt<6500 && speedAt>=0 ? speed : 0;
             return new Point(off,(int)Math.round(fix.getLatitude()*1e5),(int)Math.round(fix.getLongitude()*1e5),
-                (int)Math.round(Math.max(0,Math.min(400,v))));
+                (int)Math.round(Math.max(0,Math.min(400,v))), fix.hasAltitude() ? fix.getAltitude() : Double.NaN);
+        }
+        void recordConditions(double temperature,double pressure) {
+            if (Double.isFinite(temperature) && temperature>=-50 && temperature<=60) ambientC=temperature;
+            if (Double.isFinite(pressure) && pressure>=300 && pressure<=1150) pressureHpa=pressure;
         }
         JSONObject summary(long at) throws JSONException {
             double duration=Math.max(1,(at-start)/1000.0), distance=distance();
-            JSONArray thresholds=new JSONArray();
-            for (double v : acceleration.times) thresholds.put(Double.isFinite(v) ? v : JSONObject.NULL);
+            JSONArray thresholds=new JSONArray(), attempts=new JSONArray();
+            JSONArray rolling=new JSONArray(), rollingAttempts=new JSONArray();
+            boolean hasAttempts=false, hasRollingAttempts=false, hasRollingTime=false;
+            for (int i=0;i<TripMath.SPLITS;i++) {
+                boolean fromStop=i<TripMath.SERIES_SPLITS;
+                double v=acceleration[i]; (fromStop ? thresholds : rolling).put(Double.isFinite(v) ? v : JSONObject.NULL);
+                hasRollingTime|=!fromStop && Double.isFinite(v);
+                JSONArray split=new JSONArray();
+                for (Acceleration run:runs.get(i)) split.put(new JSONArray().put(run.atMs).put(run.seconds));
+                if (fromStop) { attempts.put(split); hasAttempts|=split.length()>0; }
+                else { rollingAttempts.put(split); hasRollingAttempts|=split.length()>0; }
+            }
             JSONObject data=new JSONObject().put("id",id).put("vehicle",vehicle).put("type","trip").put("t_start",startUnix)
                 .put("t_end",startUnix+Math.round(duration)).put("dur_s",duration).put("drive_s",drive).put("idle_s",idle)
                 .put("km",distance).put("gps_km",gpsKm).put("track_pts",count).put("max_kmh",max)
                 .put("avg_kmh",distance*3600/duration).put("fuel_cover",Math.min(1,fuelCover/duration))
                 .put("accel_s",thresholds).put("final",1);
+            if (Double.isFinite(ambientC)) data.put(AMBIENT_C,ambientC);
+            if (Double.isFinite(pressureHpa)) data.put(PRESSURE_HPA,pressureHpa);
+            if (hasAttempts) data.put("accel_runs",attempts);
+            if (hasRollingTime) data.put("accel_100_s",rolling);
+            if (hasRollingAttempts) data.put("accel_100_runs",rollingAttempts);
             if (fuelCover>0) data.put("fuel_l",liters).put("fuel_src",fuelSource);
             if (distance>=0.1 && fuelCover>=Math.max(2,duration*0.60)) data.put("l100",Math.min(100,100*liters/distance));
             return data;
         }
         double distance() { return drive>0 && km>=gpsKm*0.8 ? km : gpsKm; }
     }
-    Trips(Context c) { super(c,"trips.db",null,3); setWriteAheadLoggingEnabled(true); }
+    Trips(Context c) { super(c,"trips.db",null,5); setWriteAheadLoggingEnabled(true); }
 
     @Override public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE trips(id TEXT PRIMARY KEY, started INTEGER NOT NULL, info TEXT NOT NULL, closed INTEGER NOT NULL, exported TEXT NOT NULL DEFAULT '', vehicle TEXT NOT NULL DEFAULT '', remote INTEGER NOT NULL DEFAULT 0, expected INTEGER NOT NULL DEFAULT 0, follow INTEGER NOT NULL DEFAULT -1, retry_after INTEGER NOT NULL DEFAULT 0)");
-        db.execSQL("CREATE TABLE points(trip TEXT, off INTEGER, la INTEGER, lo INTEGER, kmh INTEGER, PRIMARY KEY(trip,off)) WITHOUT ROWID");
+        db.execSQL("CREATE TABLE points(trip TEXT, off INTEGER, la INTEGER, lo INTEGER, kmh INTEGER, altitude REAL, PRIMARY KEY(trip,off)) WITHOUT ROWID");
         db.execSQL("CREATE TABLE outbox(n INTEGER PRIMARY KEY AUTOINCREMENT,id TEXT UNIQUE,payload TEXT)");
+        createInstrumentHistory(db);
+    }
+    private static void createInstrumentHistory(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE instrument_history(vehicle TEXT NOT NULL,metric INTEGER NOT NULL,slot INTEGER NOT NULL,"
+            +"sampled INTEGER NOT NULL,value REAL NOT NULL,PRIMARY KEY(vehicle,metric,slot)) WITHOUT ROWID");
     }
     @Override public void onUpgrade(SQLiteDatabase db,int oldVersion,int newVersion) {
         if (oldVersion<2) upgradeProfiles(db);
         if (oldVersion<3) archiveEmptyTrips(db);
+        if (oldVersion<4) createInstrumentHistory(db);
+        if (oldVersion<5) db.execSQL("ALTER TABLE points ADD COLUMN altitude REAL");
     }
     private void upgradeProfiles(SQLiteDatabase db) {
         db.execSQL("ALTER TABLE trips ADD COLUMN vehicle TEXT NOT NULL DEFAULT ''");
@@ -143,8 +189,8 @@ final class Trips extends SQLiteOpenHelper {
             db.execSQL("INSERT OR IGNORE INTO trips(id,started,info,closed,vehicle) VALUES(?,?,?,0,?)",
                 new Object[]{trip.id,trip.startUnix,json.toString(),trip.vehicle});
             db.execSQL("UPDATE trips SET info=? WHERE id=? AND closed=0",new Object[]{json.toString(),trip.id});
-            for (Point pending:trip.pendingPoints) db.execSQL("INSERT OR IGNORE INTO points VALUES(?,?,?,?,?)",
-                new Object[]{trip.id,pending.s,pending.la,pending.lo,pending.kmh});
+            for (Point pending:trip.pendingPoints) db.execSQL("INSERT OR IGNORE INTO points(trip,off,la,lo,kmh,altitude) VALUES(?,?,?,?,?,?)",
+                new Object[]{trip.id,pending.s,pending.la,pending.lo,pending.kmh,Double.isFinite(pending.altitude) ? pending.altitude : null});
             db.setTransactionSuccessful();
         } finally { db.endTransaction(); }
         // Wyjątek pozostawia bufor do następnej próby, a klucz (trip, off) zapobiega duplikatom.
@@ -163,7 +209,9 @@ final class Trips extends SQLiteOpenHelper {
             info.put("track_pts",points.size()).put("recovered",recovered ? 1 : 0);
             boolean empty=emptyTrip(info);
             if (!empty) {
-                enqueue(db,info);
+                // Indywidualne pomiary zostają lokalnie, NAS nadal otrzymuje dotychczasowe minima trasy.
+                JSONObject summary=new JSONObject(info.toString()); summary.remove("accel_runs");
+                enqueue(db,summary);
                 for (JSONObject chunk : trackRecords(info,points)) enqueue(db,chunk);
             }
             db.execSQL("UPDATE trips SET closed=?,info=? WHERE id=?",new Object[]{empty ? EMPTY : CLOSED,info.toString(),id});
@@ -171,7 +219,7 @@ final class Trips extends SQLiteOpenHelper {
         } finally { db.endTransaction(); }
     }
     Trip recover(Profiles.Profile requested,List<Profiles.Profile> profiles,boolean explicitProfile,boolean allowResume,
-                 long now,long wall,int boot) throws JSONException {
+                 long now,long wall,int boot,long stationaryTimeout) throws JSONException {
         List<JSONObject> unfinished=new ArrayList<>();
         try (Cursor rows=getReadableDatabase().rawQuery("SELECT info FROM trips WHERE closed=0 ORDER BY started DESC,id DESC",null)) {
             while (rows.moveToNext()) unfinished.add(new JSONObject(rows.getString(0)));
@@ -192,14 +240,14 @@ final class Trips extends SQLiteOpenHelper {
                         new String[]{item.getString("id")})) {
                     if (row.moveToFirst() && !row.isNull(0)) lastOff=row.getInt(0);
                 }
-                resumed=restore(item,now,wall,boot,lastOff);
+                resumed=restore(item,now,wall,boot,lastOff,stationaryTimeout);
                 if (resumed!=null) continue;
             }
             closeTrip(item,true);
         }
         return resumed;
     }
-    static Trip restore(JSONObject item,long now,long wall,int boot,int lastOff) throws JSONException {
+    static Trip restore(JSONObject item,long now,long wall,int boot,int lastOff,long stationaryTimeout) throws JSONException {
         long unix=item.getLong("t_start"), end=item.getLong("t_end");
         JSONObject resume=item.optJSONObject(RESUME);
         long start,savedAt;
@@ -210,23 +258,26 @@ final class Trips extends SQLiteOpenHelper {
             // Aktualizacja ze starszego APK ma tylko czasy UTC. Początek musi przypadać po rozruchu urządzenia.
             start=now-(wall-unix*1000L); savedAt=now-(wall-end*1000L);
         }
-        if (start<=0 || savedAt<start || savedAt>now+1000 || now-savedAt>RESUME_WINDOW_MS || now-start>=MAX_TRIP_MS)
+        if (start<=0 || savedAt<start || savedAt>now+1000 || now-start>=MAX_TRIP_MS ||
+            !Engine.recoverableGap(now-savedAt,stationaryTimeout))
             return null;
-        Trip trip=new Trip(item.getString("id"),item.getString("vehicle"),unix,start,-1);
+        Trip trip=new Trip(item.getString("id"),item.getString("vehicle"),unix,start);
         double duration=item.optDouble("dur_s",0);
         trip.saved=Math.min(now,savedAt);
         trip.motion=resume==null ? trip.saved : resume.optLong("motion",trip.saved);
         trip.profileId=resume==null ? "" : resume.optString("profile");
         trip.gpsKm=item.optDouble("gps_km",0);
+        trip.recordConditions(item.optDouble(AMBIENT_C),item.optDouble(PRESSURE_HPA));
         trip.drive=item.optDouble("drive_s",0); trip.idle=item.optDouble("idle_s",0);
         double selected=item.optDouble("km",0);
         trip.km=resume==null ? (trip.drive>0 && selected!=trip.gpsKm ? selected : 0) : resume.optDouble("obd_km",0);
         trip.liters=item.optDouble("fuel_l",0); trip.fuelSource=item.optInt("fuel_src",0);
         trip.fuelCover=resume==null ? item.optDouble("fuel_cover",0)*duration : resume.optDouble("fuel_s",0);
         trip.max=item.optDouble("max_kmh",0); trip.count=item.optInt("track_pts",0); trip.lastOff=lastOff;
-        JSONArray thresholds=item.optJSONArray("accel_s");
-        if (thresholds!=null) for (int i=0;i<trip.acceleration.times.length;i++)
-            trip.acceleration.times[i]=thresholds.optDouble(i,Double.NaN);
+        for (int i=0;i<TripMath.SPLITS;i++) {
+            trip.acceleration[i]=accelerationBest(item,i);
+            trip.runs.get(i).addAll(accelerationFrom(item,i,false));
+        }
         return trip;
     }
     static List<JSONObject> trackRecords(JSONObject info,List<Point> points) throws JSONException {
@@ -254,13 +305,96 @@ final class Trips extends SQLiteOpenHelper {
         return EngineHours.kiaProfile(vehicle)
             ? "vehicle COLLATE NOCASE IN (?, 'kia-radio', '"+EngineHours.KIA_ID+"')" : "vehicle=?";
     }
-    List<JSONObject> history(String vehicle,int offset) {
-        List<JSONObject> rows=new ArrayList<>();
-        String sql="SELECT info FROM trips WHERE closed=1 AND "+historyScope(vehicle)+" ORDER BY started DESC,id DESC LIMIT 60 OFFSET "+Math.max(0,offset);
-        try (Cursor c=getReadableDatabase().rawQuery(sql,new String[]{vehicle})) {
-            while (c.moveToNext()) rows.add(new JSONObject(c.getString(0)));
+    // Każdy przedział zachowuje pierwszy poprawny odczyt i rzeczywisty czas pomiaru.
+    void instrumentSample(String vehicle,InstrumentHistory.Metric metric,long slot,long time,double value,boolean prune) {
+        SQLiteDatabase db=getWritableDatabase();
+        db.execSQL("INSERT OR IGNORE INTO instrument_history VALUES(?,?,?,?,?)",new Object[]{vehicle,metric.id,slot,time,value});
+        if (prune) db.execSQL("DELETE FROM instrument_history WHERE slot<?",new Object[]{(time-InstrumentHistory.WEEK)/InstrumentHistory.BUCKET});
+    }
+    List<InstrumentHistory.Sample> instrumentHistory(String vehicle,InstrumentHistory.Metric metric,long now) {
+        long from=now-InstrumentHistory.WEEK;
+        List<InstrumentHistory.Sample> values=new ArrayList<>();
+        SQLiteDatabase db=getReadableDatabase();
+        try (Cursor c=db.rawQuery("SELECT sampled,value FROM instrument_history WHERE "+historyScope(vehicle)
+                +" AND metric=? AND slot>=? AND sampled BETWEEN ? AND ? ORDER BY sampled",
+                new String[]{vehicle,Integer.toString(metric.id),Long.toString(from/InstrumentHistory.BUCKET),Long.toString(from),Long.toString(now)})) {
+            while (c.moveToNext()) values.add(new InstrumentHistory.Sample(c.getLong(0),c.getDouble(1),false));
+        }
+        if (metric.archivedField==null) return values;
+        long before=values.isEmpty() ? now+1 : values.get(0).at;
+        List<InstrumentHistory.Sample> archived=new ArrayList<>();
+        try (Cursor c=db.rawQuery("SELECT info FROM trips WHERE closed=1 AND "+historyScope(vehicle)
+                +" AND started BETWEEN ? AND ?",new String[]{vehicle,Long.toString((from-MAX_TRIP_MS)/1000),Long.toString(now/1000)})) {
+            while (c.moveToNext()) {
+                JSONObject trip=new JSONObject(c.getString(0));
+                long at=trip.optLong("t_end")*1000;
+                double value=trip.optDouble(metric.archivedField);
+                if (at>=from && at<before && metric.valid(value)) archived.add(new InstrumentHistory.Sample(at,value,true));
+            }
         } catch (JSONException error) { throw new IllegalStateException(error); }
-        return rows;
+        archived.sort(Comparator.comparingLong(sample -> sample.at));
+        archived.addAll(values);
+        return archived;
+    }
+    TripGrouping.Page history(String vehicle,int offset,boolean join,java.time.ZoneId zone) {
+        List<JSONObject> rows=new ArrayList<>();
+        String sql="SELECT info FROM trips WHERE closed=1 AND "+historyScope(vehicle)+" ORDER BY started DESC,id DESC LIMIT ? OFFSET ?";
+        boolean boundary=false;
+        try {
+            while (!boundary) {
+                int count=0, limit=TripGrouping.PAGE_SIZE+1;
+                try (Cursor c=getReadableDatabase().rawQuery(sql,new String[]{vehicle,Integer.toString(limit),Integer.toString(offset+rows.size())})) {
+                    while (c.moveToNext()) {
+                        JSONObject older=new JSONObject(c.getString(0)); count++;
+                        // Granica strony wypada między grupami, również przy bardzo wielu odcinkach.
+                        if (rows.size()>=TripGrouping.PAGE_SIZE &&
+                                (!join || !TripGrouping.canJoin(older,rows.get(rows.size()-1),zone)))
+                            return new TripGrouping.Page(rows,true);
+                        rows.add(older);
+                    }
+                }
+                boundary=count<limit;
+            }
+        } catch (JSONException error) { throw new IllegalStateException(error); }
+        return new TripGrouping.Page(rows,false);
+    }
+    // Starsze pozycje accel_s powyżej 100 km/h były liczone od zera.
+    static double accelerationBest(JSONObject trip,int band) {
+        boolean rolling=band>=TripMath.SERIES_SPLITS;
+        JSONArray best=trip.optJSONArray(rolling ? "accel_100_s" : "accel_s");
+        return best==null ? Double.NaN : best.optDouble(rolling ? band-TripMath.SERIES_SPLITS : band,Double.NaN);
+    }
+    static List<Acceleration> accelerationFrom(JSONObject trip,int band,boolean includeArchived) {
+        List<Acceleration> records=new ArrayList<>();
+        boolean rolling=band>=TripMath.SERIES_SPLITS;
+        JSONArray splits=trip.optJSONArray(rolling ? "accel_100_runs" : "accel_runs");
+        JSONArray list=splits==null ? null : splits.optJSONArray(rolling ? band-TripMath.SERIES_SPLITS : band);
+        if (list!=null) for (int i=Math.max(0,list.length()-ACCEL_HISTORY_LIMIT);i<list.length();i++) {
+            JSONArray row=list.optJSONArray(i);
+            if (row==null) continue;
+            long at=row.optLong(0,-1); double seconds=row.optDouble(1,Double.NaN);
+            if (at>0 && seconds>0 && Double.isFinite(seconds)) records.add(new Acceleration(at,seconds,false));
+        }
+        if (includeArchived && records.isEmpty()) {
+            double seconds=accelerationBest(trip,band);
+            long start=trip.optLong("t_start",0);
+            if (start>0 && seconds>0 && Double.isFinite(seconds)) records.add(new Acceleration(start*1000,seconds,true));
+        }
+        return records;
+    }
+    List<Acceleration> recentAcceleration(String vehicle,int band) {
+        List<Acceleration> results=new ArrayList<>();
+        String sql="SELECT started,info FROM trips WHERE closed IN (0,1) AND "+historyScope(vehicle)+" ORDER BY started DESC,id DESC";
+        try (Cursor c=getReadableDatabase().rawQuery(sql,new String[]{vehicle})) {
+            while (c.moveToNext()) {
+                if (results.size()==ACCEL_HISTORY_LIMIT && c.getLong(0)*1000+MAX_TRIP_MS<results.get(ACCEL_HISTORY_LIMIT-1).atMs) break;
+                List<Acceleration> trip=accelerationFrom(new JSONObject(c.getString(1)),band,true);
+                if (trip.isEmpty()) continue;
+                results.addAll(trip); results.sort(Comparator.comparingLong((Acceleration a) -> a.atMs).reversed());
+                if (results.size()>ACCEL_HISTORY_LIMIT) results.subList(ACCEL_HISTORY_LIMIT,results.size()).clear();
+            }
+        } catch (JSONException error) { throw new IllegalStateException(error); }
+        return results;
     }
     static final class RouteJob {
         final String id;
@@ -294,7 +428,7 @@ final class Trips extends SQLiteOpenHelper {
             if (!row.moveToFirst()) return;
             local=new JSONObject(row.getString(0));
         }
-        for (String field:new String[]{"cost_pln","odo_end","odo_src"}) if (server.has(field)) local.put(field,server.get(field));
+        for (String field:new String[]{"cost_pln","cost_net_pln","fuel_vat_pct","odo_end","odo_src","volt","coolant_max"}) if (server.has(field)) local.put(field,server.get(field));
         db.execSQL("UPDATE trips SET info=? WHERE id=? AND "+scope+" AND closed=1 AND remote=0",
             new Object[]{local.toString(),id,vehicle});
     }
@@ -315,7 +449,9 @@ final class Trips extends SQLiteOpenHelper {
                 int off=p.getInt(0),la=p.getInt(1),lo=p.getInt(2),kmh=p.optInt(3,-1);
                 if (off<=last || Math.abs((long)la)>9000000 || Math.abs((long)lo)>18000000)
                     throw new JSONException("Nieprawidłowy punkt trasy");
-                db.execSQL("INSERT OR IGNORE INTO points VALUES(?,?,?,?,?)",new Object[]{trip.id,off,la,lo,kmh});
+                double altitude=p.optDouble(4,Double.NaN);
+                db.execSQL("INSERT OR IGNORE INTO points(trip,off,la,lo,kmh,altitude) VALUES(?,?,?,?,?,?)",
+                    new Object[]{trip.id,off,la,lo,kmh,altitude>=-1500 && altitude<=11000 ? altitude : null});
                 last=off;
             }
             if (more && last==trip.after) throw new JSONException("Nie przewinięto pozycji trasy");
@@ -335,8 +471,9 @@ final class Trips extends SQLiteOpenHelper {
     void exported(String id,String uri) { getWritableDatabase().execSQL("UPDATE trips SET exported=? WHERE id=?",new Object[]{uri,id}); }
     List<Point> points(String id) {
         ArrayList<Point> result=new ArrayList<>();
-        try (Cursor c=getReadableDatabase().rawQuery("SELECT off,la,lo,kmh FROM points WHERE trip=? ORDER BY off",new String[]{id})) {
-            while (c.moveToNext()) result.add(new Point(c.getInt(0),c.getInt(1),c.getInt(2),c.getInt(3)));
+        try (Cursor c=getReadableDatabase().rawQuery("SELECT off,la,lo,kmh,altitude FROM points WHERE trip=? ORDER BY off",new String[]{id})) {
+            while (c.moveToNext()) result.add(new Point(c.getInt(0),c.getInt(1),c.getInt(2),c.getInt(3),
+                c.isNull(4) ? Double.NaN : c.getDouble(4)));
         }
         return result;
     }

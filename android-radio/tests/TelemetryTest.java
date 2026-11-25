@@ -21,6 +21,25 @@ public final class TelemetryTest {
         equal(Elm.decode(0x0c,"410C1F40\r>"),2000);
         equal(Elm.decode(0x5e,"415E00C8>"),10);
         equal(Elm.decode(0x9d,"419D00190000>"),0.5);
+        equal(Elm.decode(0x42,"41423778>"),14.2);
+        equal(Elm.decode(Elm.BAROMETER,"0133\r41 33 63\r>"),99);
+        missing(Elm.decode(Elm.BAROMETER,"4133\rNO DATA>"));
+        equal(Elm.decodeKiaAmbient("00C\r0:6201007E507C\r1:C8FF7C506B0500\r>"),0);
+        equal(Elm.decodeKiaAmbient("6201007E507CC8FF7C4F6B05>"),-0.5);
+        missing(Elm.decodeKiaAmbient("6201007E507CC8FF7CFF6B05>"));
+        missing(Elm.decodeKiaAmbient("6201007E507CC8FF7C>"));
+        equal(TripMath.estimatedPressureHpa(0),1013.25);
+        equal(Math.round(TripMath.estimatedPressureHpa(268)),981);
+        missing(TripMath.estimatedPressureHpa(Double.NaN));
+        missing(TripMath.estimatedPressureHpa(12000));
+        Elm fallback=new Elm(new Elm.Link() {
+            public String query(String cmd,int timeout) { return "ATRV".equals(cmd) ? "ATRV\r12.4V\r>" : "NO DATA>"; }
+            public void close() {}
+        });
+        Elm.Voltage battery=fallback.voltage(); equal(battery.volts,12.4);
+        if (!battery.adapter) throw new AssertionError("Źródło napięcia zastępczego");
+        equal(SpeedBands.band(69,70),6); equal(SpeedBands.band(70,-1),7);
+        equal(SpeedBands.band(-1,-1),SpeedBands.UNKNOWN);
         missing(Elm.decode(0x10,"NO DATA"));
         missing(Elm.decode(0x0d,"7F0112"));
         missing(Elm.decode(0x0d,"410D"));
@@ -38,12 +57,13 @@ public final class TelemetryTest {
         missing(Elm.decodeKiaTank(tank.replace("008A","00FF")));
         missing(Elm.decodeKiaTank("00A\r0:62B002C00000\r>"));
         String kiaOdo="043\r0:62ED03FFE7FF\r1:E0000100010000\r2:00000010000100\r3:00000000190000\r4:00000000000000\r"+
-            "5:000000FFFF0003\r6:020000075BD9A0\r7:00005604075BCD\r8:0C0003000A0000\r9:000000FFFF5555\r>";
-        equal(Elm.decodeKiaOdometer(kiaOdo),123456.78);
-        missing(Elm.decodeKiaOdometer(kiaOdo.replace("8:0C","A:0C")));
+            "5:000000FFFF0003\r6:02000014DF6178\r7:0000560400BC61\r8:4E0003000A0000\r9:000000FFFF5555\r>";
+        equal(Elm.decodeKiaOdometer(kiaOdo),12345.678);
+        missing(Elm.decodeKiaOdometer(kiaOdo.replace("8:4E","A:4E")));
         missing(Elm.decodeKiaOdometer("7F2231>"));
         gear(KiaGear.UDS,"6201A0",8,4,71,"D4");
         gear(KiaGear.UDS,"6201A0",12,3,42,"M3");
+        gear(KiaGear.UDS,"6201A0",12,4,71,"M4");
         gear(KiaGear.UDS,"6201A0",8,0,0,"D");
         gear(KiaGear.LEGACY,"61A0",11,0,0,"P");
         gear(KiaGear.LEGACY,"61A0",11,0,60,"");
@@ -55,16 +75,65 @@ public final class TelemetryTest {
             KiaGear.decode(KiaGear.UDS,tcm.replace("2:","4:"))!=null ||
             KiaGear.decode(KiaGear.LEGACY,tcm)!=null || KiaGear.decode(KiaGear.UDS,"7F2231>")!=null)
             throw new AssertionError("Błędna interpretacja ramek skrzyni");
+        equal(KiaGear.nextPoll(1000,1300,true,true),2100);
+        equal(KiaGear.nextPoll(1000,2100,true,true),2300);
+        equal(KiaGear.nextPoll(1000,1300,false,true),3700);
+        equal(KiaGear.nextPoll(1000,1300,false,false),26300);
         equal(TripMath.trapezoid(80,100,1000),0.025);
+        equal(TripMath.fuelPer100Km(4,80),5);
+        equal(TripMath.fuelPer100Km(0,80),0);
+        missing(TripMath.fuelPer100Km(0.9,0));
+        missing(TripMath.fuelPer100Km(0.9,2));
+        missing(TripMath.fuelPer100Km(4,Double.NaN));
+        TripMath.Group group=new TripMath.Group();
+        missing(group.mean()); missing(group.recordedLiters()); missing(group.estimatedCost());
+        group.add(80,4200,5,4,0.95,27.20);
+        group.add(20,1800,10,Double.NaN,Double.NaN,Double.NaN);
+        group.add(30,1200,Double.NaN,0.4,0.2,3.80);
+        equal(group.recordedLiters(),4.4); equal(group.estimatedCost(),31);
+        if (group.fuelMeasurements!=2 || group.partialFuelMeasurements!=1 || group.pricedTrips!=2)
+            throw new AssertionError("Dostępność litrów i kosztów w sumie tras");
+        equal(group.distance,130); equal(group.seconds,7200); equal(group.mean(),6);
+        if (group.fuelTrips!=2) throw new AssertionError("Wyłączenie częściowego pomiaru ze spalania grupy");
+        TripMath.FuelLevel direct=TripMath.fuelLevel(true,50,37,71);
+        equal(direct.value,37);
+        if (direct.estimated) throw new AssertionError("Litry z zegarów mają pierwszeństwo");
+        TripMath.FuelLevel estimated=TripMath.fuelLevel(true,50,Double.NaN,71);
+        equal(estimated.value,35.5);
+        if (!estimated.estimated) throw new AssertionError("Przeliczone litry są szacunkiem");
+        equal(TripMath.fuelLevel(false,50,37,71).value,50);
+        equal(TripMath.fuelLevel(false,Double.NaN,35.5,71).value,50);
+        equal(TripMath.fuelLevel(true,50,0,71).value,0);
+        missing(TripMath.fuelLevel(true,50,Double.NaN,Double.NaN).value);
         TripMath.Run run=new TripMath.Run();
         run.sample(0,1000); run.sample(30,2000); run.sample(60,3000); run.sample(145,5000);
         equal(run.times[0],2.0/3);
         equal(run.times[1],4.0/3);
-        equal(run.times[6],2+2*80.0/85);
+        equal(run.times[4],2+2*40.0/85);
+        equal(run.times[5],2*20.0/85); equal(run.times[6],2*40.0/85);
+        TripMath.Run rolling=new TripMath.Run();
+        rolling.sample(90,1000); rolling.sample(110,2000); rolling.sample(130,3000);
+        rolling.sample(170,4000); rolling.sample(200,5500);
+        missing(rolling.times[4]); equal(rolling.times[5],1); equal(rolling.times[9],4);
+        rolling.sample(88,6000); rolling.sample(125,7000);
+        equal(rolling.times[5],20.0/37); equal(rolling.times[9],4);
         TripMath.Run gap=new TripMath.Run();
-        gap.sample(0,1000); gap.sample(25,5000); gap.sample(145,6000);
+        gap.sample(0,1000); gap.sample(25,5000); gap.sample(145,9000);
         missing(gap.times[0]); missing(gap.times[6]);
+        gap.resetMotion();
         gap.sample(0,7000); gap.sample(15,8000); gap.sample(6,9000); gap.sample(64,10000); missing(gap.times[0]);
+        TripMath.Run automatic=new TripMath.Run();
+        List<Long> launches=new ArrayList<>(); List<Double> elapsed=new ArrayList<>();
+        TripMath.SplitListener crossings=(band,launchedAt,seconds) -> {
+            if (band==0) { launches.add(launchedAt); elapsed.add(seconds); }
+        };
+        automatic.sample(0,1000,crossings); automatic.sample(0,1900,crossings);
+        automatic.sample(20,2900,crossings); automatic.sample(18,3500,crossings); automatic.sample(21,4100,crossings);
+        automatic.sample(2,4700,crossings); automatic.sample(21,5200,crossings);
+        automatic.sample(0,6000,crossings); automatic.sample(1,6400,crossings); automatic.sample(20,7300,crossings);
+        automatic.resetMotion(); automatic.sample(10,9000,crossings); automatic.sample(21,9800,crossings);
+        if (!launches.equals(Arrays.asList(1900L,6000L))) throw new AssertionError("Dwie próby po pełnym zatrzymaniu");
+        equal(elapsed.get(0),1); equal(elapsed.get(1),1.3); equal(automatic.times[0],1);
         List<String> seen=new ArrayList<>();
         Elm.Link dummy=new Elm.Link() {
             public String query(String request,int timeout) {
@@ -94,7 +163,7 @@ public final class TelemetryTest {
         if (seen.contains("0110") || seen.contains("04") || !seen.containsAll(Arrays.asList("ATSP0","0100")))
             throw new AssertionError(seen);
         rediscoverAfterEcuLoss();
-        System.out.println("OK: ELM, ponowne wykrywanie ECU, spalanie, odstępy w pomiarze, progi 20–140");
+        System.out.println("OK: ELM, ponowne wykrywanie ECU, spalanie, odstępy w pomiarze, progi 0–100 i 100–200");
     }
 
     private static void rediscoverAfterEcuLoss() throws Exception {

@@ -13,7 +13,7 @@ final class ObdLan implements AutoCloseable {
     private final ConnectivityManager connectivity;
     private final NsdManager nsd;
     private final ObdExchange exchange;
-    private ObdProxy server;
+    private ObdProxy server, loopback;
     private LinkAddress bound;
     private Network boundNetwork;
     private boolean closed;
@@ -69,23 +69,28 @@ final class ObdLan implements AutoCloseable {
     synchronized String update(boolean enabled,Profiles.Profile profile) {
         if (closed) return "";
         if (profile.isWifi() || !enabled) {
-            stopSharing();
+            stopSharing(); stopLoopback();
             return profile.isWifi() ? "Klient Wi-Fi · "+profile.adapter : "Proxy Wi-Fi wyłączone";
         }
+        if (loopback==null || !loopback.open()) {
+            stopLoopback();
+            try { loopback=new ObdProxy(InetAddress.getByAddress(new byte[]{127,0,0,1}),TcpElm.PORT,32,exchange); }
+            catch (IOException error) { /* Inna usługa może zajmować port lokalny. */ }
+        }
+        String local=loopback==null ? "Proxy lokalne niedostępne" : "127.0.0.1:"+TcpElm.PORT+" · klienci: "+loopback.clientCount();
         Network network=wifi(connectivity);
         LinkAddress address=localAddress(connectivity,network);
-        if (address==null) { stopSharing(); return "Proxy czeka na lokalną sieć Wi-Fi"; }
+        if (address==null) { stopSharing(); return local; }
         if (server==null || !server.open() || !address.equals(bound) || !network.equals(boundNetwork)) {
             stopSharing();
             try {
                 server=new ObdProxy(address.getAddress(),TcpElm.PORT,address.getPrefixLength(),exchange);
                 bound=address; boundNetwork=network; announce();
-            } catch (IOException error) { return "Proxy nie może otworzyć portu "+TcpElm.PORT; }
+            } catch (IOException error) { return local+"\nProxy Wi-Fi nie może otworzyć portu "+TcpElm.PORT; }
         }
-        String name=serviceName;
-        return bound.getAddress().getHostAddress()+":"+TcpElm.PORT+" · klienci: "+server.clientCount()
-            +(name==null ? "" : "\nDNS-SD: "+name);
+        return bound.getAddress().getHostAddress()+":"+TcpElm.PORT+" · klienci: "+server.clientCount()+"\n"+local;
     }
+    String publishedName() { String name=serviceName; return name==null ? "" : name; }
     private void announce() {
         if (nsd==null) return;
         NsdServiceInfo info=new NsdServiceInfo();
@@ -111,5 +116,6 @@ final class ObdLan implements AutoCloseable {
         registration=null; serviceName=null;
         if (listener!=null) try { nsd.unregisterService(listener); } catch (RuntimeException ignored) {}
     }
-    @Override public synchronized void close() { closed=true; stopSharing(); }
+    private void stopLoopback() { if (loopback!=null) { loopback.close(); loopback=null; } }
+    @Override public synchronized void close() { closed=true; stopSharing(); stopLoopback(); }
 }

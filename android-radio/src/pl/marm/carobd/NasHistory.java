@@ -10,7 +10,7 @@ final class NasHistory {
     static volatile String status="";
     static volatile long revision;
     private static final long INTERVAL=300000;
-    private static final int HISTORY_CONTRACT=4;
+    private static final int HISTORY_CONTRACT=6;
 
     private static String telemetryKey(String vehicle) {
         return "nas_telemetry_"+(EngineHours.kiaProfile(vehicle) ? "kia-radio" : vehicle);

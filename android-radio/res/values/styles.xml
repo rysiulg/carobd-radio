@@ -1,0 +1,13 @@
+<resources>
+    <style name="CarObdTheme" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:alertDialogTheme">@style/CarObdAlertDialog</item>
+    </style>
+    <style name="CarObdAlertDialog" parent="@android:style/Theme.Material.Dialog.Alert">
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowBackground">@drawable/popup_surface</item>
+        <item name="android:colorBackgroundFloating">#122438</item>
+        <item name="android:colorAccent">#64EABD</item>
+        <item name="android:textColorPrimary">#F0F7FA</item>
+        <item name="android:textColorSecondary">#AEC7DC</item>
+    </style>
+</resources>

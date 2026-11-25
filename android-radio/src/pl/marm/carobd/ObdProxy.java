@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 /** Lokalne proxy ELM. Klienci mają własne ustawienia wyjścia, bez dostępu do konfiguracji adaptera. */
 final class ObdProxy implements AutoCloseable {
-    private static final int MAX_CLIENTS=4, MAX_COMMAND=64;
+    private static final int MAX_COMMAND=64;
     private static final Pattern READ=Pattern.compile("(?:01|09)[0-9A-F]{2}|03|07|0A|ATRV|ATDP|ATDPN");
     private final ServerSocket listener=new ServerSocket();
     private final Set<Socket> clients=new HashSet<>();
@@ -24,7 +24,7 @@ final class ObdProxy implements AutoCloseable {
         if (localIp.length!=4 || prefix<1 || prefix>32) { listener.close(); throw new IOException("Brak lokalnej sieci IPv4"); }
         this.prefix=prefix; this.exchange=exchange;
         try {
-            listener.setReuseAddress(true); listener.bind(new InetSocketAddress(ip,port),MAX_CLIENTS);
+            listener.setReuseAddress(true); listener.bind(new InetSocketAddress(ip,port),ObdExchange.MAX_PROXY_CLIENTS);
         } catch (IOException e) { listener.close(); throw e; }
         start("OBD Wi-Fi listen",this::accept);
     }
@@ -51,7 +51,7 @@ final class ObdProxy implements AutoCloseable {
                 Socket socket=listener.accept();
                 if (!local(socket)) { closeSocket(socket); continue; }
                 synchronized (this) {
-                    if (closed || clients.size()>=MAX_CLIENTS) {
+                    if (closed || !exchange.proxyClients.tryAcquire()) {
                         try { send(socket.getOutputStream(),"BUSY\r>"); } catch (IOException ignored) {}
                         closeSocket(socket); continue;
                     }
@@ -84,6 +84,7 @@ final class ObdProxy implements AutoCloseable {
         finally {
             closeSocket(socket);
             synchronized (this) { clients.remove(socket); }
+            exchange.proxyClients.release();
         }
     }
     private static void send(OutputStream out,String text) throws IOException {
